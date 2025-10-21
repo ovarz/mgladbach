@@ -114,6 +114,10 @@ section{position:relative;}
 
 
 
+.calendar-note{padding:12px;}
+
+
+
 .share-list{display:flex; gap:var(--size-2); padding:var(--size-1) 0;}
 .share-box{line-height:0;}
 .share-box svg{width:auto; height:var(--size-5);}
