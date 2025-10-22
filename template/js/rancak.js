@@ -5,17 +5,6 @@ function ClosePopup(){
 
 
 
-function back_to_top(){
-  $('#btt').on('click',function(){
-    $('html, body').animate({
-      scrollTop:0
-    },500);
-    return false;
-  });	
-}
-
-
-
 function open_sticky(){
   $('.open-sticky').click(function(){
     var get_id = $(this).attr('aria-popup-button');
@@ -44,24 +33,8 @@ function change_lang(){
 
 
 
-function all_scroll(){
-  $(window).scroll(function(){
-    var scroll_position = $(window).scrollTop();
-    if(scroll_position >= 1){
-      $('#btt').css("display","flex");		
-    }
-    else{
-      $('#btt').hide();
-    }
-  }); 
-}
-
-
-
 $(document).ready(function(){
   "use strict";
-  all_scroll();
-  back_to_top();
   open_sticky();
   change_lang();
 });

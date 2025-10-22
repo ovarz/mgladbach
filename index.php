@@ -189,26 +189,32 @@
     <div class="site-container">
 	
 	  <div class="sbl-list">
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-dsj.webp">
-		  </div>
-        </div>
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-isco.webp">
-		  </div>
-        </div>
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-wohnraum.jpg">
-		  </div>
-        </div>
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-gfi.webp">
-		  </div>
-        </div>
+        <?php 
+          $sbl_array = array();
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-dsj.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-isco.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-wohnraum.jpg',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-gfi.webp',
+          );
+          foreach($sbl_array as $sbl_list){
+        ?>
+          <div class="sbl-box content-center">
+            <div class="sbl-frame img-frame thumb-loading">
+              <img title="<?php echo($sbl_list['sbl_name'])?>" class="lazyload" data-original="template/img/<?php echo($sbl_list['sbl_img'])?>">
+            </div>
+          </div>
+		<?php } ?>
 	  </div>
 	  
 	</div>
@@ -291,6 +297,74 @@
     <div class="stg-map img-frame thumb-loading">
       <iframe title="Map" class="lazyload" data-original="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.1812252108693!2d106.66715754635472!3d-6.285971546983831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbc9afc6d467%3A0xf94add4212779b22!2sBorussia%20Academy%20Indonesia!5e0!3m2!1sid!2sid!4v1694231804634!5m2!1sid!2sid" width="1000" height="600" scrolling="no" frameborder="0" data-gtm-yt-inspected-8="true"></iframe>
     </div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-herrmann section-dsj content-center">
+    <div class="bg-blur"></div>
+    <div class="site-container">
+	
+	  <div class="sph-right img-frame thumb-loading">
+		<img title="Logo" class="lazyload" data-original="template/img/dsj.webp">
+	  </div>
+	  <div class="sph-left">
+	    <h2 class="section-title">WINNING PARTNERSHIP</h2>
+		<p>Borussia M'Gladbach Academy Indonesia is thrilled to partner with the prestigious German School Jakarta (DSJ), a key German institution in Indonesia. Our collaboration extends beyond sharing DSJ's impressive 42,000m2 campus in the heart of BSD. As multicultural and multilingual organizations, we both prioritize cultural exchange, while emphasizing sports, physical health, and mental well-being. </p>
+		<p>With over 66 years of Educational Excellence, DSJ's diverse student community of over 10 nationalities provides an ideal environment for nurturing young talents. Together, DSJ and Borussia M'Gladbach Academy are dedicated to a holistic approach to education, empowering students to reach their full potential. Learn more on DSJ's website about this exciting partnership and our shared commitment to excellence in education and sports.</p>
+	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-border-logo section-border-contact content-center">
+    <div class="site-container">
+	
+	  <div class="section-title">Partners, Sponsors & Supporters</div>
+	
+	  <div class="sbl-list">
+        <?php 
+          $sbl_array = array();
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-dsj.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-isco.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-wohnraum.jpg',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-gfi.webp',
+          );
+          foreach($sbl_array as $sbl_list){
+        ?>
+          <div class="sbl-box content-center">
+            <div class="sbl-frame img-frame thumb-loading">
+              <img title="<?php echo($sbl_list['sbl_name'])?>" class="lazyload" data-original="template/img/<?php echo($sbl_list['sbl_img'])?>">
+            </div>
+          </div>
+		<?php } ?>
+	  </div>
+	  
+	  <div class="sbc-note">
+	    <div class="sbc-note-label">Please contact us to become our sponsor or partner!</div>
+	    <div class="sbc-action content-center">
+		  <a title="Contact" class="btn" href="">Contact</a>
+		</div>
+	  </div>
+	  
+	</div>
   </section>
   
   
