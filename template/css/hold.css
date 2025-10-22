@@ -133,7 +133,7 @@ header{background-color:var(--color-3);}
 .section-training-ground{display:grid;}
 .stg-info{padding:var(--size-5); line-height:150%;}
 .stg-info *{text-align:center;}
-.stg-map{--aspect-ratio:1/1;}
+.stg-map{--aspect-ratio:1/1; max-height:610px;}
 
 
 
