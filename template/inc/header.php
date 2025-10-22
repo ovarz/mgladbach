@@ -16,7 +16,7 @@
             'nav_link'=>'',
           );
           $nav_array[]=array(
-            'nav_label_id'=>'Registrasi',
+            'nav_label_id'=>'Daftar',
             'nav_label_en'=>'Register',
             'nav_label_de'=>'Register',
             'nav_link'=>'',

@@ -133,7 +133,32 @@ header{background-color:var(--color-3);}
 
 
 .section-training-ground{display:grid;}
+.stg-info{padding:var(--size-5); line-height:150%;}
+.stg-info *{text-align:center;}
 .stg-map{--aspect-ratio:1/1;}
+
+
+
+.section-contact{background:url(../img/bg-4.webp) no-repeat fixed center var(--color-3); background-size:cover;}
+.section-contact .site-container{display:grid;}
+.section-contact .section-title{margin-bottom:var(--size-2); font-size:1.5rem;}
+.scu-left, .scu-right{padding:var(--size-5); backdrop-filter:blur(13px); display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
+.scu-left{background-color:rgb(255 255 255 / 89%);}
+.scu-right{background-color:rgb(0 0 0 / 89%);}
+.scu-box{line-height:150%;}
+.scu-right{color:var(--bg-1);}
+.scu-right .section-title{color:var(--bg-2);}
+.scu-list{display:grid; grid-gap:var(--size-3);}
+.scu-row{display:grid; grid-template-columns:auto 1fr; grid-gap:var(--size-3); color:var(--bg-2); fill:var(--color-4) !important;}
+.scu-row:hover{color:var(--color-4);}
+.scu-label{justify-content:flex-start;}
+.scu-address .srs-action-button:hover{background-color:var(--bg-2); color:var(--color-4);}
+.scu-contact-form{}
+.scu-cf-list{display:grid; grid-gap:var(--size-4); margin-top:var(--size-4);}
+.scu-cf-split{display:grid; grid-template-columns:repeat(2,1fr); grid-gap:var(--size-4);}
+.scu-cf-label{padding-bottom:var(--size-1);}
+.scu-cf-box{line-height:0;}
+.scu-cf-box input, .scu-cf-box textarea{line-height:150%;}
 
 
 
@@ -211,11 +236,6 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   .section-methodology .section-title{font-size:2rem;}
-  
-  
-  
-  .stg-info{padding:var(--size-4); line-height:150%;}
-  .stg-info *{text-align:center;}
 }
 
 
@@ -226,7 +246,6 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
 
 @media screen and (min-width:640px){
   .section-training-ground{grid-template-columns:1fr 1fr;}
-  .stg-info{text-align:right; padding:var(--size-5);}
   .stg-info *{text-align:right;}
 }
 
@@ -242,4 +261,8 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   .calendar-frame{--aspect-ratio:10/6;}
+  
+  
+  
+  .section-contact .site-container{grid-template-columns:repeat(2,1fr);}
 }

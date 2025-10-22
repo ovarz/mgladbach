@@ -23,21 +23,11 @@
             <img title="Logo" class="lazyload" data-original="template/img/logo-black.webp">
           </div>
 		  
-		  <p class="text-id">Kami telah bekerja sama dengan klub Bundesliga ternama, <b>Borussia Mönchengladbach</b>, yang dikenal dengan program pembinaan pemain mudanya yang luar biasa. Bersama mereka, kami menghadirkan pengalaman sepak bola terbaik langsung di kawasan Jabodetabek!</p>
-		  <p class="text-id">Program sepak bola ini terbuka untuk anak laki-laki dan perempuan usia 3 hingga 16 tahun, dengan tingkat kemampuan apa pun. Tidak masalah apakah kamu baru mulai belajar atau sudah berada di level semi-profesional — semua dipersilakan bergabung.</p>
-		  <p class="text-id">Tempat latihan kami berlokasi di lapangan rumput alami Deutsche Schule Jakarta (DSJ). Sekolah Jerman yang terletak di BSD City, Tangerang ini menyediakan fasilitas unggulan dalam lingkungan yang berskala internasional.</p>
-		  <p class="text-id">Ayo berlatih dengan metode Borussia Foals dan ikuti jejak para pemain terkenal seperti Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke, dan Patrick Herrmann, yang merupakan beberapa contoh lulusan hebat dari akademi ini.</p>
-		  
-		  <p class="text-en">We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
-		  <p class="text-en">The football program is open to boys and girls aged 3 to 16 with any skill level. It doesn't matter if you're just starting or already a semi-pro – everyone is welcome.</p>
-		  <p class="text-en">Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
-		  <p class="text-en">Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
-		  
-		  <p class="text-de">We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
-		  <p class="text-de">The football program is open to boys and girls aged 3 to 16 with any skill level. It doesn't matter if you're just starting or already a semi-pro – everyone is welcome.</p>
-		  <p class="text-de">Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
-		  <p class="text-de">Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
-		  
+		  <p>We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
+		  <p>The football program is open to boys and girls aged 3 to 16 with any skill level. It doesn't matter if you're just starting or already a semi-pro – everyone is welcome.</p>
+		  <p>Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
+		  <p>Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
+		  		  
 		  <div class="sib-tlap img-frame thumb-loading">
             <img title="Logo" class="lazyload" data-original="template/img/train-like-a-pro.webp">
           </div>
@@ -301,6 +291,135 @@
     <div class="stg-map img-frame thumb-loading">
       <iframe title="Map" class="lazyload" data-original="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.1812252108693!2d106.66715754635472!3d-6.285971546983831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbc9afc6d467%3A0xf94add4212779b22!2sBorussia%20Academy%20Indonesia!5e0!3m2!1sid!2sid!4v1694231804634!5m2!1sid!2sid" width="1000" height="600" scrolling="no" frameborder="0" data-gtm-yt-inspected-8="true"></iframe>
     </div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-contact content-center">
+    <div class="site-container">
+	  <div class="scu-left">
+		
+        <div class="scu-box scu-contact-form">
+          <h2 class="section-title">
+		    <span class="text-id">Kontak</span>
+		    <span class="text-en">Contact</span>
+		    <span class="text-de">Contact</span>
+		  </h2>
+          <h3 class="section-subtitle">
+		    <span class="text-id">Untuk pertanyaan umum saja, bukan untuk pendaftaran.</span>
+		    <span class="text-en">For general inquiries only, not intended for registration use</span>
+		    <span class="text-de">For general inquiries only, not intended for registration use</span>
+		  </h3>
+		  <div class="scu-cf-list">
+            <ul class="scu-cf-row">
+              <li>
+                <div class="scu-cf-label">
+                  <span class="text-id">Nama</span>
+                  <span class="text-en">Name</span>
+                  <span class="text-de">Name</span>
+                </div>
+                <div class="form-box scu-cf-box">
+                  <input class="form-field" name="" type="text" placeholder="">
+                </div>
+              </li>
+            </ul>
+            <ul class="scu-cf-row scu-cf-split">
+              <li>
+                <div class="scu-cf-label">Email</div>
+                <div class="form-box scu-cf-box">
+                  <input class="form-field" name="" type="text" placeholder="">
+                </div>
+              </li>
+              <li>
+                <div class="scu-cf-label">
+                  <span class="text-id">Telepon/Whatsapp</span>
+                  <span class="text-en">Phone/Whatsapp</span>
+                  <span class="text-de">Phone/Whatsapp</span>
+                </div>
+                <div class="form-box scu-cf-box">
+                  <input class="form-field" name="" type="text" placeholder="">
+                </div>
+              </li>
+            </ul>
+            <ul class="scu-cf-row">
+              <li>
+                <div class="scu-cf-label">
+                  <span class="text-id">Pesan</span>
+                  <span class="text-en">Message</span>
+                  <span class="text-de">Message</span>
+                </div>
+                <div class="form-box scu-cf-box">
+                  <textarea class="form-field" placeholder=""></textarea>
+                </div>
+              </li>
+            </ul>
+            <ul class="scu-cf-row">
+              <li>
+                <button title="Send" class="btn" href="">
+                  <span class="text-id">Kirim</span>
+                  <span class="text-en">Send</span>
+                  <span class="text-de">Send</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+		
+	  </div>
+	  <div class="scu-right">
+	  
+        <div class="scu-box scu-address">
+          <h2 class="section-title">Borussia Academy Indonesia</h2>
+          <p>PT. German Football Indonesia</p>
+          <p>Roseville Soho Lantai 10</p>
+          <p>BSD City</p>
+          <p>Tangerang Selatan, 15310 Banten</p>
+          <p>Indonesia</p>
+        </div>
+	  
+        <div class="scu-box scu-address">
+          <div class="srs-action">
+            <a title="Register" class="btn srs-action-button" href="">Register</a>
+            <a title="Free Trial" class="btn srs-action-button" href="">Free Trial</a>
+          </div>
+        </div>
+		
+        <div class="scu-box scu-list">
+          <?php 
+            $bai_array = array();
+            $bai_array[]=array(
+              'bai_title'=>'Email',
+              'bai_link'=>'mailto:goal@gffi.de',
+              'bai_icon'=>'email',
+              'bai_data'=>'goal@gffi.de',
+            );
+            $bai_array[]=array(
+              'bai_title'=>'Whatsapp',
+              'bai_link'=>'https://api.whatsapp.com/send/?phone=6281118898205',
+              'bai_icon'=>'whatsapp',
+              'bai_data'=>'+62 8111 8898 205',
+            );
+            $bai_array[]=array(
+              'bai_title'=>'Instagram',
+              'bai_link'=>'https://www.instagram.com/borussiaacademy.id/',
+              'bai_icon'=>'instagram',
+              'bai_data'=>'@borussiaacademy.id',
+            );
+            foreach($bai_array as $bai_list){
+          ?>
+            <a title="<?php echo($bai_list['bai_title'])?>" class="scu-row" href="<?php echo($bai_list['bai_link'])?>" target="_blank">
+              <div class="scu-icon content-center">
+			    <?php require ($_SERVER['BMG'].'template/img/icon/bai-'.$bai_list['bai_icon'].'.svg')?>
+              </div>
+              <div class="scu-label content-center"><?php echo($bai_list['bai_data'])?></div>
+            </a>
+          <?php } ?>
+        </div>
+		
+	  </div>
+	</div>
   </section>
   
   
