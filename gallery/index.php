@@ -14,7 +14,7 @@
   
   
   
-  <section class="section-default section-photo-gallery index-photo-gallery content-center">
+  <section class="section-default section-photo-gallery page-photo-gallery content-center">
     <div class="site-container activity-list">
 	
 	  <?php 
