@@ -262,6 +262,12 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   
+  @media (orientation:portrait) {
+    .section-intro{background:url(../img/bg-1-mobile.webp) no-repeat fixed center var(--color-3);}
+  }
+  
+  
+  
   .sph-right{grid-row:1/2;}
 
 
