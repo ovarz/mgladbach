@@ -5,10 +5,10 @@
 
 
 <noscript id="deferred-styles">
-  <link rel="stylesheet" type="text/css" href="template/css/hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
   <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
     <link rel="stylesheet" type="text/css" href="template/css/venobox.min.css?<?php echo $anticache; ?>" media="print" onload="this.media='all'"/>
   <?php } ?>
+  <link rel="stylesheet" type="text/css" href="template/css/hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
 </noscript>
 <script defer>
   var loadDeferredStyles = function() {

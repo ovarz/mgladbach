@@ -287,7 +287,6 @@
             selector:'.sg1-box',
             numeration:true,
             infinigall:true,
-            share:true,
             fitView:true,
             spinner:'rotating-plane'
           });
@@ -433,7 +432,6 @@
           selector:'.spg-box',
           numeration:true,
           infinigall:true,
-          share:true,
           fitView:true,
           spinner:'rotating-plane'
         });

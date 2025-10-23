@@ -18,47 +18,170 @@
     <div class="site-container activity-list">
 	
 	  <?php 
+        $gallery_id='gallery10';
+        $gallery_date='2024';
+        $gallery_title='<b>Borussia Academy CAMP</b> - JAKARTA - Day 3 (9 June 2024)';
         $pg_array = array();
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/1-small.webp',
-          'pg_img_ori'=>'bac-day3/1-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/2-small.webp',
-          'pg_img_ori'=>'bac-day3/2-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/3-small.webp',
-          'pg_img_ori'=>'bac-day3/3-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/4-small.webp',
-          'pg_img_ori'=>'bac-day3/4-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/5-small.webp',
-          'pg_img_ori'=>'bac-day3/5-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/6-small.webp',
-          'pg_img_ori'=>'bac-day3/6-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/7-small.webp',
-          'pg_img_ori'=>'bac-day3/7-original.jpeg',
-        );
-        $pg_array[]=array(
-          'pg_title'=>'',
-          'pg_img'=>'bac-day3/8-small.webp',
-          'pg_img_ori'=>'bac-day3/8-original.jpeg',
-        );
+        for ($i = 1; $i <= 8; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia Academy CAMP - JAKARTA - Day 3 (9 June 2024) - Foto {$i}",
+            'pg_img' => "2024-bac-day3/{$i}-small.webp",
+            'pg_img_ori' => "2024-bac-day3/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery9';
+        $gallery_date='2024';
+        $gallery_title='<b>Borussia Academy CAMP</b> - JAKARTA - Day 2 (8 June 2024)';
+        $pg_array = array();
+        for ($i = 1; $i <= 8; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia Academy CAMP - JAKARTA - Day 2 (8 June 2024) - Foto {$i}",
+            'pg_img' => "2024-bac-day2/{$i}-small.webp",
+            'pg_img_ori' => "2024-bac-day2/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery8';
+        $gallery_date='2024';
+        $gallery_title='<b>Borussia Academy CAMP</b> - JAKARTA - Day 1 (7 June 2024)';
+        $pg_array = array();
+        for ($i = 1; $i <= 8; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia Academy CAMP - JAKARTA - Day 1 (7 June 2024) - Foto {$i}",
+            'pg_img' => "2024-bac-day1/{$i}-small.webp",
+            'pg_img_ori' => "2024-bac-day1/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery7';
+        $gallery_date='2023';
+        $gallery_title='<b>borussia Academy CAMP</b> - JAKARTA 3 June 2023 (FUN AND ELITE, DAY 1)';
+        $pg_array = array();
+        for ($i = 1; $i <= 68; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia Academy CAMP - JAKARTA 3 June 2023 (FUN AND ELITE, DAY 1) - Foto {$i}",
+            'pg_img' => "2023-bac-day1/{$i}-small.webp",
+            'pg_img_ori' => "2023-bac-day1/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery6';
+        $gallery_date='2023';
+        $gallery_title='<b>BUNDESLIGA</b> COMMON GROUND JAKARTA';
+        $pg_array = array();
+        for ($i = 1; $i <= 4; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "BUNDESLIGA COMMON GROUND JAKARTA - Foto {$i}",
+            'pg_img' => "2023-bundesliga-common-ground/{$i}-small.webp",
+            'pg_img_ori' => "2023-bundesliga-common-ground/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery5';
+        $gallery_date='2023';
+        $gallery_title='<b>Borussia Park</b> Live';
+        $pg_array = array();
+        for ($i = 1; $i <= 8; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia Park Live - Foto {$i}",
+            'pg_img' => "2023-borussia-live/{$i}-small.webp",
+            'pg_img_ori' => "2023-borussia-live/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery4';
+        $gallery_date='2022';
+        $gallery_title='<b>MEETING</b> WITH KONI AND PSSI';
+        $pg_array = array();
+        for ($i = 1; $i <= 4; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "MEETING WITH KONI AND PSSI - Foto {$i}",
+            'pg_img' => "2022-koni-pssi/{$i}-small.webp",
+            'pg_img_ori' => "2022-koni-pssi/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery3';
+        $gallery_date='2022';
+        $gallery_title='<b>COACHES WORKSHOP</b> at PERSIJA';
+        $pg_array = array();
+        for ($i = 1; $i <= 4; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "COACHES WORKSHOP at PERSIJA - Foto {$i}",
+            'pg_img' => "2022-workshop-persija/{$i}-small.webp",
+            'pg_img_ori' => "2022-workshop-persija/{$i}-original.jpeg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery2';
+        $gallery_date='2022';
+        $gallery_title='<b>Borussia camp</b> at DSJ';
+        $pg_array = array();
+        for ($i = 1; $i <= 8; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia camp at DSJ - Foto {$i}",
+            'pg_img' => "2022-camp-dsj/{$i}-small.webp",
+            'pg_img_ori' => "2022-camp-dsj/{$i}-original.jpg",
+          );
+        }
+	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
+	  ?>
+	
+	
+	
+	  <?php 
+        $gallery_id='gallery1';
+        $gallery_date='2022';
+        $gallery_title='<b>Borussia CAMP</b> AT YOUNG WARRIORS';
+        $pg_array = array();
+        for ($i = 1; $i <= 4; $i++) {
+          $pg_array[] = array(
+            'pg_title' => "Borussia CAMP AT YOUNG WARRIORS - Foto {$i}",
+            'pg_img' => "2022-young-warrior/{$i}-small.webp",
+            'pg_img_ori' => "2022-young-warrior/{$i}-original.jpeg",
+          );
+        }
 	    require ($_SERVER['BMG'].'template/module/gallery-list.php')
 	  ?>
 
@@ -79,7 +202,6 @@
     selector:'.spg-box',
     numeration:true,
     infinigall:true,
-    share:true,
     fitView:true,
     spinner:'rotating-plane'
   });

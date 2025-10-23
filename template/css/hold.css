@@ -180,6 +180,8 @@ header{background-color:var(--color-3);}
 
 
 .section-photo-gallery, .section-photo-gallery .section-title{color:var(--bg-2);}
+.section-photo-gallery .section-title-primary b{color:var(--color-4);}
+.section-photo-gallery .section-title-secondary{color:var(--color-border);}
 .section-photo-gallery{background-color:var(--color-2);}
 .spg-action .btn:hover{background-color:var(--bg-2); color:var(--color-4);}
 
@@ -269,6 +271,10 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   .section-methodology .section-title{font-size:2rem;}
+  
+  
+  
+  .vbox-close{padding:var(--size-4)}
 }
 
 
@@ -306,4 +312,8 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   .section-dsj .site-container{grid-template-columns:655px 1fr;}
+  
+  
+  
+  .vbox-close{padding:var(--size-5)}
 }
