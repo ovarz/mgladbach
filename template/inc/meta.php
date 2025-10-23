@@ -21,6 +21,8 @@
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script">
 <?php if($menu == 'Home') { ?>
   <link rel="preload" href="template/img/bg-1.webp?<?php echo $anticache; ?>" as="image">
+  <link rel="preload" href="template/css/venobox.min.css?<?php echo $anticache; ?>" as="style">
+  <link rel="preload" href="template/js/venobox.min.js?<?php echo $anticache; ?>" as="script">
 <?php } ?>
 
 <style><?php require ($_SERVER['BMG'].'template/css/font.css')?></style>
@@ -34,6 +36,9 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
   })
 });
 </script>
+<?php if($menu == 'Home') { ?>
+  <script src="template/js/venobox.min.js"></script>
+<?php } ?>
 
 <link rel="stylesheet" type="text/css" href="template/css/rancak.css?<?php echo $anticache; ?>"/>
 <link rel="stylesheet" type="text/css" href="template/css/rancak-desktop.css?<?php echo $anticache; ?>" media="(min-width:1024px)">

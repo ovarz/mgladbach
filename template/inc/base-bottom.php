@@ -6,6 +6,7 @@
 
 <noscript id="deferred-styles">
   <link rel="stylesheet" type="text/css" href="template/css/hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" type="text/css" href="template/css/venobox.min.css?<?php echo $anticache; ?>" media="print" onload="this.media='all'"/>
 </noscript>
 <script defer>
   var loadDeferredStyles = function() {

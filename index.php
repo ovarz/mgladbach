@@ -115,16 +115,24 @@
     <div class="site-container">
 	
 	  <div class="sbl-list">
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-bmg-dev.webp">
-		  </div>
-        </div>
-	    <div class="sbl-box content-center">
-		  <div class="sbl-frame img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-original="template/img/logo-bundesliga.webp">
-		  </div>
-        </div>
+        <?php 
+          $sbl_array = array();
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-bmg-dev.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-bundesliga.webp',
+          );
+          foreach($sbl_array as $sbl_list){
+        ?>
+          <div class="sbl-box content-center">
+            <div class="sbl-frame img-frame thumb-loading">
+              <img title="<?php echo($sbl_list['sbl_name'])?>" class="lazyload" data-original="template/img/<?php echo($sbl_list['sbl_img'])?>">
+            </div>
+          </div>
+		<?php } ?>
 	  </div>
 	  
 	</div>
@@ -177,6 +185,119 @@
 		  <iframe class="instagram-media instagram-media-rendered lazyload" id="instagram-embed-0" data-original="https://www.instagram.com/p/<?php echo($ig_list['ig_embed'])?>/embed/captioned/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="880" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe>
 		</div>
 	  <?php } ?>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-gallery-1 content-center">
+    <div class="bg-blur"></div>
+    <div class="site-container">
+	  
+	  <div class="sg1-container">
+	    <div class="section-title">Borussia Academy Indonesia at Bali7s Tournament</div>
+        
+		<div class="sg1-list">
+          <?php 
+            $bali7s_array = array();
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/1.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/2.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/3.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/4.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/5.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/6.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/7.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/8.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/9.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/10.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/11.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/12.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/13.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/14.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/15.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/16.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/17.jpeg',
+            );
+            $bali7s_array[]=array(
+              'bali7s_title'=>'',
+              'bali7s_img'=>'bali7s/18.jpeg',
+            );
+			foreach($bali7s_array as $bali7s_list){
+		  ?>
+            <a title="<?php echo($bali7s_list['bali7s_title'])?>" class="sg1-box img-frame thumb-loading" data-gall="gallery01" href="template/img/<?php echo($bali7s_list['bali7s_img'])?>">
+              <img class="lazyload" data-original="template/img/<?php echo($bali7s_list['bali7s_img'])?>">
+            </a>
+          <?php } ?>
+        </div>
+        <script>
+          new VenoBox({
+            selector:'.sg1-box',
+            numeration:true,
+            infinigall:true,
+            share:true,
+            fitView:true,
+            spinner:'rotating-plane'
+          });
+        </script>
+		
+		<div class="sg1-desc">
+		  <p>We’re proud to announce that Borussia Academy Indonesia participated in the Bali7s Tournament, bringing 6 teams across various age groups. It was an incredible experience for our young talents to showcase their skills and passion for the game!</p>
+		  <p>A huge thank you to our official sponsor, <b>PRISTINE 8.6+</b> (@pristine.official) Drinking Water for their unwavering support and for keeping our players refreshed throughout the matches. Your partnership plays a vital role in our journey!</p>
+		</div>
+	  </div>
 	  
 	</div>
   </section>
@@ -277,6 +398,62 @@
 	  </div>
 	  
 	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-photo-gallery index-photo-gallery content-center">
+    <div class="site-container">
+	
+	  <div class="section-title">
+	    <!-- <div class="section-title-secondary">2024</div> -->
+	    <div class="section-title-primary">Photo Gallery</div>
+	  </div>
+        
+      <div class="spg-list">
+        <?php 
+          $pg1_array = array();
+          $pg1_array[]=array(
+            'pg1_title'=>'',
+            'pg1_img'=>'bali7s/1.jpeg',
+          );
+          $pg1_array[]=array(
+            'pg1_title'=>'',
+            'pg1_img'=>'bali7s/2.jpeg',
+          );
+          $pg1_array[]=array(
+            'pg1_title'=>'',
+            'pg1_img'=>'bali7s/3.jpeg',
+          );
+          $pg1_array[]=array(
+            'pg1_title'=>'',
+            'pg1_img'=>'bali7s/4.jpeg',
+          );
+          foreach($pg1_array as $pg1_list){
+        ?>
+          <a title="<?php echo($pg1_list['pg1_title'])?>" class="spg-box img-frame thumb-loading" data-gall="gallery02" href="template/img/<?php echo($pg1_list['pg1_img'])?>">
+            <img class="lazyload" data-original="template/img/<?php echo($pg1_list['pg1_img'])?>">
+          </a>
+        <?php } ?>
+      </div>
+      <script>
+        new VenoBox({
+          selector:'.spg-box',
+          numeration:true,
+          infinigall:true,
+          share:true,
+          fitView:true,
+          spinner:'rotating-plane'
+        });
+      </script>
+	  
+	  <div class="spg-action content-center">
+	    <a title="Gallery" class="btn" href="">View All Photos</a>
+	  </div>
+	
+    </div>
   </section>
   
   

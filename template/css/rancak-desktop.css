@@ -28,6 +28,10 @@
 
 .section-intro-box{grid-template-columns:1fr auto; max-width:880px;}
 .sib-content{padding-right:0;}
+  
+  
+  
+.spg-list{grid-template-columns:repeat(auto-fit, minmax(240px,1fr));}
 
 
 

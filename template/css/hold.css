@@ -114,6 +114,14 @@ header{background-color:var(--color-3);}
 .ig-box iframe{position:static; height:revert-layer; padding-bottom:10px; background-color:var(--bg-2); border:1px solid var(--color-border);}
 
 
+.section-gallery-1{background:url(../img/bg-5.webp) no-repeat fixed center var(--color-3); background-size:cover;}
+.section-gallery-1 .site-container{display:grid;}
+.sg1-container{background-color:var(--bg-2); padding:var(--size-5);}
+.sg1-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); grid-gap:var(--size-1);}
+.sg1-box{--aspect-ratio:1/1;}
+.sg1-desc{margin-top:var(--size-4); line-height:150%; display:grid; grid-gap:var(--size-1);}
+
+
 
 .section-calendar{background-color:#F0F4F9;}
 .calendar-note{padding:12px;}
@@ -171,6 +179,14 @@ header{background-color:var(--color-3);}
 
 
 
+.section-photo-gallery, .section-photo-gallery .section-title{color:var(--bg-2);}
+.section-photo-gallery{background-color:var(--color-3);}
+.spg-action .btn:hover{background-color:var(--bg-2); color:var(--color-4);}
+
+.index-photo-gallery .section-title-primary{text-align:center;}
+
+
+
 
 
 
@@ -217,6 +233,12 @@ top:calc(var(--button-size) / 3 * -1); right:calc(var(--button-size) / 3 * -1);}
 background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 0%) 100%);}
 .float-whatsapp{position:fixed; bottom:var(--size-4); right:0; cursor:pointer; z-index:calc(var(--max-zindex) - 10000); padding:var(--size-4); display:block;}
 .float-whatsapp svg{width:auto; height:var(--size-6);}
+
+
+
+.vbox-overlay{z-index:calc(var(--max-zindex) - 1000);}
+.vbox-container{padding:var(--size-7) 0;}
+.vbox-fit .vbox-child img, .vbox-fit .vbox-child.venoratio{max-height:calc(100vh - calc(var(--size-7) * 2));}
 
 
 
@@ -268,6 +290,10 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
 
 @media screen and (min-width:1024px){
   .section-herrmann .site-container{grid-template-columns:1fr 400px;}
+  
+  
+  
+  .sg1-list{grid-template-columns:repeat(auto-fit, minmax(160px,1fr));}
   
   
   
