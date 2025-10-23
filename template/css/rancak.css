@@ -126,7 +126,9 @@ section{position:relative;}
 .svgicon-gimmick{width:auto; height:100%; position:relative; left:-1px;}
 
 
-
+.section-photo-gallery .activity-list{display:grid; grid-gap:var(--size-6)}
+.section-photo-gallery .section-title{margin-bottom:var(--size-4);}
+.section-photo-gallery .section-title-primary{font-size:1.5rem; line-height:140%;}
 .spg-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); grid-gap:var(--size-1);}
 .spg-box{--aspect-ratio:4/3;}
 .spg-action{margin-top:var(--size-4);}

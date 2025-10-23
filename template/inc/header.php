@@ -19,19 +19,19 @@
             'nav_label_id'=>'Daftar',
             'nav_label_en'=>'Register',
             'nav_label_de'=>'Register',
-            'nav_link'=>'',
+            'nav_link'=>'/register',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Kalender',
             'nav_label_en'=>'Calendar',
             'nav_label_de'=>'Calendar',
-            'nav_link'=>'',
+            'nav_link'=>'/calendar',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Galeri',
             'nav_label_en'=>'Gallery',
             'nav_label_de'=>'Gallery',
-            'nav_link'=>'',
+            'nav_link'=>'/gallery',
           );
           foreach($nav_array as $nav_list){
         ?>

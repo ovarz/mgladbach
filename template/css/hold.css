@@ -180,10 +180,10 @@ header{background-color:var(--color-3);}
 
 
 .section-photo-gallery, .section-photo-gallery .section-title{color:var(--bg-2);}
-.section-photo-gallery{background-color:var(--color-3);}
+.section-photo-gallery{background-color:var(--color-2);}
 .spg-action .btn:hover{background-color:var(--bg-2); color:var(--color-4);}
 
-.index-photo-gallery .section-title-primary{text-align:center;}
+.index-photo-gallery .section-title{text-align:center;}
 
 
 
