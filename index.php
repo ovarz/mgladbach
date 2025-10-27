@@ -337,30 +337,18 @@
       <div class="spg-list">
         <?php 
           $pg1_array = array();
-          $pg1_array[]=array(
-            'pg1_title'=>'',
-            'pg1_img'=>'home/1-small.webp',
-            'pg1_img_ori'=>'home/1-original.jpg',
-          );
-          $pg1_array[]=array(
-            'pg1_title'=>'',
-            'pg1_img'=>'home/2-small.webp',
-            'pg1_img_ori'=>'home/2-original.jpg',
-          );
-          $pg1_array[]=array(
-            'pg1_title'=>'',
-            'pg1_img'=>'home/3-small.webp',
-            'pg1_img_ori'=>'home/3-original.jpg',
-          );
-          $pg1_array[]=array(
-            'pg1_title'=>'',
-            'pg1_img'=>'home/4-small.webp',
-            'pg1_img_ori'=>'home/4-original.jpg',
-          );
+		  
+          for ($i = 1; $i <= 4; $i++) {
+            $pg1_array[] = array(
+              'pg1_title'=>"Photo Gallery - Foto {$i}",
+              'pg1_img'=>"home/{$i}-small.webp",
+              'pg1_img_ori'=>"home/{$i}-original.jpg",
+            );
+          }
           foreach($pg1_array as $pg1_list){
         ?>
           <a title="<?php echo($pg1_list['pg1_title'])?>" class="spg-box img-frame thumb-loading" data-gall="gallery02" href="template/img/<?php echo($pg1_list['pg1_img_ori'])?>">
-            <img class="lazyload" data-original="template/img/<?php echo($pg1_list['pg1_img'])?>">
+            <img title="<?php echo($pg1_list['pg1_title'])?>" class="lazyload" data-original="template/img/<?php echo($pg1_list['pg1_img'])?>">
           </a>
         <?php } ?>
       </div>
