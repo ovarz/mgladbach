@@ -21,6 +21,8 @@
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script">
 <?php if($menu == 'Home') { ?>
   <link rel="preload" href="template/img/bg-1.webp?<?php echo $anticache; ?>" as="image">
+  <link rel="preload" href="template/img/logo-black.webp?<?php echo $anticache; ?>" as="image">
+  <link rel="preload" href="template/img/train-like-a-pro.webp?<?php echo $anticache; ?>" as="image">
 <?php } ?>
 <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
   <link rel="preload" href="template/css/venobox.min.css?<?php echo $anticache; ?>" as="style">
@@ -42,7 +44,7 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
 });
 </script>
 <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
-  <script src="template/js/venobox.min.js"></script>
+  <script async src="template/js/venobox.min.js"></script>
 <?php } ?>
 
 <link rel="stylesheet" type="text/css" href="template/css/rancak.css?<?php echo $anticache; ?>"/>
