@@ -20,7 +20,8 @@
 <link rel="preload" href="template/img/logo.png?<?php echo $anticache; ?>" as="image">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script">
 <?php if($menu == 'Home') { ?>
-  <link rel="preload" href="template/img/bg-1.webp?<?php echo $anticache; ?>" as="image">
+  <link rel="preload" href="template/img/bg-1.webp?<?php echo $anticache; ?>" as="image" media="(min-width:1024px)">
+  <link rel="preload" href="template/img/bg-1-mobile-preload.webp?<?php echo $anticache; ?>" as="image">
   <link rel="preload" href="template/img/logo-black.webp?<?php echo $anticache; ?>" as="image">
   <link rel="preload" href="template/img/train-like-a-pro.webp?<?php echo $anticache; ?>" as="image">
 <?php } ?>
@@ -44,7 +45,7 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
 });
 </script>
 <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
-  <script async src="template/js/venobox.min.js"></script>
+  <script src="template/js/venobox.min.js"></script>
 <?php } ?>
 
 <link rel="stylesheet" type="text/css" href="template/css/rancak.css?<?php echo $anticache; ?>"/>

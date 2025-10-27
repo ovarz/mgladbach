@@ -206,78 +206,12 @@
 		<div class="sg1-list">
           <?php 
             $bali7s_array = array();
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/1.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/2.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/3.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/4.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/5.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/6.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/7.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/8.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/9.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/10.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/11.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/12.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/13.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/14.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/15.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/16.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/17.jpeg',
-            );
-            $bali7s_array[]=array(
-              'bali7s_title'=>'',
-              'bali7s_img'=>'bali7s/18.jpeg',
-            );
+            for ($i = 1; $i <= 18; $i++) {
+              $bali7s_array[] = array(
+                'bali7s_title' => "Borussia Academy Indonesia at Bali7s Tournament - Foto {$i}",
+                'bali7s_img'=>"bali7s/{$i}.jpeg",
+              );
+            }
 			foreach($bali7s_array as $bali7s_list){
 		  ?>
             <a title="<?php echo($bali7s_list['bali7s_title'])?>" class="sg1-box img-frame thumb-loading" data-gall="gallery01" href="template/img/<?php echo($bali7s_list['bali7s_img'])?>">
