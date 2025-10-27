@@ -2,7 +2,7 @@
   <ul class="site-container">
 	<li class="header-left">
 	  <a title="<?php echo $sitename; ?>" class="header-box header-logo content-center" href="">
-	    <img src="template/img/logo.png?<?php echo $anticache; ?>"/>
+	    <img alt="<?php echo $sitename; ?>" src="template/img/logo.png?<?php echo $anticache; ?>"/>
 	  </a>
 	</li>
 	<li class="header-center rancak-popup" aria-popup-box="MainNav">

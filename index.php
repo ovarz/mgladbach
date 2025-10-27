@@ -171,18 +171,21 @@
 	  <?php 
         $ig_array = array();
         $ig_array[]=array(
+          'ig_title'=>'Borussia spirit in Indonesia',
           'ig_embed'=>'DLo5MDwowTB',
         );
         $ig_array[]=array(
+          'ig_title'=>'Mau susah sekarang apa nanti?',
           'ig_embed'=>'DMKA0V-yFJJ',
         );
         $ig_array[]=array(
+          'ig_title'=>'From Mönchengladbach to Jakarta',
           'ig_embed'=>'DMPdDahoGDl',
         );
         foreach($ig_array as $ig_list){
 	  ?>
 		<div class="ig-box img-frame thumb-loading">
-		  <iframe class="instagram-media instagram-media-rendered lazyload" id="instagram-embed-0" data-original="https://www.instagram.com/p/<?php echo($ig_list['ig_embed'])?>/embed/captioned/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="880" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe>
+		  <iframe title="<?php echo($ig_list['ig_title'])?>" class="instagram-media instagram-media-rendered lazyload" id="instagram-embed-0" data-original="https://www.instagram.com/p/<?php echo($ig_list['ig_embed'])?>/embed/captioned/" allowtransparency="true" allowfullscreen="true" frameborder="0" height="880" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"></iframe>
 		</div>
 	  <?php } ?>
 	  
