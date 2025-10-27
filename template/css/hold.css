@@ -6,8 +6,10 @@
   --color-2a:rgb(30 30 30 / 8%);
   --color-3:#000000; 
   --color-3a:rgb(0 0 0 / 8%);
-  --color-4:#7ab929;
-  --color-4a:rgb(122 185 41 / 8%);
+  --color-4:#23d468;
+  --color-4a:rgb(35 212 104 / 8%);
+  --color-5:#7ab929;
+  --color-5a:rgb(122 185 41 / 8%);
   --color-border:#EEEEEE;
   --color-border-form:#E0E0E0;
   --color-border-dark:#424242;
@@ -38,7 +40,7 @@ html{background-color:var(--bg-2);}
 a, .btn, button{transition:var(--transition-default); cursor:pointer}
 a, button{color:var(--color-4); fill:var(--color-4);}
 a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}
-.btn, a.btn, button.btn{background-color:var(--color-4); color:var(--bg-2); fill:var(--bg-2); border-radius:var(--rounded-1);}
+.btn, a.btn, button.btn{background-color:var(--color-4); color:var(--color-3); fill:var(--bg-2); border-radius:var(--rounded-1);}
 .btn:hover, a.btn:hover, button.btn:hover{background-color:var(--color-3); color:var(--bg-2); fill:var(--bg-2);}
 .btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent; border-radius:var(--size-6);}
 .btn-outline:hover{border:2px solid var(--color-3); color:var(--color-3); fill:var(--color-3);}
