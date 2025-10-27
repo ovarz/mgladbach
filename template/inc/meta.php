@@ -26,6 +26,9 @@
   <link rel="preload" href="template/css/venobox.min.css?<?php echo $anticache; ?>" as="style">
   <link rel="preload" href="template/js/venobox.min.js?<?php echo $anticache; ?>" as="script">
 <?php } ?>
+<?php if($menu == 'Register') { ?>
+  <link rel="preload" href="template/img/bg-6.webp?<?php echo $anticache; ?>" as="image">
+<?php } ?>
 
 <style><?php require ($_SERVER['BMG'].'template/css/font.css')?></style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
