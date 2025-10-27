@@ -82,8 +82,8 @@
 
       <div class="scu-box scu-address">
         <div class="srs-action">
-          <a title="Register" class="btn srs-action-button" href="">Register</a>
-          <a title="Free Trial" class="btn srs-action-button" href="">Free Trial</a>
+          <a title="Register" class="btn srs-action-button" href="register/">Register</a>
+          <a title="Free Trial" class="btn srs-action-button" href="register/free-trial/">Free Trial</a>
         </div>
       </div>
 

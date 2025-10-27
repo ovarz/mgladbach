@@ -1,4 +1,5 @@
-<a title="Contact Whatsapp" class="float-whatsapp content-center hide" href="https://api.whatsapp.com/send/?phone=6281118898205&text=Hi%2C+I+visited+www.borussiaacademy.id&type=phone_number&app_absent=0" target="_blank">
+<a title="Chat with us" class="float-whatsapp content-center hide" href="https://api.whatsapp.com/send/?phone=6281118898205&text=Hi%2C+I+visited+www.borussiaacademy.id&type=phone_number&app_absent=0" target="_blank">
+  <div class="tooltip">Chat with us</div>
   <?php require ($_SERVER['BMG'].'template/img/icon/float-whatsapp.svg')?>
 </a>
 

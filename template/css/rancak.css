@@ -57,6 +57,10 @@ textarea.form-field{min-height:144px;}
 
 
 
+.tooltip{position:absolute; top:-5px; right:10px; padding:var(--size-1) var(--size-2); font-size:10px; font-weight:normal;}
+
+
+
 .section-bg{position:absolute; z-index:1; top:0; left:0; width:100%; height:100%;}
 .site-container{width:100%; max-width:var(--width-max); padding:var(--size-7) var(--body-padding); position:relative; z-index:1000;}
 
@@ -132,6 +136,16 @@ section{position:relative;}
 .spg-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); grid-gap:var(--size-1);}
 .spg-box{--aspect-ratio:4/3;}
 .spg-action{margin-top:var(--size-4);}
+
+
+
+.register-logo-frame{--aspect-ratio:574/81; width:100%; max-width:480px;}
+.register-box{margin-top:var(--size-5);}
+.register-tab{display:grid; grid-template-columns:repeat(2,1fr);}
+.register-tab-button{padding:var(--size-3) var(--size-4); -webkit-appearance:none; display:flex; justify-content:center; align-items:center; font-weight:normal;}
+.register-tab-curr{font-weight:bold;}
+.register-form{padding:var(--size-5);}
+.register-form-title{text-align:center; font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
 
 
 
