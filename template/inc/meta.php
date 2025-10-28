@@ -18,6 +18,8 @@
 <link rel="preload" href="template/fonts/E218_cfngu7HiRpPX3ZpNE4kY5zKYvWhrw.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="template/css/rancak.css?<?php echo $anticache; ?>" as="style">
 <link rel="preload" href="template/img/logo.png?<?php echo $anticache; ?>" as="image">
+<link rel="preload" href="template/js/prototype.forms.js" as="script">
+<link rel="preload" href="template/js/jotform.forms.js" as="script">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" as="script">
 <?php if($menu == 'Home') { ?>
   <link rel="preload" href="template/img/bg-1.webp?<?php echo $anticache; ?>" as="image" media="(min-width:1024px)">
@@ -34,6 +36,8 @@
 <?php } ?>
 
 <style><?php require ($_SERVER['BMG'].'template/css/font.css')?></style>
+<script async src="template/js/prototype.forms.js" type="text/javascript"></script>
+<script async src="template/js/jotform.forms.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
 <script async>
