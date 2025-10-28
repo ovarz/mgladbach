@@ -170,6 +170,10 @@ section{position:relative;}
   
   
   
+  .section-title{font-size:2rem;}
+  
+  
+  
   .header-togglemenu{padding-right:var(--body-padding);}
   .header-togglemenu svg{width:auto; height:var(--size-4);}
   .open-sticky .svgicon-menu{width:24px;}
