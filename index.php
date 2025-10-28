@@ -20,7 +20,7 @@
 	  <div class="section-intro-box">
 	    <div class="sib-content">
 		  <div class="sib-logo img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/logo-black.webp"
+            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
 			data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w"/>
           </div>
 		  
@@ -30,7 +30,7 @@
 		  <p>Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
 		  		  
 		  <div class="sib-tlap img-frame thumb-loading">
-            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/train-like-a-pro.webp"
+            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
 			data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w"/>
           </div>
 		</div>
