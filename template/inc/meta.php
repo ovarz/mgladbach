@@ -7,8 +7,8 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="description" content="<?php echo $sitename; ?> <?php echo $menu; ?>">
-<link rel="preconnect" href="https://aufarmahardi.com">
-<link rel="dns-prefetch" href="https://aufarmahardi.com">
+<link rel="preconnect" href="https://mgladbachacademy.id">
+<link rel="dns-prefetch" href="https://mgladbachacademy.id">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <title><?php echo $sitename; ?> <?php echo $menu; ?></title>
