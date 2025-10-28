@@ -13,58 +13,8 @@
           <span class="text-en">For general inquiries only, not intended for registration use</span>
           <span class="text-de">For general inquiries only, not intended for registration use</span>
         </h3>
-        <div class="scu-cf-list">
-          <ul class="scu-cf-row">
-            <li>
-              <div class="scu-cf-label">
-                <span class="text-id">Nama</span>
-                <span class="text-en">Name</span>
-                <span class="text-de">Name</span>
-              </div>
-              <div class="form-box scu-cf-box">
-                <input class="form-field" name="" type="text" placeholder="">
-              </div>
-            </li>
-          </ul>
-          <ul class="scu-cf-row scu-cf-split">
-            <li>
-              <div class="scu-cf-label">Email</div>
-              <div class="form-box scu-cf-box">
-                <input class="form-field" name="" type="text" placeholder="">
-              </div>
-            </li>
-            <li>
-              <div class="scu-cf-label">
-                <span class="text-id">Telepon/Whatsapp</span>
-                <span class="text-en">Phone/Whatsapp</span>
-                <span class="text-de">Phone/Whatsapp</span>
-              </div>
-              <div class="form-box scu-cf-box">
-                <input class="form-field" name="" type="text" placeholder="">
-              </div>
-            </li>
-          </ul>
-          <ul class="scu-cf-row">
-            <li>
-              <div class="scu-cf-label">
-                <span class="text-id">Pesan</span>
-                <span class="text-en">Message</span>
-                <span class="text-de">Message</span>
-              </div>
-              <div class="form-box scu-cf-box">
-                <textarea class="form-field" placeholder=""></textarea>
-              </div>
-            </li>
-          </ul>
-          <ul class="scu-cf-row">
-            <li>
-              <button title="Send" class="btn" href="">
-                <span class="text-id">Kirim</span>
-                <span class="text-en">Send</span>
-                <span class="text-de">Send</span>
-              </button>
-            </li>
-          </ul>
+        <div class="jotform">
+		  <?php $jotform_id='252999107452062'; $jotform_date='1761623287941'; require ($_SERVER['BMG'].'template/module/form-contact.php')?>
         </div>
       </div>
 

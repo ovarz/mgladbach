@@ -33,8 +33,9 @@ font-family:"Bungee", sans-serif; font-weight:400; font-style:normal;
 display:flex; text-align:center; align-items:center; justify-content:center;}
 .rancak-popup{display:none;}
 .width-max{position:relative; width:100%; max-width:var(--site-container); margin:0 auto;}
-.form-box{position:relative;}
-.form-field{padding:var(--size-3) var(--size-4); border:1px solid; width:100%;}
+.form-box{position:relative; line-height:0;}
+.form-label{}
+.form-field{padding:var(--size-3) var(--size-4); border:1px solid; width:100%; line-height:150%;}
 textarea.form-field{min-height:144px;}
 .form-icon{position:absolute; top:1px; right:1px; height:calc(100% - 2px); padding:0 var(--size-4);}
 .form-search .form-field, .form-select .form-field{padding-right:var(--size-6);}
@@ -47,6 +48,10 @@ textarea.form-field{min-height:144px;}
 .ccr-dummy-frame{border:1px solid; width:var(--size-4); height:var(--size-4);}
 .ccr-dummy-frame svg{width:auto; height:0; opacity:0;}
 .ccr-dummy-right{line-height:150%; display:flex; align-items:center; width:100%;}
+
+.jotform-form, .jotform-row{display:grid; grid-gap:var(--size-3);}
+.jotform-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(100px,1fr));}
+.jotform-column{display:grid; grid-gap:3px;}
 
 
 

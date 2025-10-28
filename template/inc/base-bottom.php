@@ -26,6 +26,8 @@
 </script>
 <script defer src="template/js/lazysizes.min.js"></script>
 <script defer rancak-hold="template/js/rancak.js?<?php echo $anticache;?>"></script>
+<script defer rancak-hold="template/js/prototype.forms.js" type="text/javascript"></script>
+<script defer rancak-hold="template/js/jotform.forms.js" type="text/javascript"></script>
 <script defer>
   window.scrollTo(0,0);
 </script>
