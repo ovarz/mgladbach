@@ -36,8 +36,8 @@
 <?php } ?>
 
 <style><?php require ($_SERVER['BMG'].'template/css/font.css')?></style>
-<script async src="template/js/prototype.forms.js" type="text/javascript"></script>
-<script async src="template/js/jotform.forms.js" type="text/javascript"></script>
+<script src="template/js/prototype.forms.js" type="text/javascript"></script>
+<script src="template/js/jotform.forms.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>');</script>
 <script async>
