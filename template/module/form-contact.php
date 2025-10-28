@@ -64,10 +64,10 @@
   
   <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="<?php echo $jotform_id; ?>" />
   <script type="text/javascript">
-    var all_spc = document.querySelectorAll("form[id='".$jotform_id."'] .si" + "mple" + "_spc");
+    var all_spc = document.querySelectorAll("form[id='<?php echo $jotform_id; ?>'] .si" + "mple" + "_spc");
     for (var i = 0; i < all_spc.length; i++)
     {
-      all_spc[i].value = "".$jotform_id."-".$jotform_id."";
+      all_spc[i].value = "<?php echo $jotform_id; ?>-<?php echo $jotform_id; ?>";
     }
   </script>
 </form>
