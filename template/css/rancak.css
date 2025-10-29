@@ -150,6 +150,9 @@ section{position:relative;}
 .register-tab-button{padding:var(--size-3) var(--size-4); -webkit-appearance:none; display:flex; justify-content:center; align-items:center; font-weight:normal;}
 .register-tab-curr{font-weight:bold;}
 .register-form{padding:var(--size-5);}
+@media screen and (min-width:0px) and (max-width:639px){
+  .register-form{padding:var(--size-4);}
+}
 .register-form-title{text-align:center; font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
 
 
