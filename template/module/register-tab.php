@@ -2,7 +2,7 @@
   <?php
     $reg_tab_array = array();
     $reg_tab_array[]=array(
-      'reg_tab_title'=>'Register',
+      'reg_tab_title'=>'Academy',
       'reg_tab_link'=>'register/',
     );
     $reg_tab_array[]=array(

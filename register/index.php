@@ -24,13 +24,26 @@
 	  </div>
 	  
 	  <div class="register-box">
-	    <?php $reg_tab_curr='Register'; require ($_SERVER['BMG'].'template/module/register-tab.php')?>
+	    <?php $reg_tab_curr='Academy'; require ($_SERVER['BMG'].'template/module/register-tab.php')?>
 		<div class="register-form">
 		  <div class="register-form-title">Academy Registration:</div>
-		  <div class="register-form-list">
-		    <div class="rfl-row">
-			  <div class="rfl-label">Full Player Name:<span class="rfl-mandatory">*</span></div>
-			</div>
+		  <div class="jotform">
+
+            <iframe
+              id="JotFormIFrame-253009181990054"
+              title="Academy Registration"
+              onload="window.parent.scrollTo(0,0)"
+              allowtransparency="true"
+              allow="geolocation; microphone; camera; fullscreen; payment"
+              src="https://form.jotform.com/253009181990054"
+              frameborder="0"
+              style="min-width:100%;max-width:100%;height:539px;border:none;"
+              scrolling="no"
+            >
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-253009181990054']", "https://form.jotform.com/")</script>
+    
 		  </div>
 		</div>
 	  </div>
