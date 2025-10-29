@@ -50,7 +50,7 @@ textarea.form-field{min-height:144px;}
 .ccr-dummy-right{line-height:150%; display:flex; align-items:center; width:100%;}
 
 .jotform-form, .jotform-row{display:grid; grid-gap:var(--size-3);}
-.jotform-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(100px,1fr));}
+.jotform-row{display:grid; grid-template-columns:repeat(auto-fit, minmax(120px,1fr));}
 .jotform-column{display:grid; grid-gap:3px;}
 
 
