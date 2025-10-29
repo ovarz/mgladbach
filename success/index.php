@@ -23,6 +23,7 @@
 	  .success-title, .success-desc, .success-button span{text-align:center;}
 	  .success-title{font-weight:bold; text-transform:uppercase; font-size:2rem; color:var(--color-3); margin-bottom:var(--size-1);}
 	  .success-desc{line-height:150%; margin-bottom:var(--size-4);}
+	  .success-waiting{margin-top:var(--size-4); text-align:center;}
 	</style>
     <div class="site-container content-center">
 	
@@ -49,6 +50,15 @@
             <span class="text-de">Zurück zur Startseite</span>
 		  </a>
 		</div>
+		<div class="success-waiting">
+            <span class="text-id">Atau menunggu berpindah otomatis dalam</span>
+            <span class="text-en">Or wait to be redirected automatically in</span>
+            <span class="text-de">Oder warten, bis Sie automatisch weitergeleitet werden in</span>
+			<b id="countdown">10</b>
+            <span class="text-id">detik</span>
+            <span class="text-en">second</span>
+            <span class="text-de">sekunden</span>
+		</div>
 	  </div>
 	  
 	</div>
@@ -59,5 +69,24 @@
   
   
 </div>
+<script>
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  "use strict";
+  document.getElementById("countdown").innerHTML = "" + timeleft + "";
+  timeleft -= 1;
+  if(timeleft < 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "0";
+  }
+}, 1000);
+
+$(document).ready(function(){
+  "use strict";
+  setTimeout(function() {
+    window.location.replace("https://beta.mgladbachacademy.id/");
+  },10000);
+});
+</script>
 <?php require ($_SERVER['BMG'].'template/inc/footer.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/base-bottom.php')?>
