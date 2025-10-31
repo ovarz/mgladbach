@@ -17,7 +17,19 @@
     <div class="site-container">
 	
 	  <div class="section-cover-box">
-	    <div class="scb-bg"></div>
+	    <div class="scb-bg">
+		  <script>
+			$(window).on('load',function(){
+              if (window.videoLoaded) return;
+              window.videoLoaded = true;
+
+              if ($(window).width() > 1024) {
+                $('.scb-bg').append('<video autoplay loop muted playsinline><source src="template/img/cover.mp4" type="video/mp4"></video>');
+                $('.scb-bg video').hide().fadeIn(5000);
+              }
+			});
+		  </script>
+		</div>
 	    <div class="scb-content">
 		  <div class="scb-logo img-frame thumb-loading">
             <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
@@ -231,7 +243,7 @@
 	
 	  <div class="section-methodology-row section-methodology-right">
 	    <div class="smr-image img-frame thumb-loading">
-		  <img title="Background" class="lazyload" data-original="template/img/bg-3.webp">
+		  <img title="Background" class="lazyload" data-original="template/img/bg-3.jpg">
 		</div>
         <div class="section-intro-box">
           <div class="sib-content">
@@ -247,7 +259,7 @@
 	
 	  <div class="section-methodology-row section-methodology-left">
 	    <div class="smr-image img-frame thumb-loading">
-		  <img title="Background" class="lazyload" data-original="template/img/bg-2.webp">
+		  <img title="Background" class="lazyload" data-original="template/img/bg-2.jpg">
 		</div>
         <div class="section-intro-box">
           <div class="sib-content">
