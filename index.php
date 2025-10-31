@@ -230,6 +230,9 @@
     <div class="site-container">
 	
 	  <div class="section-methodology-row section-methodology-right">
+	    <div class="smr-image img-frame thumb-loading">
+		  <img title="Background" class="lazyload" data-original="template/img/bg-3.webp">
+		</div>
         <div class="section-intro-box">
           <div class="sib-content">
 		    <h2 class="section-title">Coaching Methodology</h2>
@@ -239,13 +242,13 @@
 			<p>Once young players are ready, we will provide them with match play experiences without pressure to win.</p>
 			<p>We focus on the players' long term development, not short term results, and our parents are most supportive. We do not want to win at all cost but give our best effort and play as a team.</p>
           </div>
-          <div class="sib-arrow desktop-only">
-            <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
-          </div>
         </div>
 	  </div>
 	
-	  <div class="section-methodology-row">
+	  <div class="section-methodology-row section-methodology-left">
+	    <div class="smr-image img-frame thumb-loading">
+		  <img title="Background" class="lazyload" data-original="template/img/bg-2.webp">
+		</div>
         <div class="section-intro-box">
           <div class="sib-content">
 		    <h2 class="section-title">Coaching philosophy</h2>
@@ -254,9 +257,6 @@
 			<p>A team sport such a football provides the ideal environment to practise accepting <b>winning & losing</b>, respecting others and maintaining an active, physical lifestyle. These values are now more important than ever.</p>
 			<p>We accept and encourage children of all abilities, and Borussia coaches attend to the different individual needs and talents of every player.</p>
 			<p>It is our priority to guarantee every participant a positive experience in our training sessions and tournaments. <b>Fun, enjoyment & maximum participation</b> are the main ingredients of all Borussia Academy Indonesia sessions.</p>
-          </div>
-          <div class="sib-arrow desktop-only">
-            <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
           </div>
         </div>
 	  </div>
