@@ -102,8 +102,14 @@ section{position:relative;}
 .section-intro-box{display:grid;}
 .sib-content{padding:var(--size-5); display:grid; grid-gap:var(--size-3); line-height:150%;}
 .sib-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
-.sib-logo{--aspect-ratio:357/154; max-width:357px; margin-bottom:var(--size-4);}
-.sib-tlap{--aspect-ratio:574/81; max-width:233px; margin-top:var(--size-4);}
+
+
+
+.section-cover .site-container{padding:0;}
+.scb-content{padding:var(--size-5); display:grid; grid-gap:var(--size-3); line-height:150%;}
+.scb-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
+.scb-logo{--aspect-ratio:357/154; max-width:233px; margin-bottom:var(--size-4);}
+.scb-tlap{--aspect-ratio:574/81; max-width:233px; margin-top:var(--size-4);}
 
 
 
@@ -187,6 +193,10 @@ section{position:relative;}
   
   .header-center{z-index:calc(var(--max-zindex) - 10000); top:var(--header-height) !important; left:0;
   padding:var(--body-padding); padding-top:var(--size-2);}
+  
+  
+  
+  .scb-bg:before{content:''; padding-top:100%; display:block;}
   
   
   

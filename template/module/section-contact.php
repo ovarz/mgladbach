@@ -42,9 +42,9 @@
           $bai_array = array();
           $bai_array[]=array(
             'bai_title'=>'Email',
-            'bai_link'=>'mailto:goal@gffi.de',
+            'bai_link'=>'mailto:manager@mgladbachacademy.id',
             'bai_icon'=>'email',
-            'bai_data'=>'goal@gffi.de',
+            'bai_data'=>'manager@mgladbachacademy.id',
           );
           $bai_array[]=array(
             'bai_title'=>'Whatsapp',
@@ -54,9 +54,9 @@
           );
           $bai_array[]=array(
             'bai_title'=>'Instagram',
-            'bai_link'=>'https://www.instagram.com/borussiaacademy.id/',
+            'bai_link'=>'https://www.instagram.com/mgladbachacademy.id/',
             'bai_icon'=>'instagram',
-            'bai_data'=>'@borussiaacademy.id',
+            'bai_data'=>'@mgladbachacademy.id',
           );
           foreach($bai_array as $bai_list){
         ?>

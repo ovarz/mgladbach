@@ -13,16 +13,14 @@
   
   
   
-  <section class="section-default section-cover content-center">
+  <section class="section-default section-intro content-center">
     <div class="site-container">
 	
-	  <div class="section-cover-box">
-	    <div class="scb-bg"></div>
-	    <div class="scb-content">
-		  <div class="scb-logo img-frame thumb-loading">
-            <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
+	  <div class="section-intro-box">
+	    <div class="sib-content">
+		  <div class="sib-logo img-frame thumb-loading">
+            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
 			data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
-            <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
           </div>
 		  
 		  <p>We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
@@ -30,11 +28,13 @@
 		  <p>Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
 		  <p>Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
 		  		  
-		  <div class="scb-tlap img-frame thumb-loading">
-            <img title="Train Like a Pro" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
+		  <div class="sib-tlap img-frame thumb-loading">
+            <img title="Logo" class="lazyload" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
 			data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w" fetchpriority="high"/>
-            <img title="Train Like a Pro" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/train-like-a-pro-white.webp" fetchpriority="high"/>
           </div>
+		</div>
+		<div class="sib-arrow desktop-only">
+		  <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
 		</div>
 	  </div>
 	  
@@ -143,22 +143,45 @@
   
   
   
+  <section class="section-default section-herrmann content-center">
+    <div class="bg-blur"></div>
+    <div class="site-container">
+	
+	  <div class="sph-left">
+	    <h2 class="section-title">Borussia Legend <span style="color:var(--color-4)">Patrick Herrmann</span> Visits Indonesia</h2>
+		<p>In June 2025, Borussia Mönchengladbach legend <b>Patrick <span style="color:var(--color-4)">@flaco7</span> Herrmann</b>  made a special visit to Indonesia as part of the Bundesliga Common Ground project and to spend time at the Borussia M'Gladbach Academy Indonesia.</p>
+		<p>Patrick Herrmann, who played more than a decade in the Bundesliga for Borussia, is loved by fans for his loyalty, pace, and countless decisive goals and assists. His visit brought the spirit of Borussia directly to Jakarta, inspiring young footballers and strengthening the connection between the club and its fans in Southeast Asia.</p>
+		<p>During his stay, Patrick joined community events at the Bundesliga Common Ground in Jakarta, meeting children and local players, signing autographs, and sharing stories from his professional career. He emphasized the importance of teamwork, fair play, and passion—values that Borussia has always stood for.</p>
+		<p>At the <b>Borussia M'Ggladbach Academy Indonesia</b>, Patrick attended training sessions, spoke with coaches, and encouraged our young talents to keep pushing themselves on and off the pitch. He reminded the players that even legends like him once started as kids with big dreams, and that with commitment and hard work, they can also achieve great things.</p>
+		<p>The Academy was honored to welcome such an iconic figure. Patrick Herrmann’s visit marks another milestone in Borussia’s mission to build bridges between Germany and Indonesia through football. His presence will be remembered by everyone who trained, played, and celebrated with him during those unforgettable days in June 2025.</p>
+	  </div>
+	  <div class="sph-right img-frame thumb-loading">
+		<img title="Logo" class="lazyload" data-original="template/img/patrick-herrmann-borussia-mgladbach-academy-indonesia.webp">
+	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
   <section class="section-default section-instagram content-center">
     <div class="site-container">
 	
 	  <?php 
         $ig_array = array();
         $ig_array[]=array(
-          'ig_title'=>'Ready for @topyouth_premierleague',
-          'ig_embed'=>'DQL0rAECU2f',
+          'ig_title'=>'Borussia spirit in Indonesia',
+          'ig_embed'=>'DLo5MDwowTB',
         );
         $ig_array[]=array(
-          'ig_title'=>'Friendly match vs Persera Rawabuntu @perserafc_',
-          'ig_embed'=>'DQD3j2XCR5G',
+          'ig_title'=>'Mau susah sekarang apa nanti?',
+          'ig_embed'=>'DMKA0V-yFJJ',
         );
         $ig_array[]=array(
-          'ig_title'=>'U14 @borussiaacademy.id ready for @askotpssitangsel',
-          'ig_embed'=>'DP795XWiZJt',
+          'ig_title'=>'From Mönchengladbach to Jakarta',
+          'ig_embed'=>'DMPdDahoGDl',
         );
         foreach($ig_array as $ig_list){
 	  ?>
@@ -211,6 +234,45 @@
 		  <p>We’re proud to announce that Borussia Academy Indonesia participated in the Bali7s Tournament, bringing 6 teams across various age groups. It was an incredible experience for our young talents to showcase their skills and passion for the game!</p>
 		  <p>A huge thank you to our official sponsor, <b>PRISTINE 8.6+</b> (@pristine.official) Drinking Water for their unwavering support and for keeping our players refreshed throughout the matches. Your partnership plays a vital role in our journey!</p>
 		</div>
+	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-border-logo content-center">
+    <div class="site-container">
+	
+	  <div class="sbl-list">
+        <?php 
+          $sbl_array = array();
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-dsj.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-isco.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-wohnraum.jpg',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Logo',
+            'sbl_img'=>'logo-gfi.webp',
+          );
+          foreach($sbl_array as $sbl_list){
+        ?>
+          <div class="sbl-box content-center">
+            <div class="sbl-frame img-frame thumb-loading">
+              <img title="<?php echo($sbl_list['sbl_name'])?>" class="lazyload" data-original="template/img/<?php echo($sbl_list['sbl_img'])?>">
+            </div>
+          </div>
+		<?php } ?>
 	  </div>
 	  
 	</div>
@@ -313,6 +375,26 @@
   
   
   <?php require ($_SERVER['BMG'].'template/module/section-training-ground.php')?>
+  
+  
+  
+  
+  
+  <section class="section-default section-herrmann section-dsj content-center">
+    <div class="bg-blur"></div>
+    <div class="site-container">
+	
+	  <div class="sph-right img-frame thumb-loading">
+		<img title="Logo" class="lazyload" data-original="template/img/dsj.webp">
+	  </div>
+	  <div class="sph-left">
+	    <h2 class="section-title">WINNING PARTNERSHIP</h2>
+		<p>Borussia M'Gladbach Academy Indonesia is thrilled to partner with the prestigious German School Jakarta (DSJ), a key German institution in Indonesia. Our collaboration extends beyond sharing DSJ's impressive 42,000m2 campus in the heart of BSD. As multicultural and multilingual organizations, we both prioritize cultural exchange, while emphasizing sports, physical health, and mental well-being. </p>
+		<p>With over 66 years of Educational Excellence, DSJ's diverse student community of over 10 nationalities provides an ideal environment for nurturing young talents. Together, DSJ and Borussia M'Gladbach Academy are dedicated to a holistic approach to education, empowering students to reach their full potential. Learn more on DSJ's website about this exciting partnership and our shared commitment to excellence in education and sports.</p>
+	  </div>
+	  
+	</div>
+  </section>
   
   
   
