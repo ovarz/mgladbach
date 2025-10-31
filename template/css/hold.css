@@ -101,6 +101,7 @@ header{background-color:var(--color-3);}
 
 
 
+.section-cover{background-color:var(--color-3);}
 .scb-bg{background:url(../img/bg-1.webp) no-repeat fixed center var(--color-3); background-size:cover;}
 
 
@@ -321,6 +322,7 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
 
 
 @media screen and (min-width:1024px){
+  .scb-bg{opacity:89%;}
   .scb-content, .scb-content b{color:var(--bg-1);}
   .scb-content{background:linear-gradient(to right,  rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 55%) 40%, rgb(0 0 0 / 89%) 100%);}
   .scb-logo{filter:drop-shadow(0px 5px 8px rgba(0,0,0,0.21));}
