@@ -106,6 +106,7 @@ section{position:relative;}
 
 
 .section-cover .site-container{padding:0;}
+.scb-bg{overflow:hidden;}
 .scb-content{padding:var(--size-5); display:grid; grid-gap:var(--size-3); line-height:150%;}
 .scb-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
 .scb-logo{--aspect-ratio:357/154; max-width:233px; margin-bottom:var(--size-4);}
@@ -126,7 +127,7 @@ section{position:relative;}
 
 .section-border-logo{border-top:1px solid; border-bottom:1px solid;}
 .section-border-logo .site-container{padding-top:var(--size-6); padding-bottom:var(--size-6);}
-.sbl-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); grid-gap:var(--size-3);}
+.sbl-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); grid-gap:var(--size-5) var(--size-3);}
 .sbl-frame:before{content:none;}
 .sbl-frame img{position:static; width:auto; height:auto; max-width:300px; max-height:120px;}
 

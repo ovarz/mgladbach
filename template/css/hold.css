@@ -154,11 +154,11 @@ header{background-color:var(--color-3);}
 
 
 
-.section-contact{background-color:var(--color-3);}
+.section-contact{background:url(../img/bg-map.jpg) no-repeat fixed center var(--color-4); background-size:cover;}
 .section-contact .section-title{margin-bottom:var(--size-2); font-size:1.5rem;}
 .section-contact-container{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
 .scc-box{line-height:150%;}
-.scc-address *{text-align:center; color:var(--bg-1);}
+.scc-address *{text-align:center;}
 .scc-list{display:flex; justify-content:center;}
 .scc-row{padding:var(--size-2) var(--size-3);}
 .scc-row svg{height:var(--size-5); width:auto;}
@@ -205,7 +205,7 @@ header{background-color:var(--color-3);}
 
 
 
-footer{background-color:var(--color-4); color:var(--color-3);}
+footer{background-color:var(--color-3); color:var(--bg-2);}
 footer .site-container{padding:var(--size-3) var(--body-padding); display:grid; grid-gap:var(--size-3);}
 .footer-socmed{gap:var(--size-4);}
 .footer-socmed-link{fill:var(--color-1);}

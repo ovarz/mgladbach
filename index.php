@@ -24,7 +24,7 @@
               window.videoLoaded = true;
 
               if ($(window).width() > 1024) {
-                $('.scb-bg').append('<video autoplay loop muted playsinline><source src="template/img/cover.mp4" type="video/mp4"></video>');
+                $('.scb-bg').append('<video autoplay loop muted playsinline class="desktop-only"><source src="template/img/cover.mp4" type="video/mp4"></video>');
                 $('.scb-bg video').hide().fadeIn(5000);
               }
 			});
@@ -339,20 +339,24 @@
         <?php 
           $sbl_array = array();
           $sbl_array[]=array(
-            'sbl_name'=>'Logo',
+            'sbl_name'=>'DSJ',
             'sbl_img'=>'logo-dsj.webp',
           );
           $sbl_array[]=array(
-            'sbl_name'=>'Logo',
+            'sbl_name'=>'ISCO',
             'sbl_img'=>'logo-isco.webp',
           );
           $sbl_array[]=array(
-            'sbl_name'=>'Logo',
+            'sbl_name'=>'Wohnraum',
             'sbl_img'=>'logo-wohnraum.jpg',
           );
           $sbl_array[]=array(
-            'sbl_name'=>'Logo',
+            'sbl_name'=>'German Football Indonesia',
             'sbl_img'=>'logo-gfi.webp',
+          );
+          $sbl_array[]=array(
+            'sbl_name'=>'Grassroot',
+            'sbl_img'=>'logo-grassroot.svg',
           );
           foreach($sbl_array as $sbl_list){
         ?>

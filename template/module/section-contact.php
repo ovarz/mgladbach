@@ -1,4 +1,4 @@
-<section class="section-default .section-dark section-contact content-center">
+<section class="section-default section-dark section-contact content-center">
   <div class="site-container">
     <div class="section-contact-container">
 
