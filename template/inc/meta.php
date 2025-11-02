@@ -24,6 +24,7 @@
   <link rel="preload" href="template/img/bg-1-mobile-preload.webp?<?php echo $anticache; ?>" as="image">
   <link rel="preload" href="template/img/logo-black.webp?<?php echo $anticache; ?>" as="image">
   <link rel="preload" href="template/img/train-like-a-pro.webp?<?php echo $anticache; ?>" as="image">
+  <link rel="preload" href="template/js/scrollreveal.js?<?php echo $anticache; ?>" as="script">
 <?php } ?>
 <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
   <link rel="preload" href="template/css/venobox.min.css?<?php echo $anticache; ?>" as="style">
@@ -44,6 +45,9 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
   })
 });
 </script>
+<?php if($menu == 'Home') { ?>
+  <script src="template/js/scrollreveal.js"></script>
+<?php } ?>
 <?php if($menu == 'Home' || $menu == 'Gallery') { ?>
   <script src="template/js/venobox.min.js"></script>
 <?php } ?>

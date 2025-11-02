@@ -25,7 +25,7 @@
 
               if ($(window).width() > 1024) {
                 $('.scb-bg').append('<video autoplay loop muted playsinline class="desktop-only"><source src="template/img/cover.mp4" type="video/mp4"></video>');
-                $('.scb-bg video').hide().fadeIn(5000);
+                $('.scb-bg video').hide().fadeIn(1000);
               }
 			});
 		  </script>
@@ -389,5 +389,23 @@
   
   
 </div>
+<script>
+  $(window).on('load',function(){
+    if ($(window).width() > 1024) {
+      ScrollReveal({distance:'55px',viewFactor:0.1,useDelay:'once'});
+      ScrollReveal().reveal('.scb-content',{origin:'right'});
+      ScrollReveal().reveal('.srs-left',{origin:'left'});
+      ScrollReveal().reveal('.srs-right',{origin:'right',delay:100});
+      ScrollReveal().reveal('.sbl-list > *',{origin:'right',interval:100});
+      ScrollReveal().reveal('.section-instagram .site-container > *',{origin:'right',interval:100});
+      ScrollReveal().reveal('.sg1-list > *',{origin:'right',interval:100});
+      ScrollReveal().reveal('.section-calendar .site-container > *',{origin:'right',interval:100});
+      ScrollReveal().reveal('.sib-content',{origin:'right'});
+      ScrollReveal().reveal('.spg-list > *',{origin:'right',interval:100});
+      ScrollReveal().reveal('.stg-info',{origin:'left'});
+      ScrollReveal().reveal('.section-contact-container > *',{origin:'right',interval:100});
+    }
+  });
+</script>
 <?php require ($_SERVER['BMG'].'template/inc/footer.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/base-bottom.php')?>
