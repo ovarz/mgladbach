@@ -31,21 +31,26 @@
 		  </script>
 		</div>
 	    <div class="scb-content">
-		  <div class="scb-logo img-frame thumb-loading">
-            <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
-			data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
-            <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
+          <div class="sib-arrow desktop-only">
+            <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
           </div>
-		  
-		  <p>We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
-		  <p>The football program is open to boys and girls aged 3 to 16 with any skill level. It doesn't matter if you're just starting or already a semi-pro – everyone is welcome.</p>
-		  <p>Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
-		  <p>Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
-		  		  
-		  <div class="scb-tlap img-frame thumb-loading">
-            <img title="Train Like a Pro" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
-			data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w" fetchpriority="high"/>
-            <img title="Train Like a Pro" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/train-like-a-pro-white.webp" fetchpriority="high"/>
+		  <div class="scb-content-container">
+            <div class="scb-logo img-frame thumb-loading">
+              <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
+              data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
+              <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
+            </div>
+
+            <p>We have teamed up with renowned Bundesliga club <b>Borussia Mönchengladbach</b>, famous for its outstanding youth program. Together we bring you an excelent football experience, right here in the greater Jakarta area!</p>
+            <p>The football program is open to boys and girls aged 3 to 16 with any skill level. It doesn't matter if you're just starting or already a semi-pro – everyone is welcome.</p>
+            <p>Our training ground is the natural grass pitch at Deutsche Schule Jakarta (DSJ). The german school, located in BSD City, Tangerang offers great facilities in an international environment.</p>
+            <p>Come and train the Borussia Foals way and follow the footsteps of a number of well-known players: Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke and Patrick Herrmann are just a few examples.</p>
+
+            <div class="scb-tlap img-frame thumb-loading">
+              <img title="Train Like a Pro" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
+              data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w" fetchpriority="high"/>
+              <img title="Train Like a Pro" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/train-like-a-pro-white.webp" fetchpriority="high"/>
+            </div>
           </div>
 		</div>
 	  </div>
@@ -171,6 +176,18 @@
         $ig_array[]=array(
           'ig_title'=>'U14 @borussiaacademy.id ready for @askotpssitangsel',
           'ig_embed'=>'DP795XWiZJt',
+        );
+        $ig_array[]=array(
+          'ig_title'=>'From Mönchengladbach to Jakarta',
+          'ig_embed'=>'DMPdDahoGDl',
+        );
+        $ig_array[]=array(
+          'ig_title'=>'Borussia spirit in Indonesia',
+          'ig_embed'=>'DLo5MDwowTB',
+        );
+        $ig_array[]=array(
+          'ig_title'=>'Throwback: When Borussia Came to Indonesia',
+          'ig_embed'=>'DLHWVwaSNHN',
         );
         foreach($ig_array as $ig_list){
 	  ?>

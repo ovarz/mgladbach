@@ -79,6 +79,10 @@ header .site-container{display:flex; justify-content:space-between; padding:0;}
 
 .header-logo{padding-left:var(--body-padding);}
 .header-logo img{width:auto; height:var(--size-5);}
+@media screen and (min-width:375px){
+  .header-logo{align-items:flex-start;}
+  .header-logo img{height:62px;}
+}
 
 .choice-lang{padding:0 var(--size-2); line-height:0;}
 .choice-lang svg{width:auto; height:var(--size-4);}
@@ -107,7 +111,8 @@ section{position:relative;}
 
 .section-cover .site-container{padding:0;}
 .scb-bg{overflow:hidden;}
-.scb-content{padding:var(--size-5); display:grid; grid-gap:var(--size-3); line-height:150%;}
+.scb-content{padding:var(--size-5);}
+.scb-content-container{display:grid; grid-gap:var(--size-3); line-height:150%; grid-auto-rows:min-content;}
 .scb-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
 .scb-logo{--aspect-ratio:357/154; max-width:233px; margin-bottom:var(--size-4);}
 .scb-tlap{--aspect-ratio:574/81; max-width:233px; margin-top:var(--size-4);}
