@@ -10,7 +10,8 @@
       </div>
 
       <div class="scc-box scc-address">
-        <h2 class="section-title">Borussia Academy Indonesia</h2>
+        <h2 class="section-title">Borussia Mönchengladbach Academy</h2>
+        <h3 class="section-title">Indonesia</h3>
         <p>PT. German Football Indonesia</p>
         <p>Roseville Soho Lantai 10, BSD City</p>
         <p>Tangerang Selatan, 15310 Banten, Indonesia</p>

@@ -48,6 +48,18 @@
 
 
 
+.section-methodology .sib-content{padding:var(--size-6);}
+.section-methodology-row{display:grid; grid-template-columns:repeat(2,1fr);}
+.section-methodology .section-intro-box .sib-content{max-width:606px; grid-auto-rows:min-content;}
+.section-methodology .smr-image{max-height:700px;}
+.section-methodology-left .sib-content{padding-right:0;}
+.section-methodology-right > *{grid-row:1/2;}
+.section-methodology-right .smr-image{grid-column:2/3;}
+.section-methodology-right .section-intro-box{display:flex; justify-content:flex-end;}
+.section-methodology-right .sib-content{padding-left:0;}
+
+
+
 
 
 

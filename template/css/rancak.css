@@ -130,6 +130,13 @@ section{position:relative;}
 
 
 
+.section-methodology .site-container{max-width:none; padding:0;}
+.section-methodology .section-title{margin-bottom:var(--size-3);}
+.section-methodology .section-intro-box{max-width:none;}
+.section-methodology .smr-image{--aspect-ratio:1/1;}
+
+
+
 .section-border-logo{border-top:1px solid; border-bottom:1px solid;}
 .section-border-logo .site-container{padding-top:var(--size-6); padding-bottom:var(--size-6);}
 .sbl-list{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px,1fr)); grid-gap:var(--size-5) var(--size-3);}
@@ -202,7 +209,11 @@ section{position:relative;}
   
   
   
-  .scb-bg:before{content:''; padding-top:100%; display:block;}
+  .scb-bg:before{content:''; padding-top:100%; display:block;} 
+  
+  
+  
+  .section-methodology .section-title{font-size:2rem;}
   
   
   

@@ -22,6 +22,12 @@
             'nav_link'=>'/register',
           );
           $nav_array[]=array(
+            'nav_label_id'=>'Pelatihan',
+            'nav_label_en'=>'Coaching',
+            'nav_label_de'=>'coaching',
+            'nav_link'=>'/coaching',
+          );
+          $nav_array[]=array(
             'nav_label_id'=>'Kalender',
             'nav_label_en'=>'Calendar',
             'nav_label_de'=>'Calendar',
