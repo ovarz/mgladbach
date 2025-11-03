@@ -257,6 +257,7 @@
   
   
   <section class="section-default section-photo-gallery index-photo-gallery content-center">
+    <div class="bg-blur"></div>
     <div class="site-container">
 	
 	  <div class="section-title">Photo Gallery</div>
@@ -317,6 +318,14 @@
 	    <h2 class="section-title">WINNING PARTNERSHIP</h2>
 		<p>Borussia M'Gladbach Academy Indonesia is thrilled to partner with the prestigious German School Jakarta (DSJ), a key German institution in Indonesia. Our collaboration extends beyond sharing DSJ's impressive 42,000m2 campus in the heart of BSD. As multicultural and multilingual organizations, we both prioritize cultural exchange, while emphasizing sports, physical health, and mental well-being. </p>
 		<p>With over 66 years of Educational Excellence, DSJ's diverse student community of over 10 nationalities provides an ideal environment for nurturing young talents. Together, DSJ and Borussia M'Gladbach Academy are dedicated to a holistic approach to education, empowering students to reach their full potential. Learn more on DSJ's website about this exciting partnership and our shared commitment to excellence in education and sports.</p>
+		<div class="sph-scanqr">
+		  <div class="sph-scanqr-left">
+		    <div class="sph-scanqr-title">Scan this QR</div>
+		    <div class="sph-scanqr-subtitle">to get 50% off registration fee</div>
+		  </div>
+		  <div class="sph-scanqr-center"><?php require ($_SERVER['BMG'].'template/img/icon/fancy-arrow.svg')?></div>
+		  <div class="sph-scanqr-right content-center"><?php require ($_SERVER['BMG'].'template/img/sample-qr.svg')?></div>
+		</div>
 	  </div>
 	  
 	</div>
