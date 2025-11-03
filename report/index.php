@@ -124,9 +124,11 @@
 			  <div id="report-content" class="grade-chart"></div>
 			</div>
 		  </div>
-		
-		
-          <div id="comment-display" class="grade-comment"></div>
+		  <div class="coach-comments">
+		    <div class="coach-comments-label">Coach's Comments:</div>
+            <div id="comment-display" class="grade-comment"></div>
+		  </div>
+		  		
 		</div>
       </div>
 	</div>

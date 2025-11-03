@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
             displayElement.innerHTML = `${value}`;
         });
 
-        const coachComment = document.getElementById('comment-input').value;
+        const coachComment = document.getElementById('comment-input').value.trim();
         const commentDisplay = document.getElementById('comment-display');
         const reportChartContainer = document.getElementById('report-content');
 
         // 2. Tampilkan Coach's Comment di id="comment-display"
         commentDisplay.innerHTML = `
-            ${coachComment || ""}
+            <div class="coach-comments-container">${coachComment || "No comment provided."}</p>
         `;
 
         // 3. Render Chart di id="report-content"

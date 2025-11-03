@@ -94,6 +94,12 @@ textarea.form-field{min-height:233px;}
 
 
 
+.coach-comments{display:grid; grid-gap:var(--size-3); grid-template-columns:auto 1fr; width:80%; line-height:150%;}
+.coach-comments-container{white-space:pre-wrap;}
+
+
+
+
 
 .result-download{display:flex; justify-content:center; margin-top:var(--size-4);}
 
