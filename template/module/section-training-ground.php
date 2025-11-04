@@ -1,6 +1,10 @@
 <section class="section-default section-training-ground content-center">
   <div class="stg-info">
-    <h2 class="section-title">TRAINING GROUND</h2>
+    <h2 class="section-title">
+      <span class="text-id">Tempat Latihan</span>
+      <span class="text-en">Training Ground</span>
+      <span class="text-de">Trainingsgelände</span>
+	</h2>
     <p><b>DEUTSCHE SCHULE JAKARTA (DSJ)</b></p>
     <p><b>GERMAN SCHOOL JAKARTA</b></p>
     <p><b>SEKOLAH JERMAN JAKARTA</b></p>

@@ -322,7 +322,11 @@
     <div class="site-container">
 	  
 	  <div class="sg1-container">
-	    <div class="section-title">Borussia Academy Indonesia at Bali7s Tournament</div>
+	    <div class="section-title">
+          <span class="text-id">Borussia Academy Indonesia di Turnamen Bali7s</span>
+          <span class="text-en">Borussia Academy Indonesia at Bali7s Tournament</span>
+          <span class="text-de">Borussia Academy Indonesia beim Bali7s Turnier</span>
+		</div>
         
 		<div class="sg1-list">
           <?php 
@@ -351,8 +355,15 @@
         </script>
 		
 		<div class="sg1-desc">
-		  <p>We’re proud to announce that Borussia Academy Indonesia participated in the Bali7s Tournament, bringing 6 teams across various age groups. It was an incredible experience for our young talents to showcase their skills and passion for the game!</p>
-		  <p>A huge thank you to our official sponsor, <b>PRISTINE 8.6+</b> (@pristine.official) Drinking Water for their unwavering support and for keeping our players refreshed throughout the matches. Your partnership plays a vital role in our journey!</p>
+		  <p>
+            <span class="text-id">Kami dengan bangga mengumumkan bahwa Borussia Academy Indonesia telah berpartisipasi dalam Turnamen Bali7s, dengan membawa 6 tim dari berbagai kelompok usia. Pengalaman ini menjadi momen luar biasa bagi para pemain muda kami untuk menunjukkan kemampuan, kerja sama, dan semangat mereka dalam sepak bola!</span>
+            <span class="text-en">We’re excited to share that Borussia Academy Indonesia proudly took part in the Bali7s Tournament, fielding six teams across multiple age groups. It was an unforgettable experience for our young players to demonstrate their talent, teamwork, and love for football!</span>
+            <span class="text-de">Wir freuen uns, bekannt zu geben, dass die Borussia Academy Indonesia am Bali7s-Turnier teilgenommen hat und dabei sechs Teams aus verschiedenen Altersklassen ins Rennen geschickt hat. Es war eine großartige Erfahrung für unsere jungen Talente, ihr Können, ihren Teamgeist und ihre Leidenschaft für den Fußball zu zeigen!</span>
+		  </p>
+		  <p>
+            <span class="text-id">Ucapan terima kasih sebesar-besarnya kepada sponsor resmi kami, <b>PRISTINE 8.6+ (@pristine.official)</b>, atas dukungan tanpa henti dan perannya dalam menjaga para pemain tetap segar selama pertandingan. Kemitraan Anda sangat berarti dalam perjalanan kami!</span>
+            <span class="text-en">A heartfelt thank you to our official sponsor, <b>PRISTINE 8.6+ (@pristine.official)</b>, for their continuous support and for keeping our players hydrated and energized throughout the tournament. Your partnership is an essential part of our success!</span>
+            <span class="text-de">Ein großes Dankeschön an unseren offiziellen Sponsor <b>PRISTINE 8.6+ (@pristine.official)</b> für die stetige Unterstützung und dafür, dass unsere Spieler während des Turniers stets erfrischt und voller Energie blieben. Eure Partnerschaft ist ein wichtiger Teil unseres Erfolgs!</span></p>
 		</div>
 	  </div>
 	  
@@ -373,7 +384,11 @@
     <div class="bg-blur"></div>
     <div class="site-container">
 	
-	  <div class="section-title">Photo Gallery</div>
+	  <div class="section-title">
+        <span class="text-id">Galeri Foto</span>
+        <span class="text-en">Photo Gallery</span>
+        <span class="text-de">Fotogalerie</span>
+	  </div>
         
       <div class="spg-list">
         <?php 
@@ -428,13 +443,33 @@
 		<img title="Logo" class="lazyload" data-original="template/img/dsj.webp">
 	  </div>
 	  <div class="sph-left">
-	    <h2 class="section-title">WINNING PARTNERSHIP</h2>
-		<p>Borussia M'Gladbach Academy Indonesia is thrilled to partner with the prestigious German School Jakarta (DSJ), a key German institution in Indonesia. Our collaboration extends beyond sharing DSJ's impressive 42,000m2 campus in the heart of BSD. As multicultural and multilingual organizations, we both prioritize cultural exchange, while emphasizing sports, physical health, and mental well-being. </p>
-		<p>With over 66 years of Educational Excellence, DSJ's diverse student community of over 10 nationalities provides an ideal environment for nurturing young talents. Together, DSJ and Borussia M'Gladbach Academy are dedicated to a holistic approach to education, empowering students to reach their full potential. Learn more on DSJ's website about this exciting partnership and our shared commitment to excellence in education and sports.</p>
+	    <h2 class="section-title">
+          <span class="text-id">Kerja Sama Penuh Prestasi</span>
+          <span class="text-en">WINNING PARTNERSHIP</span>
+          <span class="text-de">Erfolgreiche Partnerschaft</span>
+        </h2>
+		<p>
+          <span class="text-id">Borussia M’Gladbach Academy Indonesia dengan bangga menjalin kemitraan dengan Deutsche Schule Jakarta (DSJ), salah satu lembaga pendidikan Jerman terkemuka di Indonesia. Kolaborasi ini tidak hanya mencakup penggunaan area kampus DSJ yang luas — sekitar 42.000 m² di pusat BSD City — tetapi juga mencerminkan nilai-nilai bersama dalam keberagaman budaya dan bahasa. Bersama-sama, kami menekankan pentingnya pertukaran budaya, olahraga, kesehatan fisik, dan kesejahteraan mental.</span>
+          <span class="text-en">Borussia M’Gladbach Academy Indonesia is proud to partner with the esteemed German School Jakarta (DSJ), one of Indonesia’s leading German institutions. This collaboration goes beyond sharing DSJ’s impressive 42,000m² campus located in the heart of BSD City. As multicultural and multilingual organizations, we share the same vision — promoting cultural exchange, sportsmanship, physical health, and mental well-being.</span>
+          <span class="text-de">Die Borussia M’Gladbach Academy Indonesia freut sich über die Partnerschaft mit der angesehenen Deutschen Schule Jakarta (DSJ), einer führenden deutschen Bildungseinrichtung in Indonesien. Diese Zusammenarbeit geht über die gemeinsame Nutzung des beeindruckenden 42.000 m² großen Campus im Herzen von BSD City hinaus. Als multikulturelle und mehrsprachige Organisationen teilen wir gemeinsame Werte – insbesondere den kulturellen Austausch, den Sportgeist, die körperliche Gesundheit und das geistige Wohlbefinden.</span>
+		</p>
+		<p>
+          <span class="text-id">Dengan lebih dari 66 tahun pengalaman pendidikan berkualitas, DSJ memiliki komunitas pelajar internasional yang terdiri dari lebih dari 10 kebangsaan, menciptakan lingkungan ideal untuk menumbuhkan bakat muda. Melalui kerja sama ini, DSJ dan Borussia M’Gladbach Academy Indonesia berkomitmen pada pendekatan pendidikan holistik — membantu peserta didik mengembangkan potensi mereka secara maksimal. Pelajari lebih lanjut tentang kemitraan inspiratif ini dan komitmen kami terhadap keunggulan di bidang pendidikan dan olahraga melalui situs resmi DSJ.</span>
+          <span class="text-en">With over 66 years of educational excellence, DSJ’s diverse community — representing more than 10 nationalities — offers the perfect environment for nurturing young talents. Together, DSJ and Borussia M’Gladbach Academy Indonesia are committed to a holistic approach to education and personal growth, helping students reach their fullest potential. Learn more about this exciting collaboration and our shared dedication to excellence in both education and sports on DSJ’s official website.</span>
+          <span class="text-de">Mit über 66 Jahren Bildungserfahrung bietet die DSJ mit ihrer vielfältigen Schülergemeinschaft aus mehr als 10 Nationalitäten ein ideales Umfeld zur Förderung junger Talente. Gemeinsam setzen sich die DSJ und die Borussia M’Gladbach Academy Indonesia für einen ganzheitlichen Bildungsansatz ein, um Schüler zu befähigen, ihr volles Potenzial zu entfalten. Erfahren Sie mehr über diese spannende Partnerschaft und unser gemeinsames Engagement für Exzellenz in Bildung und Sport auf der offiziellen Website der DSJ.</span>
+		</p>
 		<div class="sph-scanqr">
 		  <div class="sph-scanqr-left">
-		    <div class="sph-scanqr-title">Scan this QR</div>
-		    <div class="sph-scanqr-subtitle">to get 50% off registration fee</div>
+		    <div class="sph-scanqr-title">
+              <span class="text-id">Scan QR ini</span>
+              <span class="text-en">Scan this QR</span>
+              <span class="text-de">Scannen Sie diesen QR-Code</span>
+            </div>
+		    <div class="sph-scanqr-subtitle">
+              <span class="text-id">untuk mendapatkan potongan 50% biaya pendaftaran!</span>
+              <span class="text-en">to get 50% off the registration fee!</span>
+              <span class="text-de">und erhalten Sie 50 % Rabatt auf die Anmeldegebühr!</span>
+            </div>
 		  </div>
 		  <div class="sph-scanqr-center"><?php require ($_SERVER['BMG'].'template/img/icon/fancy-arrow.svg')?></div>
 		  <div class="sph-scanqr-right content-center"><?php require ($_SERVER['BMG'].'template/img/sample-qr.svg')?></div>
@@ -451,7 +486,11 @@
   <section class="section-default section-border-logo section-border-contact content-center">
     <div class="site-container">
 	
-	  <div class="section-title">Partners, Sponsors & Supporters</div>
+	  <div class="section-title">
+        <span class="text-id">Mitra, Sponsor, dan Pendukung</span>
+        <span class="text-en">Partners, Sponsors & Supporters</span>
+        <span class="text-de">Partner, Sponsoren und Unterstützer</span>
+	  </div>
 	
 	  <div class="sbl-list">
         <?php 
@@ -487,9 +526,17 @@
 	  </div>
 	  
 	  <div class="sbc-note">
-	    <div class="sbc-note-label">Please contact us to become our sponsor or partner!</div>
+	    <div class="sbc-note-label">
+          <span class="text-id">Hubungi kami untuk menjadi sponsor atau mitra kami!</span>
+          <span class="text-en">Please contact us to become our sponsor or partner!</span>
+          <span class="text-de">Kontaktieren Sie uns, um Sponsor oder Partner zu werden!</span>
+		</div>
 	    <div class="sbc-action content-center">
-		  <a title="Contact" class="btn" href="">Contact</a>
+		  <a title="Contact" class="btn" href="">
+            <span class="text-id">Hubungi Kami</span>
+            <span class="text-en">Contact Us</span>
+            <span class="text-de">Kontakt Aufnehmen</span>
+		  </a>
 		</div>
 	  </div>
 	  

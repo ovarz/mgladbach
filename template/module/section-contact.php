@@ -4,8 +4,16 @@
 
       <div class="scc-box content-center">
         <div class="srs-action">
-          <a title="Register" class="btn srs-action-button" href="register/">Register</a>
-          <a title="Free Trial" class="btn srs-action-button" href="register/free-trial/">Free Trial</a>
+          <a title="Register" class="btn srs-action-button" href="register/">
+            <span class="text-id">Daftar Sekarang</span>
+            <span class="text-en">Register</span>
+            <span class="text-de">Anmelden</span>
+          </a>
+          <a title="Free Trial" class="btn srs-action-button" href="register/free-trial/">
+			<span class="text-id">Coba Gratis</span>
+			<span class="text-en">Free Trial</span>
+			<span class="text-de">Kostenloses Probetraining</span>
+          </a>
         </div>
       </div>
 
