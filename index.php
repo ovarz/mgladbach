@@ -419,7 +419,11 @@
       </script>
 	  
 	  <div class="spg-action content-center">
-	    <a title="Gallery" class="btn" href="gallery/">View All Photos</a>
+	    <a title="Gallery" class="btn" href="gallery/">
+          <span class="text-id">Lihat Semua Foto</span>
+          <span class="text-en">View All Photos</span>
+          <span class="text-de">Alle Fotos Ansehen</span>
+		</a>
 	  </div>
 	
     </div>
