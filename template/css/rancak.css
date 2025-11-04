@@ -62,7 +62,7 @@ textarea.form-field{min-height:144px;}
 
 
 
-.tooltip{position:absolute; top:-5px; right:10px; padding:var(--size-1) var(--size-2); font-size:10px; font-weight:normal;}
+.tooltip{position:absolute; top:-5px; right:10px; padding:var(--size-1) var(--size-2); font-size:8px; font-weight:normal;}
 
 
 
@@ -112,9 +112,10 @@ section{position:relative;}
 .section-cover .site-container{padding:0;}
 .scb-bg{overflow:hidden;}
 .scb-content{padding:var(--size-5);}
-.scb-content-container{display:grid; grid-gap:var(--size-3); line-height:150%; grid-auto-rows:min-content;}
+.scb-content-container{line-height:150%;}
+.scb-content-container p{margin-bottom:var(--size-3);}
 .scb-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
-.scb-logo{--aspect-ratio:357/154; max-width:233px; margin-bottom:var(--size-4);}
+.scb-logo{--aspect-ratio:357/154; max-width:233px; margin-bottom:var(--size-5);}
 .scb-tlap{--aspect-ratio:574/81; max-width:233px; margin-top:var(--size-4);}
 
 

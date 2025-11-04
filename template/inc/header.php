@@ -12,31 +12,31 @@
           $nav_array[]=array(
             'nav_label_id'=>'Beranda',
             'nav_label_en'=>'Home',
-            'nav_label_de'=>'Home',
+            'nav_label_de'=>'Startseite',
             'nav_link'=>'',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Daftar',
             'nav_label_en'=>'Register',
-            'nav_label_de'=>'Register',
+            'nav_label_de'=>'Anmelden',
             'nav_link'=>'/register',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Pelatihan',
             'nav_label_en'=>'Coaching',
-            'nav_label_de'=>'coaching',
+            'nav_label_de'=>'Coaching',
             'nav_link'=>'/coaching',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Kalender',
             'nav_label_en'=>'Calendar',
-            'nav_label_de'=>'Calendar',
+            'nav_label_de'=>'Kalender',
             'nav_link'=>'/calendar',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Galeri',
             'nav_label_en'=>'Gallery',
-            'nav_label_de'=>'Gallery',
+            'nav_label_de'=>'Galerie',
             'nav_link'=>'/gallery',
           );
           foreach($nav_array as $nav_list){
