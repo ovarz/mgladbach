@@ -463,20 +463,9 @@
           <span class="text-de">Mit über 66 Jahren Bildungserfahrung bietet die DSJ mit ihrer vielfältigen Schülergemeinschaft aus mehr als 10 Nationalitäten ein ideales Umfeld zur Förderung junger Talente. Gemeinsam setzen sich die DSJ und die Borussia M’Gladbach Academy Indonesia für einen ganzheitlichen Bildungsansatz ein, um Schüler zu befähigen, ihr volles Potenzial zu entfalten. Erfahren Sie mehr über diese spannende Partnerschaft und unser gemeinsames Engagement für Exzellenz in Bildung und Sport auf der offiziellen Website der DSJ.</span>
 		</p>
 		<div class="sph-scanqr">
-		  <div class="sph-scanqr-left">
-		    <div class="sph-scanqr-title">
-              <span class="text-id">Scan QR ini</span>
-              <span class="text-en">Scan this QR</span>
-              <span class="text-de">Scannen Sie diesen QR-Code</span>
-            </div>
-		    <div class="sph-scanqr-subtitle">
-              <span class="text-id">untuk mendapatkan potongan 50% biaya pendaftaran!</span>
-              <span class="text-en">to get 50% off the registration fee!</span>
-              <span class="text-de">und erhalten Sie 50 % Rabatt auf die Anmeldegebühr!</span>
-            </div>
-		  </div>
-		  <div class="sph-scanqr-center"><?php require ($_SERVER['BMG'].'template/img/icon/fancy-arrow.svg')?></div>
-		  <div class="sph-scanqr-right content-center"><?php require ($_SERVER['BMG'].'template/img/sample-qr.svg')?></div>
+		  <div class="sph-scanqr-frame img-frame thumb-loading">
+            <img title="QR" class="lazyload" data-original="template/img/sample-qr.png"/>
+          </div>
 		</div>
 	  </div>
 	  

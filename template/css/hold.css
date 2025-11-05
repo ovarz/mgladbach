@@ -168,10 +168,8 @@ header{background-color:var(--color-3);}
 
 .section-dsj{background:url(../img/bg-1.webp) no-repeat fixed center var(--color-3); background-size:cover;}
 .section-dsj .sph-right{--aspect-ratio:655/416.72;}
-.sph-scanqr{display:grid; grid-gap:var(--size-3) var(--size-5); margin-top:var(--size-3);}
-.sph-scanqr-left{line-height:150%;}
-.sph-scanqr-center svg{width:auto; height:var(--size-7);}
-.sph-scanqr-right svg{width:auto; height:144px;}
+.sph-scanqr{margin-top:var(--size-3);}
+.sph-scanqr-frame{--aspect-ratio:673/144;}
 
 
 
