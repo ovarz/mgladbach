@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Tampilkan Coach's Comment di id="comment-display"
         commentDisplay.innerHTML = `
-            <div class="coach-comments-container">${coachComment || "No comment provided."}</p>
+            <div class="coach-comments-container">${coachComment || "No comment provided."}</div>
         `;
 
         // 3. Render Chart di id="report-content"
