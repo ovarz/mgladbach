@@ -155,6 +155,7 @@ header{background-color:var(--color-3);}
 .section-contact .section-title{margin-bottom:var(--size-2); font-size:1.5rem;}
 .section-contact-container{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
 .scc-box{line-height:150%;}
+.scc-box .srs-action{justify-content:center;}
 .scc-address *{text-align:center;}
 .scc-list{display:flex; justify-content:center;}
 .scc-row{padding:var(--size-2) var(--size-3); fill:var(--bg-2);}
