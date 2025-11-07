@@ -120,7 +120,7 @@ header{background-color:var(--color-3);}
 
 
 .section-instagram{background:url(../img/bg-2.jpg) no-repeat fixed center var(--color-3); background-size:cover;}
-.section-instagram .site-container{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); grid-gap:var(--size-4);}
+.section-instagram .site-container{display:grid; grid-gap:var(--size-4);}
 .ig-box:before{content:none;}
 .ig-box iframe{position:static; height:revert-layer; padding-bottom:10px; background-color:var(--bg-2); border:1px solid var(--color-border);}
 
@@ -144,9 +144,10 @@ header{background-color:var(--color-3);}
 
 
 
-.section-training-ground{display:grid;}
+.section-training-ground .site-container{display:grid;}
 .stg-info{padding:var(--size-5); line-height:150%;}
 .stg-info *{text-align:center;}
+.stg-info .section-title{margin-bottom:var(--size-3);}
 .stg-map{--aspect-ratio:1/1; max-height:377px;}
 
 
@@ -279,6 +280,11 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   
+  .section-instagram .site-container{grid-auto-flow:column; overflow-x:auto;}
+  .ig-box{width:300px;}
+  
+  
+  
   @media (orientation:portrait){
     .scb-bg{background-image:url(../img/bg-1-mobile.webp);}
   }
@@ -308,7 +314,7 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
 
 
 @media screen and (min-width:640px){
-  .section-training-ground{grid-template-columns:1fr 1fr;}
+  .section-training-ground .site-container{grid-template-columns:1fr 1fr; align-items:center;}
   .stg-info *{text-align:right;}
 }
 
@@ -334,6 +340,9 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
   
   
   .sg1-list{grid-template-columns:repeat(auto-fit, minmax(160px,1fr));}
+  
+  
+  .section-instagram .site-container{grid-template-columns:repeat(auto-fit, minmax(300px,1fr));}
   
   
   
