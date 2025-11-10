@@ -35,11 +35,13 @@
             <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
           </div>
 		  <div class="scb-content-container">
+		    <!--
             <div class="scb-logo img-frame thumb-loading">
               <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
               data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
               <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
             </div>
+			-->
 			<span class="text-id">
               <p>Kami telah menjalin kerja sama dengan klub Bundesliga ternama, <b>Borussia Mönchengladbach</b>, yang dikenal memiliki salah satu program pembinaan pemain muda terbaik di Jerman. Bersama-sama, kami menghadirkan pengalaman sepak bola yang luar biasa, langsung di kawasan Jakarta dan sekitarnya!</p>
               <p>Program sepak bola ini terbuka untuk anak laki-laki dan perempuan usia 3 hingga 16 tahun, di semua tingkat kemampuan. Tidak masalah apakah kamu baru mulai belajar atau sudah berpengalaman di level semi-profesional, semua dipersilakan bergabung!</p>
