@@ -25,11 +25,7 @@
 	  <div class="register-box">
 	    <?php $reg_tab_curr='Academy'; require ($_SERVER['BMG'].'template/module/register-tab.php')?>
 		<div class="register-form">
-		  <div class="register-form-title">
-            <span class="text-id">Pendaftaran Akademi:</span>
-            <span class="text-en">Academy Registration:</span>
-            <span class="text-de">Akademie-Anmeldung:</span>
-          </div>
+		  <div class="register-form-title">Academy Registration:</div>
 		  <div class="jotform">
 
             <iframe

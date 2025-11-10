@@ -25,11 +25,7 @@
 	  <div class="register-box">
 	    <?php $reg_tab_curr='Free Trial'; require ($_SERVER['BMG'].'template/module/register-tab.php')?>
 		<div class="register-form">
-		  <div class="register-form-title">
-            <span class="text-id">Pendaftaran Uji Coba:</span>
-            <span class="text-en">Trial Registration:</span>
-            <span class="text-de">Probetraining-Anmeldung:</span>
-          </div>
+		  <div class="register-form-title">Trial Registration:</div>
 		  <div class="jotform">
 
 			<iframe
