@@ -17,8 +17,10 @@
     <div class="site-container">
 	
 	  <div class="section-methodology-row section-methodology-right">
-	    <div class="smr-image img-frame thumb-loading">
-		  <img title="Background" class="lazyload" data-original="template/img/bg-3.jpg">
+	    <div class="smr-image">
+		  <div class="smr-image-frame img-frame thumb-loading">
+		    <img title="Background" class="lazyload" data-original="template/img/bg-3.jpg">
+		  </div>
 		</div>
         <div class="section-intro-box">
           <div class="sib-content">
@@ -57,8 +59,10 @@
 	  </div>
 	
 	  <div class="section-methodology-row section-methodology-left">
-	    <div class="smr-image img-frame thumb-loading">
-		  <img title="Background" class="lazyload" data-original="template/img/bg-2.jpg">
+	    <div class="smr-image">
+		  <div class="smr-image-frame img-frame thumb-loading">
+		    <img title="Background" class="lazyload" data-original="template/img/bg-2.jpg">
+		  </div>
 		</div>
         <div class="section-intro-box">
           <div class="sib-content">

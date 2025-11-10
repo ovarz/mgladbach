@@ -131,7 +131,6 @@ section{position:relative;}
 
 
 
-.section-methodology .site-container{max-width:none; padding:0;}
 .section-methodology .section-title{margin-bottom:var(--size-3);}
 .section-methodology .section-intro-box{max-width:none;}
 .section-methodology .smr-image{--aspect-ratio:1/1;}
@@ -214,6 +213,7 @@ section{position:relative;}
   
   
   
+  .section-methodology .site-container{padding:0;}
   .section-methodology .section-title{font-size:2rem;}
   
   
