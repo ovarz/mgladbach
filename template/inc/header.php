@@ -16,12 +16,6 @@
             'nav_link'=>'',
           );
           $nav_array[]=array(
-            'nav_label_id'=>'Daftar',
-            'nav_label_en'=>'Register',
-            'nav_label_de'=>'Anmelden',
-            'nav_link'=>'/register',
-          );
-          $nav_array[]=array(
             'nav_label_id'=>'Pelatihan',
             'nav_label_en'=>'Coaching',
             'nav_label_de'=>'Coaching',
@@ -32,6 +26,12 @@
             'nav_label_en'=>'Calendar',
             'nav_label_de'=>'Kalender',
             'nav_link'=>'/calendar',
+          );
+          $nav_array[]=array(
+            'nav_label_id'=>'Daftar',
+            'nav_label_en'=>'Register',
+            'nav_label_de'=>'Anmelden',
+            'nav_link'=>'/register',
           );
           $nav_array[]=array(
             'nav_label_id'=>'Galeri',

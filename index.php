@@ -274,7 +274,6 @@
   
   
   <section class="section-default section-instagram content-center">
-    <div class="bg-blur"></div>
     <div class="site-container">
 	
 	  <?php 
@@ -318,7 +317,6 @@
   
   
   <section class="section-default section-gallery-1 content-center">
-    <div class="bg-blur"></div>
     <div class="site-container">
 	  
 	  <div class="sg1-container">
@@ -381,7 +379,6 @@
   
   
   <section class="section-default section-photo-gallery index-photo-gallery content-center">
-    <div class="bg-blur"></div>
     <div class="site-container">
 	
 	  <div class="section-title">
@@ -434,43 +431,6 @@
   
   
   <?php require ($_SERVER['BMG'].'template/module/section-training-ground.php')?>
-  
-  
-  
-  
-  
-  <section class="section-default section-herrmann section-dsj content-center">
-    <div class="bg-blur"></div>
-    <div class="site-container">
-	
-	  <div class="sph-right img-frame thumb-loading">
-		<img title="Logo" class="lazyload" data-original="template/img/dsj.webp">
-	  </div>
-	  <div class="sph-left">
-	    <h2 class="section-title">
-          <span class="text-id">Kerja Sama Penuh Prestasi</span>
-          <span class="text-en">WINNING PARTNERSHIP</span>
-          <span class="text-de">Erfolgreiche Partnerschaft</span>
-        </h2>
-		<p>
-          <span class="text-id">Borussia M’Gladbach Academy Indonesia dengan bangga menjalin kemitraan dengan Deutsche Schule Jakarta (DSJ), salah satu lembaga pendidikan Jerman terkemuka di Indonesia. Kolaborasi ini tidak hanya mencakup penggunaan area kampus DSJ yang luas — sekitar 42.000 m² di pusat BSD City — tetapi juga mencerminkan nilai-nilai bersama dalam keberagaman budaya dan bahasa. Bersama-sama, kami menekankan pentingnya pertukaran budaya, olahraga, kesehatan fisik, dan kesejahteraan mental.</span>
-          <span class="text-en">Borussia M’Gladbach Academy Indonesia is proud to partner with the esteemed German School Jakarta (DSJ), one of Indonesia’s leading German institutions. This collaboration goes beyond sharing DSJ’s impressive 42,000m² campus located in the heart of BSD City. As multicultural and multilingual organizations, we share the same vision — promoting cultural exchange, sportsmanship, physical health, and mental well-being.</span>
-          <span class="text-de">Die Borussia M’Gladbach Academy Indonesia freut sich über die Partnerschaft mit der angesehenen Deutschen Schule Jakarta (DSJ), einer führenden deutschen Bildungseinrichtung in Indonesien. Diese Zusammenarbeit geht über die gemeinsame Nutzung des beeindruckenden 42.000 m² großen Campus im Herzen von BSD City hinaus. Als multikulturelle und mehrsprachige Organisationen teilen wir gemeinsame Werte – insbesondere den kulturellen Austausch, den Sportgeist, die körperliche Gesundheit und das geistige Wohlbefinden.</span>
-		</p>
-		<p>
-          <span class="text-id">Dengan lebih dari 66 tahun pengalaman pendidikan berkualitas, DSJ memiliki komunitas pelajar internasional yang terdiri dari lebih dari 10 kebangsaan, menciptakan lingkungan ideal untuk menumbuhkan bakat muda. Melalui kerja sama ini, DSJ dan Borussia M’Gladbach Academy Indonesia berkomitmen pada pendekatan pendidikan holistik — membantu peserta didik mengembangkan potensi mereka secara maksimal. Pelajari lebih lanjut tentang kemitraan inspiratif ini dan komitmen kami terhadap keunggulan di bidang pendidikan dan olahraga melalui situs resmi DSJ.</span>
-          <span class="text-en">With over 66 years of educational excellence, DSJ’s diverse community — representing more than 10 nationalities — offers the perfect environment for nurturing young talents. Together, DSJ and Borussia M’Gladbach Academy Indonesia are committed to a holistic approach to education and personal growth, helping students reach their fullest potential. Learn more about this exciting collaboration and our shared dedication to excellence in both education and sports on DSJ’s official website.</span>
-          <span class="text-de">Mit über 66 Jahren Bildungserfahrung bietet die DSJ mit ihrer vielfältigen Schülergemeinschaft aus mehr als 10 Nationalitäten ein ideales Umfeld zur Förderung junger Talente. Gemeinsam setzen sich die DSJ und die Borussia M’Gladbach Academy Indonesia für einen ganzheitlichen Bildungsansatz ein, um Schüler zu befähigen, ihr volles Potenzial zu entfalten. Erfahren Sie mehr über diese spannende Partnerschaft und unser gemeinsames Engagement für Exzellenz in Bildung und Sport auf der offiziellen Website der DSJ.</span>
-		</p>
-		<div class="sph-scanqr">
-		  <div class="sph-scanqr-frame img-frame thumb-loading">
-            <img title="QR" class="lazyload" data-original="template/img/sample-qr.png"/>
-          </div>
-		</div>
-	  </div>
-	  
-	</div>
-  </section>
   
   
   

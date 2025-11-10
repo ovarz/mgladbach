@@ -14,7 +14,7 @@
   --max-zindex:2147483648;
   --font-size:14px;
   --bg-1:#FAFAFA;
-  --width-max:1280px;
+  --width-max:1024px;
   --body-padding:var(--size-4);
   --header-height:var(--size-6);
 }
