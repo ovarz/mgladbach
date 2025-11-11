@@ -459,10 +459,6 @@
             'sbl_img'=>'logo-isco.webp',
           );
           $sbl_array[]=array(
-            'sbl_name'=>'Wohnraum',
-            'sbl_img'=>'logo-wohnraum.jpg',
-          );
-          $sbl_array[]=array(
             'sbl_name'=>'German Football Indonesia',
             'sbl_img'=>'logo-gfi.webp',
           );

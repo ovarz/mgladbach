@@ -31,7 +31,7 @@
 
 
 
-.section-cover{max-height:800px;}
+.section-cover{max-height:720px;}
 .section-cover:before{content:''; padding-top:56.25%; display:block;}
 .section-cover .site-container{position:static;}
 .section-cover-box{display:flex; justify-content:flex-end;}
