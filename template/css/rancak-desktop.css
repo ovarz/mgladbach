@@ -32,11 +32,10 @@
 
 
 .section-cover{max-height:720px;}
-.section-cover:before{content:''; padding-top:56.25%; display:block;}
 .section-cover .site-container{position:static;}
 .section-cover-box{display:flex; justify-content:flex-end;}
 .scb-bg{position:absolute; z-index:1; top:0; left:0; width:100%; height:100%;} 
-.scb-content{position:relative; z-index:1000; max-width:750px; padding:var(--size-7) var(--size-5); display:flex;}
+.scb-content{position:relative; z-index:1000; max-width:750px; padding:var(--size-6) var(--size-5); display:flex;}
 .scb-content-container{padding:var(--size-4); position:relative;}
 .scb-content .sib-arrow{transform:scaleX(-1);}
   
