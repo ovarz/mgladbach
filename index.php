@@ -34,38 +34,40 @@
           <div class="sib-arrow desktop-only">
             <?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?>
           </div>
-		  <div class="scb-content-container">
-		    <!--
-            <div class="scb-logo img-frame thumb-loading">
-              <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
-              data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
-              <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
-            </div>
-			-->
-			<span class="text-id">
-              <p>Kami bekerja sama dengan klub Bundesliga ternama Borussia Mönchengladbach, yang dikenal dengan program pembinaan pemain mudanya. Kini, kami menghadirkan pengalaman sepak bola khas Jerman di Jakarta dan sekitarnya.</p>
-              <p>Program ini terbuka untuk anak usia 3–16 tahun, baik laki-laki maupun perempuan, di semua tingkat kemampuan, dari pemula hingga berpengalaman.</p>
-              <p>Latihan berlangsung di Deutsche Schule Jakarta (DSJ), BSD City, dengan lapangan rumput alami dan fasilitas bertaraf internasional.</p>
-              <p>Berlatihlah dengan gaya Borussia Foals dan ikuti jejak bintang-bintang seperti Lothar Matthäus dan Marc-André ter Stegen.</p>
-			</span>
-			<span class="text-en">
-              <p>We are proud to collaborate with the renowned Bundesliga club Borussia Mönchengladbach, celebrated for its outstanding youth development program. Now, we bring the authentic German football experience to Jakarta and its surrounding areas.</p>
-              <p>This program is open to boys and girls aged 3–16, of all skill levels — from beginners to advanced players.</p>
-              <p>Training sessions take place at Deutsche Schule Jakarta (DSJ) in BSD City, featuring natural grass fields and international-standard facilities.</p>
-              <p>Train the Borussia Foals way and follow in the footsteps of legendary players such as Lothar Matthäus and Marc-André ter Stegen.</p>
-			</span>
-			<span class="text-de">
-              <p>Wir freuen uns, mit dem renommierten Bundesligaverein Borussia Mönchengladbach zusammenzuarbeiten, der für seine herausragende Nachwuchsförderung bekannt ist. Nun bringen wir das authentische deutsche Fußballerlebnis nach Jakarta und Umgebung.</p>
-              <p>Das Programm richtet sich an Kinder im Alter von 3 bis 16 Jahren, sowohl Jungen als auch Mädchen, und ist für alle Leistungsstufen geeignet – vom Anfänger bis zum erfahrenen Spieler.</p>
-              <p>Das Training findet an der Deutschen Schule Jakarta (DSJ) in BSD City statt, mit Naturrasenplätzen und modernen Einrichtungen auf internationalem Niveau.</p>
-              <p>Trainiere nach dem Borussia-Fohlen-Stil und folge den Spuren von Fußballgrößen wie Lothar Matthäus und Marc-André ter Stegen.</p>
-			</span>
+		  <div class="scb-content-container content-center">
+		    <span>
+              <!--
+              <div class="scb-logo img-frame thumb-loading">
+                <img title="Logo" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/logo-black-mobile.webp"
+                data-srcset="template/img/logo-black-mobile.webp 300w, template/img/logo-black.webp 600w" fetchpriority="high"/>
+                <img title="Logo" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/logo.png" fetchpriority="high"/>
+              </div>
+              -->
+              <span class="text-id">
+                <p>Kami bekerja sama dengan klub Bundesliga ternama Borussia Mönchengladbach, yang dikenal dengan program pembinaan pemain mudanya. Kini, kami menghadirkan pengalaman sepak bola khas Jerman di Jakarta dan sekitarnya.</p>
+                <p>Program ini terbuka untuk anak usia 3–16 tahun, baik laki-laki maupun perempuan, di semua tingkat kemampuan, dari pemula hingga berpengalaman.</p>
+                <p>Latihan berlangsung di Deutsche Schule Jakarta (DSJ), BSD City, dengan lapangan rumput alami dan fasilitas bertaraf internasional.</p>
+                <p>Berlatihlah dengan gaya Borussia Foals dan ikuti jejak bintang-bintang seperti Lothar Matthäus dan Marc-André ter Stegen.</p>
+              </span>
+              <span class="text-en">
+                <p>We are proud to collaborate with the renowned Bundesliga club Borussia Mönchengladbach, celebrated for its outstanding youth development program. Now, we bring the authentic German football experience to Jakarta and its surrounding areas.</p>
+                <p>This program is open to boys and girls aged 3–16, of all skill levels — from beginners to advanced players.</p>
+                <p>Training sessions take place at Deutsche Schule Jakarta (DSJ) in BSD City, featuring natural grass fields and international-standard facilities.</p>
+                <p>Train the Borussia Foals way and follow in the footsteps of legendary players such as Lothar Matthäus and Marc-André ter Stegen.</p>
+              </span>
+              <span class="text-de">
+                <p>Wir freuen uns, mit dem renommierten Bundesligaverein Borussia Mönchengladbach zusammenzuarbeiten, der für seine herausragende Nachwuchsförderung bekannt ist. Nun bringen wir das authentische deutsche Fußballerlebnis nach Jakarta und Umgebung.</p>
+                <p>Das Programm richtet sich an Kinder im Alter von 3 bis 16 Jahren, sowohl Jungen als auch Mädchen, und ist für alle Leistungsstufen geeignet – vom Anfänger bis zum erfahrenen Spieler.</p>
+                <p>Das Training findet an der Deutschen Schule Jakarta (DSJ) in BSD City statt, mit Naturrasenplätzen und modernen Einrichtungen auf internationalem Niveau.</p>
+                <p>Trainiere nach dem Borussia-Fohlen-Stil und folge den Spuren von Fußballgrößen wie Lothar Matthäus und Marc-André ter Stegen.</p>
+              </span>
 
-            <div class="scb-tlap img-frame thumb-loading">
-              <img title="Train Like a Pro" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
-              data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w" fetchpriority="high"/>
-              <img title="Train Like a Pro" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/train-like-a-pro-white.webp" fetchpriority="high"/>
-            </div>
+              <div class="scb-tlap img-frame thumb-loading">
+                <img title="Train Like a Pro" class="lazyload mobile-only" data-sizes="auto" data-original="template/img/train-like-a-pro-mobile.webp"
+                data-srcset="template/img/train-like-a-pro-mobile.webp 300w, template/img/train-like-a-pro.webp 600w" fetchpriority="high"/>
+                <img title="Train Like a Pro" class="lazyload desktop-only" data-sizes="auto" data-original="template/img/train-like-a-pro-white.webp" fetchpriority="high"/>
+              </div>
+			</span>
           </div>
 		</div>
 	  </div>
