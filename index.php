@@ -43,22 +43,22 @@
             </div>
 			-->
 			<span class="text-id">
-              <p>Kami telah menjalin kerja sama dengan klub Bundesliga ternama, <b>Borussia Mönchengladbach</b>, yang dikenal memiliki salah satu program pembinaan pemain muda terbaik di Jerman. Bersama-sama, kami menghadirkan pengalaman sepak bola yang luar biasa, langsung di kawasan Jakarta dan sekitarnya!</p>
-              <p>Program sepak bola ini terbuka untuk anak laki-laki dan perempuan usia 3 hingga 16 tahun, di semua tingkat kemampuan. Tidak masalah apakah kamu baru mulai belajar atau sudah berpengalaman di level semi-profesional, semua dipersilakan bergabung!</p>
-              <p>Kegiatan latihan kami berlangsung di lapangan rumput alami Deutsche Schule Jakarta (DSJ). Sekolah Jerman yang berlokasi di BSD City, Tangerang ini menawarkan fasilitas berkualitas tinggi dalam lingkungan internasional.</p>
-              <p>Ayo berlatih dengan gaya Borussia Foals dan ikuti jejak para pemain hebat seperti Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke, dan Patrick Herrmann.</p>
+              <p>Kami bekerja sama dengan klub Bundesliga ternama Borussia Mönchengladbach, yang dikenal dengan program pembinaan pemain mudanya. Kini, kami menghadirkan pengalaman sepak bola khas Jerman di Jakarta dan sekitarnya.</p>
+              <p>Program ini terbuka untuk anak usia 3–16 tahun, baik laki-laki maupun perempuan, di semua tingkat kemampuan, dari pemula hingga berpengalaman.</p>
+              <p>Latihan berlangsung di Deutsche Schule Jakarta (DSJ), BSD City, dengan lapangan rumput alami dan fasilitas bertaraf internasional.</p>
+              <p>Berlatihlah dengan gaya Borussia Foals dan ikuti jejak bintang-bintang seperti Lothar Matthäus dan Marc-André ter Stegen.</p>
 			</span>
 			<span class="text-en">
-              <p>We are proud to partner with the legendary Bundesliga club <b>Borussia Mönchengladbach</b>, renowned for its exceptional youth academy. Together, we bring you a world-class football experience, right here in the Greater Jakarta area!</p>
-              <p>Our football program welcomes boys and girls aged 3 to 16 of all skill levels. Whether you’re taking your first steps in football or already playing at a semi-professional level, everyone is welcome to join.</p>
-              <p>Training sessions take place on the natural grass pitch at Deutsche Schule Jakarta (DSJ). The German school, located in BSD City, Tangerang, offers top-notch facilities in a vibrant international setting.</p>
-              <p>Train the Borussia Foals way and follow in the footsteps of legendary players such as Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke, and Patrick Herrmann.</p>
+              <p>We are proud to collaborate with the renowned Bundesliga club Borussia Mönchengladbach, celebrated for its outstanding youth development program. Now, we bring the authentic German football experience to Jakarta and its surrounding areas.</p>
+              <p>This program is open to boys and girls aged 3–16, of all skill levels — from beginners to advanced players.</p>
+              <p>Training sessions take place at Deutsche Schule Jakarta (DSJ) in BSD City, featuring natural grass fields and international-standard facilities.</p>
+              <p>Train the Borussia Foals way and follow in the footsteps of legendary players such as Lothar Matthäus and Marc-André ter Stegen.</p>
 			</span>
 			<span class="text-de">
-              <p>Wir freuen uns über die Zusammenarbeit mit dem bekannten Bundesligaverein <b>Borussia Mönchengladbach</b>, der für seine herausragende Nachwuchsarbeit bekannt ist. Gemeinsam bieten wir euch ein erstklassiges Fußballerlebnis, direkt hier in der Großregion Jakarta!</p>
-              <p>Unser Fußballprogramm richtet sich an Jungen und Mädchen im Alter von 3 bis 16 Jahren, unabhängig vom Leistungsniveau. Egal, ob du gerade erst anfängst oder schon halbprofessionell spielst, jeder ist herzlich willkommen!</p>
-              <p>Das Training findet auf dem Naturrasenplatz der Deutschen Schule Jakarta (DSJ) statt. Die in BSD City, Tangerang, gelegene Deutsche Schule bietet hervorragende Einrichtungen in einem internationalen Umfeld.</p>
-              <p>Trainiere auf die Borussia-Fohlen-Art und folge den Spuren bekannter Spieler wie Lothar Matthäus, Stefan Effenberg, Marcell Jansen, Mahmoud Dahoud, Marc-André ter Stegen, Julian Korb, Tony Jantschke und Patrick Herrmann.</p>
+              <p>Wir freuen uns, mit dem renommierten Bundesligaverein Borussia Mönchengladbach zusammenzuarbeiten, der für seine herausragende Nachwuchsförderung bekannt ist. Nun bringen wir das authentische deutsche Fußballerlebnis nach Jakarta und Umgebung.</p>
+              <p>Das Programm richtet sich an Kinder im Alter von 3 bis 16 Jahren, sowohl Jungen als auch Mädchen, und ist für alle Leistungsstufen geeignet – vom Anfänger bis zum erfahrenen Spieler.</p>
+              <p>Das Training findet an der Deutschen Schule Jakarta (DSJ) in BSD City statt, mit Naturrasenplätzen und modernen Einrichtungen auf internationalem Niveau.</p>
+              <p>Trainiere nach dem Borussia-Fohlen-Stil und folge den Spuren von Fußballgrößen wie Lothar Matthäus und Marc-André ter Stegen.</p>
 			</span>
 
             <div class="scb-tlap img-frame thumb-loading">
