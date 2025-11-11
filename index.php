@@ -393,7 +393,7 @@
         <?php 
           $pg1_array = array();
 		  
-          for ($i = 1; $i <= 4; $i++) {
+          for ($i = 1; $i <= 8; $i++) {
             $pg1_array[] = array(
               'pg1_title'=>"Photo Gallery - Foto {$i}",
               'pg1_img'=>"home/{$i}-small.webp",
