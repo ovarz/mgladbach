@@ -376,6 +376,96 @@
   
   
   
+  <section class="section-default section-gallery-1 content-center">
+    <div class="site-container">
+	  
+	  <div class="sg1-container">
+	    <div class="section-title">
+          <span class="text-id">Askot Tangerang Selatan</span>
+          <span class="text-en">Askot Tangerang Selatan</span>
+          <span class="text-de">Askot Tangerang Selatan</span>
+		</div>
+        
+		<div class="sg1-list">
+          <?php 
+            $askot20251119_array = array();
+            for ($i = 1; $i <= 24; $i++) {
+              $askot20251119_array[] = array(
+                'askot20251119_title' => "Askot Tangerang Selatan - Foto {$i}",
+                'askot20251119_img'=>"askot-20251119/{$i}.jpg",
+                'askot20251119_img_small'=>"askot-20251119/{$i}-small.jpg",
+              );
+            }
+			foreach($askot20251119_array as $askot20251119_list){
+		  ?>
+            <a title="<?php echo($askot20251119_list['askot20251119_title'])?>" class="sg1-box img-frame thumb-loading" data-gall="gallery01" href="template/img/<?php echo($askot20251119_list['askot20251119_img'])?>">
+              <img class="lazyload" data-original="template/img/<?php echo($askot20251119_list['askot20251119_img_small'])?>">
+            </a>
+          <?php } ?>
+        </div>
+        <script>
+          new VenoBox({
+            selector:'.sg1-box',
+            numeration:true,
+            infinigall:true,
+            fitView:true,
+            spinner:'rotating-plane'
+          });
+        </script>
+	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-gallery-1 content-center">
+    <div class="site-container">
+	  
+	  <div class="sg1-container">
+	    <div class="section-title">
+          <span class="text-id">Top Youth</span>
+          <span class="text-en">Top Youth</span>
+          <span class="text-de">Top Youth</span>
+		</div>
+        
+		<div class="sg1-list">
+          <?php 
+            $topyouth2025_array = array();
+            for ($i = 1; $i <= 17; $i++) {
+              $topyouth2025_array[] = array(
+                'topyouth2025_title' => "Askot Tangerang Selatan - Foto {$i}",
+                'topyouth2025_img'=>"topyouth2025/{$i}.jpg",
+                'topyouth2025_img_small'=>"topyouth2025/{$i}-small.jpg",
+              );
+            }
+			foreach($topyouth2025_array as $topyouth2025_list){
+		  ?>
+            <a title="<?php echo($topyouth2025_list['topyouth2025_title'])?>" class="sg1-box img-frame thumb-loading" data-gall="gallery01" href="template/img/<?php echo($topyouth2025_list['topyouth2025_img'])?>">
+              <img class="lazyload" data-original="template/img/<?php echo($topyouth2025_list['topyouth2025_img_small'])?>">
+            </a>
+          <?php } ?>
+        </div>
+        <script>
+          new VenoBox({
+            selector:'.sg1-box',
+            numeration:true,
+            infinigall:true,
+            fitView:true,
+            spinner:'rotating-plane'
+          });
+        </script>
+	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
   <?php require ($_SERVER['BMG'].'template/module/section-calendar.php')?>
   
   
