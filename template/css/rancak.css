@@ -176,6 +176,12 @@ section{position:relative;}
 
 
 
+.jotform{position:relative;}
+.jotform iframe{position:relative; z-index:1;}
+.jotform:after{content:''; display:block; position:absolute; z-index:1000; bottom:0; left:0; width:100%; height:64px;}
+
+
+
 
 
 
