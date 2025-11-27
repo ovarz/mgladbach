@@ -128,6 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('CHART RENDERED');
 
   });
+  
+  
+  
+  
+  
+  function formatFileName(name, age) {
+  const clean = (str) => {
+    return str
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '')  // hapus selain huruf, angka, spasi
+	  .replace(/\//g, '_')          // ganti "/" menjadi "_"
+      .trim()
+      .replace(/\s+/g, '_');       // spasi jadi underscore
+  };
+
+  const cleanName = clean(name || 'player');
+  const cleanAge  = clean(age  || 'group');
+
+  const now = new Date();
+  const monthNames = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+  const month = monthNames[now.getMonth()];
+  const year  = String(now.getFullYear()).slice(-2);
+
+  return `${cleanName}_${cleanAge}_${month}${year}.pdf`;
+}
+
+  
+  
 
   // ===============================
   // DOWNLOAD PDF 2 HALAMAN
@@ -172,9 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       pdf.addImage(imgBack, "JPEG", 0, 0, pdfWidth, pdfHeightBack);
 
-      pdf.save(
-        'Player_Report_' + new Date().toISOString().slice(0, 10) + '.pdf'
-      );
+      const nameInput = document.getElementById('name-input').value;
+      const ageInput  = document.getElementById('age-input').value;
+      const fileName = formatFileName(nameInput, ageInput);
+      pdf.save(fileName);
 
     } catch (error) {
       console.error('Download failed:', error);
