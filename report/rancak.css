@@ -124,7 +124,8 @@ textarea.form-field{min-height:233px;}
 
 
 
-.result-download{display:flex; justify-content:center; margin-top:var(--size-4);}
+.result-preview{margin-bottom:var(--size-4);}
+.result-download{display:flex; justify-content:center;}
 
 
 
