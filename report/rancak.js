@@ -134,25 +134,34 @@ document.addEventListener('DOMContentLoaded', () => {
   
   
   function formatFileName(name, age) {
-  const clean = (str) => {
+  const cleanName = (str) => {
     return str
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]/g, '')  // hapus selain huruf, angka, spasi
-	  .replace(/\//g, '_')          // ganti "/" menjadi "_"
-      .trim()
-      .replace(/\s+/g, '_');       // spasi jadi underscore
+      .replace(/\//g, '-')          // "/" jadi "-"
+      .replace(/\s+/g, '_')         // spasi jadi "_"
+      .replace(/[^A-Za-z0-9_-]/g, '') // hanya huruf, angka, "_" dan "-"
+      .trim();
   };
 
-  const cleanName = clean(name || 'player');
-  const cleanAge  = clean(age  || 'group');
+  const cleanAge = (str) => {
+    return str
+      .toLowerCase()
+      .replace(/\//g, '-')          // "/" jadi "-"
+      .replace(/\s+/g, '')          // spasi dihapus
+      .replace(/[^a-z0-9-]/g, '')   // hanya huruf kecil, angka, "-"
+      .trim();
+  };
+
+  const finalName = cleanName(name || 'Player');
+  const finalAge  = cleanAge(age || 'group');
 
   const now = new Date();
   const monthNames = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
   const month = monthNames[now.getMonth()];
   const year  = String(now.getFullYear()).slice(-2);
 
-  return `${cleanName}_${cleanAge}_${month}${year}.pdf`;
+  return `${finalAge}-${finalName}-${month}${year}.pdf`;
 }
+
 
   
   
