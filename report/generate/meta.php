@@ -19,7 +19,7 @@
 <link rel="preload" href="template/fonts/E218_cfngu7HiRpPX3ZpNE4kY5zKYvWhrw.woff2" as="font" type="font/woff2" crossorigin>
 
 <style><?php require ($_SERVER['BMG'].'template/css/font.css')?></style>
-<style><?php require ($_SERVER['BMG'].'report/rancak.css')?></style>
+<style><?php require ($_SERVER['BMG'].'report/generate/rancak.css')?></style>
 
 </head>
 <body>

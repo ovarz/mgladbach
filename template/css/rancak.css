@@ -41,6 +41,8 @@ textarea.form-field{min-height:144px;}
 .form-search .form-field, .form-select .form-field, .form-password .form-field{padding-right:var(--size-6);}
 .form-search .form-icon, .form-select .form-field, .form-password .form-field{z-index:1000;}
 .form-select .form-field{position:relative;}
+.form-password .form-icon.show-password .svgicon-pass-hide,
+.form-password .form-icon.hide-password .svgicon-pass-show{display:none;}
 
 .custom-checkbox-radiobutton{position:relative; padding:var(--size-2) 0;}
 .ccr-real{position:absolute; z-index:1000; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;}

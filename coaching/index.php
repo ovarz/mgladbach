@@ -1,19 +1,18 @@
 <?php 
   $lang='id';
   $menu='Coaching';
-  $template='default';
+  $site_title='default';
   require ('../template/inc/base.php')
 ?>
 <?php require ($_SERVER['BMG'].'template/inc/meta.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/header.php')?>
-<h1 class="hide"><?php echo $sitename; ?> <?php echo $menu; ?></h1>
 <div class="rancak-foundation">
   
   
   
   
   
-  <section class="section-default section-methodology content-center">
+  <section class="section-default section-methodology section-methodology-topdesktop content-center">
     <div class="site-container">
 	
 	  <div class="section-methodology-row section-methodology-right">
@@ -57,6 +56,16 @@
           </div>
         </div>
 	  </div>
+	  
+	</div>
+  </section>
+  
+  
+  
+  
+  
+  <section class="section-default section-methodology  content-center">
+    <div class="site-container">
 	
 	  <div class="section-methodology-row section-methodology-left">
 	    <div class="smr-image">

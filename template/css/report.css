@@ -1,0 +1,40 @@
+.scb-bg{position:fixed; z-index:1; top:var(--header-height); width:100%; height:calc(100vh - var(--header-height));}
+
+
+
+.login-box, .login-box-form{display:grid; grid-gap:var(--size-4);}
+.login-box{width:100%; max-width:377px; padding:var(--size-5); background-color:var(--bg-2); position:relative; z-index:2000; box-shadow:rgb(100 100 111 / 34%) 0px 8px 34px 0px;}
+.login-header{line-height:150%; font-size:0.75rem;}
+.lbf-label{margin-bottom:var(--size-1);}
+.lbf-error{font-weight:bold; color:var(--color-alert);}
+
+
+
+.svr-embed{position:relative;}
+.svr-embed:before{content:''; display:block; padding-top:calc(100% / calc(800/1132));}
+.svr-embed embed{position:absolute; top:0; left:0; width:100%; height:100%;}
+
+
+
+.section-view-report{background:url(../img/bg-6.webp) no-repeat fixed center var(--color-3); background-size:cover;}
+.svr-header{margin-bottom:var(--size-4); display:grid; grid-gap:var(--size-3);}
+.svr-info{display:grid; grid-gap:var(--size-1);}
+.svr-name{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; color:var(--color-2); font-size:1.5rem; line-height:130%;}
+.svr-team{color:var(--color-2);}
+.svr-download{display:flex; align-items:center; justify-content:center;}
+
+
+
+footer{position:relative; z-index:3000;}
+
+
+
+@media screen and (min-width:0px) and (max-width:1023px){
+  .svr-name, .svr-team{text-align:center;}
+}
+
+
+
+@media screen and (min-width:1024px){
+  .svr-header{grid-template-columns:1fr auto; align-items:center;}
+}

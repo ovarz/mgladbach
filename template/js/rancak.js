@@ -33,8 +33,23 @@ function change_lang(){
 
 
 
+function custom_password(){
+  $('.form-password .form-icon').click(function(){
+    if($(this).is('.show-password')){
+     $(this).removeClass('show-password').addClass('hide-password');
+     $(this).parent().find(".form-field").attr("type","password");
+    }else{
+     $(this).removeClass('hide-password').addClass('show-password');
+     $(this).parent().find(".form-field").attr("type","text");
+    }
+  });
+}
+
+
+
 $(document).ready(function(){
   "use strict";
   open_sticky();
   change_lang();
+  custom_password();
 });

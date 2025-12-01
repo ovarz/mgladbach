@@ -1,7 +1,7 @@
 <?php 
   $lang='id';
   $menu='Success';
-  $template='default';
+  $site_title='custom';
   require ('../template/inc/base.php')
 ?>
 <?php require ($_SERVER['BMG'].'template/inc/meta.php')?>
@@ -43,16 +43,16 @@
           <span class="text-de">Ihre Daten wurden erfolgreich übermittelt und werden derzeit bearbeitet. Wir werden Sie in Kürze kontaktieren, um weitere Informationen bereitzustellen.</span>
 		</h2>
 		<div class="success-action content-center">
-		  <a title="Back to Home" class="btn success-button" href="">
-            <span class="text-id">Kembali ke Halaman Utama</span>
-            <span class="text-en">Back to Home Page</span>
-            <span class="text-de">Zurück zur Startseite</span>
+		  <a title="Back to Home" class="btn success-button" href="https://api.whatsapp.com/send/?phone=6281118898205&text=Hi+Borussia+Mönchengladbach+Academy+Indonesia%2C+I+have+completed+the+registration+under+the+name+ &type=phone_number&app_absent=0">
+            <span class="text-id">Konfirmasi via Whatsapp</span>
+            <span class="text-en">Confirmation via WhatsApp</span>
+            <span class="text-de">Bestätigung über WhatsApp</span>
 		  </a>
 		</div>
 		<div class="success-waiting">
-            <span class="text-id">Atau menunggu berpindah otomatis dalam</span>
-            <span class="text-en">Or wait to be redirected automatically in</span>
-            <span class="text-de">Oder warten, bis Sie automatisch weitergeleitet werden in</span>
+            <span class="text-id">Atau pindah ke halaman utama otomatis dalam</span>
+            <span class="text-en">Or automatically redirect to the homepage in</span>
+            <span class="text-de">Alternativ werden Sie automatisch zur Hauptseite geführt in</span>
 			<b id="countdown">10</b>
             <span class="text-id">detik</span>
             <span class="text-en">second</span>

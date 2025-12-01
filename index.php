@@ -1,12 +1,11 @@
 <?php 
   $lang='id';
   $menu='Home';
-  $template='default';
+  $site_title='default';
   require ('template/inc/base.php')
 ?>
 <?php require ($_SERVER['BMG'].'template/inc/meta.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/header.php')?>
-<h1 class="hide"><?php echo $sitename; ?> <?php echo $menu; ?></h1>
 <div class="rancak-foundation">
   
   
@@ -436,7 +435,7 @@
             $topyouth2025_array = array();
             for ($i = 1; $i <= 17; $i++) {
               $topyouth2025_array[] = array(
-                'topyouth2025_title' => "Askot Tangerang Selatan - Foto {$i}",
+                'topyouth2025_title' => "Top Youth - Foto {$i}",
                 'topyouth2025_img'=>"topyouth2025/{$i}.jpg",
                 'topyouth2025_img_small'=>"topyouth2025/{$i}-small.jpg",
               );
