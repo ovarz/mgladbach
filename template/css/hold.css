@@ -48,6 +48,7 @@ b{color:var(--color-3);}
 .form-box{background-color:var(--bg-2); border-radius:var(--rounded-1);}
 .form-label b{color:var(--color-alert);}
 .form-field{border-color:var(--color-border-form); background-color:transparent; border-radius:var(--rounded-1);}
+.form-field::placeholder{color:#E0E0E0;}
 .form-icon{background-color:var(--bg-2); border-radius:var(--rounded-1); fill:var(--color-1); transition:var(--transition-default); cursor:pointer}
 .form-icon:hover{fill:var(--color-4);}
 

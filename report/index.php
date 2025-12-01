@@ -56,7 +56,7 @@
               <span class="text-de">Telefonnummer</span>
 			</li>
             <li class="form-box lbf-box">
-              <input class="form-field" name="username" type="text" required placeholder="">
+              <input class="form-field" name="username" type="text" required placeholder="Contoh: 6280000000000">
             </li>
 		  </ul>
 		  <ul class="lbf-row">
