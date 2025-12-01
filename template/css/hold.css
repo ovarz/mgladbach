@@ -154,7 +154,7 @@ header{background-color:var(--color-3);}
 
 
 
-.section-contact{background:url(../img/bg-map.jpg) no-repeat fixed center var(--color-4); background-size:cover;}
+.section-contact{background:url(../img/bg-map.jpg) no-repeat fixed center var(--color-2); background-size:cover;}
 .section-contact .section-title{margin-bottom:var(--size-2); font-size:1.5rem;}
 .section-contact-container{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
 .scc-box{line-height:150%;}
