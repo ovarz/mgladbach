@@ -217,6 +217,7 @@ section{position:relative;}
   
   
   
+  .scb-bg{position:relative;}
   .scb-bg:before{content:''; padding-top:100%; display:block;} 
   
   

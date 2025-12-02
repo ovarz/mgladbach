@@ -22,10 +22,8 @@
               if (window.videoLoaded) return;
               window.videoLoaded = true;
 
-              if ($(window).width() > 1024) {
-                $('.scb-bg').append('<video autoplay loop muted playsinline class="desktop-only"><source src="template/img/cover.mp4" type="video/mp4"></video>');
-                $('.scb-bg video').hide().fadeIn(1000);
-              }
+              $('.scb-bg').append('<video autoplay loop muted playsinline><source src="template/img/cover.mp4" type="video/mp4"></video>');
+              $('.scb-bg video').hide().fadeIn(1000);
 			});
 		  </script>
 		</div>
