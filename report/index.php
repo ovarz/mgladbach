@@ -11,7 +11,7 @@
     $u = isset($_POST['username']) ? trim($_POST['username']) : '';
     $p = isset($_POST['password']) ? $_POST['password'] : '';
 
-    if ($u !== '' && isset($users[$u]) && $users[$u] === $p) {
+    if ($u !== '' && isset($users[$u]) && isset($users[$u]['pass']) && $users[$u]['pass'] === $p) {
       $_SESSION['user'] = $u;
       header("Location: " . $u . "/");
       exit;
