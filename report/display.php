@@ -13,8 +13,14 @@
 	    </a>
 	  </div>
     </div>
-    <div class="svr-embed">
-      <embed type="application/pdf" id="report_doc" src="report/file/<?php echo $file;?>.pdf" width="956" height="2350"></embed>
+    <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
+      <?php if (file_exists($pdfPath)): ?>
+        <embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350">
+      <?php else: ?>
+        <div class="svr-embed-notfound">
+          Data tidak ditemukan, silakan hubungi customer service
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </section>

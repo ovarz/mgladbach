@@ -97,7 +97,7 @@ header .site-container{display:flex; justify-content:space-between; padding:0;}
 
 
 
-.rancak-foundation{min-height:100vh; min-height:100svh;}
+.rancak-foundation{min-height:calc(100vh - var(--header-height)); min-height:calc(100vh - var(--header-height));}
 section{position:relative;}
 .section-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:2.5rem; line-height:120%; margin-bottom:var(--size-5);}
 .section-title-secondary{font-size:1rem; line-height:100%; margin-bottom:var(--size-2);}
