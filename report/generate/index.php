@@ -62,21 +62,33 @@
           </div>
         </li>
         <li class="sidebar-form-row">
-          <div class="sfr-label">Defending</div>
-          <div class="form-box">
-            <input id="defending-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
-          </div>
-        </li>
-        <li class="sidebar-form-row">
           <div class="sfr-label">Physical</div>
           <div class="form-box">
             <input id="physical-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
+          </div>
+        </li>
+        <li class="sidebar-form-row">
+          <div class="sfr-label">Attacking</div>
+          <div class="form-box">
+            <input id="attacking-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
+          </div>
+        </li>
+        <li class="sidebar-form-row">
+          <div class="sfr-label">Defending</div>
+          <div class="form-box">
+            <input id="defending-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
           <div class="sfr-label">Coach's Comment</div>
           <div class="form-box">
             <textarea id="comment-input" placeholder="Coach's Comment" class="form-field"></textarea>
+          </div>
+        </li>
+        <li class="sidebar-form-row sidebar-form-full">
+          <div class="sfr-label">Recommendation</div>
+          <div class="form-box">
+            <textarea id="recommendation-input" placeholder="Recommendation" class="form-field"></textarea>
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
@@ -93,6 +105,32 @@
 		  <div class="rpf-bg-box"></div>
 		  <div class="rpf-bg-triangle"><?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?></div>
 		  <div class="domain-name">www.mgladbachacademy.id</div>
+		  <div class="rpf-signature">
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Saras Desch</div>
+			    <div class="rpf-signature-title">CEO/Co-Founder</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Damai Miracle</div>
+			    <div class="rpf-signature-title">Head Coach</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Lorem Ipsum</div>
+			    <div class="rpf-signature-title">Examiner</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		  </div>
 		</div>
 		<div class="rpf-logo-bottom"><?php require ($_SERVER['BMG'].'template/img/logo-icon.svg')?></div>
 		<div class="rpf-content">
@@ -161,8 +199,8 @@
 			  <ul>
 			    <li>1-3 = Need Significant Improvement</li>
 			    <li>4-6 = Developing</li>
-			    <li>1-3 = Good</li>
-			    <li>1-3 = Excellent</li>
+			    <li>7-9 = Good</li>
+			    <li>10 = Excellent</li>
 			  </ul>
 			  <p>This evaluation reflects both training sessions and match performance.</p>
 			</div>
@@ -190,12 +228,16 @@
           		<div id="dribbling-display" class="rpf-score grade-score"></div>
 			  </div>
 			  <div class="rpf-row">
-			    <div class="rpf-label">Defending</div>
-          		<div id="defending-display" class="rpf-score grade-score"></div>
-			  </div>
-			  <div class="rpf-row">
 			    <div class="rpf-label">Physical</div>
           		<div id="physical-display" class="rpf-score grade-score"></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Attacking</div>
+          		<div id="attacking-display" class="rpf-score grade-score"></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Defending</div>
+          		<div id="defending-display" class="rpf-score grade-score"></div>
 			  </div>
 			</div>
 			<div class="rpf-graph">
@@ -206,23 +248,9 @@
 		    <div class="coach-comments-label">Coach's Comments:</div>
             <div id="comment-display" class="grade-comment"></div>
 		  </div>
-		  <div class="rpf-signature">
-		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
-			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name">Saras Desch</div>
-			    <div class="rpf-signature-title">CEO/Co-Founder</div>
-			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
-			  </div>
-			</div>
-		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
-			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name">Damai Miracle</div>
-			    <div class="rpf-signature-title">Head Coach</div>
-			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
-			  </div>
-			</div>
+		  <div class="coach-comments">
+		    <div class="coach-comments-label">Recommendation:</div>
+            <div id="recommendation-display" class="grade-recommendation"></div>
 		  </div>
 		</div>
       </div>

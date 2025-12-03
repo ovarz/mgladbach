@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { inputId: 'shooting-input',  displayId: 'shooting-display',  label: 'Shooting' },
     { inputId: 'passing-input',   displayId: 'passing-display',   label: 'Passing' },
     { inputId: 'dribbling-input', displayId: 'dribbling-display', label: 'Dribbling' },
-    { inputId: 'defending-input', displayId: 'defending-display', label: 'Defending' },
     { inputId: 'physical-input',  displayId: 'physical-display',  label: 'Physical' },
+    { inputId: 'attacking-input', displayId: 'attacking-display', label: 'Attacking' },
+    { inputId: 'defending-input', displayId: 'defending-display', label: 'Defending' },
   ];
 
   const skillLabels = skillMappings.map(m => m.label);
@@ -73,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentDisplay = document.getElementById('comment-display');
 
     commentDisplay.innerHTML = coachComment || "No comment provided.";
+
+    // === COMMENT ===
+    const Recommendation  = document.getElementById('recommendation-input').value.trim();
+    const RecommendationDisplay = document.getElementById('recommendation-display');
+
+    RecommendationDisplay.innerHTML = Recommendation || "No recommendation provided.";
 
     // ===============================
     // RENDER CHART (PAKAI CANVAS HTML)
