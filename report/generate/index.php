@@ -80,13 +80,13 @@
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
-          <div class="sfr-label">Coach's Comment</div>
+          <div class="sfr-label">Coach's Comment (Max 198 Char) :</div>
           <div class="form-box">
             <textarea id="comment-input" placeholder="Coach's Comment" class="form-field"></textarea>
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
-          <div class="sfr-label">Recommendation</div>
+          <div class="sfr-label">Recommendation (Max 198 Char) :</div>
           <div class="form-box">
             <textarea id="recommendation-input" placeholder="Recommendation" class="form-field"></textarea>
           </div>
