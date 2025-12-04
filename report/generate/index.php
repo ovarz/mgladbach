@@ -34,7 +34,25 @@
         <li class="sidebar-form-row sidebar-form-full">
           <div class="sfr-label">Coach</div>
           <div class="form-box">
-            <input id="coach-input" placeholder="" type="text" value="" class="form-field">
+			<select id="coach-input" class="form-field">
+			  <option value="">-- Select Coach --</option>
+			  <option value="Coach A">Coach A</option>
+			  <option value="Coach B">Coach B</option>
+			  <option value="Coach C">Coach C</option>
+			  <option value="Coach D">Coach D</option>
+			</select>
+          </div>
+        </li>
+        <li class="sidebar-form-row sidebar-form-full">
+          <div class="sfr-label">Examiner</div>
+          <div class="form-box">
+			<select id="examiner-input" class="form-field">
+			  <option value="">-- Select Examiner --</option>
+			  <option value="Coach A">Coach A</option>
+			  <option value="Coach B">Coach B</option>
+			  <option value="Coach C">Coach C</option>
+			  <option value="Coach D">Coach D</option>
+			</select>
           </div>
         </li>
         <li class="sidebar-form-row">
@@ -80,13 +98,13 @@
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
-          <div class="sfr-label">Coach's Comment (Max 198 Char) :</div>
+          <div class="sfr-label">Coach's Comment (Max 165 Char) :</div>
           <div class="form-box">
             <textarea id="comment-input" placeholder="Coach's Comment" class="form-field"></textarea>
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
-          <div class="sfr-label">Recommendation (Max 198 Char) :</div>
+          <div class="sfr-label">Recommendation (Max 165 Char) :</div>
           <div class="form-box">
             <textarea id="recommendation-input" placeholder="Recommendation" class="form-field"></textarea>
           </div>
@@ -123,9 +141,9 @@
 			  </div>
 			</div>
 		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-img"><img id="examiner-signature-img" src="report/generate/signature.png"/></div>
 			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name">Lorem Ipsum</div>
+			    <div class="rpf-signature-name" id="examiner-display">Lorem Ipsum</div>
 			    <div class="rpf-signature-title">Examiner</div>
 			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
 			  </div>
@@ -137,7 +155,7 @@
 		  <div class="rpf-logo"><img src="template/img/logo-black.webp"/></div>
 		  <div class="rpf-head">
 		    <div class="rpf-title rpf-title-2">Player <b>Development</b> Report</div>
-		    <div class="rpf-desc">January - July 2025 Period</div>
+		    <div class="rpf-desc">July - December 2025 Period</div>
 		  </div>
 		  <div class="rpf-intro">
 		    Borussia Academy Indonesia is dedicated to developing young football players through technical skills, tactical understanding, physical conditioning, and character building. This report provides an evaluation of the player's progress and areas for improvement.
@@ -250,7 +268,7 @@
 		  </div>
 		  <div class="coach-comments">
 		    <div class="coach-comments-label">Recommendation:</div>
-            <div id="recommendation-display" class="grade-recommendation"></div>
+            <div id="recommendation-display" class="grade-comment"></div>
 		  </div>
 		</div>
       </div>

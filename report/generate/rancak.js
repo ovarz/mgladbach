@@ -68,6 +68,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("coach-display").innerText =
       document.getElementById("coach-input").value;
+	  
+	// === EXAMINER → DISPLAY + SIGNATURE IMAGE ===
+	const examinerValue = document.getElementById("examiner-input").value;
+	const examinerDisplay = document.getElementById("examiner-display");
+	const examinerSignatureImg = document.getElementById("examiner-signature-img");
+
+	// tampilkan nama examiner
+	if (examinerDisplay) {
+	  examinerDisplay.innerText = examinerValue || "Examiner";
+	}
+
+	// ubah url gambar signature berdasarkan examiner
+	if (examinerSignatureImg && examinerValue) {
+	  const formattedExaminer = examinerValue
+		.toLowerCase()
+		.replace(/\s+/g, '-')      // spasi → "-"
+		.replace(/[^a-z-]/g, '');  // hanya huruf & "-"
+
+	  examinerSignatureImg.src = `report/generate/signature-${formattedExaminer}.png`;
+	} else if (examinerSignatureImg) {
+	  // fallback jika belum dipilih
+	  examinerSignatureImg.src = `report/generate/signature.png`;
+	}
 
     // === COMMENT ===
     const coachComment  = document.getElementById('comment-input').value.trim();

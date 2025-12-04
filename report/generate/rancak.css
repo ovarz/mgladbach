@@ -108,9 +108,13 @@ textarea.form-field{min-height:233px;}
 
 
 
-.coach-comments{display:grid; grid-gap:var(--size-3); grid-template-columns:auto 1fr; width:80%; line-height:150%;}
-.coach-comments-container, .grade-comment, .grade-recommendation{white-space:pre-wrap; height:150px; max-width:300px;
+.coach-comments{display:grid; grid-gap:var(--size-2); grid-template-columns:148px 1fr; width:75%; line-height:150%;}
+.coach-comments-container, .grade-comment{white-space:pre-wrap; height:150px; max-width:300px;
 word-wrap:break-word; word-break:break-word; hyphens:auto;}
+.grade-comment{--rows:5; --row-height:calc(100% / var(--rows)); --row-align:1px; line-height:175%;
+background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--row-height) - var(--row-align)), 
+var(--color-text-1) calc(var(--row-height) - var(--row-align)), var(--color-text-1) var(--row-height));}
+
 
 
 
