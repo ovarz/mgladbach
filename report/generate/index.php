@@ -26,9 +26,15 @@
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">
-          <div class="sfr-label">Age Group / Team</div>
+          <div class="sfr-label">Age Group</div>
           <div class="form-box">
             <input id="age-input" placeholder="" type="text" value="" class="form-field">
+          </div>
+        </li>
+        <li class="sidebar-form-row sidebar-form-full">
+          <div class="sfr-label">Team</div>
+          <div class="form-box">
+            <input id="team-input" placeholder="" type="text" value="" class="form-field">
           </div>
         </li>
         <li class="sidebar-form-row sidebar-form-full">

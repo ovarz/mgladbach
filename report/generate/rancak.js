@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
 
+document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM READY');
 
   const generateButton = document.getElementById('generate-btn');
@@ -10,16 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reportChartCanvas = document.getElementById('report-content');
 
-  console.log('Generate Button:', generateButton);
-  console.log('Chart Canvas:', reportChartCanvas);
-  console.log('Chart Lib:', typeof Chart);
-
   if (!generateButton || !reportChartCanvas || typeof Chart === 'undefined') {
     console.error('Salah satu elemen utama tidak ditemukan!');
     return;
   }
 
   let mySkillLineChart;
+  let RAW_AGE_VALUE = "";   // simpan age input asli
+  let RAW_TEAM_VALUE = "";  // simpan team input asli
 
   const skillMappings = [
     { inputId: 'pace-input',      displayId: 'pace-display',      label: 'Pace' },
@@ -33,11 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const skillLabels = skillMappings.map(m => m.label);
 
-  // ===============================
-  // GENERATE FRONT + BACK + CHART
-  // ===============================
-  generateButton.addEventListener('click', () => {
+  // format birth date dd-mm-yy -> "dd Month yyyy"
+  function formatBirthDate(raw) {
+    if (!raw) return "";
+    raw = raw.toString().trim().replace(/\//g, '-');
+    const parts = raw.split("-");
+    if (parts.length < 3) return raw;
+    let [dd, mm, yy] = parts;
+    dd = dd.trim();
+    mm = mm.trim();
+    yy = yy.trim();
+    const bulanIndo = [
+      "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+      "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+    ];
+    const bulanNama = bulanIndo[parseInt(mm,10)] || mm;
+    if (yy.length === 2) { yy = "20" + yy; }
+    return `${dd} ${bulanNama} ${yy}`;
+  }
 
+  // ======================================================
+  // GENERATE FRONT + BACK + CHART
+  // ======================================================
+  generateButton.addEventListener('click', () => {
     console.log('GENERATE CLICKED');
 
     const skillValues = [];
@@ -46,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const inputElement   = document.getElementById(mapping.inputId);
       const displayElement = document.getElementById(mapping.displayId);
 
-      let value = parseInt(inputElement.value) || 0;
+      let value = parseInt(inputElement && inputElement.value) || 0;
       if (value < 0) value = 0;
       if (value > 10) value = 10;
 
@@ -56,53 +72,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Skill Values:', skillValues);
 
-    // === DATA FRONT ===
+    // Ambil RAW values dari inputs (SEBELUM merubah DOM)
+    RAW_AGE_VALUE = (document.getElementById("age-input") && document.getElementById("age-input").value) ? document.getElementById("age-input").value.trim() : '';
+    RAW_TEAM_VALUE = (document.getElementById("team-input") && document.getElementById("team-input").value) ? document.getElementById("team-input").value.trim() : '';
+
+    // === DATA FRONT === (tampilkan)
     document.getElementById("name-display").innerText =
-      document.getElementById("name-input").value;
+      document.getElementById("name-input").value || '';
 
-    document.getElementById("birth-display").innerText =
-      document.getElementById("birth-input").value;
+    // format birth date before displaying
+    const rawBirth = (document.getElementById("birth-input") && document.getElementById("birth-input").value) || '';
+    document.getElementById("birth-display").innerText = formatBirthDate(rawBirth);
 
-    document.getElementById("age-display").innerText =
-      document.getElementById("age-input").value;
+    // gabungkan age + team di age-display sesuai permintaan: "age/team"
+    const ageDisplayEl = document.getElementById("age-display");
+    if (ageDisplayEl) {
+      if (RAW_AGE_VALUE && RAW_TEAM_VALUE) {
+        ageDisplayEl.innerText = `${RAW_AGE_VALUE}/${RAW_TEAM_VALUE}`;
+      } else if (RAW_AGE_VALUE) {
+        ageDisplayEl.innerText = RAW_AGE_VALUE;
+      } else if (RAW_TEAM_VALUE) {
+        ageDisplayEl.innerText = RAW_TEAM_VALUE;
+      } else {
+        ageDisplayEl.innerText = '';
+      }
+    }
 
     document.getElementById("coach-display").innerText =
-      document.getElementById("coach-input").value;
-	  
-	// === EXAMINER → DISPLAY + SIGNATURE IMAGE ===
-	const examinerValue = document.getElementById("examiner-input").value;
-	const examinerDisplay = document.getElementById("examiner-display");
-	const examinerSignatureImg = document.getElementById("examiner-signature-img");
+      (document.getElementById("coach-input") && document.getElementById("coach-input").value) || '';
 
-	// tampilkan nama examiner
-	if (examinerDisplay) {
-	  examinerDisplay.innerText = examinerValue || "Examiner";
-	}
+    // === EXAMINER → DISPLAY + SIGNATURE IMAGE ===
+    const examinerValue = (document.getElementById("examiner-input") && document.getElementById("examiner-input").value) || '';
+    const examinerDisplay = document.getElementById("examiner-display");
+    const examinerSignatureImg = document.getElementById("examiner-signature-img");
 
-	// ubah url gambar signature berdasarkan examiner
-	if (examinerSignatureImg && examinerValue) {
-	  const formattedExaminer = examinerValue
-		.toLowerCase()
-		.replace(/\s+/g, '-')      // spasi → "-"
-		.replace(/[^a-z-]/g, '');  // hanya huruf & "-"
+    if (examinerDisplay) {
+      examinerDisplay.innerText = examinerValue || "Examiner";
+    }
 
-	  examinerSignatureImg.src = `report/generate/signature-${formattedExaminer}.png`;
-	} else if (examinerSignatureImg) {
-	  // fallback jika belum dipilih
-	  examinerSignatureImg.src = `report/generate/signature.png`;
-	}
+    if (examinerSignatureImg && examinerValue) {
+      const formattedExaminer = examinerValue
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z-]/g, '');
+      examinerSignatureImg.src = `report/generate/signature-${formattedExaminer}.png`;
+      examinerSignatureImg.onerror = function() { this.src = 'report/generate/signature.png'; };
+    } else if (examinerSignatureImg) {
+      examinerSignatureImg.src = `report/generate/signature.png`;
+    }
 
     // === COMMENT ===
-    const coachComment  = document.getElementById('comment-input').value.trim();
+    const coachComment = (document.getElementById('comment-input') && document.getElementById('comment-input').value) ? document.getElementById('comment-input').value.trim() : '';
     const commentDisplay = document.getElementById('comment-display');
+    if (commentDisplay) commentDisplay.innerHTML = coachComment || "No comment provided.";
 
-    commentDisplay.innerHTML = coachComment || "No comment provided.";
-
-    // === COMMENT ===
-    const Recommendation  = document.getElementById('recommendation-input').value.trim();
+    // Recommendation
+    const Recommendation = (document.getElementById('recommendation-input') && document.getElementById('recommendation-input').value) ? document.getElementById('recommendation-input').value.trim() : '';
     const RecommendationDisplay = document.getElementById('recommendation-display');
-
-    RecommendationDisplay.innerHTML = Recommendation || "No recommendation provided.";
+    if (RecommendationDisplay) RecommendationDisplay.innerHTML = Recommendation || "No recommendation provided.";
 
     // ===============================
     // RENDER CHART (PAKAI CANVAS HTML)
@@ -145,56 +172,42 @@ document.addEventListener('DOMContentLoaded', () => {
             max: 10,
             ticks: { stepSize: 2 }
           },
-          x: {
-            grid: { display: false }
-          }
+          x: { grid: { display: false } }
         },
-        plugins: {
-          legend: { display: false }
-        }
+        plugins: { legend: { display: false } }
       }
     });
 
     console.log('CHART RENDERED');
-
   });
-  
-  
-  
-  
-  
-  function formatFileName(name, age) {
-  const cleanName = (str) => {
-    return str
-      .replace(/\//g, '-')          // "/" jadi "-"
-      .replace(/\s+/g, '_')         // spasi jadi "_"
-      .replace(/[^A-Za-z0-9_-]/g, '') // hanya huruf, angka, "_" dan "-"
-      .trim();
-  };
 
-  const cleanAge = (str) => {
-    return str
-      .toLowerCase()
-      .replace(/\//g, '-')          // "/" jadi "-"
-      .replace(/\s+/g, '')          // spasi dihapus
-      .replace(/[^a-z0-9-]/g, '')   // hanya huruf kecil, angka, "-"
-      .trim();
-  };
+  // ======================================================
+  //   FORMAT FILENAME — MENGGUNAKAN age-input & team-input
+  // ======================================================
+  function formatFileName(name, ageRaw, teamRaw) {
+    // name: preserve capitalization, spaces -> underscore, remove symbols
+    const finalName = (name || '')
+      .replace(/[^A-Za-z0-9\s]/g, '')
+      .trim()
+      .replace(/\s+/g, '_');
 
-  const finalName = cleanName(name || 'Player');
-  const finalAge  = cleanAge(age || 'group');
+    // age token = langsung ageRaw first word (preserve)
+    const ageToken = (ageRaw || '').toString().trim().split(/\s+/)[0] || 'AGE';
 
-  const now = new Date();
-  const monthNames = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
-  const month = monthNames[now.getMonth()];
-  const year  = String(now.getFullYear()).slice(-2);
+    // team part = remove symbols, remove spaces, preserve casing
+    const teamPart = (teamRaw || '')
+      .replace(/[^A-Za-z0-9\s]/g, '') // remove symbols but keep letters/numbers/spaces
+      .replace(/\s+/g, '')           // remove spaces
+      .trim() || 'TEAM';
 
-  return `${finalAge}-${finalName}-${month}${year}.pdf`;
-}
+    // month-year
+    const now = new Date();
+    const monthNames = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    const month = monthNames[now.getMonth()];
+    const year  = String(now.getFullYear()).slice(-2);
 
-
-  
-  
+    return `${ageToken}-${teamPart}-${finalName}-${month}${year}.pdf`;
+  }
 
   // ===============================
   // DOWNLOAD PDF 2 HALAMAN
@@ -239,9 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       pdf.addImage(imgBack, "JPEG", 0, 0, pdfWidth, pdfHeightBack);
 
-      const nameInput = document.getElementById('name-input').value;
-      const ageInput  = document.getElementById('age-input').value;
-      const fileName = formatFileName(nameInput, ageInput);
+      // ===== FILENAME (PAKAI RAW VALUES YG TERSIMPAN SAAT GENERATE) =====
+      const nameInput = (document.getElementById('name-input') && document.getElementById('name-input').value) || '';
+      // gunakan RAW_AGE_VALUE dan RAW_TEAM_VALUE yang disimpan saat generate
+      const fileName = formatFileName(nameInput, RAW_AGE_VALUE, RAW_TEAM_VALUE);
+
+      console.log("Saving File:", fileName);
       pdf.save(fileName);
 
     } catch (error) {
