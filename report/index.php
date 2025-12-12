@@ -8,17 +8,31 @@
   include 'users.php';
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $u = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $u_input = isset($_POST['username']) ? trim($_POST['username']) : '';
     $p = isset($_POST['password']) ? $_POST['password'] : '';
 
-    if ($u !== '' && isset($users[$u]) && isset($users[$u]['pass']) && $users[$u]['pass'] === $p) {
-      $_SESSION['user'] = $u;
-      header("Location: " . $u . "/");
-      exit;
-    } else {
-      $error = "Username atau password salah!";
+    // normalize to lowercase for comparison
+    $u_lower = strtolower($u_input);
+
+    // create a map of lowercase username => original key
+    $matched_key = null;
+    foreach ($users as $k => $v) {
+        if (strtolower($k) === $u_lower) {
+            $matched_key = $k;
+            break;
+        }
     }
-  }
+
+    if ($u_input !== '' && $matched_key !== null && isset($users[$matched_key]['pass']) && $users[$matched_key]['pass'] === $p) {
+        // store the actual key as in users.php (preserve original case)
+        $_SESSION['user'] = $matched_key;
+        header('Location: ' . $matched_key . '/');
+        exit;
+    } else {
+        $error = 'Invalid username or password.';
+    }
+}
+
 ?>
 <?php require ($_SERVER['BMG'].'template/inc/meta.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/header.php')?>
@@ -51,12 +65,12 @@
         <form class="login-box-form" method="post" action="report/index.php">
 		  <ul class="lbf-row">
 		    <li class="lbf-label">
-              <span class="text-id">Nomor Telepon</span>
-              <span class="text-en">Phone Number</span>
-              <span class="text-de">Telefonnummer</span>
+              <span class="text-id">Nama Lengkap</span>
+              <span class="text-en">Full Name</span>
+              <span class="text-de">Vollständiger Name</span>
 			</li>
             <li class="form-box lbf-box">
-              <input class="form-field" name="username" type="text" required placeholder="Contoh: 6280000000000">
+              <input class="form-field" name="username" type="text" required placeholder="Contoh: Lothar Matthäus">
             </li>
 		  </ul>
 		  <ul class="lbf-row">
