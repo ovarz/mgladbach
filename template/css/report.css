@@ -5,7 +5,8 @@
 
 .login-box, .login-box-form{display:grid; grid-gap:var(--size-4);}
 .login-box{width:100%; max-width:377px; padding:var(--size-5); background-color:var(--bg-2); position:relative; z-index:2000; box-shadow:rgb(100 100 111 / 34%) 0px 8px 34px 0px;}
-.login-header{line-height:150%; font-size:0.75rem;}
+.login-header{line-height:150%; font-size:0.875rem;}
+.login-header p{margin-bottom:var(--size-1);}
 .lbf-label{margin-bottom:var(--size-1);}
 .lbf-error{font-weight:bold; color:var(--color-alert);}
 

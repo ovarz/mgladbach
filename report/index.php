@@ -58,9 +58,32 @@
     <div class="site-container content-center">
 	  <div class="login-box">
 	    <div class="login-header">
-          <span class="text-id">Silakan masukkan nomor telepon dan kata sandi Anda pada kolom di bawah ini sesuai dengan data yang telah dikirim melalui WhatsApp sebelumnya.</span>
-          <span class="text-en">Please enter your phone number and password in the fields below according to the information previously sent via WhatsApp.</span>
-          <span class="text-de">Bitte geben Sie Ihre Telefonnummer und Ihr Passwort in die Felder unten ein, entsprechend den zuvor per WhatsApp gesendeten Daten.</span>
+          <span class="text-id">
+		    <p>Silakan masukkan nama lengkap dan password pada  kolom dibawah ini.</p>
+			<p>Untuk password, silakan masukkan kelompok umur dan tanggal lahir dengan format :</p>
+			<p>[kelompok_umur]-[tanggal_lahir_ddmmyy]</p>
+			<p>Contoh :<br/>
+			  Nama Lengkap : Lothar Matthäus<br/>
+			  Password : u64-210361</p>
+		  </span>
+		  <span class="text-en">
+		    <p>Please enter your full name and password in the fields below.</p>
+		    <p>For the password, please enter the age group and date of birth in the following format:</p>
+		    <p>[age_group]-[date_of_birth_ddmmyy]</p>
+		    <p>Example:<br/>
+			  Full Name : Lothar Matthäus<br/>
+			  Password : u64-210361
+		    </p>
+		  </span>
+		  <span class="text-de">
+		    <p>Bitte geben Sie Ihren vollständigen Namen und Ihr Passwort in die untenstehenden Felder ein.</p>
+		    <p>Für das Passwort geben Sie bitte die Altersgruppe und das Geburtsdatum im folgenden Format ein:</p>
+		    <p>[altersgruppe]-[geburtsdatum_ddmmyy]</p>
+		    <p>Beispiel:<br/>
+			  Vollständiger Name : Lothar Matthäus<br/>
+			  Passwort : u64-210361
+		    </p>
+		  </span>
         </div>
         <form class="login-box-form" method="post" action="report/index.php">
 		  <ul class="lbf-row">
