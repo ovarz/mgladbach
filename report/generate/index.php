@@ -42,10 +42,22 @@
           <div class="form-box">
 			<select id="coach-input" class="form-field">
 			  <option value="">-- Select Coach --</option>
-			  <option value="Coach A">Coach A</option>
-			  <option value="Coach B">Coach B</option>
-			  <option value="Coach C">Coach C</option>
-			  <option value="Coach D">Coach D</option>
+			  <option value="Damai">Damai</option>
+			  <option value="Ali">Ali</option>
+			  <option value="Alfons">Alfons</option>
+			  <option value="Fabrice">Fabrice</option>
+			  <option value="Simic">Simic</option>
+			  <option value="Michael">Michael</option>
+			  <option value="Haikal">Haikal</option>
+			  <option value="Mikail">Mikail</option>
+			  <option value="Rafly">Rafly</option>
+			  <option value="Savvy">Savvy</option>
+			  <option value="Machmud">Machmud</option>
+			  <option value="Reyhan">Reyhan</option>
+			  <option value="Septian">Septian</option>
+			  <option value="Danen">Danen</option>
+			  <option value="Nicholas">Nicholas</option>
+			  <option value="Kenda">Kenda</option>
 			</select>
           </div>
         </li>
@@ -54,10 +66,22 @@
           <div class="form-box">
 			<select id="examiner-input" class="form-field">
 			  <option value="">-- Select Examiner --</option>
-			  <option value="Coach A">Coach A</option>
-			  <option value="Coach B">Coach B</option>
-			  <option value="Coach C">Coach C</option>
-			  <option value="Coach D">Coach D</option>
+			  <option value="Damai">Damai</option>
+			  <option value="Ali">Ali</option>
+			  <option value="Alfons">Alfons</option>
+			  <option value="Fabrice">Fabrice</option>
+			  <option value="Simic">Simic</option>
+			  <option value="Michael">Michael</option>
+			  <option value="Haikal">Haikal</option>
+			  <option value="Mikail">Mikail</option>
+			  <option value="Rafly">Rafly</option>
+			  <option value="Savvy">Savvy</option>
+			  <option value="Machmud">Machmud</option>
+			  <option value="Reyhan">Reyhan</option>
+			  <option value="Septian">Septian</option>
+			  <option value="Danen">Danen</option>
+			  <option value="Nicholas">Nicholas</option>
+			  <option value="Kenda">Kenda</option>
 			</select>
           </div>
         </li>
