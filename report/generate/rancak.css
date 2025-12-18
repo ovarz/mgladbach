@@ -81,9 +81,9 @@ textarea.form-field{min-height:233px;}
 
 .rpf-content{position:absolute; z-index:2000; top:0; left:0; width:75%; padding:var(--size-5); display:grid; grid-gap:var(--size-5); grid-template-rows:min-content;}
 .rpf-logo img{width:auto; height:70px;}
-.rpf-head{display:grid; grid-gap:var(--size-2); line-height:120%;}
+.rpf-head{display:grid; line-height:110%;}
 .rpf-title{font-weight:bold; font-size:1.5rem;}
-.rpf-title-2{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal;}
+.rpf-title-2{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; margin-bottom:3px;}
 .rpf-title b{color:var(--color-text-2);}
 .rpf-data{display:grid; grid-gap:var(--size-3); grid-template-columns:repeat(2,1fr);}
 .rpf-table, .rpf-row > *{border-style:solid; border-color:var(--color-text-1);}
@@ -118,13 +118,13 @@ word-wrap:break-word; word-break:break-word; hyphens:auto;}
 
 
 
-.rpf-signature{display:grid; grid-template-columns:repeat(3,1fr); grid-gap:var(--size-5); margin-top:var(--size-4);}
+.rpf-signature{display:grid; grid-template-columns:repeat(3,1fr); grid-gap:var(--size-5); margin-top:var(--size-5);}
 .rpf-signature-box{margin-right:var(--size-2);}
 .rpf-signature-img, .rpf-signature-info *{text-align:center;}
 .rpf-signature-title, .rpf-signature-company{font-size:0.875rem;}
-.rpf-signature-img img{width:auto; height:89px;}
+.rpf-signature-img img{width:auto; height:75px;}
 .rpf-signature-info{display:grid; grid-gap:2px; margin-top:var(--size-1); padding-top:var(--size-1); border-top:1px solid var(--color-text-1);}
-.rpf-signature-name{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal;}
+.rpf-signature-name{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1rem;}
 
 
 
