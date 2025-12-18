@@ -111,9 +111,9 @@ textarea.form-field{min-height:233px;}
 
 
 .coach-comments{display:grid; grid-gap:var(--size-2); grid-template-columns:148px 1fr; width:80%; line-height:150%;}
-.coach-comments-container, .grade-comment{white-space:pre-wrap; height:165px; max-width:300px;
+.coach-comments-container, .grade-comment{white-space:pre-wrap; height:167px; max-width:300px;
 word-wrap:break-word; word-break:break-word; hyphens:auto;}
-.grade-comment{line-height:138%; font-size:1.25rem; background:url(report/generate/bg-comment.svg);}
+.grade-comment{line-height:138%; font-size:1.25rem; background:url(report/generate/bg-comment.svg) top left repeat-y transparent; background-position:0px -1px;}
 
 
 
