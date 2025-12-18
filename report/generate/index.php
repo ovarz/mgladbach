@@ -92,12 +92,6 @@
           </div>
         </li>
         <li class="sidebar-form-row">
-          <div class="sfr-label">Shooting</div>
-          <div class="form-box">
-            <input id="shooting-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
-          </div>
-        </li>
-        <li class="sidebar-form-row">
           <div class="sfr-label">Passing</div>
           <div class="form-box">
             <input id="passing-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
@@ -127,6 +121,12 @@
             <input id="defending-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
           </div>
         </li>
+        <li class="sidebar-form-row">
+          <div class="sfr-label">Shooting</div>
+          <div class="form-box">
+            <input id="shooting-input" placeholder="0" type="number" value="" class="form-field" min="0" max="10">
+          </div>
+        </li>
         <li class="sidebar-form-row sidebar-form-full">
           <div class="sfr-label">Coach's Comment (Max 165 Char) :</div>
           <div class="form-box">
@@ -153,32 +153,6 @@
 		  <div class="rpf-bg-box"></div>
 		  <div class="rpf-bg-triangle"><?php require ($_SERVER['BMG'].'template/img/icon/gimmick.svg')?></div>
 		  <div class="domain-name">www.mgladbachacademy.id</div>
-		  <div class="rpf-signature">
-		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
-			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name">Saras Desch</div>
-			    <div class="rpf-signature-title">CEO/Co-Founder</div>
-			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
-			  </div>
-			</div>
-		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
-			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name">Damai Miracle</div>
-			    <div class="rpf-signature-title">Head Coach</div>
-			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
-			  </div>
-			</div>
-		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img id="examiner-signature-img" src="report/generate/signature.png"/></div>
-			  <div class="rpf-signature-info">
-			    <div class="rpf-signature-name" id="examiner-display">Lorem Ipsum</div>
-			    <div class="rpf-signature-title">Examiner</div>
-			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
-			  </div>
-			</div>
-		  </div>
 		</div>
 		<div class="rpf-logo-bottom"><?php require ($_SERVER['BMG'].'template/img/logo-icon.svg')?></div>
 		<div class="rpf-content">
@@ -227,6 +201,32 @@
 			  </li>
 			</ul>
 		  </div>
+		  <div class="rpf-signature">
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Saras Desch</div>
+			    <div class="rpf-signature-title">CEO/Co-Founder</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Damai Miracle</div>
+			    <div class="rpf-signature-title">Head Coach</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img id="examiner-signature-img" src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name" id="examiner-display">Lorem Ipsum</div>
+			    <div class="rpf-signature-title">Examiner</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		  </div>
 		</div>
       </div>
 	</div>
@@ -264,10 +264,6 @@
 				<div id="pace-display" class="rpf-score grade-score"></div>
 			  </div>
 			  <div class="rpf-row">
-			    <div class="rpf-label">Shooting</div>
-          		<div id="shooting-display" class="rpf-score grade-score"></div>
-			  </div>
-			  <div class="rpf-row">
 			    <div class="rpf-label">Passing</div>
           		<div id="passing-display" class="rpf-score grade-score"></div>
 			  </div>
@@ -287,6 +283,10 @@
 			    <div class="rpf-label">Defending</div>
           		<div id="defending-display" class="rpf-score grade-score"></div>
 			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Shooting</div>
+          		<div id="shooting-display" class="rpf-score grade-score"></div>
+			  </div>
 			</div>
 			<div class="rpf-graph">
 			  <canvas id="report-content" class="grade-chart"></canvas>
@@ -305,13 +305,21 @@
 	</div>
 	
 	<div class="result-download">
+	  <input type="file" id="excel-input" accept=".xlsx, .xls" style="display:none;" />
+	  
 	  <button id="download-report-btn" title="Download Report" class="btn button-download">Download Report</button>
+	  
+	  <button id="batch-download-btn" title="Download Bundling (.zip)" class="btn button-download">Upload Excel & Download Zip</button>
 	</div>
   </div>
   
   
   
 </div>
+
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
