@@ -99,6 +99,7 @@ textarea.form-field{min-height:233px;}
 
 
 
+
 .rpf-intro{width:89%; line-height:150%; margin:var(--size-4) 0;}
 .rpf-data-player{width:89%;}
 .rpf-data-title{font-weight:bold; padding-bottom:var(--size-3);}
@@ -110,11 +111,9 @@ textarea.form-field{min-height:233px;}
 
 
 .coach-comments{display:grid; grid-gap:var(--size-2); grid-template-columns:148px 1fr; width:80%; line-height:150%;}
-.coach-comments-container, .grade-comment{white-space:pre-wrap; height:150px; max-width:300px;
+.coach-comments-container, .grade-comment{white-space:pre-wrap; height:165px; max-width:300px;
 word-wrap:break-word; word-break:break-word; hyphens:auto;}
-.grade-comment{--rows:5; --row-height:calc(100% / var(--rows)); --row-align:1px; line-height:175%;
-background-image:repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--row-height) - var(--row-align)), 
-var(--color-text-1) calc(var(--row-height) - var(--row-align)), var(--color-text-1) var(--row-height));}
+.grade-comment{line-height:138%; font-size:1.25rem; background:url(report/generate/bg-comment.svg);}
 
 
 
