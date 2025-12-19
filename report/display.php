@@ -16,12 +16,11 @@
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
         <!--<embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350"> -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.0/pdfobject.min.js"></script>
-		<div id="my-pdf"></div>
-		<script>
-		   // PDFObject akan otomatis menangani kompatibilitas browser
-		   PDFObject.embed("report/file/<?= $file ?>.pdf", "#my-pdf");
-		</script>
+		<iframe 
+			src="report/pdfjs/web/viewer.html?file=/report/file/<?= $file ?>.pdf" 
+			style="width:100%; height:600px;" 
+			frameborder="0">
+		</iframe>
       <?php else: ?>
         <div class="svr-embed-notfound">
           Data tidak ditemukan, silakan hubungi customer service
