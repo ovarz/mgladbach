@@ -26,7 +26,7 @@
     if ($u_input !== '' && $matched_key !== null && isset($users[$matched_key]['pass']) && $users[$matched_key]['pass'] === $p) {
         // store the actual key as in users.php (preserve original case)
         $_SESSION['user'] = $matched_key;
-        header('Location: ' . $matched_key . '/');
+        header('Location: player/' . $matched_key . '/');
         exit;
     } else {
         $error = 'Invalid username or password.';
@@ -60,28 +60,25 @@
 	    <div class="login-header">
           <span class="text-id">
 		    <p>Silakan masukkan nama lengkap dan password pada  kolom dibawah ini.</p>
-			<p>Untuk password, silakan masukkan kelompok umur dan tanggal lahir dengan format :</p>
-			<p>[kelompok_umur]-[tanggal_lahir_ddmmyy]</p>
+			<p>Untuk password, silakan masukkan tanggal lahir dengan format : ddmmyy</p>
 			<p>Contoh :<br/>
 			  Nama Lengkap : Lothar Matthäus<br/>
-			  Password : u64-210361</p>
+			  Password : 210361</p>
 		  </span>
 		  <span class="text-en">
 		    <p>Please enter your full name and password in the fields below.</p>
-		    <p>For the password, please enter the age group and date of birth in the following format:</p>
-		    <p>[age_group]-[date_of_birth_ddmmyy]</p>
+		    <p>For the password, please enter date of birth in the following format: ddmmyy</p>
 		    <p>Example:<br/>
 			  Full Name : Lothar Matthäus<br/>
-			  Password : u64-210361
+			  Password : 210361
 		    </p>
 		  </span>
 		  <span class="text-de">
 		    <p>Bitte geben Sie Ihren vollständigen Namen und Ihr Passwort in die untenstehenden Felder ein.</p>
-		    <p>Für das Passwort geben Sie bitte die Altersgruppe und das Geburtsdatum im folgenden Format ein:</p>
-		    <p>[altersgruppe]-[geburtsdatum_ddmmyy]</p>
+		    <p>Für das Passwort geben Sie bitte die Altersgruppe und das Geburtsdatum im folgenden Format ein : ddmmyy</p>
 		    <p>Beispiel:<br/>
 			  Vollständiger Name : Lothar Matthäus<br/>
-			  Passwort : u64-210361
+			  Passwort : 210361
 		    </p>
 		  </span>
         </div>
