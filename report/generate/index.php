@@ -43,21 +43,21 @@
 			<select id="coach-input" class="form-field">
 			  <option value="">-- Select Coach --</option>
 			  <option value="Damai">Damai</option>
-			  <option value="Ali">Ali</option>
 			  <option value="Alfons">Alfons</option>
-			  <option value="Fabrice">Fabrice</option>
-			  <option value="Simic">Simic</option>
-			  <option value="Michael">Michael</option>
-			  <option value="Haikal">Haikal</option>
-			  <option value="Mikail">Mikail</option>
-			  <option value="Rafly">Rafly</option>
-			  <option value="Savvy">Savvy</option>
-			  <option value="Machmud">Machmud</option>
-			  <option value="Reyhan">Reyhan</option>
-			  <option value="Septian">Septian</option>
+			  <option value="Ali">Ali</option>
 			  <option value="Danen">Danen</option>
-			  <option value="Nicholas">Nicholas</option>
+			  <option value="Fabrice">Fabrice</option>
+			  <option value="Haikal">Haikal</option>
 			  <option value="Kenda">Kenda</option>
+			  <option value="Machmud">Machmud</option>
+			  <option value="Mika">Mika</option>
+			  <option value="Mike">Mike</option>
+			  <option value="Nicholas">Nicholas</option>
+			  <option value="Rafly">Rafly</option>
+			  <option value="Reyhan">Reyhan</option>
+			  <option value="Savvy">Savvy</option>
+			  <option value="Septian">Septian</option>
+			  <option value="Simic">Simic</option>
 			</select>
           </div>
         </li>
@@ -67,21 +67,21 @@
 			<select id="examiner-input" class="form-field">
 			  <option value="">-- Select Examiner --</option>
 			  <option value="Damai">Damai</option>
-			  <option value="Ali">Ali</option>
 			  <option value="Alfons">Alfons</option>
-			  <option value="Fabrice">Fabrice</option>
-			  <option value="Simic">Simic</option>
-			  <option value="Michael">Michael</option>
-			  <option value="Haikal">Haikal</option>
-			  <option value="Mikail">Mikail</option>
-			  <option value="Rafly">Rafly</option>
-			  <option value="Savvy">Savvy</option>
-			  <option value="Machmud">Machmud</option>
-			  <option value="Reyhan">Reyhan</option>
-			  <option value="Septian">Septian</option>
+			  <option value="Ali">Ali</option>
 			  <option value="Danen">Danen</option>
-			  <option value="Nicholas">Nicholas</option>
+			  <option value="Fabrice">Fabrice</option>
+			  <option value="Haikal">Haikal</option>
 			  <option value="Kenda">Kenda</option>
+			  <option value="Machmud">Machmud</option>
+			  <option value="Mika">Mika</option>
+			  <option value="Mike">Mike</option>
+			  <option value="Nicholas">Nicholas</option>
+			  <option value="Rafly">Rafly</option>
+			  <option value="Reyhan">Reyhan</option>
+			  <option value="Savvy">Savvy</option>
+			  <option value="Septian">Septian</option>
+			  <option value="Simic">Simic</option>
 			</select>
           </div>
         </li>
