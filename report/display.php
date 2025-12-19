@@ -16,11 +16,11 @@
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
         <!--<embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350"> -->
-
-  <iframe src="report/file/<?= $file ?>.pdf">
-    <p>Your browser does not support PDFs. <a href="your-document.pdf">Download the PDF</a> instead.</p>
-  </iframe>
-
+		<iframe 
+			src="report/pdfjs/web/viewer.html?file=/report/file/<?= $file ?>.pdf" 
+			style="width:100%; height:600px;" 
+			frameborder="0">
+		</iframe>
       <?php else: ?>
         <div class="svr-embed-notfound">
           Data tidak ditemukan, silakan hubungi customer service
