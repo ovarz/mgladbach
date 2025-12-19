@@ -16,9 +16,10 @@
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
         <!--<embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350"> -->
-		<object data="report/file/<?= $file ?>.pdf" type="application/pdf" width="100%" height="2350">
-		  <p>Your browser doesn't support PDFs. <a href="your-document.pdf">Download the PDF</a>.</p>
-		</object>
+
+  <iframe src="report/file/<?= $file ?>.pdf">
+    <p>Your browser does not support PDFs. <a href="your-document.pdf">Download the PDF</a> instead.</p>
+  </iframe>
 
       <?php else: ?>
         <div class="svr-embed-notfound">
