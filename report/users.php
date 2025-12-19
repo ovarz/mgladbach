@@ -1071,5 +1071,19 @@ $users = [
     'team' => 'U10 Fohlen',
     'file' => 'U10-U10Fohlen-Zachary_Kai_Sandjaja-dec25'
   ],
+  'Arjunariksa Ghani Harsono' => [
+    'pass' => '231119',
+    'name' => 'Arjunariksa Ghani Harsono',
+    'phone' => '628113040485',
+    'team' => 'U6',
+    'file' => 'U6-Arjunariksa_Ghani_Harsono-dec25'
+  ],
+  'Ganesha Priambodo Harsono' => [
+    'pass' => '080419',
+    'name' => 'Ganesha Priambodo Harsono',
+    'phone' => '6287875352153',
+    'team' => 'U6',
+    'file' => 'U6-Ganesha_Priambodo_Harsono-dec25'
+  ],
 ];
 ?>
