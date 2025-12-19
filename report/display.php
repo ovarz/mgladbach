@@ -13,33 +13,9 @@
 	    </a>
 	  </div>
     </div>
-	
-	<style>
-		/* Container pembungkus harus punya posisi relatif & tinggi pasti */
-		.svr-embed-display {
-			position: relative;
-			overflow: hidden; /* Mencegah scroll ganda */
-			-webkit-overflow-scrolling: touch; /* Hack untuk scroll halus di iOS */
-		}
-
-		/* Iframe harus absolute agar mengisi container sepenuhnya */
-		.svr-embed-display iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			border: none;
-		}
-	</style>
-	
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
-        <!--<embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350"> -->
-		<iframe 
-			src="report/pdfjs/web/viewer.html?file=/report/file/<?= $file ?>.pdf" 
-			frameborder="0">
-		</iframe>
+        <embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350">
       <?php else: ?>
         <div class="svr-embed-notfound">
           Data tidak ditemukan, silakan hubungi customer service
