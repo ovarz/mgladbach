@@ -204,7 +204,7 @@
 		  </div>
 		  <div class="rpf-signature">
 		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-img"><img src="report/generate/signature-saras.png"/></div>
 			  <div class="rpf-signature-info">
 			    <div class="rpf-signature-name">Saras Desch</div>
 			    <div class="rpf-signature-title">CEO/Co-Founder</div>
@@ -212,7 +212,7 @@
 			  </div>
 			</div>
 		    <div class="rpf-signature-box">
-			  <div class="rpf-signature-img"><img src="report/generate/signature.png"/></div>
+			  <div class="rpf-signature-img"><img src="report/generate/signature-damai.png"/></div>
 			  <div class="rpf-signature-info">
 			    <div class="rpf-signature-name">Damai Miracle</div>
 			    <div class="rpf-signature-title">Head Coach</div>
