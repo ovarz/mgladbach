@@ -14,7 +14,7 @@
 
 .svr-embed{position:relative;}
 .svr-embed-display:before{content:''; display:block; padding-top:calc(100% / calc(956/2800));}
-.svr-embed-display embed{position:absolute; top:0; left:0; width:100%; height:100%;}
+.svr-embed-display embed, .svr-embed-display iframe, .svr-embed-display object{position:absolute; top:0; left:0; width:100%; height:100%;}
 
 
 

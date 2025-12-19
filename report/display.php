@@ -15,7 +15,11 @@
     </div>
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
-        <embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350">
+        <!--<embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350"> -->
+		<object data="report/file/<?= $file ?>.pdf" type="application/pdf" width="100%" height="2350">
+		  <p>Your browser doesn't support PDFs. <a href="your-document.pdf">Download the PDF</a>.</p>
+		</object>
+
       <?php else: ?>
         <div class="svr-embed-notfound">
           Data tidak ditemukan, silakan hubungi customer service
