@@ -159,7 +159,7 @@
 		  <div class="rpf-logo"><img src="template/img/logo-black.webp"/></div>
 		  <div class="rpf-head">
 		    <div class="rpf-title rpf-title-2">Player <b>Development</b> Report</div>
-		    <div class="rpf-desc">July - December 2025</div>
+		    <div class="rpf-desc">July - December</div>
 		    <div class="rpf-desc"><b>Second semester of 2025</b></div>
 		  </div>
 		  <div class="rpf-intro">

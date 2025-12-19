@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM READY - Batch System Fixed v5 (PDF + Merged JPG)');
+  console.log('DOM READY - Batch System Fixed v6 (Shooting Note Logic)');
 
   const generateButton = document.getElementById('generate-btn');
   const downloadButton = document.getElementById('download-report-btn');
@@ -145,6 +145,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
       skillValues.push(chartVal);
     });
+
+    // --- MODIFICATION START: Handle Shooting Note Logic ---
+    // Cek khusus untuk Shooting: Jika kosong (dan bukan 0), tampilkan note
+    const shootingRaw = getValue('shooting-input', 'Shooting');
+    
+    // Normalisasi nilai shooting untuk pengecekan
+    let shootingCheck = shootingRaw;
+    if (shootingCheck === null || shootingCheck === undefined) shootingCheck = "";
+    shootingCheck = shootingCheck.toString().trim();
+
+    // Kondisi: Kosong jika string kosong. (Angka "0" tidak dianggap kosong)
+    const isShootingEmpty = (shootingCheck === "");
+
+    // Cari elemen grafik di dalam frame belakang
+    const graphContainer = frameBack.querySelector('.rpf-graph');
+
+    if (graphContainer) {
+        // Cek apakah note sudah ada sebelumnya
+        // Kita cari elemen rpf-note yang merupakan sibling dari graphContainer
+        let noteDiv = null;
+        let nextEl = graphContainer.nextElementSibling;
+        if (nextEl && nextEl.classList.contains('rpf-note')) {
+            noteDiv = nextEl;
+        }
+
+        if (isShootingEmpty) {
+            // Jika Shooting Kosong -> Buat Note jika belum ada
+            if (!noteDiv) {
+                noteDiv = document.createElement('div');
+                noteDiv.className = 'rpf-note';
+                noteDiv.innerText = '*Shooting test is performed for U14, U16, U18 only'; // Isi Text Sesuai Request
+                // Masukkan SETELAH div class rpf-graph
+                graphContainer.insertAdjacentElement('afterend', noteDiv);
+            }
+        } else {
+            // Jika Shooting Ada Isi (termasuk 0) -> Hapus Note jika ada
+            if (noteDiv) {
+                noteDiv.remove();
+            }
+        }
+    }
+    // --- MODIFICATION END ---
+
 
     // 3. Update Text Display
     const nameVal = getValue('name-input', 'Player Name');
