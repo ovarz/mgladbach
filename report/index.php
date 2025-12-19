@@ -109,9 +109,9 @@
 		  </ul>
 		  <?php if (!empty($error)){ ?>
             <div class="lbf-row lbf-error">
-			  <span class="text-id">Gagal! Nomor telepon atau kata sandi salah.</span>
-              <span class="text-en">Error! Phone number or password incorrect</span>
-              <span class="text-de">ehler! Telefonnummer oder Passwort ist falsch.</span>
+			  <span class="text-id">Gagal! Nama Lengkap atau kata sandi salah.</span>
+              <span class="text-en">Failed! Full name or password is incorrect.</span>
+              <span class="text-de">Fehlgeschlagen! Vollständiger Name oder Passwort ist falsch.</span>
 			</div>
           <?php } ?>
           <button title="Login" class="btn lbf-button" type="submit">
