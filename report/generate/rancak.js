@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM READY - Batch System Fixed v4 (Skip Empty Skills)');
+  console.log('DOM READY - Batch System Fixed v5 (PDF + Merged JPG)');
 
   const generateButton = document.getElementById('generate-btn');
   const downloadButton = document.getElementById('download-report-btn');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateSuffix = `${month}${year}`;
 
     const parts = [cleanAge, cleanTeam, cleanName, dateSuffix].filter(part => part && part.length > 0);
-    return parts.join('-') + ".pdf";
+    return parts.join('-') + ".pdf"; // Default return .pdf string
   }
 
   // ======================================================
@@ -114,43 +114,35 @@ document.addEventListener('DOMContentLoaded', () => {
        if(el) el.value = val; 
     }
 
-    // 2. Update Skill & Chart Data (PERBAIKAN LOGIKA SKIP KOSONG)
+    // 2. Update Skill & Chart Data
     const skillValues = [];
     
     skillMappings.forEach(m => {
       let rawVal = getValue(m.inputId, m.excelHeader);
       
-      // Bersihkan whitespace jika string
       if (typeof rawVal === 'string') rawVal = rawVal.trim();
 
-      let displayVal = ""; // Default text kosong (HTML)
-      let chartVal = null; // Default null (Chart.js akan skip titik ini)
+      let displayVal = ""; 
+      let chartVal = null; 
 
-      // Cek apakah data TIDAK KOSONG.
-      // Jika "0", tetap dianggap ada data. Jika "" (kosong), dianggap tidak ada.
       if (rawVal !== "" && rawVal !== null && rawVal !== undefined) {
           let parsed = parseFloat(rawVal);
           
           if (!isNaN(parsed)) {
-              // Pastikan range 0-10
               if (parsed < 0) parsed = 0;
               if (parsed > 10) parsed = 10;
               
-              displayVal = parsed; // Tampilkan angka
-              chartVal = parsed;   // Masukkan angka ke chart
+              displayVal = parsed; 
+              chartVal = parsed;   
           }
       }
       
-      // A. Update Input form (supaya terlihat di sidebar)
       const elInput = document.getElementById(m.inputId);
       if(elInput) elInput.value = displayVal;
       
-      // B. Update Nilai di Kartu (Bulatan Hijau)
-      // Jika displayVal "", maka innerText jadi kosong -> bulatan kosong
       const disp = document.getElementById(m.displayId);
       if(disp) disp.innerText = displayVal; 
 
-      // C. Masukkan ke array chart
       skillValues.push(chartVal);
     });
 
@@ -177,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById("coach-display").innerText = coachVal;
 
-    // Examiner & Tanda Tangan
     const examinerDisplay = document.getElementById("examiner-display");
     const examinerSignatureImg = document.getElementById("examiner-signature-img");
     
@@ -192,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Comment Section
     document.getElementById('comment-display').innerText = getValue('comment-input', 'Coach Comment') || "";
     document.getElementById('recommendation-display').innerText = getValue('recommendation-input', 'Recommendation') || "";
 
@@ -207,7 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const customColor = '#23d468';
     
-    // Konfigurasi Chart
     const chartConfig = {
       type: 'line',
       data: {
@@ -226,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        animation: isBatch ? false : { duration: 1000 }, // Matikan animasi jika batch
+        animation: isBatch ? false : { duration: 1000 },
         scales: {
           y: { beginAtZero: true, min: 0, max: 10, ticks: { stepSize: 2 } },
           x: { grid: { display: false } }
@@ -242,8 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if(generateButton) generateButton.addEventListener('click', () => updateReportView(null, false));
 
   // ======================================================
-  // PDF GENERATION
+  // GENERATE PDF & IMAGE
   // ======================================================
+  
+  // 1. Generate PDF Blob
   async function generatePDFBlob(filename) {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF("p", "mm", "a4");
@@ -265,15 +256,62 @@ document.addEventListener('DOMContentLoaded', () => {
     return pdf.output('blob');
   }
 
+  // 2. Generate Merged JPG Blob (Front + Back Combined)
+  async function generateCombinedImageBlob() {
+    const opts = { scale: 2, useCORS: true, allowTaint: true, backgroundColor: null };
+    
+    // Capture Front & Back
+    const canvasFront = await html2canvas(frameFront, opts);
+    const canvasBack  = await html2canvas(frameBack, opts);
+
+    // Create a new canvas to merge them vertically
+    const combinedCanvas = document.createElement('canvas');
+    const width = Math.max(canvasFront.width, canvasBack.width);
+    const height = canvasFront.height + canvasBack.height;
+
+    combinedCanvas.width = width;
+    combinedCanvas.height = height;
+
+    const ctx = combinedCanvas.getContext('2d');
+    
+    // Draw Front
+    ctx.drawImage(canvasFront, 0, 0);
+    // Draw Back (below front)
+    ctx.drawImage(canvasBack, 0, canvasFront.height);
+
+    return new Promise(resolve => {
+        combinedCanvas.toBlob(blob => {
+            resolve(blob);
+        }, 'image/jpeg', 0.95);
+    });
+  }
+
+  // EVENT: Single Download Click
   if(downloadButton) {
       downloadButton.addEventListener('click', async () => {
         if (!mySkillLineChart) { alert("Generate first."); return; }
+        
         const oldText = downloadButton.innerText;
         downloadButton.innerText = "Processing...";
         downloadButton.disabled = true;
-        const fName = formatFileName(CURRENT_DATA.nameRaw, CURRENT_DATA.ageRaw, CURRENT_DATA.teamRaw);
-        const blob = await generatePDFBlob(fName);
-        saveAs(blob, fName);
+
+        const fNamePDF = formatFileName(CURRENT_DATA.nameRaw, CURRENT_DATA.ageRaw, CURRENT_DATA.teamRaw);
+        const fNameJPG = fNamePDF.replace('.pdf', '.jpg');
+
+        try {
+            // 1. Save PDF
+            const pdfBlob = await generatePDFBlob(fNamePDF);
+            saveAs(pdfBlob, fNamePDF);
+
+            // 2. Save JPG (Merged)
+            const imgBlob = await generateCombinedImageBlob();
+            saveAs(imgBlob, fNameJPG);
+            
+        } catch (e) {
+            console.error(e);
+            alert("Error generating files");
+        }
+
         downloadButton.innerText = oldText;
         downloadButton.disabled = false;
       });
@@ -300,7 +338,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const firstSheetName = workbook.SheetNames[0];
             const worksheet = workbook.Sheets[firstSheetName];
             
-            // Defval:"" agar sel kosong terbaca string kosong
             const jsonData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
             
             const validData = jsonData.filter(row => row['Player Name']); 
@@ -340,9 +377,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const ageVal = row['Age Group'];
         const teamVal = row['Team Full Name'];
         
-        const fileName = formatFileName(nameVal, ageVal, teamVal);
-        const pdfBlob = await generatePDFBlob(fileName);
-        folder.file(fileName, pdfBlob);
+        // Setup nama file
+        const fileNamePDF = formatFileName(nameVal, ageVal, teamVal);
+        const fileNameJPG = fileNamePDF.replace('.pdf', '.jpg');
+
+        // Generate PDF dan masukkan ke ZIP
+        const pdfBlob = await generatePDFBlob(fileNamePDF);
+        folder.file(fileNamePDF, pdfBlob);
+
+        // Generate JPG dan masukkan ke ZIP
+        const jpgBlob = await generateCombinedImageBlob();
+        folder.file(fileNameJPG, jpgBlob);
+
         count++;
     }
 
@@ -351,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveAs(zipContent, `Reports_Bundle_${total}_Players.zip`);
     
     resetBatchButton();
-    alert(`Done! ${count} reports generated.`);
+    alert(`Done! ${count} reports generated (PDF + JPG).`);
   }
 
 });

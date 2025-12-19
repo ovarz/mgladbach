@@ -6,16 +6,21 @@
         <h3 class="svr-team"><?php echo $team;?></h3>
       </div>
       <div class="svr-download">
+	    <a title="Download" class="btn svr-download-button" style="margin-right:var(--size-1);" href="report/file/<?= $file ?>.pdf" target="_blank">
+          <span class="text-id">Unduh</span>
+          <span class="text-en">Download</span>
+          <span class="text-de">Abmelden</span>
+	    </a>
 	    <a title="Logout" class="btn svr-download-button" href="report/logout.php">
           <span class="text-id">Keluar</span>
           <span class="text-en">Logout</span>
-          <span class="text-de">Abmelden</span>
+          <span class="text-de">Herunterladen</span>
 	    </a>
 	  </div>
     </div>
     <div class="svr-embed <?php if (file_exists($pdfPath)){ ?>svr-embed-display<?php } ?>">
       <?php if (file_exists($pdfPath)): ?>
-        <embed type="application/pdf" src="report/file/<?= $file ?>.pdf" width="100%" height="2350">
+	    <img title="<?= $file ?>" src="report/file/<?= $file ?>.jpg" />
       <?php else: ?>
         <div class="svr-embed-notfound">
           Data tidak ditemukan, silakan hubungi customer service
