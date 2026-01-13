@@ -48,8 +48,7 @@
       <div class="rancak-popup-box absence-popup-box">
 
 		  <div class="jotform">
-
-            <iframe
+			<iframe
 			  id="JotFormIFrame-260118437385055"
 			  title="Form"
 			  onload="window.parent.scrollTo(0,0)"
@@ -57,13 +56,12 @@
 			  allow="geolocation; microphone; camera; fullscreen; payment"
 			  src="https://form.jotform.com/260118437385055"
 			  frameborder="0"
-			  style="min-width:100%;max-width:100%;height:802px;border:none;"
+			  style="min-width:100%;max-width:100%;height:539px;border:none;"
 			  scrolling="no"
 			>
 			</iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-253009181990054']", "https://form.jotform.com/")</script>
-    
+			<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+			<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260118437385055']", "https://form.jotform.com/")</script>
 		  </div>
 
       </div>
