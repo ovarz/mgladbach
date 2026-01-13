@@ -34,6 +34,7 @@ min-height:calc(100vh - var(--header-height)); min-height:calc(100svh - var(--he
 .absence-popup-container{position:relative;}
 .absence-popup-container .rancak-popup-close{z-index:4000;}
 .absence-popup-box{max-height:89vh !important;}
+.absence-popup-box .jotform{overflow:hidden;}
 
 
 
@@ -51,4 +52,6 @@ footer{position:relative; z-index:3000;}
   .svr-header{grid-template-columns:1fr auto; align-items:center;}
   .svr-embed-display:after{top:calc(50% - 4px); height:8px;}
   .svr-download .btn{margin-right:0; margin-left:calc(var(--button-margin) * 2)}
+  
+  .absence-popup-box .jotform{min-width:400px;}
 }
