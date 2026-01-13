@@ -677,7 +677,7 @@ $users = [
     'name' => 'Maliq Gibran',
     'phone' => '6281377111979',
     'team' => 'U16 Borussia',
-    'file' => 'U18-U16Borussia-Maliq_Gibran-dec25'
+    'file' => 'U16-U16Borussia-Maliq_Gibran-dec25'
   ],
   'Marco Nugroho' => [
     'pass' => '280116',
@@ -719,7 +719,7 @@ $users = [
     'name' => 'Mawson Izza Labiib',
     'phone' => '6285811356929',
     'team' => 'U12 Borussia',
-    'file' => 'U14-U12Borussia-Mawson_Izza_Labiib-dec25'
+    'file' => 'U12-U12Borussia-Mawson_Izza_Labiib-dec25'
   ],
   'Maxwell Caleb Darwin' => [
     'pass' => '221015',
@@ -1735,6 +1735,13 @@ $users = [
     'phone' => '6282150901019',
     'team' => 'U6',
     'file' => 'U6-Zavier_Athayaqavi_Kalandra-dec25'
+  ],
+  'Aiden James Aulia' => [
+    'pass' => '270916',
+    'name' => 'Aiden James Aulia',
+    'phone' => '62811988893',
+    'team' => 'U10 Fohlen',
+    'file' => 'U10-U10Fohlen-Aiden_James_Aulia-dec25'
   ],
 ];
 ?>
