@@ -97,7 +97,7 @@ header .site-container{display:flex; justify-content:space-between; padding:0;}
 
 
 
-.rancak-foundation{min-height:calc(100vh - var(--header-height)); min-height:calc(100vh - var(--header-height));}
+.rancak-foundation{min-height:calc(100vh - var(--header-height));}
 section{position:relative;}
 .section-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:2.5rem; line-height:120%; margin-bottom:var(--size-5);}
 .section-title-secondary{font-size:1rem; line-height:100%; margin-bottom:var(--size-2);}
@@ -178,6 +178,10 @@ section{position:relative;}
 
 
 
+.white-box{padding:var(--size-5);}
+
+
+
 .jotform{position:relative;}
 .jotform iframe{position:relative; z-index:1;}
 .jotform:after{content:''; display:block; position:absolute; z-index:1000; bottom:0; left:0; width:100%; height:64px;}
@@ -228,4 +232,8 @@ section{position:relative;}
   
   
   .sbl-frame img{max-width:160px;}
+
+
+
+  .white-box{padding:var(--size-4);}
 }

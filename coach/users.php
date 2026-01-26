@@ -1,0 +1,40 @@
+<?php
+$users = [
+  'damai' => [
+    'nickname' => 'damai',
+    'pass' => 'a',
+    'name' => 'Damai Miracle Tampubolon',
+    'birtdate' => '21 February 1997',
+    'email' => 'damaimiracle@gmail.com',
+    'phone' => '081336698883',
+    'address' => 'Jalan Minas 7, Blok G7 no. 27, Jatiwaringin, Bekasi',
+    'joindate' => 'September 2024',
+    'position' => 'Head Coach',
+    'schedule' => 'Monday & Saturday',
+  ],
+  'kenda' => [
+    'nickname' => 'kenda',
+    'pass' => 'a',
+    'name' => 'M Keinanda Alam',
+    'birtdate' => '13 September 1999',
+    'email' => 'akeinanda@gmail.com',
+    'phone' => '085776675400',
+    'address' => 'Apartemen Menara Kebon Jeruk. Jl.Arjuna Utara - Jakarta Barat',
+    'joindate' => 'September 2024',
+    'position' => 'U10 Coach',
+    'schedule' => 'Saturday',
+  ],
+  'rafly' => [
+    'nickname' => 'rafly',
+    'pass' => 'a',
+    'name' => 'Muhammad Rafly Alfariz',
+    'birtdate' => '03 September 2002',
+    'email' => 'raflyalfariz@gmail.com',
+    'phone' => '082120242003',
+    'address' => 'Taman Adhiloka Blok K 16, Tangerang, Banten',
+    'joindate' => 'August 2025',
+    'position' => 'U12 Borussia Coach',
+    'schedule' => 'Monday, Thursday, & Saturday',
+  ],
+];
+?>
