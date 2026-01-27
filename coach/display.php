@@ -73,6 +73,26 @@
 		  <div class="coach-data"><?php echo $schedule;?></div>
 		</div>
 	  </div>
+	  
+      <div class="training-plan">
+        <div class="section-title">Training Plan</div>
+        <ul class="training-plan-list">
+		  <?php for ($i=1; $i<=4; $i++){ ?>
+            <li class="tpl-box">
+              <div class="tpl-info">
+                <div class="tpl-title">Training Plan U10 Borussia - January 2026</div>
+                <div class="tpl-desc">Last update : 00 September 2025</div>
+              </div>
+              <div class="tpl-download">
+                <a class="btn tpl-download-button" href="" target="_blank">
+				  <?php require ($_SERVER['BMG'].'template/img/icon/download.svg')?>
+                </a>
+              </div>
+            </li>
+		  <?php } ?>
+        </ul>
+      </div>
+	
 	</div>
   </div>
 </section>
