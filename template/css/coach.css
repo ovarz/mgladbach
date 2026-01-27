@@ -81,6 +81,6 @@ footer{position:relative; z-index:3000;}
   
   .absence-popup-box .jotform{min-width:400px;}
   
-  .coach-row{grid-template-columns:135px auto 1fr;}
+  .coach-row{grid-template-columns:140px auto 1fr;}
   .coach-profile{grid-template-columns:300px 1fr;}
 }
