@@ -68,7 +68,7 @@ footer{position:relative; z-index:3000;}
 
 
 @media screen and (min-width:768px){
-  .coach-row{grid-template-columns:75px auto 1fr; grid-gap:var(--size-2);}
+  .coach-row{grid-template-columns:120px auto 1fr; grid-gap:var(--size-2);}
   .coach-data{grid-column:auto;}
   .training-plan-list{grid-template-columns:repeat(2,1fr);}
 }
@@ -81,5 +81,6 @@ footer{position:relative; z-index:3000;}
   
   .absence-popup-box .jotform{min-width:400px;}
   
+  .coach-row{grid-template-columns:135px auto 1fr;}
   .coach-profile{grid-template-columns:300px 1fr;}
 }
