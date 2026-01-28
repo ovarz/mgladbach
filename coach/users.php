@@ -72,5 +72,17 @@ $users = [
     'position' => 'U14',
     'schedule' => 'Thursday & Saturday',
   ],
+  'machmud' => [
+    'nickname' => 'machmud',
+    'pass' => 'a',
+    'name' => 'Machmud Faoji ',
+    'birtdate' => '05 February 1978',
+    'email' => 'mahmud.ale11@gmail.com',
+    'phone' => '628159553084',
+    'address' => 'Perumahan Mega Regency Blok H 44/42, RT 08/09, Jln.Beringin xxx, Suka sari, Kec.Serang Baru, Kab.Bekasi Jawa Barat',
+    'joindate' => '2022',
+    'position' => 'U12, U16, & U 18',
+    'schedule' => 'Saturday',
+  ],
 ];
 ?>

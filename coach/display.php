@@ -152,7 +152,7 @@
 
 
 
-<div class="rancak-popup absence-popup" aria-popup-box="TrainingPlanPopup">
+<div class="rancak-popup absence-popup" aria-popup-box="AbsencePopup">
   <div class="rancak-popup-container content-center">
     <div class="rancak-popup-overlay"></div>
 	<div class="absence-popup-container">
@@ -184,7 +184,7 @@
 
 
 
-<div class="rancak-popup absence-popup" aria-popup-box="AbsencePopup">
+<div class="rancak-popup absence-popup" aria-popup-box="TrainingPlanPopup">
   <div class="rancak-popup-container content-center">
     <div class="rancak-popup-overlay"></div>
 	<div class="absence-popup-container">
