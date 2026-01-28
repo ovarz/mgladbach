@@ -144,5 +144,17 @@ $users = [
     'position' => 'U14 & U16',
     'schedule' => 'Thursday & Saturday',
   ],
+  'reyhan' => [
+    'nickname' => 'reyhan',
+    'pass' => 'a',
+    'name' => 'Reyhan Amalatu Muskita',
+    'birtdate' => '20 November 2001',
+    'email' => 'reyhanmuskita20@gmail.com',
+    'phone' => '6281296316655',
+    'address' => 'Jl. Lili Blok G3/1',
+    'joindate' => 'October 2023',
+    'position' => 'U6 & U18',
+    'schedule' => 'Monday, Thursday, & Saturday',
+  ],
 ];
 ?>
