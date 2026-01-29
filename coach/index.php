@@ -1,5 +1,5 @@
 <?php 
-  $lang='id';
+  $lang='en';
   $menu='Coach';
   $site_title='default';
   require ('../template/inc/base.php');

@@ -104,7 +104,7 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
 <?php } ?>
 
 </head>
-<body class="lang-id">
+<body class="lang-<?php echo $lang;?>">
 <?php if($site_title == 'default') { ?>
   <h1 class="hide"><?php echo $menu; ?> - <?php echo $sitename; ?> – Akademi Sepak Bola Resmi Borussia Mönchengladbach</h1>
 <?php } ?>

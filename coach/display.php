@@ -6,28 +6,6 @@
         <h3 class="svr-team"><?php echo $position;?></h3>
       </div>
       <div class="svr-download">
-	    <button title="Training Plan" class="btn svr-download-button open-sticky" aria-popup-button="TrainingPlanPopup">
-          <span class="text-id">Unggah Rencana Latihan</span>
-          <span class="text-en">Upload Training Plan</span>
-          <span class="text-de">Trainingsplan hochladen</span>
-	    </button>
-	    
-        <a title="Absence" class="btn svr-download-button"
-        href="javascript:void(
-            window.open(
-              'https://form.jotform.com/260272213131441',
-              'blank',
-              'scrollbars=yes,
-              toolbar=no,
-              width=700,
-              height=500'
-            )
-          )
-        ">
-          <span class="text-id">Absensi</span>
-          <span class="text-en">Absence</span>
-          <span class="text-de">Abwesenheit</span>
-	    </a>
 	    <a title="Logout" class="btn svr-download-button" href="coach/logout.php">
           <span class="text-id">Keluar</span>
           <span class="text-en">Logout</span>
@@ -44,6 +22,18 @@
 		</div>
 	  </div>
 	  <div class="coach-info">
+		<div class="quick-access">
+          <button title="Absence" class="btn svr-download-button open-sticky" aria-popup-button="AbsencePopup">
+            <span class="text-id">Absence</span>
+            <span class="text-en">Absence</span>
+            <span class="text-de">Absence</span>
+          </button>
+          <button title="Feedback" class="btn svr-download-button open-sticky" aria-popup-button="FeedbackPopup">
+            <span class="text-id">Feedback</span>
+            <span class="text-en">Feedback</span>
+            <span class="text-de">Feedback</span>
+          </button>
+		</div>
 	    <div class="coach-row">
 		  <div class="coach-label">
             <span class="text-id">Nama Lengkap</span>
@@ -132,26 +122,15 @@
           <span class="text-id">Rencana Latihan</span>
           <span class="text-en">Training Plan</span>
           <span class="text-de">Trainingsplan</span>
+          <button title="Training Plan" class="btn svr-download-button open-sticky" aria-popup-button="TrainingPlanPopup">
+            <span class="text-id">Unggah Rencana Latihan</span>
+            <span class="text-en">Upload Training Plan</span>
+            <span class="text-de">Trainingsplan hochladen</span>
+          </button>
 		</div>
-        <ul class="training-plan-list">
-		  <?php for ($i=1; $i<=4; $i++){ ?>
-            <li class="tpl-box">
-              <div class="tpl-info">
-                <div class="tpl-title">Training Plan U10 Borussia - January 2026</div>
-                <div class="tpl-desc">
-                  <span class="text-id">Pembaruan Terakhir : 00 September 2025</span>
-                  <span class="text-en">Last update : 00 September 2025</span>
-                  <span class="text-de">Zuletzt Aktualisiert : 00 September 2025</span>
-				</div>
-              </div>
-              <div class="tpl-download">
-                <a class="btn tpl-download-button" href="" target="_blank">
-				  <?php require ($_SERVER['BMG'].'template/img/icon/download.svg')?>
-                </a>
-              </div>
-            </li>
-		  <?php } ?>
-        </ul>
+		<div class="gdrive-embed">
+		  <iframe src="https://drive.google.com/embeddedfolderview?id=<?php echo $trainingplan;?>#list" style="width:100%; height:600px; border:0;"></iframe>
+		</div>
       </div>
 	
 	</div>
@@ -164,10 +143,10 @@
 
 
 
-<div class="rancak-popup absence-popup" aria-popup-box="TrainingPlanPopup">
+<div class="rancak-popup absence-popup" aria-popup-box="AbsencePopup">
   <div class="rancak-popup-container content-center">
     <div class="rancak-popup-overlay"></div>
-	<div class="absence-popup-container">
+	<div class="rancak-popup-content absence-popup-container">
       <button title="Close" class="rancak-popup-close content-center">
         <?php require ($_SERVER['BMG'].'template/img/icon/close-popup.svg')?>
       </button>
@@ -175,18 +154,79 @@
 
 		  <div class="jotform">
 			<iframe
-			  id="JotFormIFrame-260118437385055"
+			  id="JotFormIFrame-260272213131441"
 			  title="Form"
 			  onload="window.parent.scrollTo(0,0)"
 			  allowtransparency="true"
 			  allow="geolocation; microphone; camera; fullscreen; payment"
-			  src="https://form.jotform.com/260118437385055"
+			  src="https://form.jotform.com/260272213131441"
 			  frameborder="0"
 			  style="min-width:100%;max-width:100%;height:539px;border:none;"
-			  scrolling="no"
 			>
 			</iframe>
-			<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260118437385055']", "https://form.jotform.com/")</script>
+			<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260272213131441']", "https://form.jotform.com/")</script>
+		  </div>
+
+      </div>
+	</div>
+  </div>
+</div>
+
+
+
+<div class="rancak-popup absence-popup" aria-popup-box="FeedbackPopup">
+  <div class="rancak-popup-container content-center">
+    <div class="rancak-popup-overlay"></div>
+	<div class="rancak-popup-content absence-popup-container">
+      <button title="Close" class="rancak-popup-close content-center">
+        <?php require ($_SERVER['BMG'].'template/img/icon/close-popup.svg')?>
+      </button>
+      <div class="rancak-popup-box absence-popup-box">
+
+		  <div class="jotform">
+			<iframe
+			  id="JotFormIFrame-260272213131441"
+			  title="Form"
+			  onload="window.parent.scrollTo(0,0)"
+			  allowtransparency="true"
+			  allow="geolocation; microphone; camera; fullscreen; payment"
+			  src="https://form.jotform.com/260272213131441"
+			  frameborder="0"
+			  style="min-width:100%;max-width:100%;height:539px;border:none;"
+			>
+			</iframe>
+			<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260272213131441']", "https://form.jotform.com/")</script>
+		  </div>
+
+      </div>
+	</div>
+  </div>
+</div>
+
+
+
+<div class="rancak-popup absence-popup" aria-popup-box="TrainingPlanPopup">
+  <div class="rancak-popup-container content-center">
+    <div class="rancak-popup-overlay"></div>
+	<div class="rancak-popup-content absence-popup-container">
+      <button title="Close" class="rancak-popup-close content-center">
+        <?php require ($_SERVER['BMG'].'template/img/icon/close-popup.svg')?>
+      </button>
+      <div class="rancak-popup-box absence-popup-box">
+
+		  <div class="jotform">
+			<iframe
+			  id="JotFormIFrame-260272213131441"
+			  title="Form"
+			  onload="window.parent.scrollTo(0,0)"
+			  allowtransparency="true"
+			  allow="geolocation; microphone; camera; fullscreen; payment"
+			  src="https://form.jotform.com/260272213131441"
+			  frameborder="0"
+			  style="min-width:100%;max-width:100%;height:539px;border:none;"
+			>
+			</iframe>
+			<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260272213131441']", "https://form.jotform.com/")</script>
 		  </div>
 
       </div>
