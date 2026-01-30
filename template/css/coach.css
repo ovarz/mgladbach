@@ -27,6 +27,7 @@ min-height:calc(100vh - var(--header-height)); min-height:calc(100svh - var(--he
 .coach-profile{display:grid; grid-gap:var(--size-5);}
 .coach-profile .section-title{font-size:1.5rem; margin-bottom:var(--size-3);}
 .coach-photo{--aspect-ratio:3/4;}
+.coach-photo-frame:before{background-color:var(--color-2);}
 .coach-info{--row-space:var(--size-3); display:grid; grid-gap:var(--row-space); grid-auto-rows:min-content; line-height:160%;}
 .coach-row{display:grid; grid-template-columns:auto 1fr; grid-gap:var(--size-1); padding-bottom:var(--row-space); border-bottom:1px dashed var(--color-border-form);}
 .coach-data{grid-column:1/3; font-weight:bold; color:var(--color-2);}

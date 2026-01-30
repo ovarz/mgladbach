@@ -18,7 +18,7 @@
 	<div class="white-box coach-profile">
 	  <div class="coach-photo">
 	    <div class="coach-photo-frame img-frame thumb-loading">
-          <img title="<?php echo $nickname;?> Photo" class="lazyload" data-original="template/img/coach/<?php echo $nickname;?>.jpg?v4"/>
+          <img title="<?php echo $nickname;?> Photo" class="lazyload" data-original="template/img/coach/<?php echo $nickname;?>.png?v6"/>
 		</div>
 	  </div>
 	  <div class="coach-info">
