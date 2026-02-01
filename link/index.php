@@ -60,6 +60,15 @@
             ],
           ],
         );
+        $shortcut_array[] = array(
+          'shortcut_section' => 'Student',
+          'shortcut_list' => [
+            [
+              'shortcut_title' => 'Absence',
+              'shortcut_link' => 'absence/',
+            ],
+          ],
+        );
         foreach($shortcut_array as $shortcut_row => $shortcut_box){
       ?>
         <div class="sqa-container">

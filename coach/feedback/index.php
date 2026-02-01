@@ -17,6 +17,7 @@
 		  <div class="jotform">
 		    <style>
 			  body::-webkit-scrollbar{width:1px;}
+			  .rancak-foundation, .shortcut-box .jotform:after{background-color:#f3f3fe;}
 			</style>
 			<iframe
 			  id="JotFormIFrame-260290770268056"

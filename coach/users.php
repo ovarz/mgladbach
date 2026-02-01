@@ -2,7 +2,7 @@
 $users = [
   'damai' => [
     'nickname' => 'damai',
-    'pass' => 'a',
+    'pass' => '210297', // 21 February 1997
     'name' => 'Damai Miracle Tampubolon',
     'birtdate' => '21 February 1997',
     'email' => 'damaimiracle@gmail.com',
@@ -15,7 +15,7 @@ $users = [
   ],
   'alfons' => [
     'nickname' => 'alfons',
-    'pass' => 'a',
+    'pass' => '210689', // 21 June 1989
     'name' => 'Alfonsius Kelvan',
     'birtdate' => '21 June 1989',
     'email' => '-',
@@ -28,7 +28,7 @@ $users = [
   ],
   'ali' => [
     'nickname' => 'ali',
-    'pass' => 'a',
+    'pass' => '180995', // 18 September 1995
     'name' => 'Ali Ali',
     'birtdate' => '18 September 1995',
     'email' => 'coachalikribo@gmail.con',
@@ -41,7 +41,7 @@ $users = [
   ],
   'danen' => [
     'nickname' => 'danen',
-    'pass' => 'a',
+    'pass' => '030902', // 03 september 2002
     'name' => 'Mohammad Danendra Cleosa Susilo',
     'birtdate' => '03 september 2002',
     'email' => 'danendracleosa@gmail.com',
@@ -54,7 +54,7 @@ $users = [
   ],
   'fabrice' => [
     'nickname' => 'fabrice',
-    'pass' => 'a',
+    'pass' => '130905', // 13 September 2005
     'name' => 'Fabrice Constantine Permana',
     'birtdate' => '13 September 2005',
     'email' => 'fabriceperm4na@gmail.com',
@@ -67,7 +67,7 @@ $users = [
   ],
   'haikal' => [
     'nickname' => 'haikal',
-    'pass' => 'a',
+    'pass' => '290604', // 29 June 2004
     'name' => 'Muhammad Haikal Fabian',
     'birtdate' => '29 June 2004',
     'email' => 'haikalfabian407@gmail.com',
@@ -80,7 +80,7 @@ $users = [
   ],
   'kenda' => [
     'nickname' => 'kenda',
-    'pass' => 'a',
+    'pass' => '130999', // 13 September 1999
     'name' => 'M Keinanda Alam',
     'birtdate' => '13 September 1999',
     'email' => 'akeinanda@gmail.com',
@@ -93,7 +93,7 @@ $users = [
   ],
   'machmud' => [
     'nickname' => 'machmud',
-    'pass' => 'a',
+    'pass' => '050278', // 05 February 1978
     'name' => 'Machmud Faoji',
     'birtdate' => '05 February 1978',
     'email' => 'mahmud.ale11@gmail.com',
@@ -106,7 +106,7 @@ $users = [
   ],
   'mika' => [
     'nickname' => 'mika',
-    'pass' => 'a',
+    'pass' => '290703', // 29 July 2003
     'name' => 'Mikail Mantika Pravda',
     'birtdate' => '29 July 2003',
     'email' => 'mikailmantika29@gmail.com',
@@ -119,7 +119,7 @@ $users = [
   ],
   'mike' => [
     'nickname' => 'mike',
-    'pass' => 'a',
+    'pass' => '020701', // 02 July 2001
     'name' => 'Michael Arif Rahman Kammerlohr',
     'birtdate' => '02 July 2001',
     'email' => 'kammerlohrm@gmail.com',
@@ -132,7 +132,7 @@ $users = [
   ],
   'nic' => [
     'nickname' => 'nic',
-    'pass' => 'a',
+    'pass' => '071296', // 07 December 1996
     'name' => 'Nicholas Simon',
     'birtdate' => '07 December 1996',
     'email' => 'ns.robson07@gmail.com',
@@ -145,7 +145,7 @@ $users = [
   ],
   'rafly' => [
     'nickname' => 'rafly',
-    'pass' => 'a',
+    'pass' => '030902', // 03 September 2002
     'name' => 'Muhammad Rafly Alfariz',
     'birtdate' => '03 September 2002',
     'email' => 'raflyalfariz@gmail.com',
@@ -158,7 +158,7 @@ $users = [
   ],
   'reyhan' => [
     'nickname' => 'reyhan',
-    'pass' => 'a',
+    'pass' => '201101', // 20 November 2001
     'name' => 'Reyhan Amalatu Muskita',
     'birtdate' => '20 November 2001',
     'email' => 'reyhanmuskita20@gmail.com',
@@ -171,7 +171,7 @@ $users = [
   ],
   'savvy' => [
     'nickname' => 'savvy',
-    'pass' => 'a',
+    'pass' => '110895', // 11 August 1995
     'name' => 'Sarvesh Javeri',
     'birtdate' => '11 August 1995',
     'email' => 'javerysarvesh@gmail.com',
@@ -184,7 +184,7 @@ $users = [
   ],
   'septian' => [
     'nickname' => 'septian',
-    'pass' => 'a',
+    'pass' => '290991', // 29 September 1991
     'name' => 'Mikail Mantika Pravda',
     'birtdate' => '29 September 1991',
     'email' => 'septian.gestiardi@gmail.com',
@@ -197,7 +197,7 @@ $users = [
   ],
   'simic' => [
     'nickname' => 'simic',
-    'pass' => 'a',
+    'pass' => '190487', // 19 April 1987
     'name' => 'Michael Sajadi Putra',
     'birtdate' => '19 April 1987',
     'email' => 'michael.soj87@gmail.com',

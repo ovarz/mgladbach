@@ -59,25 +59,25 @@
 	  <div class="login-box">
 	    <div class="login-header">
           <span class="text-id">
-		    <p>Silakan masukkan nama lengkap dan password pada  kolom dibawah ini.</p>
+		    <p>Silakan masukkan nama panggilan dan password pada  kolom dibawah ini.</p>
 			<p>Untuk password, silakan masukkan tanggal lahir dengan format : ddmmyy</p>
 			<p>Contoh :<br/>
-			  Nama Lengkap : Lothar Matthäus<br/>
+			  Nama Panggilan : Matthäus<br/>
 			  Password : 210361</p>
 		  </span>
 		  <span class="text-en">
-		    <p>Please enter your full name and password in the fields below.</p>
+		    <p>Please enter your nickname and password in the fields below.</p>
 		    <p>For the password, please enter date of birth in the following format: ddmmyy</p>
 		    <p>Example:<br/>
-			  Full Name : Lothar Matthäus<br/>
+			  Nickname : Matthäus<br/>
 			  Password : 210361
 		    </p>
 		  </span>
 		  <span class="text-de">
-		    <p>Bitte geben Sie Ihren vollständigen Namen und Ihr Passwort in die untenstehenden Felder ein.</p>
+		    <p>Bitte geben Sie Ihren Benutzernamen und Ihr Passwort in die untenstehenden Felder ein.</p>
 		    <p>Für das Passwort geben Sie bitte die Altersgruppe und das Geburtsdatum im folgenden Format ein : ddmmyy</p>
 		    <p>Beispiel:<br/>
-			  Vollständiger Name : Lothar Matthäus<br/>
+			  Benutzernamen : Matthäus<br/>
 			  Passwort : 210361
 		    </p>
 		  </span>
@@ -85,9 +85,9 @@
         <form class="login-box-form" method="post" action="coach/index.php">
 		  <ul class="lbf-row">
 		    <li class="lbf-label">
-              <span class="text-id">Nama Lengkap</span>
-              <span class="text-en">Full Name</span>
-              <span class="text-de">Vollständiger Name</span>
+              <span class="text-id">Nama Panggilan</span>
+              <span class="text-en">Nickname</span>
+              <span class="text-de">Benutzernamen</span>
 			</li>
             <li class="form-box lbf-box">
               <input class="form-field" name="username" type="text" required placeholder="Contoh: Lothar Matthäus">
@@ -109,9 +109,9 @@
 		  </ul>
 		  <?php if (!empty($error)){ ?>
             <div class="lbf-row lbf-error">
-			  <span class="text-id">Gagal! Nama Lengkap atau kata sandi salah.</span>
-              <span class="text-en">Failed! Full name or password is incorrect.</span>
-              <span class="text-de">Fehlgeschlagen! Vollständiger Name oder Passwort ist falsch.</span>
+			  <span class="text-id">Gagal! Nama Panggilan atau kata sandi salah.</span>
+              <span class="text-en">Failed! Nickname or password is incorrect.</span>
+              <span class="text-de">Fehlgeschlagen! Benutzernamen oder Passwort ist falsch.</span>
 			</div>
           <?php } ?>
           <button title="Login" class="btn lbf-button" type="submit">
