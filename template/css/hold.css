@@ -269,6 +269,10 @@ background:linear-gradient(135deg,  rgb(255 255 255 / 21%) 0%,rgb(255 255 255 / 
 
 
 
+.notif-success-box{background-color:var(--color-5a); color:var(--color-5); border-radius:var(--rounded-1);}
+
+
+
 
 
 

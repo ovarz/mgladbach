@@ -7,10 +7,12 @@
 <?php require ($_SERVER['BMG'].'template/inc/meta.php')?>
 <?php require ($_SERVER['BMG'].'template/inc/header.php')?>
 <div class="rancak-foundation">
+  <?php require ($_SERVER['BMG'].'template/module/notif-success.php')?>
+
   
   
   
-  
+    
   <section class="section-default section-login content-center">
     <div class="site-container shortcut-container content-center">
       <div class="shortcut-box">

@@ -188,6 +188,10 @@ section{position:relative;}
 
 
 
+.notif-success, .notif-success-box{padding:var(--size-4); font-weight:bold;}
+
+
+
 
 
 
