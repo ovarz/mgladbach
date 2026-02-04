@@ -29,7 +29,7 @@
 <?php require ($_SERVER['BMG'].'template/inc/header.php')?>
 
 <div class="rancak-foundation">
-  <?php require ($_SERVER['BMG'].'report/display.php')?>
+  <?php $report_loc='dsj'; require ($_SERVER['BMG'].'report/display.php')?>
 </div>
 
 <?php require ($_SERVER['BMG'].'template/inc/footer.php')?>
