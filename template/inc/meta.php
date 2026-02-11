@@ -102,6 +102,10 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
   <link rel="preload" href="template/css/coach.css?<?php echo $anticache; ?>" as="style">
   <link rel="stylesheet" type="text/css" href="template/css/coach.css?<?php echo $anticache; ?>"/>
 <?php } ?>
+<?php if($menu == 'Bali7') { ?>
+  <link rel="preload" href="template/css/bali7.css?<?php echo $anticache; ?>" as="style">
+  <link rel="stylesheet" type="text/css" href="template/css/bali7.css?<?php echo $anticache; ?>"/>
+<?php } ?>
 
 </head>
 <body class="lang-<?php echo $lang;?>">
