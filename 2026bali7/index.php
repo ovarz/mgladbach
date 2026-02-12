@@ -1,5 +1,5 @@
 <?php 
-  $lang='id';
+  $lang='en';
   $menu='Bali7';
   $site_title='default';
   require ('../template/inc/base.php');
@@ -14,7 +14,7 @@
     <div class="rancak-container">
 	  <div class="rancak-sticky-sidebar">
 		  <section class="bali7-information">
-			<h2 class="bali7-title">Pendaftaran Bali 7s International Tournament – Borussia Academy Indonesia</h2>
+			<h2 class="bali7-title">Bali 7s International Tournament Registration – Borussia Academy Indonesia</h2>
 			<h3 class="bali7-subtitle">1 - 5 April 2026</h3>
 			<b>Please fill out the registration form.</b>
 			<p>This registration is intended for Borussia Academy Indonesia players who will participate in the Bali 7s International Tournament.</p>
