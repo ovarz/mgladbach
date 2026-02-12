@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="template/css/venobox.min.css?<?php echo $anticache; ?>" media="print" onload="this.media='all'"/>
   <?php } ?>
   <link rel="stylesheet" type="text/css" href="template/css/hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
+  <?php if($menu == 'Bali7') { ?>
+    <link rel="stylesheet" type="text/css" href="template/css/bali7-hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
+  <?php } ?>
 </noscript>
 <script defer>
   var loadDeferredStyles = function() {

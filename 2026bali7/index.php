@@ -12,7 +12,33 @@
 
   <div class="rancak-left">
     <div class="rancak-container">
-	  left
+	  <div class="rancak-sticky-sidebar">
+		  <section class="bali7-information">
+			<h2 class="bali7-title">Pendaftaran Bali 7s International Tournament – Borussia Academy Indonesia</h2>
+			<b>Please fill out the registration form.</b>
+			<p>This registration is intended for Borussia Academy Indonesia players who will participate in the Bali 7s International Tournament.</p>
+			<p>Please complete all required information accurately and completely.</p>
+			<p>All requested documents are MANDATORY and must be uploaded according to the requirements.</p>
+		  </section>
+		  
+		  <section class="bali7-information">
+			<b>Payment Terms:</b>
+			<ul>
+			  <li><div>50% Down Payment (DP):</div> <b>8 February 2026 – 1 March 2026</b></li>
+			  <li><div>Full Payment:</div> <b>2 March 2026 – 8 March 2026</b></li>
+			</ul>
+			<p>Proof of payment MUST be uploaded through this form.</p>
+		  </section>
+		  
+		  <section class="bali7-information">
+			<p>For more informations, please contact:</p>
+			<div class="bali7-contact">
+			  <a href="Instagram" class="btn bali7-button" href="https://www.instagram.com/borussiaacademy.id/">@borussiaacademy.id</a>
+			  <a href="Instagram" class="btn bali7-button" href="https://www.instagram.com/mgladbachacademy.id/">@mgladbachacademy.id</a>
+			  <a href="Whatsapp" class="btn bali7-button" href="https://api.whatsapp.com/send/?phone=6281118898205">Whatsapp</a>
+			</div>
+		  </section>
+	  </div>
 	</div>
   </div>
     
