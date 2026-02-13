@@ -21,9 +21,18 @@
 		  
 		  <section class="bali7-information">
 			<b>Please fill out the registration form.</b>
-			<p>This registration is intended for Borussia Academy Indonesia players who will participate in the Bali 7s International Tournament.</p>
-			<p>Please complete all required information accurately and completely.</p>
+			<p>This registration is intended for Borussia Academy Indonesia players who will participate in the Bali 7s International Tournament. Please complete all required information accurately and completely.</p>
 			<p>All requested documents are MANDATORY and must be uploaded according to the requirements.</p>
+		  </section>
+		  
+		  <section class="bali7-information bali7-transfer">
+			<b>Payment Instructions:</b>
+			<p>Kindly make the payment to the following bank account:</p>
+			<ul>
+			  <li><div>Bank:</div> <b>CIMB NIAGA</b></li>
+			  <li><div>Account Number:</div> <b>707170776200</b></li>
+			  <li><div>Account Name:</div> <b>GERMAN FOOTBALL INDONESIA</b></li>
+			</ul>
 		  </section>
 		  
 		  <section class="bali7-information">
