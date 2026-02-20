@@ -80,7 +80,9 @@ textarea.form-field{min-height:233px;}
 
 
 .rpf-content{position:absolute; z-index:2000; top:0; left:0; width:75%; padding:var(--size-5); display:grid; grid-gap:var(--size-5); grid-template-rows:min-content;}
-.rpf-logo img{width:auto; height:70px;}
+.rpf-logo{display:flex; align-items:center;}
+.rpf-logo img{width:auto; height:70px; margin-right:var(--size-4);}
+.rpf-logo img.rpf-logo-dsj{height:50px;}
 .rpf-head{display:grid; line-height:110%;}
 .rpf-title{font-weight:bold; font-size:1.5rem;}
 .rpf-title-2{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; margin-bottom:3px; margin-top:var(--size-6);}

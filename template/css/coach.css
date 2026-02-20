@@ -70,6 +70,31 @@ footer{position:relative; z-index:3000;}
 
 
 
+.section-view-player .white-box{margin-top:var(--size-2);}
+
+
+
+.player-report, .player-report-list, .prl-left{display:grid;}
+.player-report{grid-gap:var(--size-3); grid-template-columns:repeat(auto-fit, minmax(240px,1fr));}
+.player-report-list{grid-gap:var(); grid-template-columns:1fr auto; padding:var(--size-3); align-items:center;
+backround-color:var(--bg-1); border:1px solid var(--color-border-form); border-radius:var(--rounded-2);}
+.prl-left{grid-gap:2px;}
+.prl-team{font-weight:normal; color:var(--color-1); font-size:0.75rem;}
+.player-report-list:hover .prl-button{background-color:var(--color-2);}
+
+.player-payment{display:grid; grid-gap:var(--size-4);}
+.player-payment-list{display:grid; grid-template-columns:repeat(4,1fr); grid-gap:var(--size-3); padding-bottom:var(--size-4); border-bottom:1px dashed var(--color-border-form);}
+.ppl-label{font-size:0.75rem; margin-bottom:2px;}
+.ppl-info{font-weight:bold; color:var(--color-2);}
+.ppl-info[aria-status="Confirmed"]{color:var(--color-4);}
+.ppl-info[aria-status="Waiting Confirmation"]{color:#f67d00;}
+.ppl-info[aria-status="Failed"]{color:#ff264d;}
+@media screen and (min-width:0px) and (max-width:639px){
+  .player-payment-list{grid-template-columns:repeat(2,1fr);}
+}
+
+
+
 @media screen and (min-width:0px) and (max-width:1023px){
   .svr-name, .svr-team{text-align:center;}
 }
