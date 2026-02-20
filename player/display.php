@@ -51,7 +51,12 @@
             <span class="text-de">Alter</span>
 		  </div>
 		  <div class="coach-separator">:</div>
-		  <div class="coach-data"><?php echo $umur->y;?> years old</div>
+		  <div class="coach-data">
+		    <?php echo $umur->y;?> 
+            <span class="text-id">tahun</span>
+            <span class="text-en">years old</span>
+            <span class="text-de">jahre</span>
+		  </div>
 		</div>
 	    <div class="coach-row">
 		  <div class="coach-label">
@@ -102,14 +107,18 @@
         <div class="section-title">
           <span class="text-id">Laporan Pemain</span>
           <span class="text-en">Player Report</span>
-          <span class="text-de"></span>
+          <span class="text-de">Spielerbericht</span>
 		</div>
 		<?php foreach ($users as $userId => $userData): ?>
           <div class="player-report">
 			<?php foreach ($userData['file'] as $fileItem): ?>
-			  <a title="Report <?= htmlspecialchars($fileItem['file_name']) ?>" class="player-report-list" href="player/file/<?= htmlspecialchars($fileItem['file_label']) ?>.pdf" target="_blank">
+			  <a title="Report <?= htmlspecialchars($fileItem['file_name_en']) ?>" class="player-report-list" href="player/file/<?= htmlspecialchars($fileItem['file_label']) ?>.pdf" target="_blank">
 			    <div class="prl-left">
-				  <div class="prl-name"><?= htmlspecialchars($fileItem['file_name']) ?></div>
+				  <div class="prl-name">
+                    <span class="text-id"><?= htmlspecialchars($fileItem['file_name_id']) ?></span>
+                    <span class="text-en"><?= htmlspecialchars($fileItem['file_name_en']) ?></span>
+                    <span class="text-de"><?= htmlspecialchars($fileItem['file_name_de']) ?></span>
+				  </div>
 				  <div class="prl-team"><?= htmlspecialchars($fileItem['file_team']) ?></div>
 				</div>
 				<div class="prl-right">
@@ -133,27 +142,47 @@
         <div class="section-title">
           <span class="text-id">Pembayaran</span>
           <span class="text-en">Payment</span>
-          <span class="text-de"></span>
+          <span class="text-de">Zahlung</span>
 		</div>
 		<?php foreach ($users as $userId => $userData): ?>
           <div class="player-payment">
 			<?php foreach ($userData['payment'] as $fileItem): ?>
 			  <div class="player-payment-list">
 			    <div class="ppl-box">
-				  <div class="ppl-label">Payment</div>
-				  <div class="ppl-info"><?= htmlspecialchars($fileItem['payment_name']) ?></div>
+				  <div class="ppl-label">
+                    <span class="text-id">Pembayaran</span>
+                    <span class="text-en">Payment</span>
+                    <span class="text-de">Zahlung</span>
+				  </div>
+				  <div class="ppl-info">
+                    <span class="text-id"><?= htmlspecialchars($fileItem['payment_name_id']) ?></span>
+                    <span class="text-en"><?= htmlspecialchars($fileItem['payment_name_en']) ?></span>
+                    <span class="text-de"><?= htmlspecialchars($fileItem['payment_name_de']) ?></span>
+				  </div>
 				</div>
 			    <div class="ppl-box">
-				  <div class="ppl-label">Price</div>
+				  <div class="ppl-label">
+                    <span class="text-id">Harga</span>
+                    <span class="text-en">Price</span>
+                    <span class="text-de">Preis</span>
+				  </div>
 				  <div class="ppl-info"><?= htmlspecialchars($fileItem['payment_total']) ?></div>
 				</div>
 			    <div class="ppl-box">
-				  <div class="ppl-label">Date</div>
+				  <div class="ppl-label">
+                    <span class="text-id">Tanggal</span>
+                    <span class="text-en">Date</span>
+                    <span class="text-de">Datum</span>
+				  </div>
 				  <div class="ppl-info"><?= htmlspecialchars($fileItem['payment_date']) ?></div>
 				</div>
 			    <div class="ppl-box">
 				  <div class="ppl-label">Status</div>
-				  <div class="ppl-info" aria-status="<?= htmlspecialchars($fileItem['payment_status']) ?>"><?= htmlspecialchars($fileItem['payment_status']) ?></div>
+				  <div class="ppl-info" aria-status="<?= htmlspecialchars($fileItem['payment_status_en']) ?>">
+                    <span class="text-id"><?= htmlspecialchars($fileItem['payment_status_id']) ?></span>
+                    <span class="text-en"><?= htmlspecialchars($fileItem['payment_status_en']) ?></span>
+                    <span class="text-de"><?= htmlspecialchars($fileItem['payment_status_de']) ?></span>
+				  </div>
 				</div>
 			  </div>
 			<?php endforeach; ?>
