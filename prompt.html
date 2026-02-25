@@ -11,7 +11,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - form checkbox remember me (buatkan juga fungsinya untuk bertahan 1 minggu)
 - button login
   - buatkan kondisi ketika ID termasuk dalam grup admin -> maka tombol diklik menuju halaman /admin/
-  - kalau ID termasuk dalam grup player -> maka tombol diklik menuju halaman /player/
+  - kalau ID termasuk dalam grup player -> maka tombol diklik menuju halaman /player/[ID]/
   
   
   
@@ -185,11 +185,12 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
 - tombol cancel -> menuju halaman /admin/player/[ID]/
 - div berisi nomor invoice
-  - hanya tampil di halaman edit, otomatis berasal dari "#" + ID + "B" + current date format ddmmyy -> contoh id 12049000003, bayar tanggal 28 februari 2026 -> maka no invoice menjadi #12049000003B280226
-- form input bulan
-- form input tahun
-- div data session
-- div data harga -> otomatis dari data session yang dipilih
+  - hanya tampil di halaman edit, otomatis berasal dari "#" + ID + "B" + current date format ddmmyy + current time jam menit detik format 24jam
+  - contoh id 12049000003, bayar tanggal 28 februari 2026 jam 20 menit 25 detik 10 -> maka no invoice menjadi #BGR12049000003B280226202510
+- form select bulan, option list january sampai december
+- form select tahun, option list 2025, 2026
+- div berisi data session
+- div berisi data harga -> otomatis dari data session yang dipilih
 - form input harga diskon 
 - form input tanggal pembayaran, input type calendar
 - form select status pembayaran -> option list = waiting confirmation, success
@@ -215,6 +216,9 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 
 /admin/player/[ID]/report/add/ dan /admin/player/[ID]/[report link]/edit/
+- form select period -> option list : first semester, second semester
+- form select year -> option list : 2025, 2026
+  - sehingga untuk report title berasal dari "period" + "year"
 - form input examiner -> option list diambil berdasarkan data dari list dari /admin/coach/
 - form input pace, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
 - form input passing, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
@@ -313,6 +317,9 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - form upload foto -> max filesize 1mb
 - form input nickname coach
 - form input join date coach
+- form select team
+  - dibawah form select tim, tambahkan tombol "tambah tim" yang ketika di klik akan muncul form select team yang diletakkan di form select team sebelumnya, diatas tombol "tambah tim"
+- form upload signature -> max filesize 1mb
 - catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
 
 
@@ -336,7 +343,6 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/setting/team/
 - tombol cancel -> menuju halaman /admin/setting/team/
 - form input team player
-- form select coach name -> option list diambil berdasarkan data dari list dari /admin/coach/
 - catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
 
 
@@ -371,6 +377,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 
 
+semua wording di website diubah menjadi versi bahasa inggris.
 sebelum generate, dianalisis dahulu prompt ini, lalu beritahukan bagian mana yang masih belum jelas.
 kita diskusikan sampai semuanya sudah jelas.
 ketika saya sampaikan "mulai generate", barulah anda mulai proses membuat script websitenya termasuk databasenya menggunakan mysql yang bisa dipasang di xampp
