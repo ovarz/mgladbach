@@ -3,7 +3,11 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 /login/
 - form input ID
 - form input password
-  - password digenerate dari birthday date player (contoh, apabila birthday 12 april 1990, maka password menjadi 120490). untuk password admin = a
+  - password digenerate dari birthday date player (contoh, apabila birthday 12 april 1990, maka password menjadi 120490). untuk password admin berikut daftarnya:
+    - username = ovarz, password = a,
+	- username = amel, password = a,
+	- username = reza, password = a,
+	- username = mamet, password = a.
 - form checkbox remember me (buatkan juga fungsinya untuk bertahan 1 minggu)
 - button login
   - buatkan kondisi ketika ID termasuk dalam grup admin -> maka tombol diklik menuju halaman /admin/
@@ -23,7 +27,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
     - name
     - team
 - section latest payment
-  - tombol view all -> menuju halaman /admin/payment/
+  - tombol view all -> menuju halaman /admin/player/payment/
   - list 5 latest payment
   - show only status waiting payment
   - apabila seluruh sudah bayar, cukup tampilkan 5 latest payment
@@ -65,7 +69,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
     - team
     - tombol detail -> menuju /admin/player/[ID]/
     - tombol edit -> menuju halaman /admin/player/[ID]/edit/
-    - tombol absen -> menuju halaman /admin/player/[ID]/attendance/
+    - tombol absen -> menuju halaman /admin/player/[ID]/attendance/add/
   
   
   
@@ -79,6 +83,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - form input fullname
 - form input join date, input type calendar
 - form select team -> option list diambil berdasarkan data dari list dari /admin/setting/team/
+- form session -> data diambil dari list di /admin/setting/payment/
 - form input birthday, input type calendar
 - form whatsapp, input hanya terima angka
 - form email, input validasi format email
@@ -89,9 +94,9 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 /admin/player/[ID]/
 - tombol edit data -> menuju halaman /admin/player/[ID]/edit/
-- tombol absen -> menuju halaman /admin/player/[ID]/attendance/
-- tombol add report -> menuju halaman /admin/player/[ID]/report/
-- tombol add payment -> menuju halaman /admin/player/[ID]/payment/
+- tombol absen -> menuju halaman /admin/player/[ID]/attendance/add/
+- tombol add report -> menuju halaman /admin/player/[ID]/report/add/
+- tombol add payment -> menuju halaman /admin/player/[ID]/payment/add/
 - tombol logout -> menuju halaman /login/
 - section biodata
   - div berisi ID
@@ -99,7 +104,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
   - div berisi nickname
   - div berisi berisi full name
   - div team
-  - div berisi coach name
+  - div berisi coach name -> otomatis diambil dari pilihan tim, hanya diambil head coach
   - div berisi birthday
   - div berisi usia -> diambil berdasarkan tanggal hari ini dikurangi tanggal birthday
   - div berisi whatsapp 
@@ -113,7 +118,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 	  - div data check-out -> apabila user sudah check-in, tetapi belum check-out, isi dengan "-"
 	  - tombol check-out -> hanya muncul ketika sudah check-in, tetapi belum check-out
 - section payment
-  - daftar payment, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - daftar payment yang sudah difilter sesuai ID, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
     - sort last data entry
 	- list per row:
 	  - tanggal payment -> bulan & tahun
@@ -121,7 +126,7 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 	  - tanggal pembayaran
 	  - status pembayaran
 - section report
-  - daftar report, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - daftar report yang sudah difilter sesuai ID, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
     - sort last data entry
 	- list per row:
 	  - report title
@@ -150,26 +155,93 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 
 
-/admin/player/[ID]/attendance/
+/admin/player/[ID]/attendance/add/
  - div berisi fullname
  - div berisi status -> check-in
    - apabila player sudah check-in, status berubah menjadi check-out. tetapi apabila sudah lewat hari, status berubah kembali menjadi check-in
  - div berisi current date
  - div berisi current time
  - tombol save -> untuk menyimpan data, selanjutnya menuju halaman /admin/player/[ID]/
+ - tombol cancel -> menuju halaman /admin/player/[ID]/
  
  
  
  
  
- /admin/player/[ID]/payment/
+ /admin/player/[ID]/payment/add/
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
 - tombol cancel -> menuju halaman /admin/player/[ID]/
 - form input bulan
 - form input tahun
-- form input harga
+- div data location & session
 - form input tanggal pembayaran, input type calendar
 - form select status pembayaran -> option list = waiting confirmation, success
+
+
+
+
+
+/admin/player/report/
+- daftar report, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort last data entry
+  - list per row:
+    - full name
+    - team
+    - report title
+    - overall
+    - tombol detail -> menuju halaman /admin/player/[ID]/[report link]/
+      - report link diambil dari report title dengan kondisi setiap spasi diganti "-". contoh report title = second semester 2025 menjadi second-semester-2025
+
+
+
+
+
+/admin/player/[ID]/report/add/
+
+
+
+
+
+/admin/player/[ID]/[report link]/
+
+
+
+
+
+/admin/player/payment/
+- daftar payment, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort last data entry
+  - list per row:
+    - full name
+    - team
+    - tanggal payment -> bulan & tahun
+    - harga
+    - tanggal pembayaran
+    - status pembayaran
+
+
+
+
+/admin/coach/
+
+
+
+
+
+/admin/setting/team/
+
+
+
+
+
+/admin/setting/payment/
+
+
+
+
+
+sebelum generate, dianalisis dahulu prompt ini, lalu beritahukan bagian mana yang masih belum jelas. ketika saya sampaikan "mulai generate", barulah anda mulai proses membuat script websitenya termasuk databasenya menggunakan mysql yang bisa dipasang di xampp
+
 
 
 
