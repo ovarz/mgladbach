@@ -1,0 +1,179 @@
+buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama sekali, termasuk inline css. berikut step by step pemasangannya di xampp. detail sebagai berikut:
+
+/login/
+- form input ID
+- form input password
+  - password digenerate dari birthday date player (contoh, apabila birthday 12 april 1990, maka password menjadi 120490). untuk password admin = a
+- form checkbox remember me (buatkan juga fungsinya untuk bertahan 1 minggu)
+- button login
+  - buatkan kondisi ketika ID termasuk dalam grup admin -> maka tombol diklik menuju halaman /admin/
+  - kalau ID termasuk dalam grup player -> maka tombol diklik menuju halaman /player/
+
+
+
+
+
+/admin/
+- tombol logout -> menuju halaman /login/
+- section latest player
+  - tombol view all -> menuju halaman /admin/player/
+  - list 5 latest player
+    isi per list
+    - photo
+    - name
+    - team
+- section latest payment
+  - tombol view all -> menuju halaman /admin/payment/
+  - list 5 latest payment
+  - show only status waiting payment
+  - apabila seluruh sudah bayar, cukup tampilkan 5 latest payment
+  - isi per list
+    - photo
+	- name
+	- team
+	- status
+- section latest player absen
+  - tombol view all -> menuju halaman /admin/player/
+  - list 5 latest player absen
+  - show only yang sudah check-in, tapi belum check-out
+  - apabila seluruh sudah check-out, tampilkan note "data belum tersedia"
+  - isi per list
+    - photo
+	- name
+	- team
+	- status
+- section latest coach
+  - tombol view all -> menuju halaman /admin/coach/
+  - list 5 latest coach
+    isi per list
+    - photo
+    - name
+    - team
+	
+	
+	
+	
+	
+/admin/player/
+- tombol tambah data -> menuju halaman /admin/player/add/
+- tombol logout -> menuju halaman /login/
+- daftar player, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort last data entry
+  - list per row :
+    - photo
+    - full name
+    - team
+    - tombol detail -> menuju /admin/player/[ID]/
+    - tombol edit -> menuju halaman /admin/player/[ID]/edit/
+    - tombol absen -> menuju halaman /admin/player/[ID]/attendance/
+  
+  
+  
+  
+  
+/admin/player/add/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/
+- tombol cancel -> menuju halaman /admin/player/
+- form upload foto -> max filesize 1mb
+- form input nickname
+- form input fullname
+- form input join date, input type calendar
+- form select team -> option list diambil berdasarkan data dari list dari /admin/setting/team/
+- form input birthday, input type calendar
+- form whatsapp, input hanya terima angka
+- form email, input validasi format email
+
+
+
+
+
+/admin/player/[ID]/
+- tombol edit data -> menuju halaman /admin/player/[ID]/edit/
+- tombol absen -> menuju halaman /admin/player/[ID]/attendance/
+- tombol add report -> menuju halaman /admin/player/[ID]/report/
+- tombol add payment -> menuju halaman /admin/player/[ID]/payment/
+- tombol logout -> menuju halaman /login/
+- section biodata
+  - div berisi ID
+    - ID digenerate dari join date dan urutan input, ditambah "P" diawal (contoh, apabila join date 12 april 1990, dan player diinput urutan ketiga, maka ID menjadi P12049000003)
+  - div berisi nickname
+  - div berisi berisi full name
+  - div team
+  - div berisi coach name
+  - div berisi birthday
+  - div berisi usia -> diambil berdasarkan tanggal hari ini dikurangi tanggal birthday
+  - div berisi whatsapp 
+  - div berisi email
+- section absen
+  - daftar absen, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+    - sort last data entry
+	- list per row:
+	  - tanggal absen
+	  - div data check-in
+	  - div data check-out -> apabila user sudah check-in, tetapi belum check-out, isi dengan "-"
+	  - tombol check-out -> hanya muncul ketika sudah check-in, tetapi belum check-out
+- section payment
+  - daftar payment, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+    - sort last data entry
+	- list per row:
+	  - tanggal payment -> bulan & tahun
+	  - harga
+	  - tanggal pembayaran
+	  - status pembayaran
+- section report
+  - daftar report, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+    - sort last data entry
+	- list per row:
+	  - report title
+	  - team
+	  - overall
+	  - tombol detail -> menuju halaman /admin/player/[ID]/[report link]/
+	    - report link diambil dari report title dengan kondisi setiap spasi diganti "-". contoh report title = second semester 2025 menjadi second-semester-2025
+  
+  
+  
+  
+  
+/admin/player/[ID]/edit/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
+- tombol cancel -> menuju halaman /admin/player/[ID]/
+- form upload foto -> max filesize 1mb
+- form input nickname
+- form input fullname
+- form select team -> option list diambil berdasarkan data dari list dari /admin/setting/team/
+- form input birthday, input type calendar
+- form whatsapp, input hanya terima angka
+- form email, input validasi format email
+- catatan : yang membedakan halaman /admin/player/add/ dengan halaman /admin/player/[ID]/edit/ hanya di isi dalam form input, di halalam add kosong, sementara halaman edit sudah ada isi dari data input data terakhir dari row yang dipilih
+
+
+
+
+
+/admin/player/[ID]/attendance/
+ - div berisi fullname
+ - div berisi status -> check-in
+   - apabila player sudah check-in, status berubah menjadi check-out. tetapi apabila sudah lewat hari, status berubah kembali menjadi check-in
+ - div berisi current date
+ - div berisi current time
+ - tombol save -> untuk menyimpan data, selanjutnya menuju halaman /admin/player/[ID]/
+ 
+ 
+ 
+ 
+ 
+ /admin/player/[ID]/payment/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
+- tombol cancel -> menuju halaman /admin/player/[ID]/
+- form input bulan
+- form input tahun
+- form input harga
+- form input tanggal pembayaran, input type calendar
+- form select status pembayaran -> option list = waiting confirmation, success
+
+
+
+
+
+
+
