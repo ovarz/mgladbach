@@ -12,6 +12,12 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - button login
   - buatkan kondisi ketika ID termasuk dalam grup admin -> maka tombol diklik menuju halaman /admin/
   - kalau ID termasuk dalam grup player -> maka tombol diklik menuju halaman /player/
+  
+  
+  
+- Pembagian grup
+  - username ovarz, amel, reza, mamet termasuk dalam grup admin
+  - selain diatas, maka masuk dalam grup player
 
 
 
@@ -23,36 +29,36 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
   - tombol view all -> menuju halaman /admin/player/
   - list 5 latest player
     isi per list
-    - photo
-    - name
-    - team
+    - photo player
+    - name player
+    - team player
 - section latest payment
   - tombol view all -> menuju halaman /admin/player/payment/
   - list 5 latest payment
   - show only status waiting payment
   - apabila seluruh sudah bayar, cukup tampilkan 5 latest payment
   - isi per list
-    - photo
-	- name
-	- team
-	- status
+    - photo player
+	- name player
+	- team player
+	- status player
 - section latest player absen
   - tombol view all -> menuju halaman /admin/player/
   - list 5 latest player absen
   - show only yang sudah check-in, tapi belum check-out
   - apabila seluruh sudah check-out, tampilkan note "data belum tersedia"
   - isi per list
-    - photo
-	- name
-	- team
-	- status
+    - photo player
+	- name player
+	- team player
+	- status player
 - section latest coach
   - tombol view all -> menuju halaman /admin/coach/
   - list 5 latest coach
     isi per list
-    - photo
-    - name
-    - team
+    - photo coach
+    - name coach
+    - team coach
 	
 	
 	
@@ -64,9 +70,9 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - daftar player, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
   - sort last data entry
   - list per row :
-    - photo
-    - full name
-    - team
+    - photo player
+    - full name player
+    - team player
     - tombol detail -> menuju /admin/player/[ID]/
     - tombol edit -> menuju halaman /admin/player/[ID]/edit/
     - tombol absen -> menuju halaman /admin/player/[ID]/attendance/add/
@@ -79,14 +85,14 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/
 - tombol cancel -> menuju halaman /admin/player/
 - form upload foto -> max filesize 1mb
-- form input nickname
-- form input fullname
-- form input join date, input type calendar
-- form select team -> option list diambil berdasarkan data dari list dari /admin/setting/team/
-- form session -> data diambil dari list di /admin/setting/payment/
-- form input birthday, input type calendar
-- form whatsapp, input hanya terima angka
-- form email, input validasi format email
+- form input nickname player
+- form input fullname player
+- form input join date player, input type calendar
+- form select team player -> option list diambil berdasarkan data dari list dari /admin/setting/team/
+- form select session -> option list diambil berdasarkan data dari list dari /admin/setting/session/
+- form input birthday player, input type calendar
+- form whatsapp player, input hanya terima angka
+- form email player, input validasi format email
 
 
 
@@ -99,39 +105,45 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - tombol add payment -> menuju halaman /admin/player/[ID]/payment/add/
 - tombol logout -> menuju halaman /login/
 - section biodata
-  - div berisi ID
-    - ID digenerate dari join date dan urutan input, ditambah "P" diawal (contoh, apabila join date 12 april 1990, dan player diinput urutan ketiga, maka ID menjadi P12049000003)
-  - div berisi nickname
-  - div berisi berisi full name
-  - div team
-  - div berisi coach name -> otomatis diambil dari pilihan tim, hanya diambil head coach
-  - div berisi birthday
-  - div berisi usia -> diambil berdasarkan tanggal hari ini dikurangi tanggal birthday
-  - div berisi whatsapp 
-  - div berisi email
+  - div berisi foto profil player
+  - div berisi ID player
+    - ID digenerate dari location code + join date + urutan input 
+	- contoh, apabila location name = BSD, join date 12 april 1990, dan player diinput urutan ketiga, maka ID menjadi BSD12049000003
+	- contoh kedua, apabila location name = Bogor, join date 1 Februari 1989, dan player diinput urutan ke-13, maka ID menjadi BGR01028900011 
+  - div berisi nickname player
+  - div berisi full name player
+  - div team player
+  - div berisi coach name -> otomatis diambil dari pilihan tim
+  - div berisi birthday player
+  - div berisi usia player -> diambil berdasarkan tanggal hari ini dikurangi tanggal birthday
+  - div berisi whatsapp player
+  - div berisi email player
 - section absen
   - daftar absen, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
     - sort last data entry
 	- list per row:
-	  - tanggal absen
-	  - div data check-in
-	  - div data check-out -> apabila user sudah check-in, tetapi belum check-out, isi dengan "-"
+	  - tanggal absen player
+	  - div data check-in player
+	  - div data check-out player -> apabila user sudah check-in, tetapi belum check-out, isi dengan "-"
 	  - tombol check-out -> hanya muncul ketika sudah check-in, tetapi belum check-out
 - section payment
   - daftar payment yang sudah difilter sesuai ID, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
     - sort last data entry
 	- list per row:
+	  - no invoice
 	  - tanggal payment -> bulan & tahun
-	  - harga
+	  - session
+	  - harga -> harga yang ditampilkan adalah harga dasar dari session dikurangi harga diskon
 	  - tanggal pembayaran
 	  - status pembayaran
+	  - tombol edit pembayaran -> menuju halaman /admin/player/[ID]/payment/edit/
 - section report
   - daftar report yang sudah difilter sesuai ID, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
     - sort last data entry
 	- list per row:
 	  - report title
-	  - team
-	  - overall
+	  - team player
+	  - overall player
 	  - tombol detail -> menuju halaman /admin/player/[ID]/[report link]/
 	    - report link diambil dari report title dengan kondisi setiap spasi diganti "-". contoh report title = second semester 2025 menjadi second-semester-2025
   
@@ -142,13 +154,14 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 /admin/player/[ID]/edit/
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
 - tombol cancel -> menuju halaman /admin/player/[ID]/
-- form upload foto -> max filesize 1mb
-- form input nickname
-- form input fullname
-- form select team -> option list diambil berdasarkan data dari list dari /admin/setting/team/
-- form input birthday, input type calendar
-- form whatsapp, input hanya terima angka
-- form email, input validasi format email
+- form upload foto profil -> max filesize 1mb
+- form input nickname player
+- form input fullname player
+- form select team player -> option list diambil berdasarkan data dari list dari /admin/setting/team/
+- form input birthday player, input type calendar
+- form input whatsapp player, input hanya terima angka
+- form input email player, input validasi format email
+- form select session -> option list diambil berdasarkan data dari list dari /admin/setting/session/
 - catatan : yang membedakan halaman /admin/player/add/ dengan halaman /admin/player/[ID]/edit/ hanya di isi dalam form input, di halalam add kosong, sementara halaman edit sudah ada isi dari data input data terakhir dari row yang dipilih
 
 
@@ -156,8 +169,8 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 
 /admin/player/[ID]/attendance/add/
- - div berisi fullname
- - div berisi status -> check-in
+ - div berisi fullname player
+ - div berisi status player -> check-in
    - apabila player sudah check-in, status berubah menjadi check-out. tetapi apabila sudah lewat hari, status berubah kembali menjadi check-in
  - div berisi current date
  - div berisi current time
@@ -168,14 +181,19 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
  
  
  
- /admin/player/[ID]/payment/add/
+ /admin/player/[ID]/payment/add/ &  /admin/player/[ID]/payment/edit/
 - tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
 - tombol cancel -> menuju halaman /admin/player/[ID]/
+- div berisi nomor invoice
+  - hanya tampil di halaman edit, otomatis berasal dari "#" + ID + "B" + current date format ddmmyy -> contoh id 12049000003, bayar tanggal 28 februari 2026 -> maka no invoice menjadi #12049000003B280226
 - form input bulan
 - form input tahun
-- div data location & session
+- div data session
+- div data harga -> otomatis dari data session yang dipilih
+- form input harga diskon 
 - form input tanggal pembayaran, input type calendar
 - form select status pembayaran -> option list = waiting confirmation, success
+- catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
 
 
 
@@ -185,10 +203,10 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - daftar report, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
   - sort last data entry
   - list per row:
-    - full name
-    - team
+    - full name player
+    - team player
     - report title
-    - overall
+    - overall player
     - tombol detail -> menuju halaman /admin/player/[ID]/[report link]/
       - report link diambil dari report title dengan kondisi setiap spasi diganti "-". contoh report title = second semester 2025 menjadi second-semester-2025
 
@@ -196,13 +214,48 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 
 
 
-/admin/player/[ID]/report/add/
+/admin/player/[ID]/report/add/ dan /admin/player/[ID]/[report link]/edit/
+- form input examiner -> option list diambil berdasarkan data dari list dari /admin/coach/
+- form input pace, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input passing, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input dribbling, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input physical, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input attacking, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input defending, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input shooting, hanya terima angka, angka dari 0 sampai 10, bisa kosong juga
+- form input coach comment
+- form input recommendation
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/player/[ID]/
+- tombol cancel -> menuju halaman /admin/player/[ID]/
+- catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
 
 
 
 
 
 /admin/player/[ID]/[report link]/
+- tombol edit -> menuju halaman /admin/player/[ID]/[report link]/edit/
+- tombol download pdf
+  - generate pdf menggunakan script html2canvas.min.js, FileSaver.min.js, jszip.min.js, xlsx.full.min.js, jspdf.umd.min.js
+  - tampilan pdf hanya diambil dari tampilan isi div #showreport
+- div berisi ID player
+- div berisi full name player
+- div berisi birthday
+- div berisi team player
+- div berisi coach name
+- div berisi tanda tangan saras desch : https://beta.mgladbachacademy.id/report/generate/signature-saras.png
+- div berisi tanda tangan damai miracle : https://beta.mgladbachacademy.id/report/generate/signature-damai.png
+- div berisi tanda tangan examiner -> diambil dari data coach. bisa kosong
+- div berisi pace
+- div berisi passing
+- div berisi dribbling
+- div berisi physical
+- div berisi attacking
+- div berisi defending
+- div berisi shooting
+- div berisi coach comment
+- div berisi recommendation
+- buat chart menggunakan script chart.umd.min.js, tipe Radar Chart, untuk menampilkan chart data pace, dribbling, physical, attacking, defending, shooting
 
 
 
@@ -212,35 +265,115 @@ buatkan website html lengkap menggunakan database (contoh mysql), tanpa css sama
 - daftar payment, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
   - sort last data entry
   - list per row:
-    - full name
-    - team
+    - no invoice
+    - full name player
+    - team player
     - tanggal payment -> bulan & tahun
-    - harga
+	- session
+    - harga -> otomatis dari data session yang dipilih
     - tanggal pembayaran
     - status pembayaran
+	- tombol edit -> menuju halaman /admin/player/[ID]/payment/edit/
+
 
 
 
 
 /admin/coach/
+- tombol tambah data -> menuju halaman /admin/coach/add/
+- tombol logout -> menuju halaman /login/
+- daftar coach, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort last data entry
+  - list per row :
+    - photo coach
+    - nickname coach
+    - join date coach
+	
+	
+	
+	
+	
+/admin/coach/[ID]/
+- tombol edit data -> menuju halaman /admin/coach/[ID]/edit/
+- tombol logout -> menuju halaman /login/
+- section biodata
+  - div berisi photo coach
+  - div berisi ID coach
+    - ID digenerate dari join date dan urutan input, ditambah "C" diawal (contoh, apabila join date 12 april 1990, dan player diinput urutan ketiga, maka ID menjadi C12049000003)
+  - div berisi nickname coach
+  - div berisi join date coach
+  
+  
+  
+  
+  
+/admin/coach/add/ dan /admin/coach/[ID]/edit/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/coach/
+- tombol cancel -> menuju halaman /admin/coach/
+- form upload foto -> max filesize 1mb
+- form input nickname coach
+- form input join date coach
+- catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
 
 
 
 
 
 /admin/setting/team/
+- tombol add -> menuju halaman /admin/setting/team/add/
+- daftar team, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort ascending
+  - list per row:
+    - team player
+    - coach name
+	- tombol edit -> menuju halaman /admin/setting/team/edit/
 
 
 
 
 
-/admin/setting/payment/
+/admin/setting/team/add/ dan /admin/setting/team/edit/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/setting/team/
+- tombol cancel -> menuju halaman /admin/setting/team/
+- form input team player
+- form select coach name -> option list diambil berdasarkan data dari list dari /admin/coach/
+- catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
+
+
+
+
+/admin/setting/session/
+- tombol add -> menuju halaman /admin/setting/session/add/
+- daftar session, dalam bentuk tabel menggunakan jquery datatable dengan extension responsive, page (10 row per page), sort data per column, search autofill
+  - sort ascending
+  - list per row:
+    - session -> format location name - pertemuan. contoh : location name = BSD, pertemuan = 3, maka session = BSD - 3 kali pertemuan 
+    - harga
+	- tombol edit -> menuju halaman /admin/setting/session/edit/
 
 
 
 
 
-sebelum generate, dianalisis dahulu prompt ini, lalu beritahukan bagian mana yang masih belum jelas. ketika saya sampaikan "mulai generate", barulah anda mulai proses membuat script websitenya termasuk databasenya menggunakan mysql yang bisa dipasang di xampp
+/admin/setting/session/add/ dan /admin/setting/session/edit/
+- tombol save data -> setelah data tersimpan -> menuju halaman /admin/setting/session/
+- tombol cancel -> menuju halaman /admin/setting/session/
+- form select location 
+  -> option list : 
+     - location name = BSD, location code = BSD
+	 - location name = Bogor, location code = BGR
+- form input pertemuan -> hanya terima angka, tambahkan text "kali pertemuan" setelah form input
+- form input harga
+- catatan : yang membedakan "add" dan "edit" hanya di data, kalau add kosong, sementara edit sudah ada data yang diinput sebelumnya
+
+
+
+
+
+
+sebelum generate, dianalisis dahulu prompt ini, lalu beritahukan bagian mana yang masih belum jelas.
+kita diskusikan sampai semuanya sudah jelas.
+ketika saya sampaikan "mulai generate", barulah anda mulai proses membuat script websitenya termasuk databasenya menggunakan mysql yang bisa dipasang di xampp
 
 
 
