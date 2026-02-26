@@ -35,9 +35,15 @@ RewriteRule ^admin/coach/([A-Za-z0-9]+)/edit/?$ admin/coach/edit.php?id=$1 [L,QS
 # --- ADMIN SETTINGS ---
 RewriteRule ^admin/setting/team/?$ admin/setting/team/index.php [L,QSA]
 RewriteRule ^admin/setting/team/add/?$ admin/setting/team/add.php [L,QSA]
+RewriteRule ^admin/setting/team/edit/([0-9]+)/?$ admin/setting/team/edit.php?id=$1 [L,QSA]
 RewriteRule ^admin/setting/session/?$ admin/setting/session/index.php [L,QSA]
 RewriteRule ^admin/setting/session/add/?$ admin/setting/session/add.php [L,QSA]
+RewriteRule ^admin/setting/session/edit/([0-9]+)/?$ admin/setting/session/edit.php?id=$1 [L,QSA]
 
 # --- PLAYER VIEW MODULE ---
 RewriteRule ^player/([A-Za-z0-9]+)/?$ player/profile.php?id=$1 [L,QSA]
 RewriteRule ^player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/?$ player/report_detail.php?id=$1&link=$2 [L,QSA]
+
+RewriteRule ^admin/setting/location/?$ admin/setting/location/index.php [L,QSA]
+RewriteRule ^admin/setting/location/add/?$ admin/setting/location/add.php [L,QSA]
+RewriteRule ^admin/setting/location/edit/([A-Za-z0-9]+)/?$ admin/setting/location/edit.php?code=$1 [L,QSA]

@@ -21,7 +21,7 @@
 <meta content="Indonesia" name="geo.placename"/>
 <meta http-equiv="content-language" content="In-Id"/>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="HandheldFriendly" content="true" />
@@ -59,6 +59,21 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
 
 <link rel="stylesheet" type="text/css" href="admin/assets/css/rancak.css?<?php echo $anticache; ?>"/>
 <link rel="stylesheet" type="text/css" href="admin/assets/css/rancak-desktop.css?<?php echo $anticache; ?>" media="(min-width:1024px)">
+
+<?php if($datatable == 'yes') { ?>
+  <link rel="preconnect" href="https://cdn.datatables.net">
+  <link rel="dns-prefetch" href="https://cdn.datatables.net">
+
+  <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style">
+  <link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css" as="style">
+  <link rel="preload" href="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" as="script">
+  <link rel="preload" href="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js" as="script">
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<?php } ?>
 
 </head>
 <body class="lang-<?php echo $lang;?>">

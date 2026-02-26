@@ -36,7 +36,6 @@
 
 
 body, html{color:var(--color-1);}
-html{background-color:var(--bg-2);}
 a, .btn, button{transition:var(--transition-default); cursor:pointer}
 a, button{color:var(--color-4); fill:var(--color-4);}
 a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}

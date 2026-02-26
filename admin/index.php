@@ -21,10 +21,11 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
   $lang='en';
   $menu='Home';
   $site_title='default';
+  $datatable='no';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
 <?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
-<div class="rancak-main">
+<div class="rancak-main-container rancak-main-2column">
 
 
 
@@ -34,7 +35,7 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
         <ul>
             <?php while($row = $res_players->fetch_assoc()): ?>
                 <li>
-                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
+                    <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                     <br>Name: <?php echo $row['fullname']; ?>
                     <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
                 </li>
@@ -63,7 +64,7 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
             <?php if($res_absent->num_rows > 0): ?>
                 <?php while($row = $res_absent->fetch_assoc()): ?>
                     <li>
-                        <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
+                        <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                         <br>Name: <?php echo $row['fullname']; ?>
                         <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
                         <br>Status: <?php echo $row['status']; ?>
@@ -81,7 +82,7 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
         <ul>
             <?php while($row = $res_coaches->fetch_assoc()): ?>
                 <li>
-                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
+                    <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                     <br>Name: <?php echo $row['nickname']; ?>
                     <br>Team(s): <br>
                     <div><?php echo $row['team_name'] ?: 'No Team'; ?></div>
@@ -91,6 +92,6 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
     </div>
 	
 	
-	
+
 </div>
 <?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

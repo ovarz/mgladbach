@@ -1,3 +1,7 @@
+</div>
+
+
+
 <noscript id="deferred-styles">
   <link rel="stylesheet" type="text/css" href="admin/assets/css/hold.css?<?php echo $anticache;?>" media="print" onload="this.media='all'"/>
 </noscript>

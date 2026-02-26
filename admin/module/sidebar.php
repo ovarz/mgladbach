@@ -8,60 +8,72 @@
   
     <nav class="nav-list">
 	  <div class="nav-section desktop-only">Main Menu</div>
-      <a title="" class="nav-box nav-curr" href="/admin/">
-	    <div class="nav-icon">
-		  <div class="nav-icon-frame content-center">
-		    <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-home.svg')?>
-		  </div>
-		</div>
-	    <div class="nav-info desktop-only">
-		  <div class="nav-title">Home</div>
-		</div>
-      </a>
-      <a title="" class="nav-box" href="/admin/player/">
-	    <div class="nav-icon">
-		  <div class="nav-icon-frame content-center">
-		    <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-player.svg')?>
-		  </div>
-		</div>
-	    <div class="nav-info desktop-only">
-		  <div class="nav-title">Player</div>
-		</div>
-      </a>
-      <a title="" class="nav-box" href="/admin/coach/">
-	    <div class="nav-icon">
-		  <div class="nav-icon-frame content-center">
-		    <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-coach.svg')?>
-		  </div>
-		</div>
-	    <div class="nav-info desktop-only">
-		  <div class="nav-title">Coach</div>
-		</div>
-      </a>
+      <?php 
+        $nav_array = array();
+        $nav_array[]=array(
+          'nav_id'=>'Home',
+          'nav_icon'=>'home',
+          'nav_link'=>'',
+        );
+        $nav_array[]=array(
+          'nav_id'=>'Player',
+          'nav_icon'=>'player',
+          'nav_link'=>'player/',
+        );
+        $nav_array[]=array(
+          'nav_id'=>'Coach',
+          'nav_icon'=>'coach',
+          'nav_link'=>'coach/',
+        );
+        foreach($nav_array as $nav_list){
+      ?>
+        <a title="<?php echo($nav_list['nav_id'])?>" class="nav-box <?php if($menu == $nav_list['nav_id']) { ?>nav-curr<?php } ?>" 
+		href="/admin/<?php echo($nav_list['nav_link'])?>">
+          <div class="nav-icon">
+            <div class="nav-icon-frame content-center">
+              <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-'.$nav_list['nav_icon'].'.svg')?>
+            </div>
+          </div>
+          <div class="nav-info desktop-only">
+            <div class="nav-title"><?php echo($nav_list['nav_id'])?></div>
+          </div>
+        </a>
+	  <?php } ?>
     </nav>
 
     <nav class="nav-list">
 	  <div class="nav-section desktop-only">Setting</div>
-      <a title="" class="nav-box" href="/admin/setting/team/">
-	    <div class="nav-icon">
-		  <div class="nav-icon-frame content-center">
-		    <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-team.svg')?>
-		  </div>
-		</div>
-	    <div class="nav-info desktop-only">
-		  <div class="nav-title">Team</div>
-		</div>
-      </a>
-      <a title="" class="nav-box" href="/admin/setting/session/">
-	    <div class="nav-icon">
-		  <div class="nav-icon-frame content-center">
-		    <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-session.svg')?>
-		  </div>
-		</div>
-	    <div class="nav-info desktop-only">
-		  <div class="nav-title">Session</div>
-		</div>
-      </a>
+      <?php 
+        $nav_array = array();
+        $nav_array[]=array(
+          'nav_id'=>'Team',
+          'nav_icon'=>'team',
+          'nav_link'=>'setting/team/',
+        );
+        $nav_array[]=array(
+          'nav_id'=>'Location',
+          'nav_icon'=>'location',
+          'nav_link'=>'setting/location/',
+        );
+        $nav_array[]=array(
+          'nav_id'=>'Session',
+          'nav_icon'=>'session',
+          'nav_link'=>'setting/session/',
+        );
+        foreach($nav_array as $nav_list){
+      ?>
+        <a title="<?php echo($nav_list['nav_id'])?>" class="nav-box <?php if($menu == $nav_list['nav_id']) { ?>nav-curr<?php } ?>" 
+		href="/admin/<?php echo($nav_list['nav_link'])?>">
+          <div class="nav-icon">
+            <div class="nav-icon-frame content-center">
+              <?php require ($_SERVER['BMG'].'admin/assets/img/icon/nav-'.$nav_list['nav_icon'].'.svg')?>
+            </div>
+          </div>
+          <div class="nav-info desktop-only">
+            <div class="nav-title"><?php echo($nav_list['nav_id'])?></div>
+          </div>
+        </a>
+	  <?php } ?>
     </nav>
 	
   </div>
@@ -92,3 +104,7 @@
 	
   </div>
 </div>
+
+
+
+<div class="rancak-main">

@@ -8,19 +8,18 @@ $sql = "SELECT t.id, t.name as team_name, c.nickname as coach_name
         ORDER BY t.name ASC";
 $result = $conn->query($sql);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Team Settings</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Team';
+  $site_title='default';
+  $datatable='yes';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Team Settings</h2>
     <div>
         <a href="/admin/setting/team/add/"><button>Add Data</button></a>
@@ -28,12 +27,12 @@ $result = $conn->query($sql);
         <a href="/logout/"><button>Logout</button></a>
     </div>
     <br>
-    <table id="teamTable" class="display responsive nowrap" style="width:100%">
+    <table id="teamTable" class="display responsive nowrap">
         <thead>
             <tr>
-                <th>Team Name</th>
-                <th>Coach Name</th>
-                <th>Action</th>
+                <th class="all">Team Name</th>
+                <th class="min-tablet">Coach Name</th>
+                <th class="all">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -57,5 +56,8 @@ $result = $conn->query($sql);
             });
         });
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

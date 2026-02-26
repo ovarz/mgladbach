@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_FILES['photo']) && $_FILES['photo']['size'] > 0 && $_FILES['photo']['size'] <= $max_size) {
         $photo_name = $coach_id . "_photo." . pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
-        move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/assets/img/photos/" . $photo_name);
+        move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/" . $photo_name);
     }
     if (isset($_FILES['signature']) && $_FILES['signature']['size'] > 0 && $_FILES['signature']['size'] <= $max_size) {
         $signature_name = $coach_id . "_sig." . pathinfo($_FILES['signature']['name'], PATHINFO_EXTENSION);
-        move_uploaded_file($_FILES['signature']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/assets/img/signatures/" . $signature_name);
+        move_uploaded_file($_FILES['signature']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/signatures/" . $signature_name);
     }
 
     $stmt = $conn->prepare("INSERT INTO coaches (coach_id, nickname, join_date, photo, signature) VALUES (?, ?, ?, ?, ?)");
