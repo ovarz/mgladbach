@@ -70,7 +70,7 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 .nav-title{font-weight:bold;}
 .nav-label{font-size:0.875rem;}
 .nav-icon-frame{width:var(--icon-size); height:var(--icon-size);}
-.nav-icon-frame svg{width:var(--size-3); height:auto;}
+.nav-icon-frame svg{width:16px; height:auto;}
 
 
 
