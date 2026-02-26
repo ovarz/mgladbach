@@ -1,21 +1,43 @@
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/jpg "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
-  ExpiresByType image/webp "access plus 1 year"
-  ExpiresByType image/avif "access plus 1 year"
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType text/javascript "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/font-woff2 "access plus 1 year"
-  ExpiresByType font/woff2 "access plus 1 year"
-  ExpiresDefault "access plus 1 month"
-</IfModule>
+RewriteEngine On
+RewriteBase /
 
-<IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|png|jpg|jpeg|gif|webp|avif|woff2)$">
-    Header set Cache-Control "public, max-age=31536000, immutable"
-  </FilesMatch>
-</IfModule>
+# Abaikan jika file/folder aslinya ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# --- AUTH & DASHBOARD ---
+RewriteRule ^login/?$ login/index.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+RewriteRule ^admin/?$ admin/index.php [L,QSA]
+
+# --- ADMIN PLAYER MODULE ---
+RewriteRule ^admin/player/?$ admin/player/index.php [L,QSA]
+RewriteRule ^admin/player/add/?$ admin/player/add.php [L,QSA]
+RewriteRule ^admin/player/payment/?$ admin/player/payment_list.php [L,QSA]
+RewriteRule ^admin/player/report/?$ admin/player/report_list.php [L,QSA]
+
+# --- ADMIN PLAYER DYNAMIC [ID] ---
+RewriteRule ^admin/player/([A-Za-z0-9]+)/?$ admin/player/profile.php?id=$1 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/edit/?$ admin/player/edit.php?id=$1 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/attendance/add/?$ admin/player/attendance_add.php?id=$1 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/payment/add/?$ admin/player/payment_add.php?id=$1 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/payment/edit/([0-9]+)/?$ admin/player/payment_edit.php?id=$1&inv=$2 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/report/add/?$ admin/player/report_add.php?id=$1 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/edit/?$ admin/player/report_edit.php?id=$1&link=$2 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/?$ admin/player/report_detail.php?id=$1&link=$2 [L,QSA]
+
+# --- ADMIN COACH MODULE ---
+RewriteRule ^admin/coach/?$ admin/coach/index.php [L,QSA]
+RewriteRule ^admin/coach/add/?$ admin/coach/add.php [L,QSA]
+RewriteRule ^admin/coach/([A-Za-z0-9]+)/?$ admin/coach/profile.php?id=$1 [L,QSA]
+RewriteRule ^admin/coach/([A-Za-z0-9]+)/edit/?$ admin/coach/edit.php?id=$1 [L,QSA]
+
+# --- ADMIN SETTINGS ---
+RewriteRule ^admin/setting/team/?$ admin/setting/team/index.php [L,QSA]
+RewriteRule ^admin/setting/team/add/?$ admin/setting/team/add.php [L,QSA]
+RewriteRule ^admin/setting/session/?$ admin/setting/session/index.php [L,QSA]
+RewriteRule ^admin/setting/session/add/?$ admin/setting/session/add.php [L,QSA]
+
+# --- PLAYER VIEW MODULE ---
+RewriteRule ^player/([A-Za-z0-9]+)/?$ player/profile.php?id=$1 [L,QSA]
+RewriteRule ^player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/?$ player/report_detail.php?id=$1&link=$2 [L,QSA]
