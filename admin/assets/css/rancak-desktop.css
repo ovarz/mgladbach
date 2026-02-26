@@ -12,11 +12,13 @@ body{grid-template-columns:240px 1fr;}
 
 
 
-.rancak-sidebar{--icon-size:var(--size-4); padding:var(--size-2) 0;}
+.rancak-sidebar{--icon-size:var(--size-4); padding-bottom:var(--size-2);}
 .sidebar-top{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
+.logo{padding:var(--size-4);}
+.logo img{width:100%;}
 
-.nav-section{padding:var(--size-1) var(--size-3);}
-.nav-box{padding:var(--size-2) var(--size-3); grid-gap:var(--size-2);}
+.nav-section{padding:var(--size-1) var(--size-4);}
+.nav-box{padding:var(--size-2) var(--size-4); grid-gap:var(--size-2);}
 .nav-info{padding:2px 0;}
 .nav-user .nav-info{padding:1px 0;}
 

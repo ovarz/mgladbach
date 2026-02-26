@@ -62,6 +62,10 @@ textarea.form-field{min-height:144px;}
 .rancak-sidebar{--icon-size:var(--size-5); position:-webkit-sticky; position:sticky; z-index:calc(var(--max-zindex) - 9000); top:0; height:100vh; height:100svh;
 display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
+.logo{text-align:center; padding:var(--size-2); padding-bottom:var(--size-1) !important;}
+.logo:before{content:none;}
+.logo img{position:static; width:32px; height:auto;}
+
 .nav-box{display:grid; grid-template-columns:auto 1fr; padding:var(--size-2);}
 .nav-title{font-weight:bold;}
 .nav-label{font-size:0.875rem;}

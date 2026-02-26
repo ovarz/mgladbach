@@ -1,5 +1,10 @@
 <div class="rancak-sidebar">
   <div class="sidebar-top">
+    
+	<div class="logo img-frame content-center">
+	  <img class="lazyload mobile-only" data-original="/admin/assets/img/icon.webp"/>
+	  <img class="lazyload desktop-only" data-original="/admin/assets/img/logo.webp"/>
+	</div>
   
     <nav class="nav-list">
 	  <div class="nav-section desktop-only">Main Menu</div>
