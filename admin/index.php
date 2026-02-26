@@ -92,4 +92,3 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
         </ul>
     </div>
 <?php require ($_SERVER['BMG'].'admin/assets/module/footer.php')?>
-<?php require ($_SERVER['BMG'].'admin/assets/module/base-bottom.php')?>
