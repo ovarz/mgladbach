@@ -29,7 +29,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $remember = isset($_POST['remember']) ? true : false;
 
     // Check Admin
-    $stmt = $conn->prepare("SELECT id, username, password FROM admins WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, username, password, photo FROM admins WHERE username = ?");
+    $stmt->bind_param("s", $userid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $admin = $result->fetch_assoc();
+        if ($password === $admin['password']) {
+            $_SESSION['user_id'] = $admin['id'];
+            $_SESSION['role'] = 'admin';
+            $_SESSION['username'] = $admin['username'];
+            $_SESSION['photo'] = $admin['photo']; // Menyimpan nama file foto ke sesi
+            
+            if ($remember) {
+                setcookie("remember_user", $admin['id'], time() + (86400 * 7), "/");
+                setcookie("remember_role", 'admin', time() + (86400 * 7), "/");
+            }
+            header("Location: /admin/");
+            exit();
+        } else {
+            $error = "Incorrect password.";
+        }
+    }
     $stmt->bind_param("s", $userid);
     $stmt->execute();
     $result = $stmt->get_result();

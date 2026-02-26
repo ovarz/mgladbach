@@ -3,6 +3,7 @@
   $sitedesc = 'Borussia Mönchengladbach Academy Indonesia adalah akademi sepak bola resmi dari Borussia Mönchengladbach untuk anak usia 3–16 tahun di Jakarta dan BSD. Menghadirkan pelatihan sepak bola ala Jerman dengan metode FUNiño dan kurikulum internasional.';
   $anticache = date ('s'.'i'.'H'.'d'.'m'.'Y');
 ?>
+<!DOCTYPE html>
 <head>  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PW3NTZVN5X"></script>
 <script>

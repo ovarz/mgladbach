@@ -1,12 +1,28 @@
 :root, :before, :after{
-  --font-size:16px;
   --body-padding:var(--size-5);
-  --header-height:var(--size-7);
 }
 
 
 
 .mobile-only{display:none !important; visibility:hidden; content-visibility:hidden;}
+
+
+
+body{grid-template-columns:240px 1fr;}
+
+
+
+.rancak-sidebar{--icon-size:var(--size-4); padding:var(--size-2) 0;}
+.sidebar-top{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
+
+.nav-section{padding:var(--size-1) var(--size-3);}
+.nav-box{padding:var(--size-2) var(--size-3); grid-gap:var(--size-2);}
+.nav-info{padding:2px 0;}
+.nav-user .nav-info{padding:1px 0;}
+
+
+
+.rancak-main{padding:var(--size-5);}
 
 
 

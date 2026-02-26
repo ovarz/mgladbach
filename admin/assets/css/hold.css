@@ -6,10 +6,10 @@
   --color-2a:rgb(30 30 30 / 8%);
   --color-3:#000000; 
   --color-3a:rgb(0 0 0 / 8%);
-  --color-4:#23d468;
-  --color-4a:rgb(35 212 104 / 8%);
-  --color-5:#7ab929;
-  --color-5a:rgb(122 185 41 / 8%);
+  --color-4:#7ab929;
+  --color-4a:rgb(122 185 41 / 8%);
+  --color-5:#23d468;
+  --color-5a:rgb(35 212 104 / 8%);
   --color-border:#EEEEEE;
   --color-border-form:#E0E0E0;
   --color-border-dark:#424242;
@@ -26,7 +26,7 @@
   --rounded-1:8px;
   --rounded-2:16px;
   --rounded-3:24px;
-  --hover-opacity:34%;
+  --hover-opacity:36%;
   --transition-default:all 0.34s;
   --shadow-default:2px 5px 13px rgb(0 0 0 / 8%);
   --shadow-neumorp:-2px -2px 4px rgba(255,255,255,.2), 2px 2px 12px rgba(0,0,0,.2);
@@ -67,6 +67,16 @@ a.img-frame:hover{opacity:var(--hover-opacity);}
 .thumb-loading:before{animation:skeleton-loading 0.5s linear infinite alternate; background-color:var(--color-2);}
 @-webkit-keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
 @keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
+
+
+
+.rancak-sidebar{background-color:var(--bg-2); border-color:var(--color-border);}
+
+.nav-icon-frame{border-radius:50%;}
+.nav-box{color:var(--color-2); fill:var(--color-2);}
+a.nav-box:hover{color:var(--color-5); fill:var(--color-5);}
+.nav-curr{color:var(--color-4) !important; fill:var(--color-4) !important;}
+.nav-label{color:var(--color-1);}
 
 
 

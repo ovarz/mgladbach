@@ -17,26 +17,24 @@ $res_absent = $conn->query("SELECT p.photo, p.fullname, t.name as team_name, 'Ch
 // Fetch Latest Coaches
 $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEPARATOR '<br>') as team_name FROM coaches c LEFT JOIN teams t ON c.id = t.coach_id GROUP BY c.id ORDER BY c.id DESC LIMIT 5");
 ?>
-<!DOCTYPE html>
 <?php 
   $lang='en';
   $menu='Home';
   $site_title='default';
-  require ($_SERVER['BMG'].'admin/assets/module/meta.php')
+  require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
-    <div>
-        <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <hr>
-    
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main">
+
+
+
     <div>
         <h2>Latest Player</h2>
         <a href="/admin/player/"><button>View All</button></a>
         <ul>
             <?php while($row = $res_players->fetch_assoc()): ?>
                 <li>
-                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>" width="50">
+                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                     <br>Name: <?php echo $row['fullname']; ?>
                     <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
                 </li>
@@ -65,7 +63,7 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
             <?php if($res_absent->num_rows > 0): ?>
                 <?php while($row = $res_absent->fetch_assoc()): ?>
                     <li>
-                        <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>" width="50">
+                        <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                         <br>Name: <?php echo $row['fullname']; ?>
                         <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
                         <br>Status: <?php echo $row['status']; ?>
@@ -83,7 +81,7 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
         <ul>
             <?php while($row = $res_coaches->fetch_assoc()): ?>
                 <li>
-                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>" width="50">
+                    <img src="/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
                     <br>Name: <?php echo $row['nickname']; ?>
                     <br>Team(s): <br>
                     <div><?php echo $row['team_name'] ?: 'No Team'; ?></div>
@@ -91,4 +89,8 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
             <?php endwhile; ?>
         </ul>
     </div>
-<?php require ($_SERVER['BMG'].'admin/assets/module/footer.php')?>
+	
+	
+	
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>
