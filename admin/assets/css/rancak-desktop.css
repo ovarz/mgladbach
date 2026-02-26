@@ -1,0 +1,39 @@
+:root, :before, :after{
+  --font-size:16px;
+  --body-padding:var(--size-5);
+  --header-height:var(--size-7);
+}
+
+
+
+.mobile-only{display:none !important; visibility:hidden; content-visibility:hidden;}
+
+
+
+
+
+
+
+@media screen and (min-width:1280px){
+  
+}
+
+
+
+
+
+
+
+@media screen and (min-width:1360px){
+  
+}
+
+
+
+
+
+
+
+@media screen and (min-width:1920px){
+  
+}

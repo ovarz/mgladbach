@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($_FILES['photo']['size'] <= 1048576) { // 1MB
             $ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
             $photo_name = $player_id . "." . $ext;
-            move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $photo_name);
+            move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/assets/img/photos/" . $photo_name);
         } else {
             die("File size exceeds 1MB");
         }

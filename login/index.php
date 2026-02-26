@@ -1,5 +1,4 @@
 <?php
-// Menggunakan absolute path untuk memanggil config
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 // Check cookies for remember me
@@ -81,38 +80,106 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Login System</title>
-</head>
-<body>
-    <div>
-        <h2>Login</h2>
-        <?php if ($error): ?>
-            <div><?php echo $error; ?></div>
-        <?php endif; ?>
-        
-        <form method="POST" action="login/index.php">
-            <div>
-                <label>ID / Username</label><br>
-                <input type="text" name="userid" required>
-            </div>
-            <div>
-                <label>Password</label><br>
-                <input type="password" name="password" required>
-            </div>
-            <div>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Remember Me</label>
-            </div>
-            <div>
-                <button type="submit">Login</button>
-            </div>
+<?php 
+  $lang='en'; 
+  $menu='Coach'; 
+  $site_title='default'; 
+  $anticache = date ('s'.'i'.'H'.'d'.'m'.'Y'); 
+  $sitename = 'Borussia Mönchengladbach Academy Indonesia';
+  $sitedesc = 'Unlock your potential at Borussia Academy Indonesia. Join our premier football academy in Jakarta. Enhance skills, tactical awareness, and physical conditioning.';
+  require ($_SERVER['BMG'].'template/inc/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'template/inc/header.php')?>
+<div class="scb-bg">
+  <script>
+	$(window).on('load',function(){
+	  if (window.videoLoaded) return;
+	  window.videoLoaded = true;
+
+	  if ($(window).width() > 1024) {
+		$('.scb-bg').append('<video autoplay loop muted playsinline class="desktop-only"><source src="template/img/cover.mp4" type="video/mp4"></video>');
+		$('.scb-bg video').hide().fadeIn(1000);
+	  }
+	});
+  </script>
+</div>
+<div class="rancak-foundation">
+  
+  
+  
+  
+  <section class="section-default section-login content-center">
+    <div class="site-container content-center">
+	  <div class="login-box">
+	    <div class="login-header">
+          <span class="text-id">
+		    <p>Silakan masukkan ID dan password pada  kolom dibawah ini.</p>
+			<p>Untuk password, silakan masukkan tanggal lahir dengan format : ddmmyy</p>
+			<p>Contoh :<br/>
+			  ID : XXX00000000000<br/>
+			  Password : 210361</p>
+		  </span>
+		  <span class="text-en">
+		    <p>Please enter your ID and password in the fields below.</p>
+		    <p>For the password, please enter date of birth in the following format: ddmmyy</p>
+		    <p>Example:<br/>
+			  ID : XXX00000000000<br/>
+			  Password : 210361
+		    </p>
+		  </span>
+		  <span class="text-de">
+		    <p>Bitte geben Sie Ihren ID und Ihr Passwort in die untenstehenden Felder ein.</p>
+		    <p>Für das Passwort geben Sie bitte die Altersgruppe und das Geburtsdatum im folgenden Format ein : ddmmyy</p>
+		    <p>Beispiel:<br/>
+			  ID : XXX00000000000<br/>
+			  Passwort : 210361
+		    </p>
+		  </span>
+        </div>
+		
+        <form class="login-box-form" method="POST" action="login/index.php">
+		  <ul class="lbf-row">
+		    <li class="lbf-label">ID</li>
+            <li class="form-box lbf-box">
+              <input class="form-field" type="text" name="userid" required placeholder="Contoh: XXX00000000000">
+            </li>
+		  </ul>
+		  <ul class="lbf-row">
+		    <li class="lbf-label">
+			  <span class="text-id">Kata Sandi</span>
+              <span class="text-en">Password</span>
+              <span class="text-de">Passwort</span>
+			</li>
+            <li class="form-box form-password lbf-box">
+              <input class="form-field" type="password" name="password" required placeholder="">
+			  <span title="Show/Hide Password" class="form-icon hide-password content-center">
+			    <?php require ($_SERVER['BMG'].'template/img/icon/pass-hide.svg')?>
+				<?php require ($_SERVER['BMG'].'template/img/icon/pass-show.svg')?>
+			  </span>
+            </li>
+		  </ul>
+		  <?php if (!empty($error)){ ?>
+            <div class="lbf-row lbf-error">
+			  <span class="text-id">Gagal! ID atau kata sandi salah.</span>
+              <span class="text-en">Failed! ID or password is incorrect.</span>
+              <span class="text-de">Fehlgeschlagen! ID oder Passwort ist falsch.</span>
+			</div>
+          <?php } ?>
+          <button title="Login" class="btn lbf-button" type="submit">
+            <span class="text-id">Masuk</span>
+            <span class="text-en">Login</span>
+            <span class="text-de">Anmelden</span>
+	      </button>
         </form>
+		
+	  </div>
     </div>
-</body>
-</html>
+  </section>
+  
+  
+  
+  
+  
+</div>
+<?php require ($_SERVER['BMG'].'template/inc/footer.php')?>
+<?php require ($_SERVER['BMG'].'template/inc/base-bottom.php')?>

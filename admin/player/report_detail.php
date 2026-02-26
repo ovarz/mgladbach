@@ -78,7 +78,7 @@ if(!$rep) die("Report not found.");
             </div>
             <div style="display:inline-block;">
                 <?php if($rep['examiner_signature']): ?>
-                    <img src="/uploads/signatures/<?php echo $rep['examiner_signature']; ?>" width="100" crossorigin="anonymous"><br>
+                    <img src="/assets/img/signatures/<?php echo $rep['examiner_signature']; ?>" width="100" crossorigin="anonymous"><br>
                 <?php else: ?>
                     <div style="width:100px; height:50px;"></div><br>
                 <?php endif; ?>

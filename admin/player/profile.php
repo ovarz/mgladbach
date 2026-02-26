@@ -46,7 +46,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
 
     <h2>Biodata Section</h2>
     <div>
-        <div><img src="/uploads/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="150"></div>
+        <div><img src="/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="150"></div>
         <div>ID: <?php echo $player['player_id']; ?></div>
         <div>Nickname: <?php echo $player['nickname']; ?></div>
         <div>Full Name: <?php echo $player['fullname']; ?></div>
