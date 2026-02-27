@@ -55,7 +55,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
         </div>
         <br>
         <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save Data</button>
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
           <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
         </div>
     </form>

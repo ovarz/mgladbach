@@ -32,7 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <h2>Add Location</h2>
+  <div class="header-table-page">
+    <h2 class="htp-title">Add Location</h2>
+  </div>
+
+
+
     <form method="POST">
         <div>
             <label>Location Code (Max 10 chars, example: BGR)</label><br>
@@ -43,9 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="name" required>
         </div>
         <br>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/setting/location/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/location/">Cancel</a>
         </div>
     </form>
 	

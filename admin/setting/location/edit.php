@@ -33,7 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <h2>Edit Location</h2>
+  <div class="header-table-page">
+    <h2 class="htp-title">Edit Location</h2>
+  </div>
+
+
+
     <form method="POST">
         <div>
             <label>Location Code (Cannot be changed)</label><br>
@@ -44,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="name" value="<?php echo $loc['name']; ?>" required>
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/setting/location/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/location/">Cancel</a>
         </div>
     </form>
 	

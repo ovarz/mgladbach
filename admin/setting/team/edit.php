@@ -40,17 +40,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <h2>Edit Team</h2>
+  <div class="header-table-page">
+    <h2 class="htp-title">Edit Team</h2>
+  </div>
+
+
+
     <form method="POST">
         <div>
             <label>Team Name</label><br>
             <input type="text" name="team_name" value="<?php echo $team['name']; ?>" required>
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/setting/team/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this team? Players assigned to this team will have their team reset.');">Delete Team</button>
+        <div class="form-action-button">
+            <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+            <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/team/">Cancel</a>
+            <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+			onclick="return confirm('Are you sure you want to delete this team? Players assigned to this team will have their team reset.');">Delete</button>
         </div>
     </form>
 	
