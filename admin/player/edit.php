@@ -65,7 +65,7 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Edit Player</h2>
   </div>
   

@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Team Settings</h2>
 	<div class="htp-button-list">
       <a title="Add Data" class="btn" href="/admin/setting/team/add/">Add Data</a>
@@ -42,7 +42,9 @@ $result = $conn->query($sql);
                 <td><?php echo $row['team_name']; ?></td>
                 <td><?php echo $row['coach_name'] ?: 'No Coach Assigned'; ?></td>
                 <td>
-                    <a href="/admin/setting/team/edit/<?php echo $row['id']; ?>/"><button>Edit</button></a>
+				  <div class="datatable-action">
+                    <a title="Edit" class="btn btn-small" href="/admin/setting/team/edit/<?php echo $row['id']; ?>/">Edit</a>
+				  </div>
                 </td>
             </tr>
             <?php endwhile; ?>

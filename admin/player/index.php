@@ -17,10 +17,12 @@ $result = $conn->query($sql);
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Player List</h2>
 	<div class="htp-button-list">
       <a title="Add Data" class="btn" href="/admin/player/add/">Add Data</a>
+      <a title="Report List" class="btn" href="/admin/player/report/">Report List</a>
+      <a title="Payment List" class="btn" href="/admin/player/payment/">Payment List</a>
 	</div>
   </div>
 
@@ -47,9 +49,9 @@ $result = $conn->query($sql);
                 <td><?php echo $row['team_name'] ?: 'No Team'; ?></td>
                 <td>
 				  <div class="datatable-action">
-                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/">Detail</a>
-                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/edit/">Edit</a>
-                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/attendance/add/">Absen</a>
+                    <a title="Detail" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/">Detail</a>
+                    <a title="Edit" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/edit/">Edit</a>
+                    <a title="Absent" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/attendance/add/">Absent</a>
 				  </div>
                 </td>
             </tr>

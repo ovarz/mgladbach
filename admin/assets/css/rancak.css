@@ -85,12 +85,12 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 
 
-.form-action-button{display:flex; flex-wrap:wrap; justify-content:flex-end;}
+.form-action-button{display:flex; flex-wrap:wrap;}
 .form-action-button .btn{margin-top:var(--size-1); margin-right:var(--size-1);}
 
 
 
-.htp-button-list{display:flex;}
+.htp-button-list{display:flex; flex-wrap:wrap;}
 .htp-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
 
 

@@ -60,7 +60,7 @@ while($t = $teams_res->fetch_assoc()) {
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Add New Coach</h2>
   </div>
   

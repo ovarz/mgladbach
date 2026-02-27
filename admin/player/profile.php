@@ -23,32 +23,32 @@ $att_res = $conn->query("SELECT * FROM attendances WHERE player_id = $pid ORDER 
 $pay_res = $conn->query("SELECT p.*, s.meetings, s.price as base_price, l.name as loc_name FROM payments p LEFT JOIN sessions s ON p.session_id = s.id LEFT JOIN locations l ON s.location_code = l.code WHERE p.player_id = $pid ORDER BY p.id DESC");
 $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY id DESC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Player Profile</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-</head>
-<body>
-    <div>
-        <a href="/admin/player/<?php echo $player_code; ?>/edit/"><button>Edit Data</button></a>
-        <a href="/admin/player/<?php echo $player_code; ?>/attendance/add/"><button>Absen</button></a>
-        <a href="/admin/player/<?php echo $player_code; ?>/report/add/"><button>Add Report</button></a>
-        <a href="/admin/player/<?php echo $player_code; ?>/payment/add/"><button>Add Payment</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='yes';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title"><?php echo $player['nickname']; ?></h2>
+	<div class="htp-button-list">
+      <a title="Edit Data" class="btn" href="/admin/player/<?php echo $player_code; ?>/edit/">Edit Data</a>
+      <a title="Absent" class="btn" href="/admin/player/<?php echo $player_code; ?>/attendance/add/">Absent</a>
+      <a title="Add Report" class="btn" href="/admin/player/<?php echo $player_code; ?>/report/add/">Add Report</a>
+      <a title="Add Payment" class="btn" href="/admin/player/<?php echo $player_code; ?>/payment/add/">Add Payment</a>
+	</div>
+  </div>
 
     <h2>Biodata Section</h2>
     <div>
         <div><img src="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="150"></div>
         <div>ID: <?php echo $player['player_id']; ?></div>
-        <div>Nickname: <?php echo $player['nickname']; ?></div>
+        <div>Nickname: </div>
         <div>Full Name: <?php echo $player['fullname']; ?></div>
         <div>Team: <?php echo $player['team_name'] ?: 'No Team'; ?></div>
         <div>Coach: <?php echo $player['coach_name'] ?: 'No Coach'; ?></div>
@@ -60,18 +60,29 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
 
     <hr>
     <h2>Attendance Section</h2>
-    <table id="attTable" class="display responsive nowrap" style="width:100%">
-        <thead><tr><th>Date</th><th>Check-In</th><th>Check-Out</th><th>Action</th></tr></thead>
+    <table id="attTable" class="display responsive nowrap">
+        <thead>
+            <tr>
+                <th class="all">Date</th>
+                <th class="min-tablet">Check-In</th>
+                <th class="min-tablet">Check-Out</th>
+                <th class="min-tablet">Submit By</th>
+                <th class="all">Action</th>
+            </tr>
+        </thead>
         <tbody>
             <?php while($row = $att_res->fetch_assoc()): ?>
             <tr>
                 <td><?php echo $row['date']; ?></td>
                 <td><?php echo $row['check_in_time']; ?></td>
                 <td><?php echo $row['check_out_time'] ?: '-'; ?></td>
+                <td><?php echo $row['submit_by'] ? ucwords($row['submit_by']) : '-'; ?></td>
                 <td>
-                    <?php if(!$row['check_out_time']): ?>
-                        <a href="/admin/player/<?php echo $player_code; ?>/attendance/add/"><button>Check-out</button></a>
-                    <?php endif; ?>
+				  <?php if(!$row['check_out_time']): ?>
+                    <div class="datatable-action">
+                      <a title="Check-out" class="btn btn-small" href="/admin/player/<?php echo $player_code; ?>/attendance/add/">Check-out</a>
+                    </div>
+				  <?php endif; ?>
                 </td>
             </tr>
             <?php endwhile; ?>
@@ -80,18 +91,32 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
 
     <hr>
     <h2>Payment Section</h2>
-    <table id="payTable" class="display responsive nowrap" style="width:100%">
-        <thead><tr><th>Invoice</th><th>Month & Year</th><th>Session</th><th>Price (After Discount)</th><th>Payment Date</th><th>Status</th><th>Action</th></tr></thead>
+    <table id="payTable" class="display responsive nowrap">
+        <thead>
+            <tr>
+                <th class="all">Invoice</th>
+                <th class="min-tablet">Month & Year</th>
+                <th class="min-tablet">Session</th>
+                <th class="min-tablet">Price</th>
+                <th class="min-tablet">Payment Date</th>
+                <th class="all">Status</th>
+                <th class="all">Action</th>
+            </tr>
+        </thead>
         <tbody>
             <?php while($row = $pay_res->fetch_assoc()): ?>
             <tr>
                 <td><?php echo $row['invoice_number']; ?></td>
                 <td><?php echo $row['month'] . ' ' . $row['year']; ?></td>
-                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali pertemuan'; ?></td>
+                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo $row['payment_date']; ?></td>
                 <td><?php echo $row['status']; ?></td>
-                <td><a href="/admin/player/<?php echo $player_code; ?>/payment/edit/<?php echo $row['id']; ?>/"><button>Edit</button></a></td>
+                <td>
+                  <div class="datatable-action">
+                    <a title="Edit" class="btn btn-small" href="/admin/player/<?php echo $player_code; ?>/payment/edit/<?php echo $row['id']; ?>/">Edit</a>
+                  </div>
+				</td>
             </tr>
             <?php endwhile; ?>
         </tbody>
@@ -99,15 +124,26 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
 
     <hr>
     <h2>Report Section</h2>
-    <table id="repTable" class="display responsive nowrap" style="width:100%">
-        <thead><tr><th>Report Title</th><th>Team</th><th>Overall</th><th>Action</th></tr></thead>
+    <table id="repTable" class="display responsive nowrap">
+        <thead>
+            <tr>
+                <th class="all">Report Title</th>
+                <th class="min-tablet">Team</th>
+                <th class="all">Overall</th>
+                <th class="all">Action</th>
+            </tr>
+        </thead>
         <tbody>
             <?php while($row = $rep_res->fetch_assoc()): ?>
             <tr>
                 <td><?php echo ucwords(str_replace('-', ' ', $row['report_link'])); ?></td>
                 <td><?php echo $player['team_name'] ?: '-'; ?></td>
                 <td><?php echo $row['overall']; ?></td>
-                <td><a href="/admin/player/<?php echo $player_code; ?>/<?php echo $row['report_link']; ?>/"><button>Detail</button></a></td>
+                <td>
+                  <div class="datatable-action">
+                    <a title="Detail" class="btn btn-small" href="/admin/player/<?php echo $player_code; ?>/<?php echo $row['report_link']; ?>/">Detail</a>
+                  </div>
+				</td>
             </tr>
             <?php endwhile; ?>
         </tbody>
@@ -120,5 +156,8 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             $('#repTable').DataTable({ responsive: true, pageLength: 10, order: [[0, 'desc']] });
         });
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Edit Team</h2>
   </div>
 

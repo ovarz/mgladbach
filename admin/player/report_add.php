@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO reports (player_id, period, year, report_title, report_link, examiner_id, pace, passing, dribbling, physical, attacking, defending, shooting, overall, coach_comment, recommendation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     
-    $stmt->bind_param("issssdiiiiiiiddss", $pid, $period, $year, $report_title, $report_link, $examiner_id, $vals['pace'], $vals['passing'], $vals['dribbling'], $vals['physical'], $vals['attacking'], $vals['defending'], $vals['shooting'], $overall, $coach_comment, $recommendation);
+    $stmt->bind_param("issssiiiiiiiidss", $pid, $period, $year, $report_title, $report_link, $examiner_id, $vals['pace'], $vals['passing'], $vals['dribbling'], $vals['physical'], $vals['attacking'], $vals['defending'], $vals['shooting'], $overall, $coach_comment, $recommendation);
     
     if($stmt->execute()){
         header("Location: /admin/player/$player_code/");
@@ -53,12 +53,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $coaches = $conn->query("SELECT id, nickname FROM coaches ORDER BY nickname ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><base href="/" /><title>Add Report</title></head>
-<body>
-    <h2>Add Report</h2>
-    <form method="POST">
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Add Report</h2>
+  </div>
+
+
+
+     <form method="POST">
         <div>
             <label>Period</label><br>
             <select name="period" required>
@@ -100,10 +112,13 @@ $coaches = $conn->query("SELECT id, nickname FROM coaches ORDER BY nickname ASC"
             <label>Recommendation</label><br>
             <textarea name="recommendation" rows="4"></textarea>
         </div>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/">Cancel</a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

@@ -28,11 +28,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><base href="/" /><title>Add Payment</title></head>
-<body>
-    <h2>Add Payment</h2>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Add Payment</h2>
+  </div>
+  
+  
+  
     <form method="POST">
         <div>
             <label>Month</label><br>
@@ -64,10 +76,13 @@ $months = ['January','February','March','April','May','June','July','August','Se
                 <option value="success">success</option>
             </select>
         </div>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/">Cancel</a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

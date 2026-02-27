@@ -105,7 +105,7 @@ foreach($all_teams as $t) {
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Edit Coach</h2>
   </div>
   

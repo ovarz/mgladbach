@@ -44,7 +44,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Edit Session</h2>
   </div>
 

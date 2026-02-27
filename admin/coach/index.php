@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Coach List</h2>
 	<div class="htp-button-list">
       <a title="Add Data" class="btn" href="/admin/coach/add/">Add Data</a>
@@ -44,8 +44,10 @@ $result = $conn->query($sql);
                 <td><?php echo $row['nickname']; ?></td>
                 <td><?php echo $row['join_date']; ?></td>
                 <td>
-                    <a href="/admin/coach/<?php echo $row['coach_id']; ?>/"><button>Detail</button></a>
-                    <a href="/admin/coach/<?php echo $row['coach_id']; ?>/edit/"><button>Edit</button></a>
+				  <div class="datatable-action">
+                    <a title="Detail" class="btn btn-small" href="/admin/coach/<?php echo $row['coach_id']; ?>/">Detail</a>
+                    <a title="Edit" class="btn btn-small" href="/admin/coach/<?php echo $row['coach_id']; ?>/edit/">Edit</a>
+				  </div>
                 </td>
             </tr>
             <?php endwhile; ?>

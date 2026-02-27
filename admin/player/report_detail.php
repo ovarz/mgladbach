@@ -17,24 +17,29 @@ $rep = $result->fetch_assoc();
 
 if(!$rep) die("Report not found.");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Report Detail</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
-<body>
-    <div>
-        <a href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/edit/"><button>Edit Report</button></a>
-        <button onclick="downloadPDF()">Download PDF</button>
-        <a href="/admin/player/<?php echo $player_code; ?>/"><button>Back</button></a>
-    </div>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <hr>
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Report Detail</h2>
+	<div class="htp-button-list">
+      <a title="Edit Report" class="btn" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/edit/">Edit Report</a>
+      <button title="Download PDF" class="btn" onclick="downloadPDF()">Download PDF</button>
+	</div>
+  </div>
+    
+  
     
     <div id="showreport" style="width: 800px; padding: 20px; background: white;">
         <h2>Report: <?php echo ucwords($rep['report_title']); ?></h2>
@@ -69,11 +74,11 @@ if(!$rep) die("Report not found.");
         <div>
             <b>Signatures:</b><br>
             <div style="display:inline-block; margin-right: 20px;">
-                <img src="/admin/template/img/signature-saras.png" width="100" crossorigin="anonymous"><br>
+                <img src="/admin/assets/img/signatures/signature-saras.png" width="100" crossorigin="anonymous"><br>
                 Saras Desch
             </div>
             <div style="display:inline-block; margin-right: 20px;">
-                <img src="/admin/template/img/signature-damai.png" width="100" crossorigin="anonymous"><br>
+                <img src="/admin/assets/img/signatures/signature-damai.png" width="100" crossorigin="anonymous"><br>
                 Damai Miracle
             </div>
             <div style="display:inline-block;">
@@ -129,5 +134,8 @@ if(!$rep) die("Report not found.");
             });
         }
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

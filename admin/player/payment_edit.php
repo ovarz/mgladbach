@@ -36,11 +36,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 $months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Payment</title></head>
-<body>
-    <h2>Edit Payment</h2>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Edit Payment</h2>
+  </div>
+  
+  
+  
     <div>Invoice Number: <?php echo $pay['invoice_number']; ?></div>
     <form method="POST">
         <div>
@@ -76,11 +88,15 @@ $months = ['January','February','March','April','May','June','July','August','Se
             </select>
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this payment record?');">Delete Payment</button>
+        <div class="form-action-button">
+            <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+            <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/">Cancel</a>
+            <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+			onclick="return confirm('Are you sure you want to delete this payment record?');">Delete</button>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

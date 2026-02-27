@@ -10,26 +10,24 @@ $sql = "SELECT py.*, p.player_id as p_code, p.fullname, t.name as team_name, s.m
         ORDER BY py.id DESC";
 $result = $conn->query($sql);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Payment List</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-</head>
-<body>
-    <h2>Payment List</h2>
-    <div>
-        <a href="/admin/"><button>Back to Dashboard</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <br>
-    <table id="allPayTable" class="display responsive nowrap" style="width:100%">
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='yes';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Payment List</h2>
+  </div>
+  
+  
+  
+    <table id="allPayTable" class="display responsive nowrap">
         <thead>
             <tr>
                 <th>Invoice</th>
@@ -55,7 +53,9 @@ $result = $conn->query($sql);
                 <td><?php echo $row['payment_date']; ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td>
-                    <a href="/admin/player/<?php echo $row['p_code']; ?>/payment/edit/<?php echo $row['id']; ?>/"><button>Edit</button></a>
+				  <div class="datatable-action">
+                    <a title="Edit" class="btn btn-small" href="/admin/player/<?php echo $row['p_code']; ?>/payment/edit/<?php echo $row['id']; ?>/">Edit</a>
+				  </div>
                 </td>
             </tr>
             <?php endwhile; ?>
@@ -66,5 +66,8 @@ $result = $conn->query($sql);
             $('#allPayTable').DataTable({ responsive: true, pageLength: 10, order: [[0, 'desc']] });
         });
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

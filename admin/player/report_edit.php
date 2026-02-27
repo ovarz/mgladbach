@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $overall = ($count_filled > 0) ? ($total_score / $count_filled) : 0;
 
     $stmt = $conn->prepare("UPDATE reports SET period=?, year=?, report_title=?, report_link=?, examiner_id=?, pace=?, passing=?, dribbling=?, physical=?, attacking=?, defending=?, shooting=?, overall=?, coach_comment=?, recommendation=? WHERE id=?");
-    $stmt->bind_param("ssssiiiiiiiiiisi", $period, $year, $new_title, $new_link, $examiner_id, $vals['pace'], $vals['passing'], $vals['dribbling'], $vals['physical'], $vals['attacking'], $vals['defending'], $vals['shooting'], $overall, $coach_comment, $recommendation, $rid);
+    $stmt->bind_param("ssssiiiiiiiidssi", $period, $year, $new_title, $new_link, $examiner_id, $vals['pace'], $vals['passing'], $vals['dribbling'], $vals['physical'], $vals['attacking'], $vals['defending'], $vals['shooting'], $overall, $coach_comment, $recommendation, $rid);
     
     if($stmt->execute()){
         header("Location: /admin/player/$player_code/$new_link/");
@@ -64,12 +64,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $coaches = $conn->query("SELECT id, nickname FROM coaches ORDER BY nickname ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Report</title></head>
-<body>
-    <h2>Edit Report</h2>
-    <form method="POST">
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="head-top-page">
+    <h2 class="htp-title">Edit Report</h2>
+  </div>
+
+
+
+     <form method="POST">
         <div>
             <label>Period</label><br>
             <select name="period" required>
@@ -112,11 +124,15 @@ $coaches = $conn->query("SELECT id, nickname FROM coaches ORDER BY nickname ASC"
             <textarea name="recommendation" rows="4"><?php echo $rep['recommendation']; ?></textarea>
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this report?');">Delete Report</button>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/">Cancel</a>
+          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+		  onclick="return confirm('Are you sure you want to delete this report?');">Delete Report</button>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

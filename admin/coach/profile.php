@@ -22,7 +22,7 @@ $teams = $conn->query("SELECT name FROM teams WHERE coach_id = $cid");
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Biodata Coach</h2>
 	<div class="htp-button-list">
       <a title="Add Data" class="btn" href="/admin/coach/<?php echo $coach_code; ?>/edit/">Edit Data</a>

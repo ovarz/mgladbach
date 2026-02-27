@@ -15,7 +15,7 @@ $result = $conn->query($sql);
 
 
 
-  <div class="header-table-page">
+  <div class="head-top-page">
     <h2 class="htp-title">Location Settings</h2>
 	<div class="htp-button-list">
       <a title="Add Data" class="btn" href="/admin/setting/location/add/">Add Data</a>
@@ -38,7 +38,9 @@ $result = $conn->query($sql);
                 <td><?php echo $row['code']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td>
-                    <a href="/admin/setting/location/edit/<?php echo $row['code']; ?>/"><button>Edit</button></a>
+				  <div class="datatable-action">
+                    <a title="Edit" class="btn btn-small" href="/admin/setting/location/edit/<?php echo $row['code']; ?>/">Edit</a>
+				  </div>
                 </td>
             </tr>
             <?php endwhile; ?>
