@@ -7,7 +7,6 @@ $result = $conn->query($sql);
 <?php 
   $lang='en';
   $menu='Location';
-  $site_title='default';
   $datatable='yes';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
@@ -16,14 +15,15 @@ $result = $conn->query($sql);
 
 
 
-    <h2>Location Settings</h2>
-    <div>
-        <a href="/admin/setting/location/add/"><button>Add Data</button></a>
-        <a href="/admin/"><button>Back to Dashboard</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <br>
+  <div class="header-table-page">
+    <h2 class="htp-title">Location Settings</h2>
+	<div class="htp-button-list">
+      <a title="Add Data" class="btn" href="/admin/setting/location/add/">Add Data</a>
+	</div>
+  </div>
+
     
+	
     <table id="locTable" class="display responsive nowrap">
         <thead>
             <tr>

@@ -11,7 +11,6 @@ $result = $conn->query($sql);
 <?php 
   $lang='en';
   $menu='Team';
-  $site_title='default';
   $datatable='yes';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
@@ -20,13 +19,15 @@ $result = $conn->query($sql);
 
 
 
-    <h2>Team Settings</h2>
-    <div>
-        <a href="/admin/setting/team/add/"><button>Add Data</button></a>
-        <a href="/admin/"><button>Back to Dashboard</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <br>
+  <div class="header-table-page">
+    <h2 class="htp-title">Team Settings</h2>
+	<div class="htp-button-list">
+      <a title="Add Data" class="btn" href="/admin/setting/team/add/">Add Data</a>
+	</div>
+  </div>
+
+
+
     <table id="teamTable" class="display responsive nowrap">
         <thead>
             <tr>

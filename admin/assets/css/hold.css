@@ -10,6 +10,8 @@
   --color-4a:rgb(122 185 41 / 8%);
   --color-5:#23d468;
   --color-5a:rgb(35 212 104 / 8%);
+  --color-6:#ff6b4b;
+  --color-6a:rgb(255 107 75 / 8%);
   --color-border:#EEEEEE;
   --color-border-form:#E0E0E0;
   --color-border-dark:#424242;
@@ -39,10 +41,10 @@ body, html{color:var(--color-1);}
 a, .btn, button{transition:var(--transition-default); cursor:pointer}
 a, button{color:var(--color-4); fill:var(--color-4);}
 a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}
-.btn, a.btn, button.btn{background-color:var(--color-4); color:var(--color-3); fill:var(--bg-2); border-radius:var(--rounded-1);}
-.btn:hover, a.btn:hover, button.btn:hover{background-color:var(--color-3); color:var(--bg-2); fill:var(--bg-2);}
-.btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent; border-radius:var(--size-6);}
-.btn-outline:hover{border:2px solid var(--color-3); color:var(--color-3); fill:var(--color-3);}
+.btn, a.btn, button.btn{background-color:var(--color-4); color:var(--bg-2); fill:var(--bg-2); border-radius:var(--rounded-1);}
+.btn:hover, a.btn:hover, button.btn:hover{background-color:var(--color-2); color:var(--bg-2); fill:var(--bg-2);}
+.btn.btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent !important; border-radius:var(--rounded-1);}
+.btn.btn-outline:hover{border:2px solid var(--color-3); color:var(--color-3); fill:var(--color-3);}
 b{color:var(--color-3);}
 .form-box{background-color:var(--bg-2); border-radius:var(--rounded-1);}
 .form-label b{color:var(--color-alert);}
@@ -76,6 +78,14 @@ a.img-frame:hover{opacity:var(--hover-opacity);}
 a.nav-box:hover{color:var(--color-5); fill:var(--color-5);}
 .nav-curr{color:var(--color-4) !important; fill:var(--color-4) !important;}
 .nav-label{color:var(--color-1);}
+
+
+
+.btn.fab-delete{background-color:var(--color-6);}
+
+
+
+.htp-title{color:var(--color-2);}
 
 
 

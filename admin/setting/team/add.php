@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php 
   $lang='en';
   $menu='Team';
-  $site_title='default';
   $datatable='no';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>

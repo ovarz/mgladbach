@@ -20,7 +20,6 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
 <?php 
   $lang='en';
   $menu='Home';
-  $site_title='default';
   $datatable='no';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>

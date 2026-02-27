@@ -36,7 +36,6 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 <?php 
   $lang='en';
   $menu='Session';
-  $site_title='default';
   $datatable='no';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
@@ -45,7 +44,12 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 
 
 
-    <h2>Edit Session</h2>
+  <div class="header-table-page">
+    <h2 class="htp-title">Edit Session</h2>
+  </div>
+
+
+
     <form method="POST">
         <div>
             <label>Location</label><br>
@@ -67,10 +71,11 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
             <input type="number" name="price" value="<?php echo $session['price']; ?>" required>
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/setting/session/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete Session</button>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
+          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+          onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete</button>
         </div>
     </form>
 	

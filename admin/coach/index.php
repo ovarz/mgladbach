@@ -7,7 +7,6 @@ $result = $conn->query($sql);
 <?php 
   $lang='en';
   $menu='Coach';
-  $site_title='default';
   $datatable='yes';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>

@@ -21,7 +21,6 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 <?php 
   $lang='en';
   $menu='Session';
-  $site_title='default';
   $datatable='no';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
@@ -30,7 +29,12 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 
 
 
-    <h2>Add Session</h2>
+  <div class="header-table-page">
+    <h2 class="htp-title">Add Session</h2>
+  </div>
+
+
+
     <form method="POST">
         <div>
             <label>Location</label><br>
@@ -50,9 +54,9 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
             <input type="number" name="price" required>
         </div>
         <br>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/setting/session/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save Data</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
         </div>
     </form>
 	

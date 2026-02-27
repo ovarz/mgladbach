@@ -9,7 +9,6 @@ $result = $conn->query($sql);
 <?php 
   $lang='en';
   $menu='Player';
-  $site_title='default';
   $datatable='yes';
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
