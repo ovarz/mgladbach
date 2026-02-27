@@ -11,6 +11,15 @@ $res_pay = $conn->query("SELECT * FROM payments WHERE id = $inv_id");
 $pay = $res_pay->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // --- LOGIKA DELETE ---
+    if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+        $conn->query("DELETE FROM payments WHERE id = $inv_id");
+        header("Location: /admin/player/$player_code/");
+        exit();
+    }
+
+    // --- LOGIKA UPDATE ---
     $month = $_POST['month'];
     $year = $_POST['year'];
     $discount = $_POST['discount'] ?: 0;
@@ -29,7 +38,7 @@ $months = ['January','February','March','April','May','June','July','August','Se
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><base href="/" /><title>Edit Payment</title></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Payment</title></head>
 <body>
     <h2>Edit Payment</h2>
     <div>Invoice Number: <?php echo $pay['invoice_number']; ?></div>
@@ -66,9 +75,11 @@ $months = ['January','February','March','April','May','June','July','August','Se
                 <option value="success" <?php echo ($pay['status'] == 'success') ? 'selected' : ''; ?>>success</option>
             </select>
         </div>
+        <br>
         <div>
-            <button type="submit">Save Data</button>
+            <button type="submit" name="action" value="update">Save Data</button>
             <a href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this payment record?');">Delete Payment</button>
         </div>
     </form>
 </body>

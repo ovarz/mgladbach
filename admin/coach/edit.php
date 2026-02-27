@@ -10,18 +10,32 @@ if(!$coach) die("Coach not found.");
 $cid = $coach['id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // --- LOGIKA DELETE ---
+    if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+        if ($coach['photo'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $coach['photo'])) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $coach['photo']);
+        }
+        if ($coach['signature'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/" . $coach['signature'])) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/" . $coach['signature']);
+        }
+        $conn->query("DELETE FROM coaches WHERE id = $cid");
+        header("Location: /admin/coach/");
+        exit();
+    }
+
+    // --- LOGIKA UPDATE ---
     $nickname = $conn->real_escape_string($_POST['nickname']);
     $join_date = $_POST['join_date'];
     $teams = isset($_POST['teams']) ? $_POST['teams'] : [];
 
-    $photo_name = $coach['photo']; // Default pakai foto lama
-    $signature_name = $coach['signature']; // Default pakai signature lama
+    $photo_name = $coach['photo'];
+    $signature_name = $coach['signature'];
     $max_size = 1048576; // 1MB
 
-    $dir_photos = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/";
-    $dir_sigs = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/signatures/";
+    $dir_photos = $_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/";
+    $dir_sigs = $_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/";
 
-    // Cek dan Upload Photo Baru (Jika ada)
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         if ($_FILES['photo']['size'] <= $max_size) {
             $photo_name = $coach_code . "_photo." . pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
@@ -32,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // Cek dan Upload Signature Baru (Jika ada)
     if (isset($_FILES['signature']) && $_FILES['signature']['error'] === UPLOAD_ERR_OK) {
         if ($_FILES['signature']['size'] <= $max_size) {
             $signature_name = $coach_code . "_sig." . pathinfo($_FILES['signature']['name'], PATHINFO_EXTENSION);
@@ -47,10 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssi", $nickname, $join_date, $photo_name, $signature_name, $cid);
     
     if($stmt->execute()){
-        // Reset tim yang sebelumnya dipegang coach ini menjadi NULL
         $conn->query("UPDATE teams SET coach_id = NULL WHERE coach_id = $cid");
-        
-        // Update tim baru yang dipilih
         foreach($teams as $tid) {
             if(!empty($tid)) {
                 $conn->query("UPDATE teams SET coach_id = $cid WHERE id = " . (int)$tid);
@@ -61,21 +71,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Ambil semua tim untuk opsi dropdown
 $teams_res = $conn->query("SELECT id, name FROM teams ORDER BY name ASC");
 $all_teams = [];
-while($t = $teams_res->fetch_assoc()) {
-    $all_teams[] = $t;
-}
+while($t = $teams_res->fetch_assoc()) { $all_teams[] = $t; }
 
-// Ambil tim yang saat ini sedang dipegang oleh coach
 $assigned_teams_res = $conn->query("SELECT id FROM teams WHERE coach_id = $cid");
 $assigned_teams = [];
-while($at = $assigned_teams_res->fetch_assoc()) {
-    $assigned_teams[] = $at['id'];
-}
+while($at = $assigned_teams_res->fetch_assoc()) { $assigned_teams[] = $at['id']; }
 
-// Fungsi pembantu untuk membuat dropdown HTML
 function buildTeamSelect($all_teams, $selected_id = "") {
     $html = '<select name="teams[]"><option value="">-- Select Team --</option>';
     foreach($all_teams as $t) {
@@ -86,7 +89,6 @@ function buildTeamSelect($all_teams, $selected_id = "") {
     return $html;
 }
 
-// Template murni (tanpa form tag dan selected attribute) untuk fungsi tambah tim Javascript
 $team_options_clean = '<option value="">-- Select Team --</option>';
 foreach($all_teams as $t) {
     $team_options_clean .= '<option value="'.$t['id'].'">'.$t['name'].'</option>';
@@ -94,18 +96,13 @@ foreach($all_teams as $t) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Edit Coach</title>
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Coach</title></head>
 <body>
     <h2>Edit Coach</h2>
     <form method="POST" enctype="multipart/form-data">
         <div>
             <label>Current Photo:</label><br>
-            <img src="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>" width="100"><br>
+            <img src="/uploads/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>" width="100"><br>
             <label>Upload New Photo (Max 1MB, leave blank to keep current)</label><br>
             <input type="file" name="photo" accept="image/*">
         </div>
@@ -138,7 +135,7 @@ foreach($all_teams as $t) {
         <div>
             <label>Current Signature:</label><br>
             <?php if($coach['signature']): ?>
-                <img src="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>" width="100"><br>
+                <img src="/uploads/signatures/<?php echo $coach['signature']; ?>" width="100"><br>
             <?php else: ?>
                 No Signature Uploaded<br>
             <?php endif; ?>
@@ -147,8 +144,9 @@ foreach($all_teams as $t) {
         </div>
         <br>
         <div>
-            <button type="submit">Save Data</button>
+            <button type="submit" name="action" value="update">Save Data</button>
             <a href="/admin/coach/<?php echo $coach_code; ?>/"><button type="button">Cancel</button></a>
+            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this coach? Teams assigned to this coach will be unassigned.');">Delete Coach</button>
         </div>
     </form>
 

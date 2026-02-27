@@ -18,15 +18,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // AMBIL DATA LOKASI DARI DATABASE
 $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Add Session</title>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Session';
+  $site_title='default';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Add Session</h2>
     <form method="POST">
         <div>
@@ -52,5 +55,8 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
             <a href="/admin/setting/session/"><button type="button">Cancel</button></a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

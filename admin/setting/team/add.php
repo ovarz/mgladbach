@@ -12,10 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><base href="/" /><title>Add Team</title></head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Team';
+  $site_title='default';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Add Team</h2>
     <form method="POST">
         <div>
@@ -27,5 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a href="/admin/setting/team/"><button type="button">Cancel</button></a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

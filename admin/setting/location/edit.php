@@ -9,6 +9,8 @@ $loc = $result->fetch_assoc();
 if(!$loc) die("Location not found.");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // --- LOGIKA UPDATE ---
     $name = $conn->real_escape_string($_POST['name']);
 
     $stmt = $conn->prepare("UPDATE locations SET name=? WHERE code=?");
@@ -20,15 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Edit Location</title>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Location';
+  $site_title='default';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Edit Location</h2>
     <form method="POST">
         <div>
@@ -41,9 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <br>
         <div>
-            <button type="submit">Save Data</button>
+            <button type="submit" name="action" value="update">Save Data</button>
             <a href="/admin/setting/location/"><button type="button">Cancel</button></a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

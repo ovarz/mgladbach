@@ -4,20 +4,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/admin/auth.php';
 $sql = "SELECT * FROM locations ORDER BY name ASC";
 $result = $conn->query($sql);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Location Settings</title>
-    
-    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/r-2.5.0/datatables.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/r-2.5.0/datatables.min.js"></script>
-    <style> body { max-width: 100vw; overflow-x: hidden; padding: 10px; } </style>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Location';
+  $site_title='default';
+  $datatable='yes';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Location Settings</h2>
     <div>
         <a href="/admin/setting/location/add/"><button>Add Data</button></a>
@@ -26,10 +24,10 @@ $result = $conn->query($sql);
     </div>
     <br>
     
-    <table id="locTable" class="display nowrap" style="width:100%">
+    <table id="locTable" class="display responsive nowrap">
         <thead>
             <tr>
-                <th class="all">Location Code</th>
+                <th class="min-tablet">Location Code</th>
                 <th class="all">Location Name</th>
                 <th class="all">Action</th>
             </tr>
@@ -52,5 +50,8 @@ $result = $conn->query($sql);
             $('#locTable').DataTable({ responsive: true, pageLength: 10, order: [[1, 'asc']] });
         });
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

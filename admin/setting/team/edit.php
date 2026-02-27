@@ -9,6 +9,15 @@ $team = $result->fetch_assoc();
 if(!$team) die("Team not found.");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // --- LOGIKA DELETE ---
+    if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+        $conn->query("DELETE FROM teams WHERE id = $team_id");
+        header("Location: /admin/setting/team/");
+        exit();
+    }
+
+    // --- LOGIKA UPDATE ---
     $name = $conn->real_escape_string($_POST['team_name']);
     
     $stmt = $conn->prepare("UPDATE teams SET name=? WHERE id=?");
@@ -20,15 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Edit Team</title>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Team';
+  $site_title='default';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Edit Team</h2>
     <form method="POST">
         <div>
@@ -37,9 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <br>
         <div>
-            <button type="submit">Save Data</button>
+            <button type="submit" name="action" value="update">Save Data</button>
             <a href="/admin/setting/team/"><button type="button">Cancel</button></a>
+            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this team? Players assigned to this team will have their team reset.');">Delete Team</button>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

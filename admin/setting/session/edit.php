@@ -9,6 +9,15 @@ $session = $result->fetch_assoc();
 if(!$session) die("Session not found.");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // --- LOGIKA DELETE ---
+    if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+        $conn->query("DELETE FROM sessions WHERE id = $session_id");
+        header("Location: /admin/setting/session/");
+        exit();
+    }
+
+    // --- LOGIKA UPDATE ---
     $location = $_POST['location_code'];
     $meetings = (int)$_POST['meetings'];
     $price = (float)$_POST['price'];
@@ -22,18 +31,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Ambil data lokasi dinamis untuk dropdown
 $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/" />
-    <title>Edit Session</title>
-</head>
-<body>
+<?php 
+  $lang='en';
+  $menu='Session';
+  $site_title='default';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
     <h2>Edit Session</h2>
     <form method="POST">
         <div>
@@ -57,9 +68,13 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
         </div>
         <br>
         <div>
-            <button type="submit">Save Data</button>
+            <button type="submit" name="action" value="update">Save Data</button>
             <a href="/admin/setting/session/"><button type="button">Cancel</button></a>
+            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete Session</button>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

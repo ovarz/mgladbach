@@ -77,7 +77,6 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 .rancak-main{padding-left:var(--sidebar-width);}
 .rancak-main-container{display:grid; grid-gap:var(--size-5); width:100%; max-width:var(--width-max); margin:0 auto; padding:var(--body-padding);}
-.rancak-main-container table.dataTable{width:calc(100% - (var(--body-padding) * 2)) !important;}
 
 
 
@@ -94,4 +93,8 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
   
   .desktop-only, .share-box-static{display:none !important; visibility:hidden; content-visibility:hidden;}
   .desktop-only iframe[loading=lazy]{content-visibility:hidden !important;}
+  
+  
+  
+  .rancak-main-container table.dataTable{width:calc(100% - (var(--body-padding) * 2)) !important;}
 }
