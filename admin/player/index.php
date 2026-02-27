@@ -35,7 +35,11 @@ $result = $conn->query($sql);
         <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>" width="50"></td>
+                <td>
+				  <div class="profile-frame img-frame content-center">
+				    <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>">
+				  </div>
+				</td>
                 <td><?php echo $row['fullname']; ?></td>
                 <td><?php echo $row['team_name'] ?: 'No Team'; ?></td>
                 <td>

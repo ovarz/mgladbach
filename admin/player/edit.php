@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- LOGIKA DELETE ---
     if (isset($_POST['action']) && $_POST['action'] == 'delete') {
         if ($player['photo']) {
-            $photo_path = $_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $player['photo'];
+            $photo_path = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/" . $player['photo'];
             if (file_exists($photo_path)) unlink($photo_path);
         }
         $conn->query("DELETE FROM players WHERE id = $pid");
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         if ($_FILES['photo']['size'] <= 1048576) {
             $photo_name = $player_code . "." . pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
-            move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $photo_name);
+            move_uploaded_file($_FILES['photo']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/" . $photo_name);
         } else {
             echo "<script>alert('Failed: Photo size exceeds 1MB!'); window.history.back();</script>";
             exit();
@@ -54,15 +54,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $teams = $conn->query("SELECT id, name FROM teams ORDER BY name ASC");
 $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessions s JOIN locations l ON s.location_code = l.code ORDER BY s.id ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Player</title></head>
-<body>
-    <h2>Edit Player</h2>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="header-table-page">
+    <h2 class="htp-title">Edit Player</h2>
+  </div>
+  
+  
+  
     <form method="POST" enctype="multipart/form-data">
         <div>
             <label>Current Photo:</label><br>
-            <img src="/uploads/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="100"><br>
+            <img src="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="100"><br>
             <label>Upload New Photo (Max 1MB, leave blank to keep current)</label><br>
             <input type="file" name="photo" accept="image/*">
         </div>
@@ -89,11 +101,15 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
         <div><label>WhatsApp</label><br><input type="number" name="whatsapp" value="<?php echo $player['whatsapp']; ?>" required></div>
         <div><label>Email</label><br><input type="email" name="email" value="<?php echo $player['email']; ?>" required></div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this player? All reports, attendances, and payments will be deleted!');">Delete Player</button>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+		  onclick="return confirm('Are you sure you want to delete this player? All reports, attendances, and payments will be deleted!');">Delete</button>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   <div class="header-table-page">
-    <h2 class="htp-title">Add Team</h2>
+    <h2 class="htp-title">Add New Team</h2>
   </div>
 
 

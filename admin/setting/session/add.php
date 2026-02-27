@@ -30,7 +30,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 
 
   <div class="header-table-page">
-    <h2 class="htp-title">Add Session</h2>
+    <h2 class="htp-title">Add New Session</h2>
   </div>
 
 

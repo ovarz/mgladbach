@@ -54,15 +54,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $teams = $conn->query("SELECT id, name FROM teams ORDER BY name ASC");
 $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessions s JOIN locations l ON s.location_code = l.code ORDER BY s.id ASC");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Add Player</title>
-</head>
-<body>
-    <h2>Add New Player</h2>
+<?php 
+  $lang='en';
+  $menu='Player';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="header-table-page">
+    <h2 class="htp-title">Add New Player</h2>
+  </div>
+  
+  
+  
     <form method="POST" enctype="multipart/form-data">
         <div>
             <label>Upload Photo (Max 1MB)</label><br>
@@ -110,10 +118,13 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
             <label>Email</label><br>
             <input type="email" name="email" required>
         </div>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/player/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/">Cancel</a>
         </div>
     </form>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>
