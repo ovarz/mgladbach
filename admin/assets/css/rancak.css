@@ -30,6 +30,7 @@ body{overflow-x:hidden; position:relative; max-width:100vw;}
 a, button{font-weight:bold;}
 .btn, a.btn, button.btn, .btn-outline{padding:var(--size-3) var(--size-4); -webkit-appearance:none; text-transform:capitalize; font-weight:bold;
 display:flex; text-align:center; align-items:center; justify-content:center;}
+.btn-small, a.btn-small, button.btn-small{padding:var(--size-2) var(--size-3); font-size:0.875rem;}
 .rancak-popup{display:none;}
 .width-max{position:relative; width:100%; max-width:var(--site-container); margin:0 auto;}
 .form-box{position:relative; line-height:0;}
@@ -74,16 +75,17 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 
 
-.rancak-main{padding-left:var(--sidebar-width);}
-.rancak-main-container{display:grid; grid-gap:var(--size-5); width:100%; max-width:var(--width-max); margin:0 auto; padding:var(--body-padding);}
+.rancak-main{padding-left:var(--sidebar-width); position:relative;}
+.rancak-main-container{display:grid; grid-gap:var(--size-5); width:100%; max-width:var(--width-max); margin:0 auto; padding:var(--body-padding); position:relative;}
 
 
 
 .dataTable .profile-frame{width:40px; height:40px;}
+.datatable-action{display:flex; gap:var(--size-1);}
 
 
 
-.form-action-button{display:flex; flex-wrap:wrap;}
+.form-action-button{display:flex; flex-wrap:wrap; justify-content:flex-end;}
 .form-action-button .btn{margin-top:var(--size-1); margin-right:var(--size-1);}
 
 

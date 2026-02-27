@@ -17,12 +17,15 @@ $result = $conn->query($sql);
 
 
 
-    <h2>Player List</h2>
-    <div>
-        <a href="/admin/player/add/"><button>Add Data</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <br>
+  <div class="header-table-page">
+    <h2 class="htp-title">Player List</h2>
+	<div class="htp-button-list">
+      <a title="Add Data" class="btn" href="/admin/player/add/">Add Data</a>
+	</div>
+  </div>
+
+
+
     <table id="playerTable" class="display responsive nowrap">
         <thead>
             <tr>
@@ -43,9 +46,11 @@ $result = $conn->query($sql);
                 <td><?php echo $row['fullname']; ?></td>
                 <td><?php echo $row['team_name'] ?: 'No Team'; ?></td>
                 <td>
-                    <a href="/admin/player/<?php echo $row['player_id']; ?>/"><button>Detail</button></a>
-                    <a href="/admin/player/<?php echo $row['player_id']; ?>/edit/"><button>Edit</button></a>
-                    <a href="/admin/player/<?php echo $row['player_id']; ?>/attendance/add/"><button>Absen</button></a>
+				  <div class="datatable-action">
+                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/">Detail</a>
+                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/edit/">Edit</a>
+                    <a title="Add Data" class="btn btn-small" href="/admin/player/<?php echo $row['player_id']; ?>/attendance/add/">Absen</a>
+				  </div>
                 </td>
             </tr>
             <?php endwhile; ?>
