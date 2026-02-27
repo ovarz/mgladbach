@@ -79,13 +79,21 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 
 
+.dataTable .profile-frame{width:40px; height:40px;}
+
+
+
 .form-action-button{display:flex; flex-wrap:wrap;}
 .form-action-button .btn{margin-top:var(--size-1); margin-right:var(--size-1);}
 
 
 
 .htp-button-list{display:flex;}
-.htp-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem; padding-bottom:var(--size-1);}
+.htp-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
+
+
+
+.profile-picture .profile-frame{width:160px; height:160px;}
 
 
 
@@ -109,5 +117,6 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
   
   
   
+  .htp-title{padding-bottom:var(--size-2);}
   .htp-button-list .btn{margin-top:var(--size-1); margin-right:var(--size-1);}
 }

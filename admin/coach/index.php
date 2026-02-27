@@ -15,12 +15,15 @@ $result = $conn->query($sql);
 
 
 
-    <h2>Coach List</h2>
-    <div>
-        <a href="/admin/coach/add/"><button>Add Data</button></a>
-        <a href="/logout/"><button>Logout</button></a>
-    </div>
-    <br>
+  <div class="header-table-page">
+    <h2 class="htp-title">Coach List</h2>
+	<div class="htp-button-list">
+      <a title="Add Data" class="btn" href="/admin/coach/add/">Add Data</a>
+	</div>
+  </div>
+
+
+
     <table id="coachTable" class="display responsive nowrap">
         <thead>
 		  <tr>
@@ -33,7 +36,11 @@ $result = $conn->query($sql);
         <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>" width="50"></td>
+                <td>
+				  <div class="profile-frame img-frame content-center">
+				    <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>">
+				  </div>
+				</td>
                 <td><?php echo $row['nickname']; ?></td>
                 <td><?php echo $row['join_date']; ?></td>
                 <td>

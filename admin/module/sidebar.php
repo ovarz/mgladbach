@@ -82,7 +82,7 @@
     <nav class="nav-list">
       <div class="nav-box nav-user" href="/admin/setting/team/">
 	    <div class="nav-icon">
-		  <div class="nav-icon-frame img-frame content-center">
+		  <div class="nav-icon-frame profile-frame img-frame content-center">
 		    <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $_SESSION['photo'] ?: 'default.png'; ?>"/>
 		  </div>
 		</div>

@@ -44,7 +44,7 @@ a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}
 .btn, a.btn, button.btn{background-color:var(--color-4); color:var(--bg-2); fill:var(--bg-2); border-radius:var(--rounded-1);}
 .btn:hover, a.btn:hover, button.btn:hover{background-color:var(--color-2); color:var(--bg-2); fill:var(--bg-2);}
 .btn.btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent !important; border-radius:var(--rounded-1);}
-.btn.btn-outline:hover{border:2px solid var(--color-3); color:var(--color-3); fill:var(--color-3);}
+.btn.btn-outline:hover{border-color:var(--color-3); color:var(--color-3); fill:var(--color-3);}
 b{color:var(--color-3);}
 .form-box{background-color:var(--bg-2); border-radius:var(--rounded-1);}
 .form-label b{color:var(--color-alert);}
@@ -64,10 +64,14 @@ b{color:var(--color-3);}
 
 a.img-frame:hover{opacity:var(--hover-opacity);}
 .img-frame > img{transition:var(--transition-default);}
-.img-frame > img.lazyloaded, .img-frame > iframe.lazyloaded{opacity:1;}
+.img-frame > img.lazyloaded, .img-frame > iframe.lazyloaded, .img-frame > img.lazyloading{opacity:1;}
 .thumb-loading:before{animation:skeleton-loading 0.5s linear infinite alternate; background-color:var(--color-2);}
 @-webkit-keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
 @keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
+
+
+
+.profile-frame{border-radius:50%;}
 
 
 

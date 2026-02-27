@@ -49,15 +49,23 @@ while($t = $teams_res->fetch_assoc()) {
     $team_options .= '<option value="'.$t['id'].'">'.$t['name'].'</option>';
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <base href="/" />
-    <title>Add Coach</title>
-</head>
-<body>
-    <h2>Add Coach</h2>
+<?php 
+  $lang='en';
+  $menu='Coach';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="header-table-page">
+    <h2 class="htp-title">Add Coach</h2>
+  </div>
+  
+  
+  
     <form method="POST" enctype="multipart/form-data">
         <div>
             <label>Upload Photo (Max 1MB)</label><br>
@@ -87,9 +95,9 @@ while($t = $teams_res->fetch_assoc()) {
             <input type="file" name="signature" accept="image/*">
         </div>
         <br>
-        <div>
-            <button type="submit">Save Data</button>
-            <a href="/admin/coach/"><button type="button">Cancel</button></a>
+        <div class="form-action-button">
+          <button title="Save" class="btn fab-save" type="submit">Save</button>
+          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/">Cancel</a>
         </div>
     </form>
 
@@ -101,5 +109,8 @@ while($t = $teams_res->fetch_assoc()) {
             container.appendChild(div);
         }
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>

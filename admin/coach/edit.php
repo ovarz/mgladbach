@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // --- LOGIKA DELETE ---
     if (isset($_POST['action']) && $_POST['action'] == 'delete') {
-        if ($coach['photo'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $coach['photo'])) {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/" . $coach['photo']);
+        if ($coach['photo'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/" . $coach['photo'])) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/" . $coach['photo']);
         }
-        if ($coach['signature'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/" . $coach['signature'])) {
-            unlink($_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/" . $coach['signature']);
+        if ($coach['signature'] && file_exists($_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/signatures/" . $coach['signature'])) {
+            unlink($_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/signatures/" . $coach['signature']);
         }
         $conn->query("DELETE FROM coaches WHERE id = $cid");
         header("Location: /admin/coach/");
@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $signature_name = $coach['signature'];
     $max_size = 1048576; // 1MB
 
-    $dir_photos = $_SERVER['DOCUMENT_ROOT'] . "/uploads/photos/";
-    $dir_sigs = $_SERVER['DOCUMENT_ROOT'] . "/uploads/signatures/";
+    $dir_photos = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/photos/";
+    $dir_sigs = $_SERVER['DOCUMENT_ROOT'] . "/admin/assets/img/signatures/";
 
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         if ($_FILES['photo']['size'] <= $max_size) {
@@ -94,15 +94,27 @@ foreach($all_teams as $t) {
     $team_options_clean .= '<option value="'.$t['id'].'">'.$t['name'].'</option>';
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><base href="/" /><title>Edit Coach</title></head>
-<body>
-    <h2>Edit Coach</h2>
+<?php 
+  $lang='en';
+  $menu='Coach';
+  $datatable='no';
+  require ($_SERVER['BMG'].'admin/module/meta.php')
+?>
+<?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<div class="rancak-main-container rancak-main-1column">
+
+
+
+  <div class="header-table-page">
+    <h2 class="htp-title">Edit Coach</h2>
+  </div>
+  
+  
+  
     <form method="POST" enctype="multipart/form-data">
         <div>
             <label>Current Photo:</label><br>
-            <img src="/uploads/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>" width="100"><br>
+            <img src="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>" width="100"><br>
             <label>Upload New Photo (Max 1MB, leave blank to keep current)</label><br>
             <input type="file" name="photo" accept="image/*">
         </div>
@@ -135,7 +147,7 @@ foreach($all_teams as $t) {
         <div>
             <label>Current Signature:</label><br>
             <?php if($coach['signature']): ?>
-                <img src="/uploads/signatures/<?php echo $coach['signature']; ?>" width="100"><br>
+                <img src="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>" width="100"><br>
             <?php else: ?>
                 No Signature Uploaded<br>
             <?php endif; ?>
@@ -143,10 +155,11 @@ foreach($all_teams as $t) {
             <input type="file" name="signature" accept="image/*">
         </div>
         <br>
-        <div>
-            <button type="submit" name="action" value="update">Save Data</button>
-            <a href="/admin/coach/<?php echo $coach_code; ?>/"><button type="button">Cancel</button></a>
-            <button type="submit" name="action" value="delete" formnovalidate onclick="return confirm('Are you sure you want to delete this coach? Teams assigned to this coach will be unassigned.');">Delete Coach</button>
+        <div class="form-action-button">
+            <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save Data</button>
+            <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/<?php echo $coach_code; ?>/">Cancel</a>
+            <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+			onclick="return confirm('Are you sure you want to delete this coach? Teams assigned to this coach will be unassigned.');">Delete</button>
         </div>
     </form>
 
@@ -158,5 +171,8 @@ foreach($all_teams as $t) {
             container.appendChild(div);
         }
     </script>
-</body>
-</html>
+	
+	
+
+</div>
+<?php require ($_SERVER['BMG'].'admin/module/footer.php')?>
