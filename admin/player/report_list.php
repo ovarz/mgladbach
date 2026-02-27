@@ -28,11 +28,11 @@ $result = $conn->query($sql);
     <table id="allRepTable" class="display responsive nowrap">
         <thead>
             <tr>
-                <th>Player Name</th>
-                <th>Team</th>
-                <th>Report Title</th>
-                <th>Overall</th>
-                <th>Action</th>
+                <th class="all">Player Name</th>
+                <th class="min-tablet">Team</th>
+                <th class="min-tablet">Report Title</th>
+                <th class="min-tablet">Overall</th>
+                <th class="all">Action</th>
             </tr>
         </thead>
         <tbody>

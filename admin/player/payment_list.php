@@ -30,15 +30,13 @@ $result = $conn->query($sql);
     <table id="allPayTable" class="display responsive nowrap">
         <thead>
             <tr>
-                <th>Invoice</th>
-                <th>Player Name</th>
-                <th>Team</th>
-                <th>Month & Year</th>
-                <th>Session</th>
-                <th>Final Price</th>
-                <th>Payment Date</th>
-                <th>Status</th>
-                <th>Action</th>
+                <th class="all">Invoice</th>
+                <th class="min-tablet">Player Name</th>
+                <th class="min-tablet">Info</th>
+                <th class="min-tablet">Final Price</th>
+                <th class="min-tablet">Payment Date</th>
+                <th class="min-tablet">Status</th>
+                <th class="all">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -46,9 +44,10 @@ $result = $conn->query($sql);
             <tr>
                 <td><?php echo $row['invoice_number']; ?></td>
                 <td><?php echo $row['fullname']; ?></td>
-                <td><?php echo $row['team_name'] ?: '-'; ?></td>
-                <td><?php echo $row['month'] . ' ' . $row['year']; ?></td>
-                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
+                <td>
+				  <div><?php echo $row['month'] . ' ' . $row['year']; ?></div>
+				  <div><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></div>
+				</td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo $row['payment_date']; ?></td>
                 <td><?php echo $row['status']; ?></td>

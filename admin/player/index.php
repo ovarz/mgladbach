@@ -23,6 +23,7 @@ $result = $conn->query($sql);
       <a title="Add Data" class="btn" href="/admin/player/add/">Add Data</a>
       <a title="Report List" class="btn" href="/admin/player/report/">Report List</a>
       <a title="Payment List" class="btn" href="/admin/player/payment/">Payment List</a>
+      <a title="Attendance List" class="btn" href="/admin/player/attendance/">Attendance List</a>
 	</div>
   </div>
 
