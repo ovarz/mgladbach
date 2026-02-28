@@ -72,8 +72,8 @@ $months = ['January','February','March','April','May','June','July','August','Se
         <div>
             <label>Status</label><br>
             <select name="status">
-                <option value="waiting confirmation">waiting confirmation</option>
-                <option value="success">success</option>
+                <option value="Waiting Confirmation">Waiting Confirmation</option>
+                <option value="Success">Success</option>
             </select>
         </div>
         <div class="form-action-button">

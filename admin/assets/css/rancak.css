@@ -13,7 +13,7 @@
   --size-7:84px;
   --max-zindex:2147483648;
   --font-size:14px;
-  --bg-1:#FAFAFA;
+  --bg-1:#FDFDFD;
   --width-max:1600px;
   --body-padding:var(--size-4);
   --sidebar-width:48px;
@@ -90,6 +90,12 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 
 
+.home-shortcut-title{font-weight:bold;}
+.home-shortcut-list{display:flex; flex-wrap:wrap;}
+.hcl-button{margin-right:var(--size-2); margin-top:var(--size-2);}
+
+
+
 .htp-button-list{display:flex; flex-wrap:wrap;}
 .htp-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
 
@@ -116,6 +122,10 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
   
   
   .rancak-main-container table.dataTable{width:calc(100% - (var(--body-padding) * 2)) !important;}
+  
+  
+  
+  .ihr-payment{width:84px;}
   
   
   

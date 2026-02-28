@@ -1,21 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/admin/auth.php';
-
-// Fetch Latest Players
-$res_players = $conn->query("SELECT p.photo, p.fullname, t.name as team_name FROM players p LEFT JOIN teams t ON p.team_id = t.id ORDER BY p.id DESC LIMIT 5");
-
-// Fetch Latest Payments (Waiting)
-$res_payments = $conn->query("SELECT p.photo, p.fullname, t.name as team_name, py.status FROM payments py JOIN players p ON py.player_id = p.id LEFT JOIN teams t ON p.team_id = t.id WHERE py.status = 'waiting confirmation' ORDER BY py.id DESC LIMIT 5");
-if($res_payments->num_rows == 0) {
-    // Jika semua sudah bayar, tampilkan 5 latest payment apapun statusnya
-    $res_payments = $conn->query("SELECT p.photo, p.fullname, t.name as team_name, py.status FROM payments py JOIN players p ON py.player_id = p.id LEFT JOIN teams t ON p.team_id = t.id ORDER BY py.id DESC LIMIT 5");
-}
-
-// Fetch Latest Attendance (Check-in but no check-out)
-$res_absent = $conn->query("SELECT p.photo, p.fullname, t.name as team_name, 'Check-in' as status FROM attendances a JOIN players p ON a.player_id = p.id LEFT JOIN teams t ON p.team_id = t.id WHERE a.date = CURDATE() AND a.check_out_time IS NULL ORDER BY a.id DESC LIMIT 5");
-
-// Fetch Latest Coaches
-$res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEPARATOR '<br>') as team_name FROM coaches c LEFT JOIN teams t ON c.id = t.coach_id GROUP BY c.id ORDER BY c.id DESC LIMIT 5");
+  require_once $_SERVER['DOCUMENT_ROOT'] . '/admin/auth.php';
 ?>
 <?php 
   $lang='en';
@@ -24,71 +8,69 @@ $res_coaches = $conn->query("SELECT c.photo, c.nickname, GROUP_CONCAT(t.name SEP
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
 <?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
-<div class="rancak-main-container rancak-main-2column">
+<div class="rancak-main-container rancak-main-1column">
 
 
 
-    <div>
-        <h2>Latest Player</h2>
-        <a href="/admin/player/"><button>View All</button></a>
-        <ul>
-            <?php while($row = $res_players->fetch_assoc()): ?>
-                <li>
-                    <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
-                    <br>Name: <?php echo $row['fullname']; ?>
-                    <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
-                </li>
-            <?php endwhile; ?>
-        </ul>
+  <div class="head-top-page">
+    <h2 class="htp-title">Dashboard</h2>
+  </div>
+  
+  
+  <?php 
+    $nav_array = array();
+    $nav_array[]=array(
+      'nav_title'=>'Player',
+      'nav_list' => [
+        ['nav_title'=>'Player List', 'nav_link'=>'/admin/player/',],
+        ['nav_title'=>'Add Player', 'nav_link'=>'/admin/player/add/',],
+        ['nav_title'=>'Attendance List', 'nav_link'=>'/admin/player/attendance/',],
+        ['nav_title'=>'Report List', 'nav_link'=>'/admin/player/report/',],
+        ['nav_title'=>'Payment List', 'nav_link'=>'/admin/player/payment/',],
+      ],
+    );
+    $nav_array[]=array(
+      'nav_title'=>'Coach',
+      'nav_list' => [
+        ['nav_title'=>'Coach List', 'nav_link'=>'/admin/coach/',],
+        ['nav_title'=>'Add Coach', 'nav_link'=>'/admin/coach/add/',],
+      ],
+    );
+    $nav_array[]=array(
+      'nav_title'=>'Team',
+      'nav_list' => [
+        ['nav_title'=>'Team List', 'nav_link'=>'/admin/setting/team/',],
+        ['nav_title'=>'Add Team', 'nav_link'=>'/admin/setting/team/add/',],
+      ],
+    );
+    $nav_array[]=array(
+      'nav_title'=>'Location',
+      'nav_list' => [
+        ['nav_title'=>'Location List', 'nav_link'=>'/admin/setting/location/',],
+        ['nav_title'=>'Add Location', 'nav_link'=>'/admin/setting/location/add/',],
+      ],
+    );
+    $nav_array[]=array(
+      'nav_title'=>'Session',
+      'nav_list' => [
+        ['nav_title'=>'Session List', 'nav_link'=>'/admin/setting/session/',],
+        ['nav_title'=>'Add Session', 'nav_link'=>'/admin/setting/session/add/',],
+      ],
+    );
+  ?>
+  
+  <?php foreach($nav_array as $nav_row => $nav_box){ ?>
+    <div class="home-shortcut">
+      <h3 class="home-shortcut-title"><?php echo($nav_box['nav_title'])?></h3>
+      <div class="home-shortcut-list">
+	    <?php foreach($nav_box['nav_list'] as $nav_box){ ?>
+          <a title="<?php echo($nav_box['nav_title'])?>" class="btn hcl-button" href="<?php echo($nav_box['nav_link'])?>">
+		    <?php echo($nav_box['nav_title'])?>
+		  </a>
+		<?php } ?>
+      </div>
     </div>
-
-    <div>
-        <h2>Latest Payment</h2>
-        <a href="/admin/player/payment/"><button>View All</button></a>
-        <ul>
-            <?php while($row = $res_payments->fetch_assoc()): ?>
-                <li>
-                    <br>Name: <?php echo $row['fullname']; ?>
-                    <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
-                    <br>Status: <?php echo $row['status']; ?>
-                </li>
-            <?php endwhile; ?>
-        </ul>
-    </div>
-
-    <div>
-        <h2>Latest Player Attendance</h2>
-        <a href="/admin/player/"><button>View All</button></a>
-        <ul>
-            <?php if($res_absent->num_rows > 0): ?>
-                <?php while($row = $res_absent->fetch_assoc()): ?>
-                    <li>
-                        <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
-                        <br>Name: <?php echo $row['fullname']; ?>
-                        <br>Team: <?php echo $row['team_name'] ?: 'No Team'; ?>
-                        <br>Status: <?php echo $row['status']; ?>
-                    </li>
-                <?php endwhile; ?>
-            <?php else: ?>
-                <li>Data belum tersedia</li>
-            <?php endif; ?>
-        </ul>
-    </div>
-
-    <div>
-        <h2>Latest Coach</h2>
-        <a href="/admin/coach/"><button>View All</button></a>
-        <ul>
-            <?php while($row = $res_coaches->fetch_assoc()): ?>
-                <li>
-                    <img src="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.jpg'; ?>" width="50">
-                    <br>Name: <?php echo $row['nickname']; ?>
-                    <br>Team(s): <br>
-                    <div><?php echo $row['team_name'] ?: 'No Team'; ?></div>
-                </li>
-            <?php endwhile; ?>
-        </ul>
-    </div>
+  <?php } ?>
 	
 	
 

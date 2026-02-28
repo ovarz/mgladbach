@@ -83,8 +83,8 @@ $months = ['January','February','March','April','May','June','July','August','Se
         <div>
             <label>Status</label><br>
             <select name="status">
-                <option value="waiting confirmation" <?php echo ($pay['status'] == 'waiting confirmation') ? 'selected' : ''; ?>>waiting confirmation</option>
-                <option value="success" <?php echo ($pay['status'] == 'success') ? 'selected' : ''; ?>>success</option>
+                <option value="Waiting Confirmation" <?php echo ($pay['status'] == 'Waiting Confirmation') ? 'selected' : ''; ?>>Waiting Confirmation</option>
+                <option value="Success" <?php echo ($pay['status'] == 'Success') ? 'selected' : ''; ?>>Success</option>
             </select>
         </div>
         <br>
