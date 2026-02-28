@@ -45,7 +45,7 @@ $result = $conn->query($sql);
                 <td><?php echo $row['fullname']; ?></td>
                 <td><?php echo $row['team_name'] ?: '-'; ?></td>
                 <td><?php echo $row['check_in_time']; ?></td>
-                <td><?php echo $row['check_out_time'] ?: '<span style="color:red;">Not Checked Out</span>'; ?></td>
+                <td><?php echo $row['check_out_time'] ?: '<span class="alert-text">Not Checked Out</span>'; ?></td>
                 <td><?php echo $row['submit_by'] ? ucwords($row['submit_by']) : '-'; ?></td>
                 <td>
 				  <?php if(!$row['check_out_time']): ?>

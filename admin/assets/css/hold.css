@@ -10,8 +10,10 @@
   --color-4a:rgb(122 185 41 / 8%);
   --color-5:#23d468;
   --color-5a:rgb(35 212 104 / 8%);
-  --color-6:#ff6b4b;
-  --color-6a:rgb(255 107 75 / 8%);
+  --color-6:#ff6040;
+  --color-6a:rgb(255 96 64 / 8%);
+  --color-7:#00b8ff;
+  --color-7a:rgb(0 184 255 / 8%);
   --color-border:#EEEEEE;
   --color-border-form:#E0E0E0;
   --color-border-dark:#424242;
@@ -46,6 +48,7 @@ a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}
 .btn.btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent !important; border-radius:var(--rounded-1);}
 .btn.btn-outline:hover{border-color:var(--color-3); color:var(--color-3); fill:var(--color-3);}
 b{color:var(--color-3);}
+.alert-text{color:var(--color-6);}
 
 
 
@@ -82,6 +85,8 @@ a.img-frame:hover{opacity:var(--hover-opacity);}
 .dataTable.no-footer,
 .dataTables_wrapper .dataTables_length select,
 .dataTables_wrapper .dataTables_filter input{border-color:var(--color-border-form) !important;}
+.dataTable div[aria-status="Waiting Confirmation"]{color:var(--color-6);}
+.dataTable div[aria-status="Success"]{color:var(--color-7);}
 
 
 

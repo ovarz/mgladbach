@@ -75,7 +75,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <tr>
                 <td><?php echo date('j F Y', strtotime($row['date'])); ?></td>
                 <td><?php echo $row['check_in_time']; ?></td>
-                <td><?php echo $row['check_out_time'] ?: '-'; ?></td>
+                <td><?php echo $row['check_out_time'] ?: '<span class="alert-text">Not Checked Out</span>'; ?></td>
                 <td><?php echo $row['submit_by'] ? ucwords($row['submit_by']) : '-'; ?></td>
                 <td>
 				  <?php if(!$row['check_out_time']): ?>
@@ -111,7 +111,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
                 <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>
-                <td><?php echo $row['status']; ?></td>
+                <td><div aria-status="<?php echo $row['status']; ?>"><?php echo $row['status']; ?></div></td>
                 <td>
                   <div class="datatable-action">
                     <a title="Edit" class="btn btn-small" href="/admin/player/<?php echo $player_code; ?>/payment/edit/<?php echo $row['id']; ?>/">Edit</a>

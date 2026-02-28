@@ -50,7 +50,7 @@ $result = $conn->query($sql);
 				</td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>
-                <td><?php echo $row['status']; ?></td>
+                <td><div aria-status="<?php echo $row['status']; ?>"><?php echo $row['status']; ?></div></td>
                 <td>
 				  <div class="datatable-action">
                     <a title="Edit" class="btn btn-small" href="/admin/player/<?php echo $row['p_code']; ?>/payment/edit/<?php echo $row['id']; ?>/">Edit</a>
