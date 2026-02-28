@@ -71,6 +71,10 @@ a.img-frame:hover{opacity:var(--hover-opacity);}
 
 
 
+.white-box{border-radius:var(--rounded-2); border-color:var(--color-border); background-color:var(--bg-2);}
+
+
+
 .profile-frame{border-radius:50%;}
 
 

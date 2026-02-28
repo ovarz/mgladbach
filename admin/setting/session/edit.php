@@ -50,34 +50,41 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
 
 
 
-    <form method="POST">
-        <div>
-            <label>Location</label><br>
-            <select name="location_code" required>
-                <option value="">-- Select Location --</option>
-                <?php while($l = $loc_res->fetch_assoc()): ?>
-                    <option value="<?php echo $l['code']; ?>" <?php echo ($session['location_code'] == $l['code']) ? 'selected' : ''; ?>>
-                        <?php echo $l['name']; ?>
-                    </option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div>
-            <label>Meetings (Numbers only)</label><br>
-            <input type="number" name="meetings" value="<?php echo $session['meetings']; ?>" required> kali pertemuan
-        </div>
-        <div>
-            <label>Price</label><br>
-            <input type="number" name="price" value="<?php echo $session['price']; ?>" required>
-        </div>
-        <br>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
-          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
-          onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete</button>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST">
+    <div class="form-row">
+      <div class="form-label">Location</div>
+      <div class="form-box form-select">
+        <select class="form-field pdf-list" name="location_code" required>
+          <option value="">-- Select Location --</option>
+          <?php while($l = $loc_res->fetch_assoc()): ?>
+			<option value="<?php echo $l['code']; ?>" <?php echo ($session['location_code'] == $l['code']) ? 'selected' : ''; ?>>
+				<?php echo $l['name']; ?>
+			</option>
+          <?php endwhile; ?>
+        </select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Meetings</div>
+      <div class="form-box form-withsuffix">
+        <input class="form-field" name="meetings" type="number" value="<?php echo $session['meetings']; ?>" required>
+        <div class="form-suffix">kali pertemuan</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Price</div>
+      <div class="form-box">
+        <input class="form-field" name="price" type="number" value="<?php echo $session['price']; ?>" required>
+      </div>
+    </div>
+      <div class="form-action-button">
+        <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+        <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
+        <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+        onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete</button>
+      </div>
+  </form>
 	
 	
 
