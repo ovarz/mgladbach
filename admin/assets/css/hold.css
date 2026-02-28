@@ -46,12 +46,26 @@ a:hover, button:hover{color:var(--color-3); fill:var(--color-3);}
 .btn.btn-outline{border:2px solid var(--color-4); color:var(--color-4); fill:var(--color-4); background-color:transparent !important; border-radius:var(--rounded-1);}
 .btn.btn-outline:hover{border-color:var(--color-3); color:var(--color-3); fill:var(--color-3);}
 b{color:var(--color-3);}
+
+
+
+a.img-frame:hover{opacity:var(--hover-opacity);}
+.img-frame > img{transition:var(--transition-default);}
+.img-frame > img.lazyloaded, .img-frame > iframe.lazyloaded, .img-frame > img.lazyloading{opacity:1;}
+.thumb-loading:before{animation:skeleton-loading 0.5s linear infinite alternate; background-color:var(--color-2);}
+@-webkit-keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
+@keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
+
+
+
 .form-box{background-color:var(--bg-2); border-radius:var(--rounded-1);}
 .form-label b{color:var(--color-alert);}
 .form-field{border-color:var(--color-border-form); background-color:transparent; border-radius:var(--rounded-1);}
 .form-field::placeholder{color:#E0E0E0;}
+.form-field:disabled{background-color:var(--color-border);}
 .form-icon{background-color:var(--bg-2); border-radius:var(--rounded-1); fill:var(--color-1); transition:var(--transition-default); cursor:pointer}
 .form-icon:hover{fill:var(--color-4);}
+.form-pp-frame{border-radius:50%;}
 
 .ccr-dummy-frame{border-color:var(--color-border-form); border-radius:4px;}
 .ccr-dummy-frame, .ccr-dummy-frame svg, .ccr-dummy-right{transition:var(--transition-default);}
@@ -62,12 +76,12 @@ b{color:var(--color-3);}
 
 
 
-a.img-frame:hover{opacity:var(--hover-opacity);}
-.img-frame > img{transition:var(--transition-default);}
-.img-frame > img.lazyloaded, .img-frame > iframe.lazyloaded, .img-frame > img.lazyloading{opacity:1;}
-.thumb-loading:before{animation:skeleton-loading 0.5s linear infinite alternate; background-color:var(--color-2);}
-@-webkit-keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
-@keyframes skeleton-loading{0%{opacity:0.05;}100%{opacity:0.15;};}
+.dataTable tbody tr:nth-child(even){background-color:#FAFAFA;}
+.dataTable tbody td{box-shadow:0 0 0 !important; border-color:var(--color-border-form) !important;}
+.dataTable > thead > tr > th, .dataTable > thead > tr > td,
+.dataTable.no-footer,
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input{border-color:var(--color-border-form) !important;}
 
 
 
@@ -94,6 +108,10 @@ a.nav-box:hover{color:var(--color-5); fill:var(--color-5);}
 
 
 .htp-title{color:var(--color-2);}
+
+
+
+.pbi-data{color:var(--color-2);}
 
 
 

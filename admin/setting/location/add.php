@@ -38,21 +38,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <form method="POST">
-        <div>
-            <label>Location Code (Max 10 chars, example: BGR)</label><br>
-            <input type="text" name="code" maxlength="10" required>
-        </div>
-        <div>
-            <label>Location Name (example: Bogor)</label><br>
-            <input type="text" name="name" required>
-        </div>
-        <br>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/location/">Cancel</a>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST">
+    <div class="form-row">
+      <div class="form-label">Location Code (3 Character)</div>
+      <div class="form-box">
+	    <input class="form-field form-uppercase" type="text" name="code" maxlength="3" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Location Name</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="name" required>
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/location/">Cancel</a>
+    </div>
+  </form>
 	
 	
 

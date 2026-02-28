@@ -80,7 +80,7 @@ $assigned_teams = [];
 while($at = $assigned_teams_res->fetch_assoc()) { $assigned_teams[] = $at['id']; }
 
 function buildTeamSelect($all_teams, $selected_id = "") {
-    $html = '<select name="teams[]"><option value="">-- Select Team --</option>';
+    $html = '<select class="form-field" name="teams[]"><option value="">-- Select Team --</option>';
     foreach($all_teams as $t) {
         $sel = ($t['id'] == $selected_id) ? 'selected' : '';
         $html .= '<option value="'.$t['id'].'" '.$sel.'>'.$t['name'].'</option>';
@@ -111,63 +111,71 @@ foreach($all_teams as $t) {
   
   
   
-    <form method="POST" enctype="multipart/form-data">
-        <div>
-            <label>Current Photo:</label><br>
-            <img src="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>" width="100"><br>
-            <label>Upload New Photo (Max 1MB, leave blank to keep current)</label><br>
-            <input type="file" name="photo" accept="image/*">
-        </div>
-        <br>
-        <div>
-            <label>Nickname</label><br>
-            <input type="text" name="nickname" value="<?php echo $coach['nickname']; ?>" required>
-        </div>
-        <div>
-            <label>Join Date</label><br>
-            <input type="date" name="join_date" value="<?php echo $coach['join_date']; ?>" required>
-        </div>
-        
-        <div>
-            <label>Assign Teams</label><br>
-            <div id="team-container">
-                <?php 
-                if (count($assigned_teams) > 0) {
-                    foreach($assigned_teams as $sel_id) {
-                        echo '<div>' . buildTeamSelect($all_teams, $sel_id) . '</div>';
-                    }
-                } else {
-                    echo '<div>' . buildTeamSelect($all_teams) . '</div>';
-                }
-                ?>
-            </div>
-            <button type="button" onclick="addTeamField()">Tambah Tim</button>
-        </div>
-        <br>
-        <div>
-            <label>Current Signature:</label><br>
-            <?php if($coach['signature']): ?>
-                <img src="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>" width="100"><br>
-            <?php else: ?>
-                No Signature Uploaded<br>
-            <?php endif; ?>
-            <label>Upload New Signature (Max 1MB, leave blank to keep current)</label><br>
-            <input type="file" name="signature" accept="image/*">
-        </div>
-        <br>
-        <div class="form-action-button">
-            <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save Data</button>
-            <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/<?php echo $coach_code; ?>/">Cancel</a>
-            <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
-			onclick="return confirm('Are you sure you want to delete this coach? Teams assigned to this coach will be unassigned.');">Delete</button>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST" enctype="multipart/form-data">
+    <div class="form-pp content-center">
+	  <div class="form-pp-frame img-frame">
+		<img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>">
+	  </div>
+	</div>
+    <div class="form-row">
+      <div class="form-label">Upload New Photo (Max 1MB, leave blank to keep current)</div>
+      <div class="form-box">
+        <input class="form-field" type="file" name="photo" accept="image/*">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Nickname</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="nickname" value="<?php echo $coach['nickname']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Join Date</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="join_date" value="<?php echo $coach['join_date']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Assign Teams</div>
+      <div id="team-container" class="form-add-form">
+		<?php 
+		  if (count($assigned_teams) > 0) {
+			foreach($assigned_teams as $sel_id) {
+				echo '<div class="form-box form-select">' . buildTeamSelect($all_teams, $sel_id) . '</div>';
+			}
+		  } else {
+			echo '<div class="form-box form-select">' . buildTeamSelect($all_teams) . '</div>';
+		  }
+		?>
+      </div>
+      <button type="button" onclick="addTeamField()">Tambah Tim</button>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Upload Signature (Max 1MB)</div>
+      <?php if($coach['signature']): ?>
+	    <div class="display-signature img-frame">
+          <img class="lazyload" data-original="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>">
+		</div>
+      <?php else: ?>
+        <div class="form-label">No Signature Uploaded</div>
+      <?php endif; ?>
+      <div class="form-box">
+        <input class="form-field" type="file" name="signature" accept="image/*">
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save Data</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/<?php echo $coach_code; ?>/">Cancel</a>
+      <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+      onclick="return confirm('Are you sure you want to delete this coach? Teams assigned to this coach will be unassigned.');">Delete</button>
+    </div>
+  </form>
 
     <script>
         function addTeamField() {
             var container = document.getElementById('team-container');
             var div = document.createElement('div');
-            div.innerHTML = '<select name="teams[]"><?php echo addslashes($team_options_clean); ?></select>';
+            div.innerHTML = '<select class="form-field" name="teams[]"><?php echo addslashes($team_options_clean); ?></select>';
             container.appendChild(div);
         }
     </script>

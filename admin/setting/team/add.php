@@ -29,16 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <form method="POST">
-        <div>
-            <label>Team Name</label><br>
-            <input type="text" name="team_name" required>
-        </div>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/team/">Cancel</a>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST">
+    <div class="form-row">
+      <div class="form-label">Team Name</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="team_name" required>
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/team/">Cancel</a>
+    </div>
+  </form>
 	
 	
 

@@ -66,49 +66,55 @@ while($t = $teams_res->fetch_assoc()) {
   
   
   
-    <form method="POST" enctype="multipart/form-data">
-        <div>
-            <label>Upload Photo (Max 1MB)</label><br>
-            <input type="file" name="photo" accept="image/*">
-        </div>
-        <div>
-            <label>Nickname</label><br>
-            <input type="text" name="nickname" required>
-        </div>
-        <div>
-            <label>Join Date</label><br>
-            <input type="date" name="join_date" required>
-        </div>
-        
-        <div>
-            <label>Assign Teams</label><br>
-            <div id="team-container">
-                <div>
-                    <select name="teams[]"><?php echo $team_options; ?></select>
-                </div>
-            </div>
-            <button type="button" onclick="addTeamField()">Tambah Tim</button>
-        </div>
-        <br>
-        <div>
-            <label>Upload Signature (Max 1MB)</label><br>
-            <input type="file" name="signature" accept="image/*">
-        </div>
-        <br>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/">Cancel</a>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-label">Upload Photo (Max 1MB)</div>
+      <div class="form-box">
+        <input class="form-field" type="file" name="photo" accept="image/*">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Nickname</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="nickname" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Join Date</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="join_date" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Assign Teams</div>
+      <div id="team-container" class="form-add-form">
+        <div class="form-box form-select">
+          <select class="form-field" name="teams[]"><?php echo $team_options; ?></select>
+          <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+		</div>
+      </div>
+      <button type="button" onclick="addTeamField()">Tambah Tim</button>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Upload Signature (Max 1MB)</div>
+      <div class="form-box">
+        <input class="form-field" type="file" name="signature" accept="image/*">
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/coach/">Cancel</a>
+    </div>
+  </form>
 
-    <script>
-        function addTeamField() {
-            var container = document.getElementById('team-container');
-            var div = document.createElement('div');
-            div.innerHTML = '<select name="teams[]"><?php echo addslashes($team_options); ?></select>';
-            container.appendChild(div);
-        }
-    </script>
+  <script>
+      function addTeamField() {
+          var container = document.getElementById('team-container');
+          var div = document.createElement('div');
+          div.innerHTML = '<div class="form-box form-select"><select class="form-field" name="teams[]"><?php echo addslashes($team_options); ?></select></div>';
+          container.appendChild(div);
+      }
+  </script>
 	
 	
 

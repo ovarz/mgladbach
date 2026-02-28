@@ -39,7 +39,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
     <div class="form-row">
       <div class="form-label">Location</div>
       <div class="form-box form-select">
-        <select class="form-field pdf-list" name="location_code" required>
+        <select class="form-field" name="location_code" required>
           <option value="">-- Select Location --</option>
           <?php while($l = $loc_res->fetch_assoc()): ?>
             <option value="<?php echo $l['code']; ?>"><?php echo $l['name']; ?></option>

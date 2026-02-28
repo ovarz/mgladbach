@@ -54,7 +54,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
     <div class="form-row">
       <div class="form-label">Location</div>
       <div class="form-box form-select">
-        <select class="form-field pdf-list" name="location_code" required>
+        <select class="form-field" name="location_code" required>
           <option value="">-- Select Location --</option>
           <?php while($l = $loc_res->fetch_assoc()): ?>
 			<option value="<?php echo $l['code']; ?>" <?php echo ($session['location_code'] == $l['code']) ? 'selected' : ''; ?>>
@@ -75,15 +75,15 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
     <div class="form-row">
       <div class="form-label">Price</div>
       <div class="form-box">
-        <input class="form-field" name="price" type="number" value="<?php echo $session['price']; ?>" required>
+        <input class="form-field" name="price" type="number" value="<?php echo (int)$session['price']; ?>" required>
       </div>
     </div>
-      <div class="form-action-button">
-        <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
-        <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
-        <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
-        onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete</button>
-      </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/setting/session/">Cancel</a>
+      <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+      onclick="return confirm('Are you sure you want to delete this session? Players assigned to this session will have their session reset.');">Delete</button>
+    </div>
   </form>
 	
 	

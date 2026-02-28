@@ -71,10 +71,10 @@ $months = ['January','February','March','April','May','June','July','August','Se
             </select>
         </div>
         <div>Session Data: <?php echo $player['loc_name'] . ' - ' . $player['meetings'] . ' kali pertemuan'; ?></div>
-        <div>Base Price: <?php echo $player['price']; ?></div>
+        <div>Base Price: <?php echo (int)$player['price']; ?></div>
         <div>
             <label>Discount Price</label><br>
-            <input type="number" name="discount" value="<?php echo $pay['discount']; ?>">
+            <input type="number" name="discount" value="<?php echo (int)$pay['discount']; ?>">
         </div>
         <div>
             <label>Payment Date</label><br>

@@ -9,6 +9,14 @@
 
 
 
+.form-container{grid-gap:var(--size-5);}
+
+
+
+.white-box{padding:var(--size-5);}
+
+
+
 .rancak-main-2column{grid-template-columns:repeat(2,1fr);}
 .rancak-main-3column{grid-template-columns:repeat(3,1fr);}
 
@@ -37,6 +45,11 @@
 
 .head-top-page{display:flex; align-items:center; justify-content:space-between;}
 .htp-button-list .btn{margin-left:var(--size-1);}
+
+
+
+.profile-bio{grid-gap:var(--size-5); grid-template-columns:auto 1fr; align-items:flex-start;}
+.profile-coach{grid-template-columns:auto 1fr auto;}
 
 
 

@@ -31,30 +31,49 @@ $teams = $conn->query("SELECT name FROM teams WHERE coach_id = $cid");
 
 
 
-    <div>
-        <div class="profile-picture">
-		  <div class="profile-frame img-frame content-center">
-		    <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>">
-		  </div>
-		</div>
-        <div>ID: <?php echo $coach['coach_id']; ?></div>
-        <div>Nickname: <?php echo $coach['nickname']; ?></div>
-        <div>Join Date: <?php echo $coach['join_date']; ?></div>
-        <div>
-            Teams Assigned:<br>
-            <?php while($t = $teams->fetch_assoc()): ?>
-                <div>- <?php echo $t['name']; ?></div>
-            <?php endwhile; ?>
-        </div>
-        <div>
-            Signature:<br>
-            <?php if($coach['signature']): ?>
-                <img src="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>" width="100">
-            <?php else: ?>
-                No Signature Uploaded
-            <?php endif; ?>
-        </div>
+  <div class="profile-bio profile-coach white-box">
+    <div class="profile-bio-picture content-center">
+      <div class="profile-frame img-frame">
+        <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $coach['photo'] ?: 'default.png'; ?>">
+      </div>
     </div>
+	<ul class="profile-bio-info">
+	  <li class="pbi-row">
+	    <div class="pbi-label">Coach ID</div>
+	    <div class="pbi-data"><?php echo $coach['coach_id']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Nickname</div>
+	    <div class="pbi-data"><?php echo $coach['nickname']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Join Date</div>
+	    <div class="pbi-data"><?php echo $coach['join_date']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Teams Assigned</div>
+	    <ul class="pbi-data">
+          <?php while($t = $teams->fetch_assoc()): ?>
+            <li><?php echo $t['name']; ?></li>
+          <?php endwhile; ?>
+		</ul>
+	  </li>
+	</ul>
+	<ul class="profile-bio-info">
+	  <li class="pbi-row">
+	    <div class="pbi-label">Signature</div>
+	    <div class="pbi-data">
+		  <?php if($coach['signature']): ?>
+			<div class="display-signature img-frame">
+			  <img class="lazyload" data-original="/admin/assets/img/signatures/<?php echo $coach['signature']; ?>">
+			</div>
+		  <?php else: ?>
+			<div class="form-label">No Signature Uploaded</div>
+		  <?php endif; ?>
+		</div>
+	  </li>
+	</ul>
+  </div>
 	
 	
 

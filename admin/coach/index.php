@@ -37,7 +37,7 @@ $result = $conn->query($sql);
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
                 <td>
-				  <div class="profile-frame img-frame content-center">
+				  <div class="profile-frame img-frame">
 				    <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $row['photo'] ?: 'default.png'; ?>">
 				  </div>
 				</td>
