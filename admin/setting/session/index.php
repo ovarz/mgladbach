@@ -39,7 +39,7 @@ $result = $conn->query($sql);
         <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali pertemuan'; ?></td>
+                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' meetings'; ?></td>
                 <td><?php echo number_format($row['price'], 0, ',', '.'); ?></td>
                 <td>
 				  <div class="datatable-action">

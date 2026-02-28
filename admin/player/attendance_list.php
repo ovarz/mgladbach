@@ -41,7 +41,7 @@ $result = $conn->query($sql);
         <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><?php echo date('d M Y', strtotime($row['date'])); ?></td>
+                <td><?php echo date('j F Y', strtotime($row['date'])); ?></td>
                 <td><?php echo $row['fullname']; ?></td>
                 <td><?php echo $row['team_name'] ?: '-'; ?></td>
                 <td><?php echo $row['check_in_time']; ?></td>

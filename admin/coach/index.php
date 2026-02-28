@@ -1,7 +1,12 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/admin/auth.php';
 
-$sql = "SELECT c.coach_id, c.photo, c.nickname, c.join_date FROM coaches c ORDER BY c.id DESC";
+// Mengambil data coach beserta gabungan nama tim yang dilatihnya
+$sql = "SELECT c.id, c.photo, c.coach_id, c.nickname, GROUP_CONCAT(t.name SEPARATOR ', ') as assigned_teams 
+        FROM coaches c 
+        LEFT JOIN teams t ON c.id = t.coach_id 
+        GROUP BY c.id 
+        ORDER BY c.nickname ASC";
 $result = $conn->query($sql);
 ?>
 <?php 
@@ -29,7 +34,7 @@ $result = $conn->query($sql);
 		  <tr>
 		    <th class="min-tablet">Photo</th>
 			<th class="all">Nickname</th>
-			<th class="min-tablet">Join Date</th>
+			<th class="min-tablet">Teams Assigned</th>
 			<th class="all">Action</th>
 		  </tr>
 		</thead>
@@ -42,8 +47,22 @@ $result = $conn->query($sql);
 				  </div>
 				</td>
                 <td><?php echo $row['nickname']; ?></td>
-                <td><?php echo $row['join_date']; ?></td>
-                <td>
+				<td>
+                    <?php if ($row['assigned_teams']): ?>
+                        <ul class="team-list">
+                            <?php 
+                            // Memecah teks tim berdasarkan koma, lalu di-loop menjadi <li>
+                            $teams = explode(',', $row['assigned_teams']);
+                            foreach($teams as $t): 
+                            ?>
+                                <li><?php echo trim($t); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php else: ?>
+					  No Team Assigned
+                    <?php endif; ?>
+                </td>
+				<td>
 				  <div class="datatable-action">
                     <a title="Detail" class="btn btn-small" href="/admin/coach/<?php echo $row['coach_id']; ?>/">Detail</a>
                     <a title="Edit" class="btn btn-small" href="/admin/coach/<?php echo $row['coach_id']; ?>/edit/">Edit</a>

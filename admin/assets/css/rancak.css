@@ -102,6 +102,7 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 .dataTable tbody td{border-top:1px dashed !important;}
 .dataTable tbody tr:first-child td{border-top:0 !important;}
 .dataTable tbody th, .dataTable tbody td{padding:12px !important;}
+.dataTable tbody td ul{list-style:disc; padding-left:var(--size-4); display:grid; grid-gap:var(--size-1);}
 .dataTable .profile-frame{width:40px; height:40px;}
 .datatable-action{display:flex; gap:var(--size-1);}
 

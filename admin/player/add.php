@@ -102,7 +102,7 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
             <select name="session_id" required>
                 <option value="">-- Select Session --</option>
                 <?php while($s = $sessions->fetch_assoc()): ?>
-                    <option value="<?php echo $s['id']; ?>"><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' kali pertemuan'; ?></option>
+                    <option value="<?php echo $s['id']; ?>"><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' meetings'; ?></option>
                 <?php endwhile; ?>
             </select>
         </div>

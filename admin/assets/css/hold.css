@@ -133,7 +133,7 @@ top:calc(var(--button-size) / 3 * -1); right:calc(var(--button-size) / 3 * -1);}
 
 
 @media screen and (min-width:0px) and (max-width:1023px){
-
+  .dataTable>tbody>tr.child ul.dtr-details>li{border-color:transparent !important;}
 }
 
 

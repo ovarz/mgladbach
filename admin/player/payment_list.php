@@ -49,7 +49,7 @@ $result = $conn->query($sql);
 				  <div><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></div>
 				</td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
-                <td><?php echo $row['payment_date']; ?></td>
+                <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td>
 				  <div class="datatable-action">

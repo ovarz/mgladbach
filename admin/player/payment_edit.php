@@ -70,7 +70,7 @@ $months = ['January','February','March','April','May','June','July','August','Se
                 <option value="2026" <?php echo ($pay['year'] == '2026') ? 'selected' : ''; ?>>2026</option>
             </select>
         </div>
-        <div>Session Data: <?php echo $player['loc_name'] . ' - ' . $player['meetings'] . ' kali pertemuan'; ?></div>
+        <div>Session Data: <?php echo $player['loc_name'] . ' - ' . $player['meetings'] . ' meetings'; ?></div>
         <div>Base Price: <?php echo (int)$player['price']; ?></div>
         <div>
             <label>Discount Price</label><br>

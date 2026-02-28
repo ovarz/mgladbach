@@ -52,7 +52,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
         <div>Full Name: <?php echo $player['fullname']; ?></div>
         <div>Team: <?php echo $player['team_name'] ?: 'No Team'; ?></div>
         <div>Coach: <?php echo $player['coach_name'] ?: 'No Coach'; ?></div>
-        <div>Birthday: <?php echo $player['birthday']; ?></div>
+        <div>Birthday: <?php echo date('j F Y', strtotime($player['birthday'])); ?></div>
         <div>Age: <?php echo $age; ?> Years Old</div>
         <div>WhatsApp: <?php echo $player['whatsapp']; ?></div>
         <div>Email: <?php echo $player['email']; ?></div>
@@ -73,7 +73,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
         <tbody>
             <?php while($row = $att_res->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $row['date']; ?></td>
+                <td><?php echo date('j F Y', strtotime($row['date'])); ?></td>
                 <td><?php echo $row['check_in_time']; ?></td>
                 <td><?php echo $row['check_out_time'] ?: '-'; ?></td>
                 <td><?php echo $row['submit_by'] ? ucwords($row['submit_by']) : '-'; ?></td>
@@ -110,7 +110,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
                 <td><?php echo $row['month'] . ' ' . $row['year']; ?></td>
                 <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
-                <td><?php echo $row['payment_date']; ?></td>
+                <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>
                 <td><?php echo $row['status']; ?></td>
                 <td>
                   <div class="datatable-action">

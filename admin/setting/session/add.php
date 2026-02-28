@@ -52,7 +52,7 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
       <div class="form-label">Meetings</div>
       <div class="form-box form-withsuffix">
         <input class="form-field" name="meetings" type="number" required>
-        <div class="form-suffix">kali pertemuan</div>
+        <div class="form-suffix">meetings</div>
       </div>
     </div>
     <div class="form-row">

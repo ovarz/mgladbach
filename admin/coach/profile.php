@@ -48,7 +48,7 @@ $teams = $conn->query("SELECT name FROM teams WHERE coach_id = $cid");
 	  </li>
 	  <li class="pbi-row">
 	    <div class="pbi-label">Join Date</div>
-	    <div class="pbi-data"><?php echo $coach['join_date']; ?></div>
+	    <div class="pbi-data"><?php echo date('j F Y', strtotime($coach['join_date'])); ?></div>
 	  </li>
 	  <li class="pbi-row">
 	    <div class="pbi-label">Teams Assigned</div>
