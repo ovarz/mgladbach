@@ -24,8 +24,7 @@
 
 .rancak-sidebar{--icon-size:var(--size-4); padding-bottom:var(--size-2);}
 .sidebar-top{display:grid; grid-gap:var(--size-4); grid-auto-rows:min-content;}
-.logo{padding:var(--size-4);}
-.logo img{width:100%;}
+.logo{padding:var(--size-4); height:92px;}
 
 .nav-section{padding:var(--size-1) var(--size-4);}
 .nav-box{padding:var(--size-2) var(--size-4); grid-gap:var(--size-2);}

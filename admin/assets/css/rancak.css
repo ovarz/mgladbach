@@ -82,9 +82,9 @@ textarea.form-field{min-height:144px;}
 .rancak-sidebar{--icon-size:var(--size-5); position:fixed; z-index:calc(var(--max-zindex) - 9000); top:0; left:0; height:100vh; height:100svh; width:var(--sidebar-width);
 display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
-.logo{text-align:center; padding:var(--size-2); padding-bottom:var(--size-1) !important;}
+.logo{text-align:center; padding:var(--size-2); padding-bottom:var(--size-1) !important; height:60px;}
 .logo:before{content:none;}
-.logo img{position:static; width:32px; height:auto;}
+.logo img{position:static; width:auto; height:100%;}
 
 .nav-box{display:grid; grid-template-columns:auto 1fr; padding:var(--size-2);}
 .nav-title{font-weight:bold;}
