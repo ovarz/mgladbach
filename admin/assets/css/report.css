@@ -1,0 +1,80 @@
+.result-preview{margin-top:var(--size-2);}
+.result-preview-frame{--font-size:12px; width:800px; height:1132px; background-color:var(--color-3); font-size:1.25rem; position:relative; color:var(--color-3);}
+
+
+
+.rpf-bg{position:absolute; z-index:1; top:0; left:0; width:100%; height:100%; display:grid; grid-template-columns:1fr auto;}
+.rpf-bg-box{background-color:var(--bg-2);}
+.rpf-bg-triangle svg{position:relative; margin-left:-1px; width:auto; height:100%; fill:var(--bg-2);}
+
+
+
+.rpf-logo-bottom, .domain-name{position:absolute; z-index:1000; bottom:var(--size-6); right:var(--size-6);}
+.rpf-logo-bottom svg{width:auto; height:144px;}
+.domain-name{left:var(--size-6); right:auto;}
+
+
+
+.rpf-content{position:absolute; z-index:2000; top:0; left:0; width:75%; padding:var(--size-5); display:grid; grid-gap:var(--size-5); grid-template-rows:min-content;}
+.rpf-logo{display:flex; align-items:center;}
+.rpf-logo img{width:auto; height:70px; margin-right:var(--size-4);}
+.rpf-logo img.rpf-logo-dsj{height:50px;}
+.rpf-head{display:grid; line-height:110%;}
+.rpf-title{font-weight:bold; font-size:1.5rem;}
+.rpf-title-2{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; margin-bottom:3px; margin-top:var(--size-6);}
+.rpf-title b{color:var(--color-5);}
+.rpf-data{display:grid; grid-gap:var(--size-3); grid-template-columns:repeat(2,1fr);}
+.rpf-table, .rpf-row > *{border-style:solid; border-color:var(--color-1);}
+.rpf-table, .rpf-row{display:grid;}
+.rpf-table{border-left-width:1px; border-top-width:1px; font-size:1rem;}
+.rpf-table-head{background-color:var(--color-5); color:var(--bg-2); font-weight:bold; text-transform:uppercase;}
+.rpf-row{grid-template-columns:repeat(2,1fr);}
+.rpf-row > *{padding:var(--size-2) var(--size-3); border-right-width:1px; border-bottom-width:1px; display:flex; align-items:center;}
+.rpf-score{justify-content:center;}
+.rpf-graph{border:1px solid var(--color-1); padding:var(--size-3);}
+.grade-chart{width:100%; height:300px; display:block;}
+.rpf-desc{line-height:150%;}
+.rpf-note{grid-column:1/3; font-style:italic; font-size:1rem;}
+
+
+
+
+.rpf-intro{width:89%; line-height:150%; margin:var(--size-4) 0;}
+.rpf-data-player{width:100%;}
+.rpf-data-title{font-weight:bold; padding-bottom:var(--size-3);}
+.rpf-dl-dot svg{width:auto; height:var(--size-2); margin-right:var(--size-2);}
+.rpf-dl-box{padding:var(--size-1) 0; display:grid; grid-gap:var(--size-2); grid-template-columns:auto 100px auto 1fr; align-items:center;}
+.rpf-dl-box > *{padding:var(--size-1) 0;}
+.rpf-dl-display{border-bottom:1px solid var(--color-1);}
+
+
+
+.coach-comments{display:grid; grid-gap:var(--size-2); grid-template-columns:152px 1fr; width:80%; line-height:150%;}
+.coach-comments-container, .grade-comment{white-space:pre-wrap; height:167px; max-width:300px;
+word-wrap:break-word; word-break:break-word; hyphens:auto;}
+.grade-comment{line-height:120%; font-size:1.25rem; background:url(admin/assets/img/line-comment.svg) top left repeat-y transparent; background-position:0px -1px;}
+
+
+
+
+.rpf-signature{display:grid; grid-template-columns:repeat(3,1fr); grid-gap:var(--size-5); margin-top:var(--size-6);}
+.rpf-signature-box{margin-right:var(--size-2);}
+.rpf-signature-img, .rpf-signature-info *{text-align:center;}
+.rpf-signature-title, .rpf-signature-company{font-size:0.875rem;}
+.rpf-signature-img img{width:auto; height:55px;}
+.rpf-signature-info{display:grid; grid-gap:2px; margin-top:var(--size-1); padding-top:var(--size-1); border-top:1px solid var(--color-1);}
+.rpf-signature-name{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1rem;}
+
+
+
+
+
+
+
+@media screen and (min-width:0px) and (max-width:639px){
+  .report-display{zoom:0.3;}
+}
+
+@media screen and (min-width:640px) and (max-width:1023px){
+  .report-display{zoom:0.7;}
+}

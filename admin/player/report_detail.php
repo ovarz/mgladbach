@@ -16,6 +16,12 @@ $result = $conn->query($sql);
 $rep = $result->fetch_assoc();
 
 if(!$rep) die("Report not found.");
+
+// --- FORMAT NAMA FILE PDF ---
+$raw_title = str_replace(' ', '_', strtolower($rep['report_title']));
+$raw_name = str_replace(' ', '_', strtolower($rep['fullname']));
+$raw_team = str_replace(' ', '_', strtolower($rep['team_name'] ?: 'no_team'));
+$pdf_filename = $raw_title . '-' . $raw_name . '-' . $raw_team . '.pdf';
 ?>
 <?php 
   $lang='en';
@@ -24,6 +30,7 @@ if(!$rep) die("Report not found.");
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
 <?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
+<style><?php require ($_SERVER['BMG'].'admin/assets/css/report.css')?></style>
 <div class="rancak-main-container rancak-main-1column">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -38,59 +45,183 @@ if(!$rep) die("Report not found.");
       <button title="Download PDF" class="btn" onclick="downloadPDF()">Download PDF</button>
 	</div>
   </div>
-    
   
-    
-    <div id="showreport" style="width: 800px; padding: 20px; background: white;">
-        <h2>Report: <?php echo ucwords($rep['report_title']); ?></h2>
-        
-        <div>Player ID: <?php echo $rep['p_code']; ?></div>
-        <div>Full Name: <?php echo $rep['fullname']; ?></div>
-        <div>Birthday: <?php echo $rep['birthday']; ?></div>
-        <div>Team: <?php echo $rep['team_name'] ?: 'No Team'; ?></div>
-        <div>Head Coach: <?php echo $rep['head_coach'] ?: 'No Coach'; ?></div>
-        
-        <br>
-        <div>Pace: <?php echo $rep['pace'] !== null ? $rep['pace'] : '-'; ?></div>
-        <div>Passing: <?php echo $rep['passing'] !== null ? $rep['passing'] : '-'; ?></div>
-        <div>Dribbling: <?php echo $rep['dribbling'] !== null ? $rep['dribbling'] : '-'; ?></div>
-        <div>Physical: <?php echo $rep['physical'] !== null ? $rep['physical'] : '-'; ?></div>
-        <div>Attacking: <?php echo $rep['attacking'] !== null ? $rep['attacking'] : '-'; ?></div>
-        <div>Defending: <?php echo $rep['defending'] !== null ? $rep['defending'] : '-'; ?></div>
-        <div>Shooting: <?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div>
-        <div><b>Overall: <?php echo $rep['overall']; ?></b></div>
-        
-        <br>
-        <div style="width: 400px; height: 400px;">
-            <canvas id="radarChart"></canvas>
-        </div>
-
-        <br>
-        <div>Coach Comment: <br><?php echo nl2br($rep['coach_comment']); ?></div>
-        <br>
-        <div>Recommendation: <br><?php echo nl2br($rep['recommendation']); ?></div>
-
-        <br><br>
-        <div>
-            <b>Signatures:</b><br>
-            <div style="display:inline-block; margin-right: 20px;">
-                <img src="/admin/assets/img/signatures/signature-saras.png" width="100" crossorigin="anonymous"><br>
-                Saras Desch
-            </div>
-            <div style="display:inline-block; margin-right: 20px;">
-                <img src="/admin/assets/img/signatures/signature-damai.png" width="100" crossorigin="anonymous"><br>
-                Damai Miracle
-            </div>
-            <div style="display:inline-block;">
+  
+  
+  <div id="showreport" class="report-display">
+  
+    <div class="result-preview content-center">
+      <div class="result-preview-frame" id="result-preview-front">
+	    <div class="rpf-bg">
+		  <div class="rpf-bg-box"></div>
+		  <div class="rpf-bg-triangle"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/gimmick.svg')?></div>
+		  <div class="domain-name">www.mgladbachacademy.id</div>
+		</div>
+		<div class="rpf-logo-bottom"><?php require ($_SERVER['BMG'].'admin/assets/img/logo-icon.svg')?></div>
+		<div class="rpf-content">
+		  <div class="rpf-logo"><img src="admin/assets/img/logo.webp"/></div>
+		  <div class="rpf-head">
+		    <div class="rpf-title rpf-title-2">Player <b>Development</b> Report</div>
+		    <div class="rpf-desc"><b><?php echo ucwords($rep['report_title']); ?></b></div>
+		  </div>
+		  <div class="rpf-intro">
+		    Borussia Academy Indonesia is dedicated to developing young football players through technical skills, tactical understanding, physical conditioning, and character building. This report provides an evaluation of the player's progress and areas for improvement.
+		  </div>
+		  <div class="rpf-data-player">
+		    <div class="rpf-data-title">Player Profile</div>
+			<ul class="rpf-data-list">
+			  <li>
+			    <div class="rpf-dl-box">
+                  <div class="rpf-dl-dot"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/dot.svg')?></div>
+                  <div class="rpf-dl-label">ID</div>
+                  <div class="rpf-dl-separator">:</div>
+                  <div id="name-display" class="rpf-dl-display"><?php echo $rep['p_code']; ?></div>
+				</div>
+			  </li>
+			  <li>
+			    <div class="rpf-dl-box">
+                  <div class="rpf-dl-dot"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/dot.svg')?></div>
+                  <div class="rpf-dl-label">Name</div>
+                  <div class="rpf-dl-separator">:</div>
+                  <div id="name-display" class="rpf-dl-display"><?php echo $rep['fullname']; ?></div>
+				</div>
+			  </li>
+			  <li>
+			    <div class="rpf-dl-box">
+                  <div class="rpf-dl-dot"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/dot.svg')?></div>
+                  <div class="rpf-dl-label">Date of Birth</div>
+                  <div class="rpf-dl-separator">:</div>
+                  <div id="birth-display" class="rpf-dl-display"><?php echo $rep['birthday']; ?></div>
+				</div>
+			  </li>
+			  <li>
+			    <div class="rpf-dl-box">
+                  <div class="rpf-dl-dot"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/dot.svg')?></div>
+                  <div class="rpf-dl-label">Team</div>
+                  <div class="rpf-dl-separator">:</div>
+                  <div id="age-display" class="rpf-dl-display"><?php echo $rep['team_name'] ?: 'No Team'; ?></div>
+				</div>
+			  </li>
+			  <li>
+			    <div class="rpf-dl-box">
+                  <div class="rpf-dl-dot"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/dot.svg')?></div>
+                  <div class="rpf-dl-label">Coach</div>
+                  <div class="rpf-dl-separator">:</div>
+                  <div id="coach-display" class="rpf-dl-display"><?php echo $rep['head_coach'] ?: 'No Coach'; ?></div>
+				</div>
+			  </li>
+			</ul>
+		  </div>
+		  <div class="rpf-signature">
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="admin/assets/img/signatures/signature-saras.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Saras Desch</div>
+			    <div class="rpf-signature-title">CEO/Co-Founder</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img"><img src="admin/assets/img/signatures/signature-damai.png"/></div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name">Damai Miracle</div>
+			    <div class="rpf-signature-title">Head Coach</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		    <div class="rpf-signature-box">
+			  <div class="rpf-signature-img">
                 <?php if($rep['examiner_signature']): ?>
-                    <img src="/admin/assets/img/signatures/<?php echo $rep['examiner_signature']; ?>" width="100" crossorigin="anonymous"><br>
+                  <img id="examiner-signature-img" src="/admin/assets/img/signatures/<?php echo $rep['examiner_signature']; ?>" crossorigin="anonymous"/>
                 <?php else: ?>
-                    <div style="width:100px; height:50px;"></div><br>
+                  <img id="examiner-signature-img" src="admin/assets/img/signatures/signature.png" crossorigin="anonymous"/>
                 <?php endif; ?>
-                Examiner: <?php echo $rep['examiner_name']; ?>
-            </div>
-        </div>
-    </div>
+			  </div>
+			  <div class="rpf-signature-info">
+			    <div class="rpf-signature-name" id="examiner-display"><?php echo $rep['examiner_name']; ?></div>
+			    <div class="rpf-signature-title">Examiner</div>
+			    <div class="rpf-signature-company">Borussia Academy Indonesia</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+      </div>
+	</div>
+	
+    <div class="result-preview content-center">
+      <div class="result-preview-frame" id="result-preview-back">
+	    <div class="rpf-bg">
+		  <div class="rpf-bg-box"></div>
+		  <div class="rpf-bg-triangle"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/gimmick.svg')?></div>
+		</div>
+		<div class="rpf-logo-bottom"><?php require ($_SERVER['BMG'].'admin/assets/img/logo-icon.svg')?></div>
+		<div class="rpf-content">
+		  <div class="rpf-logo"><img src="admin/assets/img/logo.webp"/></div>
+		  <div class="rpf-head">
+		    <div class="rpf-title">Guide to The Report Card:</div>
+		    <div class="rpf-desc">
+			  <p>Each skill is graded on a scale of 1-10, where:</p>
+			  <ul>
+			    <li>1-3 = Need Significant Improvement</li>
+			    <li>4-6 = Developing</li>
+			    <li>7-9 = Good</li>
+			    <li>10 = Excellent</li>
+			  </ul>
+			  <p>This evaluation reflects both training sessions and match performance.</p>
+			</div>
+		  </div>
+		  <div class="rpf-data">
+		    <div class="rpf-table">
+			  <div class="rpf-row rpf-table-head">
+			    <div class="rpf-label">Skill Category</div>
+				<div class="rpf-score">Grade (1-10)</div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Pace</div>
+				<div id="pace-display" class="rpf-score grade-score"><?php echo $rep['pace'] !== null ? $rep['pace'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Passing</div>
+          		<div id="passing-display" class="rpf-score grade-score"><?php echo $rep['passing'] !== null ? $rep['passing'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Dribbling</div>
+          		<div id="dribbling-display" class="rpf-score grade-score"><?php echo $rep['dribbling'] !== null ? $rep['dribbling'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Physical</div>
+          		<div id="physical-display" class="rpf-score grade-score"><?php echo $rep['physical'] !== null ? $rep['physical'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Attacking</div>
+          		<div id="attacking-display" class="rpf-score grade-score"><?php echo $rep['attacking'] !== null ? $rep['attacking'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Defending</div>
+          		<div id="defending-display" class="rpf-score grade-score"><?php echo $rep['defending'] !== null ? $rep['defending'] : '-'; ?></div>
+			  </div>
+			  <div class="rpf-row">
+			    <div class="rpf-label">Shooting</div>
+          		<div id="shooting-display" class="rpf-score grade-score"><?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div>
+			  </div>
+			</div>
+			<div class="rpf-graph">
+			  <canvas id="radarChart" class="grade-chart"></canvas>
+			</div>
+		  </div>
+		  <div class="coach-comments">
+		    <div class="coach-comments-label">Coach's Comments :</div>
+            <div id="comment-display" class="grade-comment"><?php echo nl2br($rep['coach_comment']); ?></div>
+		  </div>
+		  <div class="coach-comments">
+		    <div class="coach-comments-label">Recommendation :</div>
+            <div id="recommendation-display" class="grade-comment"><?php echo nl2br($rep['recommendation']); ?></div>
+		  </div>
+		</div>
+      </div>
+	</div>
+  
+  </div>
 
     <script>
         // Inisialisasi Chart.js
@@ -117,21 +248,69 @@ if(!$rep) die("Report not found.");
                     pointBackgroundColor: 'rgb(54, 162, 235)'
                 }]
             },
-            options: { scales: { r: { min: 0, max: 10 } } }
+            options: { 
+                animation: false, 
+                scales: { r: { min: 0, max: 10 } } 
+            }
         });
 
         // Script html2canvas dan jsPDF
         window.jsPDF = window.jspdf.jsPDF;
-        function downloadPDF() {
-            const element = document.getElementById('showreport');
-            html2canvas(element, { scale: 2, useCORS: true }).then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
+        
+        async function downloadPDF() {
+            // 1. Scroll ke atas penuh
+            window.scrollTo(0, 0);
+            
+            // 2. Ubah state tombol
+            const btn = document.querySelector('button[title="Download PDF"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Generating PDF...";
+            btn.disabled = true;
+
+            // 3. TARGET KONTENER UTAMA
+            const reportDisplay = document.getElementById('showreport');
+
+            try {
+                // SUNTIKAN ANTI-ZOOM: Paksa zoom menjadi 1 (100%) mengabaikan CSS mobile Anda
+                reportDisplay.style.zoom = '1';
+
+                // Beri jeda 300ms agar browser selesai me-render ulang ukuran aslinya yang besar
+                await new Promise(resolve => setTimeout(resolve, 300));
+
+                // Inisialisasi Kertas A4
                 const pdf = new jsPDF('p', 'mm', 'a4');
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                pdf.save('<?php echo $rep['p_code'] . "_" . $report_link; ?>.pdf');
-            });
+                const pdfWidth = pdf.internal.pageSize.getWidth(); 
+                const pdfHeight = pdf.internal.pageSize.getHeight(); 
+
+                // --- PROSES HALAMAN 1 ---
+                const page1 = document.getElementById('result-preview-front');
+                const canvas1 = await html2canvas(page1, { scale: 2, useCORS: true });
+                const imgData1 = canvas1.toDataURL('image/png');
+                pdf.addImage(imgData1, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                // --- TAMBAH KERTAS BARU ---
+                pdf.addPage();
+
+                // --- PROSES HALAMAN 2 ---
+                const page2 = document.getElementById('result-preview-back');
+                const canvas2 = await html2canvas(page2, { scale: 2, useCORS: true });
+                const imgData2 = canvas2.toDataURL('image/png');
+                pdf.addImage(imgData2, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                // --- SIMPAN FILE ---
+                pdf.save('<?php echo $pdf_filename; ?>');
+                
+            } catch (error) {
+                console.error("Error generating PDF: ", error);
+                alert("Terjadi kesalahan saat memproses PDF.");
+            } finally {
+                // 4. PEMULIHAN ZOOM: Hapus zoom paksa agar kembali mengikuti CSS @media mobile Anda
+                reportDisplay.style.zoom = '';
+                
+                // Kembalikan tombol seperti semula
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
         }
     </script>
 	
