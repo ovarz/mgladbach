@@ -66,10 +66,9 @@ $loc_res = $conn->query("SELECT * FROM locations ORDER BY name ASC");
       </div>
     </div>
     <div class="form-row">
-      <div class="form-label">Meetings</div>
-      <div class="form-box form-withsuffix">
+      <div class="form-label">Session</div>
+      <div class="form-box">
         <input class="form-field" name="meetings" type="number" value="<?php echo $session['meetings']; ?>" required>
-        <div class="form-suffix">meetings</div>
       </div>
     </div>
     <div class="form-row">

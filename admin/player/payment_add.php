@@ -45,42 +45,65 @@ $months = ['January','February','March','April','May','June','July','August','Se
   
   
   
-    <form method="POST">
-        <div>
-            <label>Month</label><br>
-            <select name="month" required>
-                <?php foreach($months as $m): ?><option value="<?php echo $m; ?>"><?php echo $m; ?></option><?php endforeach; ?>
-            </select>
-        </div>
-        <div>
-            <label>Year</label><br>
-            <select name="year" required>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-            </select>
-        </div>
-        <div>Session Data: <?php echo $player['loc_name'] . ' - ' . $player['meetings'] . ' meetings'; ?></div>
-        <div>Base Price: <?php echo $player['price']; ?></div>
-        <div>
-            <label>Discount Price</label><br>
-            <input type="number" name="discount" value="0">
-        </div>
-        <div>
-            <label>Payment Date</label><br>
-            <input type="date" name="payment_date" required>
-        </div>
-        <div>
-            <label>Status</label><br>
-            <select name="status">
-                <option value="Waiting Confirmation">Waiting Confirmation</option>
-                <option value="Success">Success</option>
-            </select>
-        </div>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/">Cancel</a>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-label">Month</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="month" required>
+          <?php foreach($months as $m): ?><option value="<?php echo $m; ?>"><?php echo $m; ?></option><?php endforeach; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Year</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="year" required>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Session</div>
+      <div class="form-box">
+        <input class="form-field" type="text" name="session" value="<?php echo $player['loc_name'] . ' - ' . $player['meetings'] . ' session'; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Base Price</div>
+      <div class="form-box">
+        <input class="form-field" type="text" name="price" value="<?php echo (int)$player['price']; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Discount</div>
+      <div class="form-box">
+	    <input class="form-field" type="number" name="discount" value="0">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Payment Date</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="payment_date" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Status</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="status" required>
+          <option value="Waiting Confirmation">Waiting Confirmation</option>
+          <option value="Success">Success</option>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+	<div class="form-action-button">
+	  <button title="Save" class="btn fab-save" type="submit">Save</button>
+	  <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/">Cancel</a>
+	</div>
+  </form>
 	
 	
 

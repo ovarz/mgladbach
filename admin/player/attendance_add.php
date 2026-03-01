@@ -51,17 +51,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   
   
-    <div>Full Name: <?php echo $player['fullname']; ?></div>
-    <div>Status: <?php echo $status_text; ?></div>
-    <div>Current Date: <?php echo $today; ?></div>
-    <div>Current Time: <?php echo $now; ?></div>
-    <br>
-    <form method="POST">
-	  <div class="form-action-button">
-        <button title="Save" class="btn fab-save" type="submit">Save</button>
-        <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
-	  </div>
-    </form>
+  <form class="form-container white-box" method="POST">
+    <div class="form-row">
+      <div class="form-label">Full Name</div>
+      <div class="form-box">
+        <input class="form-field" type="text" name="fullname" value="<?php echo $player['fullname']; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Status</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="status_text" value="<?php echo $status_text; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Current Date</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="today" value="<?php echo $today; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Current Time</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="now" value="<?php echo $now; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+    </div>
+  </form>
 	
 	
 

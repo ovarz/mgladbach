@@ -96,16 +96,19 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 .rancak-main{padding-left:var(--sidebar-width); position:relative;}
 .rancak-main-container{display:grid; grid-gap:var(--size-5); width:100%; max-width:var(--width-max); margin:0 auto; padding:var(--body-padding); position:relative;}
+.section-container{margin-top:var(--size-4);}
+.section-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1rem; margin-bottom:var(--size-3);}
 
 
 
 .dataTable tbody td{border-top:1px dashed !important;}
 .dataTable tbody tr:first-child td{border-top:0 !important;}
-.dataTable tr > *:last-child{text-align:right;}
 .dataTable tbody th, .dataTable tbody td{padding:12px !important;}
-.dataTable tbody td ul{list-style:disc; padding-left:var(--size-4); display:grid; grid-gap:var(--size-1);}
 .dataTable .profile-frame{width:40px; height:40px;}
-.datatable-action{display:flex; flex-wrap:wrap; gap:var(--size-1); justify-content:flex-end;}
+.datatable-action{display:flex; flex-wrap:wrap; gap:var(--size-1);}
+
+.column-content-list{display:grid; grid-gap:var(--size-1);}
+ul.column-content-list{list-style:disc; padding-left:var(--size-4);}
 
 
 

@@ -45,8 +45,10 @@ $result = $conn->query($sql);
                 <td class="text-wrap"><span><?php echo $row['invoice_number']; ?></span></td>
                 <td><?php echo $row['fullname']; ?></td>
                 <td>
-				  <div><?php echo $row['month'] . ' ' . $row['year']; ?></div>
-				  <div><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></div>
+				  <div class="column-content-list">
+				    <div><?php echo $row['month'] . ' ' . $row['year']; ?></div>
+				    <div><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' session'; ?></div>
+				  </div>
 				</td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>

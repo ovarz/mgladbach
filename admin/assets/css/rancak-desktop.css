@@ -37,6 +37,11 @@
 
 
 
+.dataTable tr > *:last-child{text-align:right;}
+.datatable-action{justify-content:flex-end;}
+
+
+
 .head-top-page{display:flex; align-items:center; justify-content:space-between;}
 .htp-button-list .btn{margin-left:var(--size-1);}
 

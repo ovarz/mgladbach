@@ -120,7 +120,7 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
         <select class="form-field" name="session_id">
           <option value="">-- Select Session --</option>
 			<?php while($s = $sessions->fetch_assoc()): ?>
-              <option value="<?php echo $s['id']; ?>" <?php echo ($player['session_id'] == $s['id']) ? 'selected' : ''; ?>><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' kali'; ?></option>
+              <option value="<?php echo $s['id']; ?>" <?php echo ($player['session_id'] == $s['id']) ? 'selected' : ''; ?>><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' session'; ?></option>
 			<?php endwhile; ?>
 		</select>
         <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>

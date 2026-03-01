@@ -100,7 +100,8 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
   
   
   
-    <h2>Attendance Section</h2>
+  <section title="Attendance Section" class="section-container">
+    <h2 class="section-title">Attendance Section</h2>
     <table id="attTable" class="display responsive nowrap">
         <thead>
             <tr>
@@ -129,15 +130,17 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <?php endwhile; ?>
         </tbody>
     </table>
+  </section>
 
-    <hr>
-    <h2>Payment Section</h2>
+
+
+  <section title="Payment Section" class="section-container">
+    <h2 class="section-title">Payment Section</h2>
     <table id="payTable" class="display responsive nowrap">
         <thead>
             <tr>
                 <th class="all">Invoice</th>
-                <th class="min-tablet">Month & Year</th>
-                <th class="min-tablet">Session</th>
+                <th class="min-tablet">Info</th>
                 <th class="min-tablet">Price</th>
                 <th class="min-tablet">Payment Date</th>
                 <th class="min-tablet">Status</th>
@@ -148,8 +151,12 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <?php while($row = $pay_res->fetch_assoc()): ?>
             <tr>
                 <td class="text-wrap"><span><?php echo $row['invoice_number']; ?></span></td>
-                <td><?php echo $row['month'] . ' ' . $row['year']; ?></td>
-                <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
+                <td>
+				  <div class="column-content-list">
+                    <div><?php echo $row['month'] . ' ' . $row['year']; ?></div>
+                    <div><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' session'; ?></div>
+				  </div>
+				</td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
                 <td><?php echo date('j F Y', strtotime($row['payment_date'])); ?></td>
                 <td><div aria-status="<?php echo $row['status']; ?>"><?php echo $row['status']; ?></div></td>
@@ -162,9 +169,12 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <?php endwhile; ?>
         </tbody>
     </table>
+  </section>
 
-    <hr>
-    <h2>Report Section</h2>
+
+
+  <section title="Report Section" class="section-container">
+    <h2 class="section-title">Report Section</h2>
     <table id="repTable" class="display responsive nowrap">
         <thead>
             <tr>
@@ -189,6 +199,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <?php endwhile; ?>
         </tbody>
     </table>
+  </section>
 
     <script>
         $(document).ready(function() {

@@ -49,7 +49,7 @@ $result = $conn->query($sql);
                 <td><?php echo $row['nickname']; ?></td>
 				<td>
                     <?php if ($row['assigned_teams']): ?>
-                        <ul class="team-list">
+                        <ul class="column-content-list">
                             <?php 
                             // Memecah teks tim berdasarkan koma, lalu di-loop menjadi <li>
                             $teams = explode(',', $row['assigned_teams']);
