@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // --- LOGIKA UPDATE ---
     $nickname = $conn->real_escape_string($_POST['nickname']);
     $fullname = $conn->real_escape_string($_POST['fullname']);
+    $join_date = $_POST['join_date'];
     $team_id = $_POST['team_id'];
     $session_id = $_POST['session_id'];
     $birthday = $_POST['birthday'];
@@ -71,43 +72,85 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
   
   
   
-    <form method="POST" enctype="multipart/form-data">
-        <div>
-            <label>Current Photo:</label><br>
-            <img src="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="100"><br>
-            <label>Upload New Photo (Max 1MB, leave blank to keep current)</label><br>
-            <input type="file" name="photo" accept="image/*">
-        </div>
-        <div><label>Nickname</label><br><input type="text" name="nickname" value="<?php echo $player['nickname']; ?>" required></div>
-        <div><label>Full Name</label><br><input type="text" name="fullname" value="<?php echo $player['fullname']; ?>" required></div>
-        <div>
-            <label>Team</label><br>
-            <select name="team_id">
-                <option value="">-- Select Team --</option>
-                <?php while($t = $teams->fetch_assoc()): ?>
-                    <option value="<?php echo $t['id']; ?>" <?php echo ($player['team_id'] == $t['id']) ? 'selected' : ''; ?>><?php echo $t['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div>
-            <label>Session</label><br>
-            <select name="session_id" required>
-                <?php while($s = $sessions->fetch_assoc()): ?>
-                    <option value="<?php echo $s['id']; ?>" <?php echo ($player['session_id'] == $s['id']) ? 'selected' : ''; ?>><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' kali'; ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div><label>Birthday</label><br><input type="date" name="birthday" value="<?php echo $player['birthday']; ?>" required></div>
-        <div><label>WhatsApp</label><br><input type="number" name="whatsapp" value="<?php echo $player['whatsapp']; ?>" required></div>
-        <div><label>Email</label><br><input type="email" name="email" value="<?php echo $player['email']; ?>" required></div>
-        <br>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
-          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
-		  onclick="return confirm('Are you sure you want to delete this player? All reports, attendances, and payments will be deleted!');">Delete</button>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST" enctype="multipart/form-data">
+    <div class="form-pp content-center">
+	  <div class="form-pp-frame img-frame">
+		<img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>">
+	  </div>
+	</div>
+    <div class="form-row">
+      <div class="form-label">Upload Photo (Max 1MB)</div>
+      <div class="form-box">
+        <input class="form-field" type="file" name="photo" accept="image/*">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Nickname</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="nickname" value="<?php echo $player['nickname']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Full Name</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="fullname" value="<?php echo $player['fullname']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Join Date</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="join_date" value="<?php echo $player['join_date']; ?>" disabled>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Teams</div>
+      <div class="form-box form-select">
+        <select class="form-field" name="team_id">
+          <option value="">-- Select Team --</option>
+			<?php while($t = $teams->fetch_assoc()): ?>
+              <option value="<?php echo $t['id']; ?>" <?php echo ($player['team_id'] == $t['id']) ? 'selected' : ''; ?>><?php echo $t['name']; ?></option>
+			<?php endwhile; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Session</div>
+      <div class="form-box form-select">
+        <select class="form-field" name="session_id">
+          <option value="">-- Select Session --</option>
+			<?php while($s = $sessions->fetch_assoc()): ?>
+              <option value="<?php echo $s['id']; ?>" <?php echo ($player['session_id'] == $s['id']) ? 'selected' : ''; ?>><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' kali'; ?></option>
+			<?php endwhile; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Birthday</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="birthday" value="<?php echo $player['birthday']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">WhatsApp</div>
+      <div class="form-box">
+        <input class="form-field" type="number" name="whatsapp" value="<?php echo $player['whatsapp']; ?>" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Email</div>
+      <div class="form-box">
+        <input class="form-field" type="email" name="email" value="<?php echo $player['email']; ?>" required>
+      </div>
+    </div>
+	<div class="form-action-button">
+	  <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+	  <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/"><button type="button">Cancel</button></a>
+	  <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+	  onclick="return confirm('Are you sure you want to delete this player? All reports, attendances, and payments will be deleted!');">Delete</button>
+	</div>
+  </form>
 	
 	
 

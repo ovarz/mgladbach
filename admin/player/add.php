@@ -71,58 +71,78 @@ $sessions = $conn->query("SELECT s.id, l.name as loc_name, s.meetings FROM sessi
   
   
   
-    <form method="POST" enctype="multipart/form-data">
-        <div>
-            <label>Upload Photo (Max 1MB)</label><br>
-            <input type="file" name="photo" accept="image/*">
-        </div>
-        <div>
-            <label>Nickname</label><br>
-            <input type="text" name="nickname" required>
-        </div>
-        <div>
-            <label>Full Name</label><br>
-            <input type="text" name="fullname" required>
-        </div>
-        <div>
-            <label>Join Date</label><br>
-            <input type="date" name="join_date" required>
-        </div>
-        <div>
-            <label>Team</label><br>
-            <select name="team_id">
-                <option value="">-- Select Team --</option>
-                <?php while($t = $teams->fetch_assoc()): ?>
-                    <option value="<?php echo $t['id']; ?>"><?php echo $t['name']; ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div>
-            <label>Session</label><br>
-            <select name="session_id" required>
-                <option value="">-- Select Session --</option>
-                <?php while($s = $sessions->fetch_assoc()): ?>
-                    <option value="<?php echo $s['id']; ?>"><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' meetings'; ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        <div>
-            <label>Birthday</label><br>
-            <input type="date" name="birthday" required>
-        </div>
-        <div>
-            <label>WhatsApp (Numbers only)</label><br>
-            <input type="number" name="whatsapp" required>
-        </div>
-        <div>
-            <label>Email</label><br>
-            <input type="email" name="email" required>
-        </div>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/">Cancel</a>
-        </div>
-    </form>
+  <form class="form-container white-box" method="POST" enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-label">Upload Photo (Max 1MB)</div>
+      <div class="form-box">
+        <input class="form-field" type="file" name="photo" accept="image/*">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Nickname</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="nickname" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Full Name</div>
+      <div class="form-box">
+	    <input class="form-field" type="text" name="fullname" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Join Date</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="join_date" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Teams</div>
+      <div class="form-box form-select">
+        <select class="form-field" name="team_id">
+          <option value="">-- Select Team --</option>
+          <?php while($t = $teams->fetch_assoc()): ?>
+            <option value="<?php echo $t['id']; ?>"><?php echo $t['name']; ?></option>
+          <?php endwhile; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Session</div>
+      <div class="form-box form-select">
+        <select class="form-field" name="session_id">
+          <option value="">-- Select Session --</option>
+            <?php while($s = $sessions->fetch_assoc()): ?>
+              <option value="<?php echo $s['id']; ?>"><?php echo $s['loc_name'] . ' - ' . $s['meetings'] . ' meetings'; ?></option>
+            <?php endwhile; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Birthday</div>
+      <div class="form-box">
+        <input class="form-field" type="date" name="birthday" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">WhatsApp</div>
+      <div class="form-box">
+        <input class="form-field" type="number" name="whatsapp" value="628" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Email</div>
+      <div class="form-box">
+        <input class="form-field" type="email" name="email" required>
+      </div>
+    </div>
+    <div class="form-action-button">
+      <button title="Save" class="btn fab-save" type="submit">Save</button>
+      <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/">Cancel</a>
+    </div>
+  </form>
 	
 	
 
