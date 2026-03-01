@@ -208,5 +208,18 @@ $users = [
     'schedule' => 'Monday',
     'trainingplan' => '1EjdnyNygoahuLCjzixHAkKxb8gBBVdm6',
   ],
+  'fayren' => [
+    'nickname' => 'fayren',
+    'pass' => '180299', // 19 April 1987
+    'name' => 'Fayren Chaerunnissa',
+    'birtdate' => '18 February 1999',
+    'email' => 'fayren18@gmail.com',
+    'phone' => '6281295352519',
+    'address' => 'Apartemen Roseville Unit 935. Sunburst CBD Lot 1, RW.8, Lengkong Gudang, Kec. Serpong, Kota Tangerang Selatan, Banten',
+    'joindate' => 'January 2026',
+    'position' => 'U6 Coach',
+    'schedule' => 'Saturday',
+    'trainingplan' => '1CDyN80mRLf3EtpXdlaqte2VC1_SQAa6_',
+  ],
 ];
 ?>
