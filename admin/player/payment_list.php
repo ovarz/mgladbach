@@ -42,7 +42,7 @@ $result = $conn->query($sql);
         <tbody>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $row['invoice_number']; ?></td>
+                <td class="text-wrap"><span><?php echo $row['invoice_number']; ?></span></td>
                 <td><?php echo $row['fullname']; ?></td>
                 <td>
 				  <div><?php echo $row['month'] . ' ' . $row['year']; ?></div>

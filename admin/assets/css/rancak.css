@@ -101,10 +101,11 @@ display:grid; grid-template-rows:1fr auto; border-right:1px solid;}
 
 .dataTable tbody td{border-top:1px dashed !important;}
 .dataTable tbody tr:first-child td{border-top:0 !important;}
+.dataTable tr > *:last-child{text-align:right;}
 .dataTable tbody th, .dataTable tbody td{padding:12px !important;}
 .dataTable tbody td ul{list-style:disc; padding-left:var(--size-4); display:grid; grid-gap:var(--size-1);}
 .dataTable .profile-frame{width:40px; height:40px;}
-.datatable-action{display:flex; gap:var(--size-1);}
+.datatable-action{display:flex; flex-wrap:wrap; gap:var(--size-1); justify-content:flex-end;}
 
 
 
@@ -137,7 +138,7 @@ ul.pbi-data{list-style:disc; padding-left:var(--size-4);}
 
 
 
-@media screen and (min-width:0px) and (max-width:1023px){
+@media screen and (min-width:0px) and (max-width:1279px){
   :root, :before, :after{
     
   }
@@ -151,6 +152,8 @@ ul.pbi-data{list-style:disc; padding-left:var(--size-4);}
   
   .rancak-main-container table.dataTable{width:calc(100% - (var(--body-padding) * 2)) !important;}
   .dataTable tbody .child td{border-top:0 !important; padding-top:0 !important;}
+  .dataTable .text-wrap{display:grid; grid-template-columns:auto 1fr;}
+  .dataTable .text-wrap span{word-break:break-all; overflow-wrap:break-word; white-space:break-spaces; display:inline-block;}
   
   
   

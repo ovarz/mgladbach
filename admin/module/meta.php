@@ -58,7 +58,7 @@ $("body,html").bind("touchstart touchmove scroll mousedown DOMMouseScroll mousew
 </script>
 
 <link rel="stylesheet" type="text/css" href="admin/assets/css/rancak.css?<?php echo $anticache; ?>"/>
-<link rel="stylesheet" type="text/css" href="admin/assets/css/rancak-desktop.css?<?php echo $anticache; ?>" media="(min-width:1024px)">
+<link rel="stylesheet" type="text/css" href="admin/assets/css/rancak-desktop.css?<?php echo $anticache; ?>" media="(min-width:1280px)">
 
 <?php if($datatable == 'yes') { ?>
   <link rel="preconnect" href="https://cdn.datatables.net">

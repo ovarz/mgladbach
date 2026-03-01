@@ -44,21 +44,62 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
 	</div>
   </div>
 
-    <h2>Biodata Section</h2>
-    <div>
-        <div><img src="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>" width="150"></div>
-        <div>ID: <?php echo $player['player_id']; ?></div>
-        <div>Nickname: </div>
-        <div>Full Name: <?php echo $player['fullname']; ?></div>
-        <div>Team: <?php echo $player['team_name'] ?: 'No Team'; ?></div>
-        <div>Coach: <?php echo $player['coach_name'] ?: 'No Coach'; ?></div>
-        <div>Birthday: <?php echo date('j F Y', strtotime($player['birthday'])); ?></div>
-        <div>Age: <?php echo $age; ?> Years Old</div>
-        <div>WhatsApp: <?php echo $player['whatsapp']; ?></div>
-        <div>Email: <?php echo $player['email']; ?></div>
-    </div>
 
-    <hr>
+
+  <div class="profile-bio profile-player white-box">
+    <div class="profile-bio-picture content-center">
+      <div class="profile-frame img-frame">
+        <img class="lazyload" data-original="/admin/assets/img/photos/<?php echo $player['photo'] ?: 'default.png'; ?>">
+      </div>
+    </div>
+	<ul class="profile-bio-info">
+	  <li class="pbi-row">
+	    <div class="pbi-label">Nickname</div>
+	    <div class="pbi-data"><?php echo $player['nickname']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Full Name</div>
+	    <div class="pbi-data"><?php echo $player['fullname']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Birthday</div>
+	    <div class="pbi-data"><?php echo date('j F Y', strtotime($player['birthday'])); ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Age</div>
+	    <div class="pbi-data"><?php echo $age; ?> Years Old</div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">WhatsApp</div>
+	    <div class="pbi-data"><?php echo $player['whatsapp']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Email</div>
+	    <div class="pbi-data"><?php echo $player['email']; ?></div>
+	  </li>
+	</ul>
+	<ul class="profile-bio-info">
+	  <li class="pbi-row">
+	    <div class="pbi-label">Player ID</div>
+	    <div class="pbi-data"><?php echo $player['player_id']; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Join Date</div>
+	    <div class="pbi-data"><?php echo date('j F Y', strtotime($player['join_date'])); ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Teams</div>
+	    <div class="pbi-data"><?php echo $player['team_name'] ?: 'No Team'; ?></div>
+	  </li>
+	  <li class="pbi-row">
+	    <div class="pbi-label">Coach</div>
+	    <div class="pbi-data"><?php echo $player['coach_name'] ?: 'No Coach'; ?></div>
+	  </li>
+	</ul>
+  </div>
+  
+  
+  
     <h2>Attendance Section</h2>
     <table id="attTable" class="display responsive nowrap">
         <thead>
@@ -99,14 +140,14 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
                 <th class="min-tablet">Session</th>
                 <th class="min-tablet">Price</th>
                 <th class="min-tablet">Payment Date</th>
-                <th class="all">Status</th>
+                <th class="min-tablet">Status</th>
                 <th class="all">Action</th>
             </tr>
         </thead>
         <tbody>
             <?php while($row = $pay_res->fetch_assoc()): ?>
             <tr>
-                <td><?php echo $row['invoice_number']; ?></td>
+                <td class="text-wrap"><span><?php echo $row['invoice_number']; ?></span></td>
                 <td><?php echo $row['month'] . ' ' . $row['year']; ?></td>
                 <td><?php echo $row['loc_name'] . ' - ' . $row['meetings'] . ' kali'; ?></td>
                 <td><?php echo ($row['base_price'] - $row['discount']); ?></td>
@@ -129,7 +170,7 @@ $rep_res = $conn->query("SELECT * FROM reports WHERE player_id = $pid ORDER BY i
             <tr>
                 <th class="all">Report Title</th>
                 <th class="min-tablet">Team</th>
-                <th class="all">Overall</th>
+                <th class="min-tablet">Overall</th>
                 <th class="all">Action</th>
             </tr>
         </thead>
