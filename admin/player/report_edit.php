@@ -78,59 +78,73 @@ $coaches = $conn->query("SELECT id, nickname FROM coaches ORDER BY nickname ASC"
   <div class="head-top-page">
     <h2 class="htp-title">Edit Report</h2>
   </div>
-
-
-
-     <form method="POST">
-        <div>
-            <label>Period</label><br>
-            <select name="period" required>
-                <option value="first semester" <?php echo ($rep['period'] == 'first semester') ? 'selected' : ''; ?>>first semester</option>
-                <option value="second semester" <?php echo ($rep['period'] == 'second semester') ? 'selected' : ''; ?>>second semester</option>
-            </select>
-        </div>
-        <div>
-            <label>Year</label><br>
-            <select name="year" required>
-                <option value="2025" <?php echo ($rep['year'] == '2025') ? 'selected' : ''; ?>>2025</option>
-                <option value="2026" <?php echo ($rep['year'] == '2026') ? 'selected' : ''; ?>>2026</option>
-            </select>
-        </div>
-        <div>
-            <label>Examiner</label><br>
-            <select name="examiner_id" required>
-                <?php while($c = $coaches->fetch_assoc()): ?>
-                    <option value="<?php echo $c['id']; ?>" <?php echo ($rep['examiner_id'] == $c['id']) ? 'selected' : ''; ?>><?php echo $c['nickname']; ?></option>
-                <?php endwhile; ?>
-            </select>
-        </div>
-        
-        <?php 
+  
+  
+  
+  <form class="form-container white-box" method="POST">
+    <div class="form-row">
+      <div class="form-label">Period</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="period" required>
+          <option value="First Semester" <?php echo ($rep['period'] == 'First Semester') ? 'selected' : ''; ?>>First Semester</option>
+          <option value="Second Semester" <?php echo ($rep['period'] == 'Second Semester') ? 'selected' : ''; ?>>Second Semester</option>
+        </select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Year</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="year" required>
+          <option value="2025" <?php echo ($rep['year'] == '2025') ? 'selected' : ''; ?>>2025</option>
+          <option value="2026" <?php echo ($rep['year'] == '2026') ? 'selected' : ''; ?>>2026</option>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Examiner</div>
+      <div class="form-box form-select">
+		<select class="form-field" name="examiner_id" required>
+          <?php while($c = $coaches->fetch_assoc()): ?>
+            <option value="<?php echo $c['id']; ?>" <?php echo ($rep['examiner_id'] == $c['id']) ? 'selected' : ''; ?>><?php echo $c['nickname']; ?></option>
+          <?php endwhile; ?>
+		</select>
+        <div class="form-icon content-center"><?php require ($_SERVER['BMG'].'admin/assets/img/icon/down.svg')?></div>
+      </div>
+    </div>
+	<div class="form-stat-list">
+      <?php 
         $metrics = ['pace', 'passing', 'dribbling', 'physical', 'attacking', 'defending', 'shooting'];
         foreach($metrics as $m): 
-        ?>
-            <div>
-                <label><?php echo ucfirst($m); ?> (0-10)</label><br>
-                <input type="number" name="<?php echo $m; ?>" min="0" max="10" value="<?php echo $rep[$m]; ?>">
-            </div>
-        <?php endforeach; ?>
-
-        <div>
-            <label>Coach Comment</label><br>
-            <textarea name="coach_comment" rows="4"><?php echo $rep['coach_comment']; ?></textarea>
+      ?>
+        <div class="form-row">
+          <div class="form-label"><?php echo ucfirst($m); ?> (0-10)</div>
+          <div class="form-box">
+            <input class="form-field" type="number" name="<?php echo $m; ?>" min="0" max="10" value="<?php echo $rep[$m]; ?>" min="0" max="10">
+          </div>
         </div>
-        <div>
-            <label>Recommendation</label><br>
-            <textarea name="recommendation" rows="4"><?php echo $rep['recommendation']; ?></textarea>
-        </div>
-        <br>
-        <div class="form-action-button">
-          <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
-          <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/">Cancel</a>
-          <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
-		  onclick="return confirm('Are you sure you want to delete this report?');">Delete Report</button>
-        </div>
-    </form>
+      <?php endforeach; ?>
+	</div>
+    <div class="form-row">
+      <div class="form-label">Coach Comment</div>
+      <div class="form-box">
+        <textarea class="form-field" name="coach_comment" rows="4"><?php echo $rep['coach_comment']; ?></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Recommendation</div>
+      <div class="form-box">
+        <textarea class="form-field" name="recommendation" rows="4"><?php echo $rep['recommendation']; ?></textarea>
+      </div>
+    </div>
+	<div class="form-action-button">
+	  <button title="Save" class="btn fab-save" type="submit" name="action" value="update">Save</button>
+	  <a title="Cancel" class="btn btn-outline fab-cancel" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/">Cancel</a>
+	  <button title="Delete" class="btn fab-delete" type="submit" name="action" value="delete" formnovalidate 
+	  onclick="return confirm('Are you sure you want to delete this report?');">Delete Report</button>
+	</div>
+  </form>
 	
 	
 
