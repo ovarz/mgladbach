@@ -125,6 +125,9 @@ ul.column-content-list{list-style:disc; padding-left:var(--size-4);}
 
 .htp-button-list{display:flex; flex-wrap:wrap;}
 .htp-title{font-family:"Bungee", sans-serif; font-weight:400; font-style:normal; font-size:1.25rem;}
+.htg-info{display:grid; grid-gap:var(--size-1); width:100%;}
+.htp-label{text-align:center; width:100%;}
+h2.htp-label{font-weight:bold;}
 
 
 

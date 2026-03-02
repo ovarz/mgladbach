@@ -26,6 +26,7 @@ RewriteRule ^admin/player/([A-Za-z0-9]+)/payment/add/?$ admin/player/payment_add
 RewriteRule ^admin/player/([A-Za-z0-9]+)/payment/edit/([0-9]+)/?$ admin/player/payment_edit.php?id=$1&inv=$2 [L,QSA]
 RewriteRule ^admin/player/([A-Za-z0-9]+)/report/add/?$ admin/player/report_add.php?id=$1 [L,QSA]
 RewriteRule ^admin/player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/edit/?$ admin/player/report_edit.php?id=$1&link=$2 [L,QSA]
+RewriteRule ^admin/player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/generate/?$ admin/player/report_generate.php?id=$1&link=$2 [L,QSA]
 RewriteRule ^admin/player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/?$ admin/player/report_detail.php?id=$1&link=$2 [L,QSA]
 
 # --- ADMIN COACH MODULE ---
@@ -49,4 +50,5 @@ RewriteRule ^admin/setting/location/edit/([A-Za-z0-9]+)/?$ admin/setting/locatio
 
 # --- PLAYER VIEW MODULE ---
 RewriteRule ^player/([A-Za-z0-9]+)/?$ player/profile.php?id=$1 [L,QSA]
+RewriteRule ^player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/generate/?$ player/report_generate.php?id=$1&link=$2 [L,QSA]
 RewriteRule ^player/([A-Za-z0-9]+)/([A-Za-z0-9\-]+)/?$ player/report_detail.php?id=$1&link=$2 [L,QSA]
