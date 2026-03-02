@@ -144,6 +144,33 @@ ul.pbi-data{list-style:disc; padding-left:var(--size-4);}
 
 
 
+.player-report-web, .prw-split, .prw-info{display:grid; grid-gap:var(--size-4);}
+.prw-top{display:grid; grid-gap:2px;}
+.prw-top *{text-align:center;}
+.prw-name, .prw-team{font-weight:bold;}
+.prw-name{font-size:1.5rem; line-height:130%;}
+.prw-coach-exam{display:flex; flex-wrap:wrap; justify-content:center;}
+.prw-coach-exam li{display:block; padding:0 var(--size-2); margin-top:2px; border-right:1px solid;}
+.prw-coach-exam li:last-child{border-right:0;}
+
+.prw-stats{display:grid; grid-gap:var(--size-2); grid-template-columns:repeat(auto-fit, minmax(110px,1fr));}
+.prw-stat-box{display:grid; grid-gap:var(--size-1); padding:var(--size-4) !important;}
+.prw-stat-box *{text-align:center;}
+.prw-stat-number{font-weight:bold; font-size:32px;}
+
+.prw-chart-frame{position:relative;}
+.prw-chart-frame:before{content:''; display:block; padding-top:100%;}
+.prw-chart-frame canvas{position:absolute; top:0; left:0; width:100%; height:100%;}
+
+.prw-comment{display:grid; grid-gap:var(--size-2); grid-auto-rows:min-content;}
+.prw-comment-content{font-weight:bold; font-size:1.25rem; font-style:italic; line-height:140%;}
+
+@media screen and (min-width:1024px){
+  .prw-split{grid-template-columns:repeat(2,1fr);}
+}
+
+
+
 
 
 

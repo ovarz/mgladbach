@@ -24,7 +24,6 @@ if(!$rep) die("Report not found.");
   require ($_SERVER['BMG'].'admin/module/meta.php')
 ?>
 <?php require ($_SERVER['BMG'].'admin/module/sidebar.php')?>
-<style><?php require ($_SERVER['BMG'].'admin/assets/css/report.css')?></style>
 <div class="rancak-main-container rancak-main-1column">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -32,40 +31,75 @@ if(!$rep) die("Report not found.");
     <h2 class="htp-title">Report Detail</h2>
 	<div class="htp-button-list">
       <a title="Edit Report" class="btn" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/edit/">Edit Report</a>
-      <a title="Generate PDF" class="btn" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/generate/">Generate PDF</a>
+      <a title="Generate PDF" class="btn" href="/admin/player/<?php echo $player_code; ?>/<?php echo $report_link; ?>/generate/">Download PDF</a>
 	</div>
   </div>
   
   
   
-  <div>
-    <div>Report Title : <?php echo ucwords($rep['report_title']); ?></div>
-    <div>ID : <?php echo $rep['p_code']; ?></div>
-	<div>Name : <?php echo $rep['fullname']; ?></div>
-	<div>Birth : <?php echo $rep['birthday']; ?></div>
-	<div>Team : <?php echo $rep['team_name'] ?: 'No Team'; ?></div>
-	<div>Coach : <?php echo $rep['head_coach'] ?: 'No Coach'; ?></div>
-	<div>Examiner : <?php echo $rep['examiner_name'] ?: 'No Coach'; ?></div>
+  <div class="player-report-web">
+    <div class="prw-top">
+	  <h2 class="prw-title"><?php echo ucwords($rep['report_title']); ?></h2>
+	  <h3 class="prw-name"><?php echo $rep['fullname']; ?></h3>
+	  <h4 class="prw-team"><?php echo $rep['team_name'] ?: 'No Team'; ?></h4>
+	  <ul class="prw-coach-exam">
+	    <li>Coach : <b><?php echo $rep['head_coach'] ?: 'No Coach'; ?></b></li>
+	    <li>Examiner : <b><?php echo $rep['examiner_name'] ?: 'No Coach'; ?></b></li>
+	  </ul>
+	</div>
 	
-	<br><br>
+	<ul class="prw-stats">
+	  <li class="prw-stat-box prw-stat-overall white-box">
+	    <div class="prw-stat-number"><?php echo $rep['overall'] !== null ? $rep['overall'] : '-'; ?></div>
+	    <div class="prw-stat-label">Overall</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['pace'] !== null ? $rep['pace'] : '-'; ?></div>
+	    <div class="prw-stat-label">Pace</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['passing'] !== null ? $rep['passing'] : '-'; ?></div>
+	    <div class="prw-stat-label">Passing</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['dribbling'] !== null ? $rep['dribbling'] : '-'; ?></div>
+	    <div class="prw-stat-label">Dribbling</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div>
+	    <div class="prw-stat-label">Shooting</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['physical'] !== null ? $rep['physical'] : '-'; ?></div>
+	    <div class="prw-stat-label">Physical</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['attacking'] !== null ? $rep['attacking'] : '-'; ?></div>
+	    <div class="prw-stat-label">Attacking</div>
+	  </li>
+	  <li class="prw-stat-box white-box">
+	    <div class="prw-stat-number"><?php echo $rep['defending'] !== null ? $rep['defending'] : '-'; ?></div>
+	    <div class="prw-stat-label">Defending</div>
+	  </li>
+	</ul>
 	
-	<canvas id="radarChart" class="grade-chart"></canvas>
-	
-	<br><br>
-	
-    <div>Pace : <?php echo $rep['pace'] !== null ? $rep['pace'] : '-'; ?></div>
-    <div>Passing : <?php echo $rep['passing'] !== null ? $rep['passing'] : '-'; ?></div>
-    <div>Dribbling : <?php echo $rep['dribbling'] !== null ? $rep['dribbling'] : '-'; ?></div>
-    <div>Physical : <?php echo $rep['physical'] !== null ? $rep['physical'] : '-'; ?></div>
-    <div>Attacking : <?php echo $rep['attacking'] !== null ? $rep['attacking'] : '-'; ?></div>
-    <div>Defending : <?php echo $rep['defending'] !== null ? $rep['defending'] : '-'; ?></div>
-    <div>Shooting : <?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div>
-    <div>Overall : <?php echo $rep['overall'] !== null ? $rep['overall'] : '-'; ?></div>
-	
-	<br><br>
-	
-    <div>Coach's Comments : <?php echo nl2br($rep['coach_comment']); ?></div>
-    <div>Recommendation : <?php echo nl2br($rep['recommendation']); ?></div>
+	<div class="prw-split">
+	  <div class="prw-chart white-box">
+	    <div class="prw-chart-frame">
+	      <canvas id="radarChart" class="grade-chart"></canvas>
+		</div>
+	  </div>
+	  <div class="prw-info">
+	    <div class="prw-comment white-box">
+		  <div class="prw-comment-label">Coach's Comments</div>
+		  <div class="prw-comment-content"><?php echo nl2br($rep['coach_comment']); ?></div>
+		</div>
+	    <div class="prw-comment white-box">
+		  <div class="prw-comment-label">Recommendation</div>
+		  <div class="prw-comment-content"><?php echo nl2br($rep['recommendation']); ?></div>
+		</div>
+	  </div>
+	</div>
   </div>
 
     <script>
@@ -77,10 +111,10 @@ if(!$rep) die("Report not found.");
             data: {
                 labels: ['Pace', 'Passing', 'Dribbling', 'Physical', 'Attacking', 'Defending', 'Shooting'],
                 datasets: [{
-                    label: 'Player Stats', data: dataVals, backgroundColor: 'rgba(54, 162, 235, 0.2)', borderColor: 'rgb(54, 162, 235)', pointBackgroundColor: 'rgb(54, 162, 235)'
+                    label: 'Player Stats', data: dataVals, backgroundColor: 'rgba(122, 185, 41, 0.2)', borderColor: 'rgb(122, 185, 41)', pointBackgroundColor: 'rgb(122, 185, 41)'
                 }]
             },
-            options: { animation: true, scales: { r: { min: 0, max: 10 } } }
+            options: { animation: true, scales: { r: { min: 0, max: 10 } }, plugins: { legend: {display: false}} }
         });
     </script>
 	

@@ -67,7 +67,7 @@ $redirect_url = "/admin/player/{$player_code}/{$report_link}/";
             <ul class="rpf-data-list">
               <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">ID</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo $rep['p_code']; ?></div></div></li>
               <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">Name</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo $rep['fullname']; ?></div></div></li>
-              <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">Date of Birth</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo $rep['birthday']; ?></div></div></li>
+              <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">Date of Birth</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo date('j F Y', strtotime($rep['birthday'])); ?></div></div></li>
               <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">Team</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo $rep['team_name'] ?: 'No Team'; ?></div></div></li>
               <li><div class="rpf-dl-box"><div class="rpf-dl-dot"><?php require ($_SERVER['DOCUMENT_ROOT'].'/admin/assets/img/icon/dot.svg')?></div><div class="rpf-dl-label">Coach</div><div class="rpf-dl-separator">:</div><div class="rpf-dl-display"><?php echo $rep['head_coach'] ?: 'No Coach'; ?></div></div></li>
             </ul>
@@ -94,10 +94,10 @@ $redirect_url = "/admin/player/{$player_code}/{$report_link}/";
               <div class="rpf-row"><div class="rpf-label">Pace</div><div class="rpf-score grade-score"><?php echo $rep['pace'] !== null ? $rep['pace'] : '-'; ?></div></div>
               <div class="rpf-row"><div class="rpf-label">Passing</div><div class="rpf-score grade-score"><?php echo $rep['passing'] !== null ? $rep['passing'] : '-'; ?></div></div>
               <div class="rpf-row"><div class="rpf-label">Dribbling</div><div class="rpf-score grade-score"><?php echo $rep['dribbling'] !== null ? $rep['dribbling'] : '-'; ?></div></div>
+              <div class="rpf-row"><div class="rpf-label">Shooting</div><div class="rpf-score grade-score"><?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div></div>
               <div class="rpf-row"><div class="rpf-label">Physical</div><div class="rpf-score grade-score"><?php echo $rep['physical'] !== null ? $rep['physical'] : '-'; ?></div></div>
               <div class="rpf-row"><div class="rpf-label">Attacking</div><div class="rpf-score grade-score"><?php echo $rep['attacking'] !== null ? $rep['attacking'] : '-'; ?></div></div>
               <div class="rpf-row"><div class="rpf-label">Defending</div><div class="rpf-score grade-score"><?php echo $rep['defending'] !== null ? $rep['defending'] : '-'; ?></div></div>
-              <div class="rpf-row"><div class="rpf-label">Shooting</div><div class="rpf-score grade-score"><?php echo $rep['shooting'] !== null ? $rep['shooting'] : '-'; ?></div></div>
             </div>
             <div class="rpf-graph"><canvas id="radarChart" class="grade-chart"></canvas></div>
           </div>
@@ -117,7 +117,7 @@ $redirect_url = "/admin/player/{$player_code}/{$report_link}/";
         
         new Chart(ctx, {
             type: 'radar',
-            data: { labels: ['Pace', 'Passing', 'Dribbling', 'Physical', 'Attacking', 'Defending', 'Shooting'], datasets: [{ label: 'Player Stats', data: dataVals, backgroundColor: 'rgba(54, 162, 235, 0.2)', borderColor: 'rgb(54, 162, 235)', pointBackgroundColor: 'rgb(54, 162, 235)' }] },
+            data: { labels: ['Pace', 'Passing', 'Dribbling', 'Physical', 'Attacking', 'Defending', 'Shooting'], datasets: [{ label: 'Player Stats', data: dataVals, backgroundColor: 'rgba(122, 185, 41, 0.2)', borderColor: 'rgb(122, 185, 41)', pointBackgroundColor: 'rgb(122, 185, 41)' }] },
             options: { animation: false, scales: { r: { min: 0, max: 10 } } }
         });
 
@@ -152,7 +152,7 @@ $redirect_url = "/admin/player/{$player_code}/{$report_link}/";
                     alert("Terjadi kesalahan saat memproses PDF.");
                 } finally {
                     reportDisplay.style.zoom = '';
-                    window.location.href = '<?php echo $redirect_url; ?>';
+                    //window.location.href = '<php echo $redirect_url; ?>';
                 }
             }, 500);
         };

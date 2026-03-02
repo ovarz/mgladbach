@@ -120,6 +120,15 @@ a.nav-box:hover{color:var(--color-5); fill:var(--color-5);}
 
 
 
+.prw-name{color:var(--color-2);}
+.prw-coach-exam li{border-color:var(--color-border-form);}
+.prw-team{color:var(--color-4);}
+
+.prw-stat-number, .prw-comment-content{color:var(--color-2);}
+.prw-stat-overall .prw-stat-number{color:var(--color-4);}
+
+
+
 .rancak-popup, .rancak-popup-overlay, .rancak-popup-container{top:0; left:0; width:100%; height:100%;}
 .rancak-popup{position:fixed; z-index:calc(var(--max-zindex) - 1000);}
 .rancak-popup-container{position:relative; z-index:1000; padding:var(--body-padding);}
